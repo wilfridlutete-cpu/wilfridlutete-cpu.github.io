@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wilfrid Lutete — Ingénieur Géomaticien & Data Analyst SIG</title>
+<meta name="description" content="Wilfrid Lutete Nzau — Ingénieur géomaticien et data analyst SIG à Bruxelles : SIG, LiDAR, photogrammétrie, réseaux télécom, Python et SQL." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* =========================================================
+   TOKENS — modifiez ces couleurs pour changer tout le thème
+   ========================================================= */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --navy:#0a1628; --navy2:#0f1e35; --navy3:#162540;
+  --blue:#1a6ef7; --blue-d:#0f5de0; --sky:#e8f0fe; --light:#7eb8ff;
+  --offwhite:#f7f9fc; --white:#fff; --text:#1e2d42; --muted:#5a7290;
+  --border:#d4dff0; --gold:#e8a838; --green:#15803d;
+  --serif:'Fraunces',Georgia,serif; --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  --radius:14px; --shadow:0 4px 24px rgba(10,22,40,.10); --shadow-lg:0 12px 48px rgba(10,22,40,.18);
+  --px:clamp(16px,5vw,64px);
+}
+body{background:var(--offwhite);color:var(--text);font-family:var(--sans);line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.container{max-width:1200px;margin:0 auto}
+
+/* ---------- NAV ---------- */
+nav{position:fixed;inset:0 0 auto 0;z-index:200;height:64px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--px);background:rgba(255,255,255,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 4px 20px rgba(10,22,40,.08)}
+.brand{font-family:var(--serif);font-weight:700;font-size:1.15rem;color:var(--navy);text-decoration:none;letter-spacing:-.02em}
+.brand span{color:var(--blue)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{text-decoration:none;font-size:.88rem;font-weight:500;color:var(--muted);position:relative;padding:.3rem 0;transition:color .2s}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--blue);transition:width .25s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links a.active::after,.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--blue);color:#fff;text-decoration:none;font-size:.85rem;font-weight:600;padding:.55rem 1.3rem;border-radius:100px;transition:all .2s}
+.nav-cta:hover{background:var(--blue-d);transform:translateY(-1px)}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:.5rem;flex-direction:column;gap:5px}
+.burger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:860px){
+  .nav-cta{display:none}
+  .burger{display:flex}
+  .nav-links{position:fixed;top:64px;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--border);
+    box-shadow:0 8px 32px rgba(10,22,40,.12);transform:translateY(-120%);transition:transform .3s;pointer-events:none}
+  .nav-links.open{transform:none;pointer-events:auto}
+  .nav-links a{display:block;padding:1rem 1.5rem;border-left:3px solid transparent}
+  .nav-links a::after{display:none}
+  .nav-links a.active{border-left-color:var(--blue);background:var(--sky)}
+}
+
+/* ---------- HERO ---------- */
+#hero{min-height:100svh;padding:7rem var(--px) 4rem;display:flex;align-items:center;position:relative;overflow:hidden;
+  background:linear-gradient(150deg,var(--navy) 0%,var(--navy3) 100%);color:#fff}
+#hero::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 60% at 25% 40%,rgba(26,110,247,.22),transparent 70%),
+             radial-gradient(ellipse 40% 50% at 85% 70%,rgba(232,168,56,.10),transparent 70%)}
+/* grille topographique décorative */
+#hero::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.07;
+  background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);
+  background-size:48px 48px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%)}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:4rem;align-items:center;width:100%}
+.badge{display:inline-flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+  color:var(--light);font-size:.78rem;font-weight:500;padding:.4rem 1rem;border-radius:100px;margin-bottom:1.6rem}
+.dot{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 0 rgba(74,222,128,.7);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1rem}
+h1 strong{font-weight:700}
+.typed{font-size:clamp(1rem,2vw,1.25rem);color:var(--light);font-weight:500;min-height:1.9em;margin-bottom:1.4rem}
+.typed em{font-family:var(--serif);color:var(--gold)}
+.cursor{display:inline-block;width:2px;height:1.1em;background:var(--gold);vertical-align:-3px;margin-left:3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.pitch{color:rgba(255,255,255,.72);max-width:540px;font-size:1.02rem;margin-bottom:2rem}
+.pitch b{color:#fff;font-weight:600}
+.btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.7rem;border-radius:100px;font-weight:600;font-size:.92rem;text-decoration:none;transition:all .2s;cursor:pointer;border:0;font-family:inherit}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 24px rgba(26,110,247,.35)}
+.btn-primary:hover{background:var(--blue-d);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3)}
+.btn-ghost:hover{background:rgba(255,255,255,.08);border-color:#fff}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:560px;border-top:1px solid rgba(255,255,255,.12);padding-top:1.8rem}
+.stat b{display:block;font-family:var(--serif);font-size:2.1rem;font-weight:600;line-height:1}
+.stat span{font-size:.75rem;color:rgba(255,255,255,.55)}
+.portrait{position:relative;justify-self:center;width:min(360px,100%)}
+.portrait-frame{aspect-ratio:4/5;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.15);
+  background:linear-gradient(160deg,#1d3a66,#0f1e35);box-shadow:var(--shadow-lg);display:grid;place-items:center}
+.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.portrait-frame .initials{font-family:var(--serif);font-size:6rem;font-weight:300;color:rgba(255,255,255,.25)}
+.portrait::before{content:'';position:absolute;inset:-14px;border:1px dashed rgba(126,184,255,.35);border-radius:30px;z-index:-1}
+.float-badge{position:absolute;background:#fff;color:var(--navy);padding:.7rem 1rem;border-radius:12px;font-size:.8rem;font-weight:600;
+  box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:.5rem;animation:float 4s ease-in-out infinite}
+.float-badge.b1{bottom:-16px;left:-36px}
+.float-badge.b2{top:-16px;right:-28px;animation-delay:-2s}
+.float-badge i{font-style:normal;font-size:1.1rem}
+@keyframes float{50%{transform:translateY(-10px)}}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;text-align:center;gap:3rem}
+  .pitch{margin-inline:auto}.btns{justify-content:center}.stats{margin-inline:auto}
+  .portrait{order:-1;width:220px}.float-badge.b1{left:-34px;bottom:-14px}.float-badge.b2{right:-34px;top:-14px}
+}
+@media (max-width:480px){.stats{grid-template-columns:repeat(2,1fr);row-gap:1.5rem}.float-badge{font-size:.7rem;padding:.5rem .7rem}}
+
+/* ---------- SECTIONS ---------- */
+section{padding:6rem var(--px)}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:.8rem}
+.eyebrow::before{content:'';width:28px;height:2px;background:var(--blue)}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,4vw,2.9rem);line-height:1.1;letter-spacing:-.02em;color:var(--navy);margin-bottom:1rem}
+h2 em{font-weight:300;color:var(--blue)}
+.lead{color:var(--muted);max-width:620px;margin-bottom:3rem;font-size:1.02rem}
+.alt{background:var(--white)}
+.dark{background:var(--navy);color:#fff}
+.dark h2{color:#fff}.dark .lead{color:rgba(255,255,255,.6)}.dark .eyebrow{color:var(--light)}.dark .eyebrow::before{background:var(--light)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none!important}}
+
+/* ---------- COMPÉTENCES ---------- */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+.skill{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;transition:all .3s;position:relative;overflow:hidden}
+.skill::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--light));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.skill:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent}
+.skill:hover::before{transform:scaleX(1)}
+.skill-ico{width:56px;height:56px;border-radius:14px;background:var(--sky);display:grid;place-items:center;font-size:1.6rem;margin-bottom:1.2rem}
+.skill h3{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--navy);margin-bottom:.5rem}
+.skill p{color:var(--muted);font-size:.92rem;margin-bottom:1.2rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.certs{margin-top:1.1rem;padding-top:1rem;border-top:1px dashed var(--border);display:grid;gap:.45rem}
+.certs a{display:flex;justify-content:space-between;gap:.8rem;align-items:center;text-decoration:none;font-size:.8rem;font-weight:600;color:var(--navy);
+  background:var(--sky);border-radius:8px;padding:.5rem .7rem;transition:all .2s}
+.certs a:hover{background:var(--blue);color:#fff}
+.certs small{color:inherit;opacity:.7;white-space:nowrap;font-weight:500}
+.info li a{color:var(--blue);text-decoration:none;font-weight:600}
+.info li a:hover{text-decoration:underline}
+.tag{font-size:.72rem;font-weight:600;padding:.28rem .7rem;border-radius:100px;background:var(--offwhite);border:1px solid var(--border);color:var(--text)}
+
+/* ---------- GALERIE ---------- */
+.gallery-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.count{font-size:.85rem;color:var(--muted)}
+.count b{color:var(--blue)}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.filter{font-family:inherit;font-size:.85rem;font-weight:600;padding:.55rem 1.1rem;border-radius:100px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer;transition:all .2s}
+.filter:hover{border-color:var(--blue);color:var(--blue)}
+.filter.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.maps{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.map-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:all .3s;animation:fadeIn .4s ease}
+@keyframes fadeIn{from{opacity:0;transform:scale(.96)}}
+.map-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.map-thumb{aspect-ratio:4/3;position:relative;overflow:hidden;background:var(--navy2)}
+.map-thumb svg,.map-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.map-card:hover .map-thumb svg,.map-card:hover .map-thumb img{transform:scale(1.06)}
+.map-thumb .cat{position:absolute;top:12px;left:12px;background:rgba(10,22,40,.8);backdrop-filter:blur(6px);color:#fff;font-size:.7rem;font-weight:600;padding:.3rem .7rem;border-radius:100px}
+.map-thumb .zoom{position:absolute;inset:0;display:grid;place-items:center;background:rgba(10,22,40,.45);opacity:0;transition:opacity .3s;color:#fff;font-weight:600;font-size:.88rem}
+.map-card:hover .zoom{opacity:1}
+.map-body{padding:1.2rem 1.4rem 1.4rem}
+.map-body h3{font-family:var(--serif);font-size:1.12rem;font-weight:600;color:var(--navy);margin-bottom:.3rem}
+.map-body p{font-size:.85rem;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:500;background:rgba(5,12,24,.85);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:16px}
+.modal.open{display:flex;animation:fadeIn .25s}
+.modal-box{background:#fff;border-radius:18px;max-width:900px;width:100%;max-height:92vh;overflow:auto;position:relative}
+.modal-img{aspect-ratio:16/9;background:var(--navy2)}
+.modal-img svg{width:100%;height:100%;object-fit:cover}
+.modal-img img{width:100%;height:100%;object-fit:contain;background:#fff}
+.modal-thumbs{display:flex;gap:.5rem;padding:.8rem 2rem 0;flex-wrap:wrap}
+.modal-thumbs:empty{display:none}
+.modal-thumbs img{width:84px;height:60px;object-fit:cover;border-radius:8px;border:2px solid var(--border);cursor:pointer;opacity:.7;transition:all .2s}
+.modal-thumbs img:hover,.modal-thumbs img.on{opacity:1;border-color:var(--blue)}
+.modal-content{padding:1.8rem 2rem 2rem}
+.modal-content h3{font-family:var(--serif);font-size:1.6rem;color:var(--navy);margin:.4rem 0 .8rem}
+.modal-meta{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:.85rem;color:var(--muted);margin-bottom:1rem}
+.modal-nav{display:flex;justify-content:space-between;gap:1rem;margin-top:1.6rem;padding-top:1.2rem;border-top:1px solid var(--border)}
+.modal-nav button{font-family:inherit;background:none;border:1px solid var(--border);padding:.55rem 1.1rem;border-radius:100px;cursor:pointer;font-weight:600;color:var(--text)}
+.modal-nav button:hover{border-color:var(--blue);color:var(--blue)}
+.close{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.9);font-size:1.1rem;cursor:pointer;z-index:2;box-shadow:var(--shadow)}
+
+/* ---------- PARCOURS ---------- */
+.timeline{position:relative;max-width:820px}
+.timeline::before{content:'';position:absolute;left:27px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--blue),var(--border))}
+.tl-item{display:grid;grid-template-columns:56px 1fr;gap:1.6rem;margin-bottom:2.2rem;position:relative}
+.tl-mark{width:56px;height:56px;border-radius:50%;background:#fff;border:2px solid var(--blue);display:grid;place-items:center;
+  font-family:var(--serif);font-weight:700;color:var(--blue);font-size:1.1rem;z-index:1;box-shadow:0 0 0 6px var(--offwhite)}
+.tl-item.edu .tl-mark{border-color:var(--gold);color:var(--gold)}
+.tl-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem 1.6rem;transition:box-shadow .3s}
+.tl-card:hover{box-shadow:var(--shadow)}
+.tl-date{font-size:.76rem;font-weight:700;color:var(--blue);letter-spacing:.06em;text-transform:uppercase}
+.tl-card h3{font-family:var(--serif);font-size:1.18rem;color:var(--navy);margin:.2rem 0}
+.tl-place{font-size:.85rem;color:var(--muted);margin-bottom:.6rem}
+.tl-card p{font-size:.9rem}
+
+/* ---------- SERVICES ---------- */
+.service{background:var(--navy2);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:2.2rem;transition:all .3s;position:relative}
+.service:hover{background:var(--navy3);border-color:rgba(126,184,255,.35);transform:translateY(-6px)}
+.service .num{font-family:var(--serif);font-size:3rem;font-weight:300;color:var(--light);opacity:.5;line-height:1;margin-bottom:1rem}
+.service h3{font-family:var(--serif);font-size:1.4rem;margin-bottom:1rem}
+.service ul{list-style:none}
+.service li{padding:.45rem 0 .45rem 1.6rem;position:relative;font-size:.92rem;color:rgba(255,255,255,.75);border-bottom:1px solid rgba(255,255,255,.06)}
+.service li::before{content:'→';position:absolute;left:0;color:var(--gold)}
+
+/* ---------- DIPLÔMES ---------- */
+.grid-4{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.4rem}
+.diploma{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.8rem;text-align:center;transition:all .3s}
+.diploma:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.diploma .d-ico{font-size:2.2rem;margin-bottom:.8rem}
+.diploma h3{font-family:var(--serif);font-size:1.1rem;color:var(--navy);margin-bottom:.3rem}
+.diploma p{font-size:.85rem;color:var(--muted)}
+.extras{margin-top:1.6rem}
+.info{background:var(--offwhite);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem 1.8rem}
+.info h3{font-family:var(--serif);font-size:1.15rem;color:var(--navy);margin-bottom:.8rem;display:flex;gap:.5rem;align-items:center}
+.info ul{list-style:none}
+.info li{font-size:.88rem;padding:.4rem 0;border-bottom:1px dashed var(--border);display:flex;justify-content:space-between;gap:1rem}
+.info li:last-child{border-bottom:0}
+.info li small{color:var(--muted);white-space:nowrap}
+.diploma .year{display:inline-block;margin-top:.8rem;font-size:.72rem;font-weight:700;color:var(--blue);background:var(--sky);padding:.25rem .7rem;border-radius:100px}
+
+/* ---------- CONTACT ---------- */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:start}
+.socials{display:grid;gap:1rem;margin-top:2rem}
+.social{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;background:#fff;border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;transition:all .2s}
+.social:hover{border-color:var(--blue);transform:translateX(4px)}
+.social .s-ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-weight:700;color:#fff;flex-shrink:0}
+.social b{display:block;font-size:.92rem;color:var(--navy)}
+.social span{font-size:.8rem;color:var(--muted)}
+form{background:#fff;border:1px solid var(--border);border-radius:18px;padding:2rem;box-shadow:var(--shadow)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.field{margin-bottom:1.1rem}
+label{display:block;font-size:.8rem;font-weight:600;margin-bottom:.4rem;color:var(--navy)}
+input,select,textarea{width:100%;font-family:inherit;font-size:.92rem;padding:.8rem 1rem;border:1px solid var(--border);border-radius:10px;background:var(--offwhite);color:var(--text);transition:all .2s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(26,110,247,.12)}
+textarea{min-height:130px;resize:vertical}
+form .btn{width:100%;justify-content:center}
+.success{display:none;margin-top:1rem;padding:1rem;border-radius:10px;background:#f0fdf4;border:1px solid #86efac;color:var(--green);font-size:.9rem}
+.success.show{display:block}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--navy);color:rgba(255,255,255,.6);padding:2.5rem var(--px);font-size:.85rem}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.foot .brand{color:#fff}
+.foot-links{display:flex;gap:1.4rem;flex-wrap:wrap}
+.foot-links a{text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--light)}
+.to-top{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;background:var(--blue);color:#fff;border:0;font-size:1.2rem;cursor:pointer;
+  box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:all .3s;z-index:150}
+.to-top.show{opacity:1;pointer-events:auto}
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav id="nav">
+  <a href="#" class="brand">Wilfrid <span>Lutete</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#competences">Compétences</a></li>
+    <li><a href="#galerie">Projets</a></li>
+    <li><a href="#parcours">Parcours</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Me contacter</a>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header id="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge"><span class="dot"></span> Basé à Bruxelles · Autorisé à travailler UE & Belgique</div>
+      <h1>Bonjour, je suis<br><strong>Wilfrid Lutete</strong></h1>
+      <div class="typed"><span id="typed"></span><span class="cursor"></span></div>
+      <p class="pitch">Ingénieur géomaticien diplômé en <b>géomatique</b> et en <b>gestion des risques et catastrophes</b>. Je transforme les données spatiales en outils de décision : jumeaux numériques de réseaux, modèles 3D par drone et LiDAR, analyses SIG et applications WebGIS.</p>
+      <div class="btns">
+        <a href="#galerie" class="btn btn-primary">Voir mes projets →</a>
+        <a href="https://www.linkedin.com/in/wilfrid-lutete-7700bbb0" class="btn btn-ghost" target="_blank" rel="noopener">Mon profil LinkedIn ↗</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b data-count="9" data-suffix="+">0</b><span>Années d'exp.</span></div>
+        <div class="stat"><b data-count="4">0</b><span>Diplômes</span></div>
+        <div class="stat"><b data-count="4">0</b><span>Certifs ESRI</span></div>
+        <div class="stat"><b data-count="6">0</b><span>Pays</span></div>
+      </div>
+    </div>
+    <div class="portrait">
+      <div class="portrait-frame"><img src="photo.jpg" alt="Wilfrid Lutete Nzau"></div>
+      <div class="float-badge b1"><i>📡</i> Digital Twin télécom</div>
+      <div class="float-badge b2"><i>🛸</i> LiDAR & Drone</div>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== COMPÉTENCES ===================== -->
+<section id="competences">
+  <div class="container">
+    <div class="eyebrow reveal">01 — Expertise</div>
+    <h2 class="reveal">Mes <em>compétences</em></h2>
+    <p class="lead reveal">De la capture terrain par drone jusqu'au jumeau numérique d'un réseau fibre : une chaîne de compétences complète autour de la donnée spatiale.</p>
+    <div class="grid-3" id="skills"></div>
+  </div>
+</section>
+
+<!-- ===================== GALERIE ===================== -->
+<section id="galerie" class="alt">
+  <div class="container">
+    <div class="gallery-head">
+      <div>
+        <div class="eyebrow reveal">02 — Portfolio</div>
+        <h2 class="reveal">Mes <em>réalisations</em></h2>
+      </div>
+      <div class="count">Affichage : <b id="shown">0</b> projet(s) sur <b id="total">0</b></div>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="maps" id="maps"></div>
+  </div>
+</section>
+
+<!-- ===================== PARCOURS ===================== -->
+<section id="parcours">
+  <div class="container">
+    <div class="eyebrow reveal">03 — Trajectoire</div>
+    <h2 class="reveal">Mon <em>parcours</em></h2>
+    <p class="lead reveal">Des missions de terrain en RDC aux réseaux télécom en Belgique : plus de 9 ans au service de la donnée géospatiale.</p>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section id="services" class="dark">
+  <div class="container">
+    <div class="eyebrow reveal">04 — Offres</div>
+    <h2 class="reveal">Mes <em>services</em></h2>
+    <p class="lead reveal">Des prestations sur mesure pour entreprises, opérateurs réseau, bureaux d'études et organisations internationales.</p>
+    <div class="grid-3" id="servicesGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== DIPLÔMES ===================== -->
+<section id="formation" class="alt">
+  <div class="container">
+    <div class="eyebrow reveal">05 — Formation</div>
+    <h2 class="reveal">Diplômes & <em>certifications</em></h2>
+    <p class="lead reveal">Une formation académique en Belgique, en Égypte et en RDC, complétée par des certifications ESRI et des bourses internationales. Diplômes obtenus hors Belgique reconnus par équivalence de la Fédération Wallonie-Bruxelles.</p>
+    <div class="grid-4" id="diplomas"></div>
+    <div class="grid-3 extras" id="extras"></div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="eyebrow reveal">06 — Contact</div>
+      <h2 class="reveal">Travaillons <em>ensemble</em></h2>
+      <p class="lead reveal" style="margin-bottom:0">Un poste, une mission SIG, un projet de jumeau numérique ou de modélisation 3D ? Basé à Bruxelles, je travaille en français, en anglais et j'ai des notions de néerlandais.</p>
+      <div class="socials">
+        <a class="social reveal" href="https://www.linkedin.com/in/wilfrid-lutete-7700bbb0" target="_blank" rel="noopener">
+          <div class="s-ico" style="background:#0a66c2">in</div><div><b>LinkedIn</b><span>linkedin.com/in/wilfrid-lutete-7700bbb0</span></div>
+        </a>
+        <a class="social reveal" href="mailto:wilfridlutete@gmail.com">
+          <div class="s-ico" style="background:var(--blue)">@</div><div><b>Email</b><span>wilfridlutete@gmail.com</span></div>
+        </a>
+      </div>
+    </div>
+    <form id="form" class="reveal">
+      <div class="row">
+        <div class="field"><label for="fn">Prénom</label><input id="fn" required></div>
+        <div class="field"><label for="ln">Nom</label><input id="ln" required></div>
+      </div>
+      <div class="field"><label for="em">Email</label><input id="em" type="email" required></div>
+      <div class="field"><label for="tp">Type de demande</label>
+        <select id="tp">
+          <option>Offre d'emploi</option><option>Mission SIG / Cartographie</option>
+          <option>Digital Twin / Réseaux télécom</option><option>Photogrammétrie, LiDAR & 3D</option>
+          <option>Développement WebGIS</option><option>Formation</option><option>Autre</option>
+        </select>
+      </div>
+      <div class="field"><label for="msg">Message</label><textarea id="msg" required></textarea></div>
+      <button class="btn btn-primary" type="submit">Envoyer le message →</button>
+      <div class="success" id="success">✅ Merci ! Votre logiciel de messagerie va s'ouvrir pour envoyer le message.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container foot">
+    <div><a href="#" class="brand">Wilfrid <span style="color:var(--light)">Lutete Nzau</span></a><br>Ingénieur Géomaticien & Data Analyst · Bruxelles, Belgique</div>
+    <div class="foot-links">
+      <a href="https://www.linkedin.com/in/wilfrid-lutete-7700bbb0">LinkedIn</a>
+      <a href="mailto:wilfridlutete@gmail.com">Email</a>
+      <span>© <span id="year"></span></span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Haut de page">↑</button>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <button class="close" id="close" aria-label="Fermer">✕</button>
+    <div class="modal-img" id="mImg"></div>
+    <div class="modal-thumbs" id="mThumbs"></div>
+    <div class="modal-content">
+      <span class="tag" id="mCat"></span>
+      <h3 id="mTitle"></h3>
+      <div class="modal-meta"><span id="mDate"></span><span id="mTools"></span></div>
+      <p id="mDesc"></p>
+      <div class="modal-nav">
+        <button id="prev">← Précédent</button>
+        <button id="next">Suivant →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   CONTENU — modifiez ici vos informations
+   ========================================================= */
+const EMAIL = "wilfridlutete@gmail.com";
+const ROLES = ["Ingénieur Géomaticien", "Data Analyst SIG", "Spécialiste LiDAR & Photogrammétrie", "Consultant Réseaux Télécom"];
+
+const SKILLS = [
+  {ico:"🗺️", t:"SIG & Géomatique", d:"Analyse spatiale avancée, géotraitement et production cartographique de haute qualité.", tags:["ArcGIS Pro","QGIS","ArcGIS Enterprise","PostGIS","GeoServer","OpenStreetMap","Spatial Data Science"],
+    certs:[{t:"Esri — Spatial Data Science: The New Frontier in Analytics", y:"Oct 2024", href:"certificats/esri-spatial-data-science.pdf"},
+           {t:"Esri — Make an Impact with Modern Geo Apps", y:"Oct 2024", href:"certificats/esri-modern-geo-apps.pdf"}]},
+  {ico:"📐", t:"BIM & CAO — AutoCAD", d:"Dessin technique 2D d'un projet de bâtiment complet : plans de niveaux, coupes, élévations, détails constructifs, plan électrique et plan d'implantation.", tags:["AutoCAD","DAO","Plans & coupes","Élévations","Plan électrique","Plan d'implantation"],
+    certs:[{t:"Formation DAO / AutoCAD — Bruxelles Formation", y:"Avr 2025", href:"projets/maison-eco-bio-autocad.pdf"}]},
+  {ico:"📡", t:"Réseaux Télécom & Digital Twin", d:"Gestion de l'inventaire géographique et logique d'un réseau fibre optique dans un jumeau numérique.", tags:["MarlinDT","Utility Network","Fibre optique","Digital Twin"]},
+  {ico:"🛸", t:"LiDAR, Photogrammétrie & 3D", d:"Capture d'images par drone, traitement photogrammétrique, nuages de points et modélisation 3D de sites.", tags:["LiDAR","Photogrammétrie","ERDAS","Modélisation 3D"]},
+  {ico:"🌐", t:"WebGIS & bibliothèques SIG", d:"Applications cartographiques web interactives et outils géospatiaux sur mesure.", tags:["Leaflet.js","OpenLayers","Mapbox GL JS","Turf.js","GeoPandas","GDAL/OGR"]},
+  {ico:"🗄️", t:"Données, SQL & programmation", d:"Exploitation de bases de données, modélisation des flux et automatisation des traitements.", tags:["Python","SQL","Oracle","DuckDB","DBeaver","R","FME","UML"]},
+  {ico:"🌍", t:"Risques & Environnement", d:"Évaluations d'impact environnemental et social, cartographie des risques et hydrologie des bassins versants.", tags:["EIES","Risques & catastrophes","Bassins versants","Changement climatique"]},
+];
+
+const CATS = [
+  {k:"all", l:"🗂️ Tous les projets"},
+  {k:"telecom", l:"📡 Télécom & Digital Twin"},
+  {k:"3d", l:"🛸 LiDAR & 3D"},
+  {k:"analyse", l:"📊 Analyse spatiale"},
+  {k:"sig", l:"🗺️ Cartographie & Risques"},
+  {k:"webgis", l:"🌐 WebGIS"},
+  {k:"bim", l:"📐 BIM & CAO"},
+  {k:"pub", l:"📄 Publications"},
+];
+
+/* img: mettez le chemin d'une image (ex. "projets/marlindt.jpg") ; sinon une vignette est générée */
+const MAPS = [
+  {c:"pub", t:"Zonage de l'aléa inondation dans les aires avales du bassin versant de la N'Djili à Kinshasa (RDC)", d:"Article scientifique — Makanzu Imwangana F., Lutete Nzau W., Zola Kamosi B., Wa Ndela N'landu P., Tshitshi Bambi M., Lofongo Ilito D. P. Journal Africain des Sciences, vol. 3, n° 7, p. 77-90. Zonage de l'aléa inondation du bassin inférieur de la N'Djili (762,8 km², indice de compacité 1,8) par modélisation Frequency Ratio et géomatique à partir de onze facteurs causatifs : quatre zones de susceptibilité (élevée, moyenne, faible, très faible). La proximité, la forme et la densité du réseau hydrographique sont déterminantes ; les zones situées à 300 m d'altitude ou moins sont les plus exposées.", date:"Juillet 2026", tools:"ArcGIS 10.3, SRTM 30 m, Landsat, fréquence ratio", img:"projets/ndjili-susceptibilite-inondation.png", more:["projets/ndjili-pentes.png"], link:"https://doi.org/10.70237/jafrisci.2026.v3.i7.09"},
+  {c:"pub", t:"Poster — Zonage de l'aléa inondation du bassin versant de la N'Djili", d:"Poster scientifique — Lutete Nzau W. (premier auteur), Ilito Lofongo D. P., Makanzu Imwangana F. Version préliminaire de l'étude sur la N'Djili : photos de terrain après les inondations de novembre 2017, zone d'étude extraite du SRTM, méthodologie Frequency Ratio (70 % des points d'inondation pour l'entraînement, 30 % pour la validation), cartes des facteurs topographiques (pente, aspect, courbure, hillshade, densité de drainage, SPI) et carte finale de susceptibilité, avec recommandations d'aménagement.", date:"2022", tools:"ArcGIS 10.3, SRTM, Google Earth", img:"projets/poster-ndjili.jpg", link:"projets/poster-ndjili-alea-inondation.pdf"},
+  {c:"pub", t:"Récents processus géomorphologiques sur le plateau du Kwango : anthropisation et glissements de terrain (Pont Kwango, RDC)", d:"Article scientifique — Makanzu Imwangana F., Lefa Mayoko T., Lutete Nzau W., Kalunga Mukuwa B., Ilito Lofongo D. P. Journal of Environmental Education Research and Sustainable Development (JEERESD), vol. 3, n° 3. Inventaire de 18 glissements de terrain par interprétation d'images Google Earth Pro et Landsat 8 validée sur le terrain (GPS), classification supervisée de l'occupation du sol et carte de susceptibilité comme outil d'aide à la décision.", date:"Juin 2025", tools:"Google Earth Pro, Landsat 8, ArcGIS 10.3, fréquence ratio", img:"projets/kwango-bassin-versant.png", link:"https://doi.org/10.5281/zenodo.15786659"},
+  {c:"pub", t:"Analyse de susceptibilité aux inondations dans la zone Est de Kinshasa (bassin versant de la Tshangu)", d:"Mémoire de Master de spécialisation en gestion des risques et des catastrophes — Université de Liège, défendu le 1er septembre 2023 (88 p.). Promoteurs : Pierre Ozer et Fils Makanzu. Évaluation quantifiée et géospatiale de la susceptibilité aux inondations par télédétection, SIG et modèle de fréquence ratio (FR) : trois zones de susceptibilité identifiées ; facteurs déterminants : proximité des cours d'eau, densité de drainage, Stream Power Index, topographie et précipitations. Recherche de terrain soutenue par une bourse de la Fondation Roi Baudouin (Fonds Elisabeth et Amélie).", date:"Septembre 2023", tools:"Télédétection, SIG, modèle FR", img:"", link:"https://hdl.handle.net/2268.2/17991"},
+  {c:"pub", t:"Theoretical Analysis of Biogas Production from Septic Tanks: The Case of the City of Kinshasa", d:"Article scientifique — Ngondo Otshwe J., Lutete Nzau W., Okolonga Djeli D. Natural Science, 15(4), p. 149-166 (plus de 370 téléchargements sur SCIRP). Estimation du potentiel de biogaz issu des fosses septiques de Kinshasa (équation de Buswell) et analyse cartographique par district à partir de données OpenStreetMap et DIVA-GIS sous ArcGIS.", date:"Avril 2023", tools:"ArcGIS, OpenStreetMap, DIVA-GIS", img:"projets/kinshasa-districts.jpg", more:["projets/kinshasa-communes.jpg","projets/kinshasa-urbanisation.jpg"], link:"https://doi.org/10.4236/ns.2023.154011"},
+  {c:"bim", t:"Maison d'habitation éco-bio-construction — Lot 5", d:"Dossier complet réalisé sous AutoCAD en fin de formation DAO, en partant d'un niveau zéro : vues en plan du rez-de-chaussée et de l'étage (1/40), coupe GG avec complexes de murs, sol et toiture, élévations nord, sud et ouest, détail d'isolation (laine de chanvre, liège expansé, brique en terre crue), plan électrique, plan de masse et plan d'implantation.", date:"Avril 2025", tools:"AutoCAD", img:"projets/maison-eco-bio-autocad.jpg", link:"projets/maison-eco-bio-autocad.pdf"},
+  {c:"telecom", t:"MarlinDT — Jumeau numérique du réseau fibre", d:"Mise en œuvre de MarlinDT, digital twin géographique basé sur ArcGIS Pro / Utility Network / ArcGIS Enterprise, pour la gestion du réseau fibre optique de Telenet. Mise à jour de l'inventaire géographique et logique du réseau, support aux phases UAT et propositions d'évolution.", date:"2026 — Présent", tools:"ArcGIS Pro, Utility Network, ArcGIS Enterprise", img:"", link:""},
+  {c:"telecom", t:"Analyse et modélisation des données réseau", d:"Exploitation et analyse des données réseau, modélisation des flux de données en UML et traduction des besoins utilisateurs en exigences fonctionnelles (spécifications, user stories) au sein d'une équipe Scrum.", date:"2026", tools:"Oracle, DuckDB, DBeaver, SQL, UML", img:"", link:""},
+  {c:"3d", t:"Modélisation 3D de sites par drone", d:"Pilotage de projets photogrammétriques : capture d'images par drone, traitement photogrammétrique et modélisation 3D de sites.", date:"2021 — 2026", tools:"Drone, Photogrammétrie, LiDAR", img:"", link:""},
+  {c:"3d", t:"Classification automatisée d'images", d:"Développement de scripts Python pour automatiser la classification d'images et l'analyse spatiale, avec des méthodes de deep learning dans ArcGIS Pro.", date:"2021 — 2026", tools:"Python, ArcGIS Pro, Deep Learning", img:"", link:""},
+  {c:"analyse", t:"Évaluations d'impact environnemental et social", d:"Réalisation d'EIES conformes aux réglementations environnementales et gestion de géodonnées pour des projets de risques environnementaux et de catastrophes.", date:"2021 — 2026", tools:"ArcGIS Pro, QGIS", img:"", link:""},
+  {c:"webgis", t:"Applications Web SIG d'analyse spatiale", d:"Création et mise à jour d'applications WebGIS interactives et d'outils ArcPy pour l'analyse spatiale.", date:"2021", tools:"Leaflet, OpenLayers, GeoServer, ArcPy", img:"", link:""},
+  {c:"analyse", t:"Automatisation de traitements géospatiaux", d:"Scripts Python et R pour automatiser des traitements géospatiaux complexes.", date:"2021", tools:"Python, R, GeoPandas", img:"", link:""},
+  {c:"sig", t:"Cartographie des risques en RDC", d:"Missions de terrain au Grand Katanga, au Lualaba et au Nord-Kivu ; production de cartes thématiques, modélisation spatiale et cartographie des risques, en lien avec les acteurs gouvernementaux, académiques et la société civile.", date:"2017 — 2021", tools:"ArcGIS Pro, QGIS, PostGIS", img:"", link:""},
+  {c:"analyse", t:"Barrage hydroélectrique — bassin de l'INKISI", d:"Évaluation de la faisabilité d'un projet de barrage hydroélectrique en cascade : analyse des caractéristiques hydrophysiques du bassin (débit, sédimentation, impacts écologiques).", date:"2019 — 2020", tools:"SIG, Hydrologie", img:"", link:""},
+  {c:"sig", t:"Open Cities Kinshasa — Banque Mondiale (GFDRR)", d:"Projet Open Cities for Africa mis en œuvre à Kinshasa par l'OSFAC et ses partenaires (Potentiel 3.0, ministères provinciaux du Plan et de l'Urbanisme, Université de Kinshasa), avec l'appui de la GFDRR / Banque Mondiale, en soutien au Projet de Développement Urbain et de Résilience de Kinshasa (PDURK). Objectif : produire des données ouvertes sur le bâti, les infrastructures critiques et les risques d'inondation et d'érosion. Résultats du projet : environ 64 km² cartographiés et plus de 55 000 bâtiments numérisés dans OpenStreetMap (quartiers de Kisenso et Matete), deux campagnes de survol par drone et plus de 220 personnes formées à la cartographie participative. Mon rôle : numérisation du bâti et des infrastructures dans OpenStreetMap, collecte et validation des données de terrain, analyses spatiales de la couverture des services, des lacunes d'infrastructure et des risques environnementaux.", date:"2018 — 2019", tools:"OpenStreetMap, drone, collecte terrain, SIG", img:"", link:"https://osfac.net/fr/projets/item/650-open-cities-kinshasa"},
+];
+
+const TIMELINE = [
+  {m:"26", date:"Mars 2026 — Présent", t:"Data Analyst — Consultant Télécom", p:"MERKATOR / Telenet · Zellik, Belgique", d:"Mise en œuvre du digital twin MarlinDT (ArcGIS Pro / Utility Network) pour le réseau fibre ; analyse des besoins, exigences fonctionnelles, SQL (Oracle, DuckDB), UAT et documentation, en équipe Scrum."},
+  {m:"21", date:"Oct 2021 — Avr 2026", t:"Consultant Géomaticien Senior", p:"Earth Group SARL · Bruxelles, Belgique", d:"Géodonnées pour les risques environnementaux, EIES, projets photogrammétriques par drone et modélisation 3D, automatisation Python, formation d'agents à la cartographie 2D/3D."},
+  {m:"21", date:"Jan — Oct 2021", t:"Ingénieur SIG", p:"Earth Group SARL · Bruxelles, Belgique", d:"Applications Web SIG, scripts Python et R, outils ArcPy et applications WebGIS (Leaflet, OpenLayers, GeoServer)."},
+  {m:"17", date:"Jan 2017 — Juin 2021", t:"Assistant de Recherche", p:"Centre de Recherche Géologique et Minière · Kinshasa, RDC", d:"Risques environnementaux et gouvernance foncière ; missions de terrain en RDC, en Tanzanie et en Angola ; cartographie thématique et modélisation des risques."},
+  {m:"19", date:"Août 2019 — Jan 2020", t:"Consultant SIG — Bassin versant", p:"Sichuan Huafei Energy Investment Co. Ltd · RDC", d:"Faisabilité d'un barrage hydroélectrique en cascade dans le bassin de l'INKISI."},
+  {m:"18", date:"Août 2018 — Jan 2019", t:"Cartographe & Géomètre", p:"Banque Mondiale (GFDRR) — Open Cities Kinshasa · Kinshasa, RDC", d:"Projet Open Cities Kinshasa : numérisation du bâti et des infrastructures dans OpenStreetMap, collecte et validation de données de terrain, analyses de la couverture des services et des risques environnementaux (inondations, érosion)."},
+];
+
+const SERVICES = [
+  {t:"Analyse SIG & Risques", items:["Analyses spatiales et cartographie thématique","Cartographie des risques et catastrophes","Évaluations d'impact environnemental et social","Hydrologie et bassins versants","Formation à la cartographie 2D/3D"]},
+  {t:"Drone, LiDAR & 3D", items:["Capture d'images par drone","Traitement photogrammétrique","Nuages de points LiDAR","Modélisation 3D de sites","Classification d'images par deep learning"]},
+  {t:"Data, WebGIS & Digital Twin", items:["Jumeaux numériques de réseaux (Utility Network)","Analyse de données SQL (Oracle, DuckDB, PostGIS)","Applications WebGIS sur mesure","Automatisation Python / FME","Spécifications fonctionnelles et UAT"]},
+];
+
+const DIPLOMAS = [
+  {ico:"🛡️", t:"Master spécialisé en Gestion des Risques et Catastrophes", p:"Université de Liège · Belgique", y:"2022 — 2023"},
+  {ico:"💧", t:"Post-graduat en Hydraulique des Bassins Versants", p:"Institut de Recherches Hydrauliques (HRI) · Le Caire, Égypte", y:"2020 — 2021"},
+  {ico:"🌿", t:"Master en Géomatique — Ressources naturelles & changement climatique", p:"Université de Kinshasa · RDC", y:"2015 — 2017"},
+  {ico:"🗺️", t:"Licence en Géomatique", p:"Université de Kinshasa · RDC", y:"2012 — 2015"},
+];
+
+const EXTRAS = [
+  {ico:"🏅", t:"Certifications ESRI (USA)", items:[["Spatial Data Science: The New Frontier in Analytics","Oct 2024","certificats/esri-spatial-data-science.pdf"],["Make an Impact with Modern Geo Apps","Oct 2024","certificats/esri-modern-geo-apps.pdf"],["Classifying Objects Using Deep Learning in ArcGIS Pro",""],["Calculate Rates Using ArcGIS Pro",""]]},
+  {ico:"🎖️", t:"Bourses & formations", items:[["Formation DAO / AutoCAD — Bruxelles Formation","2025","projets/maison-eco-bio-autocad.pdf"],["Bourse Fondation Roi Baudouin — Fonds Elisabeth & Amélie","2022","https://kbs-frb.be/fr/analyse-de-susceptibilite-aux-inondations-dans-la-zone-est-de-kinshasa-par-teledetection-et-sig"],["Bourse ARES — Belgique","2021"],["Bourse HRI — Le Caire, Égypte","2020"],["Programme IFDD / Université Senghor","2020"],["Stage risques côtiers — Normandie","France"]]},
+  {ico:"🗣️", t:"Langues & engagements", items:[["Français","Langue maternelle"],["Anglais","Professionnel"],["Néerlandais","Notions"],["Mentor — ADMA (diaspora africaine)",""],["Professeur de géographie en ligne","Superprof"]]},
+];
+
+/* =========================================================
+   RENDU
+   ========================================================= */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+$("#skills").innerHTML = SKILLS.map(s => `
+  <div class="skill reveal"><div class="skill-ico">${s.ico}</div><h3>${esc(s.t)}</h3><p>${esc(s.d)}</p>
+  <div class="tags">${s.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>
+  ${s.certs ? `<div class="certs">${s.certs.map(c=>`<a href="${esc(c.href)}" target="_blank" rel="noopener"><span>🏅 ${esc(c.t)}</span><small>${esc(c.y)} ↗</small></a>`).join("")}</div>` : ""}</div>`).join("");
+
+$("#timeline").innerHTML = TIMELINE.map(e => `
+  <div class="tl-item reveal ${e.edu?"edu":""}"><div class="tl-mark">${e.m}</div>
+  <div class="tl-card"><div class="tl-date">${esc(e.date)}</div><h3>${esc(e.t)}</h3><div class="tl-place">${esc(e.p)}</div><p>${esc(e.d)}</p></div></div>`).join("");
+
+$("#servicesGrid").innerHTML = SERVICES.map((s,i) => `
+  <div class="service reveal"><div class="num">0${i+1}</div><h3>${esc(s.t)}</h3>
+  <ul>${s.items.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`).join("");
+
+$("#diplomas").innerHTML = DIPLOMAS.map(d => `
+  <div class="diploma reveal"><div class="d-ico">${d.ico}</div><h3>${esc(d.t)}</h3><p>${esc(d.p)}</p><span class="year">${esc(d.y)}</span></div>`).join("");
+
+$("#extras").innerHTML = EXTRAS.map(x => `
+  <div class="info reveal"><h3>${x.ico} ${esc(x.t)}</h3>
+  <ul>${x.items.map(([a,b,href])=>`<li><span>${href?`<a href="${esc(href)}" target="_blank" rel="noopener">${esc(a)} ↗</a>`:esc(a)}</span>${b?`<small>${esc(b)}</small>`:""}</li>`).join("")}</ul></div>`).join("");
+
+/* Vignette "carte" générée en SVG quand aucune image n'est fournie */
+const PALETTES = {
+  sig:["#e8dcc0","#c9b98f","#9fb27a","#6f8f5a","#3d5a3a"],
+  analyse:["#fff3c4","#fdc76b","#f58b4c","#d9483b","#8c1d40"],
+  pub:["#fdf6e3","#f3e3b5","#e8c77a","#d9a441","#8a5a12"],
+  bim:["#f7f9fc","#e2e8f0","#cbd5e1","#94a3b8","#475569"],
+  "3d":["#1b3a2a","#2f6b3d","#5fa04e","#a7d46f","#e4f2a5"],
+  telecom:["#160f2e","#3b1f6b","#7e22ce","#c084fc","#f0abfc"],
+  webgis:["#0f1e35","#1a3a66","#1a6ef7","#3b82f6","#7eb8ff"],
+};
+function rand(seed){ return () => (seed = (seed*9301+49297)%233280)/233280; }
+function thumb(m, i){
+  if (m.img) return `<img src="${esc(m.img)}" alt="${esc(m.t)}" loading="lazy">`;
+  const r = rand(i*97+13), pal = PALETTES[m.c], W=400, H=300;
+  let s = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="${W}" height="${H}" fill="${pal[0]}"/>`;
+  for (let k=1;k<pal.length;k++){            // courbes de niveau / zones
+    const cx=r()*W, cy=r()*H;
+    for (let j=3;j>0;j--){
+      const rx=(40+r()*90)*j/2, ry=rx*(0.5+r()*0.6), rot=r()*180;
+      s+=`<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" transform="rotate(${rot} ${cx} ${cy})" fill="${pal[k]}" fill-opacity="${0.35+0.2*(3-j)}" stroke="rgba(0,0,0,.18)" stroke-width="0.8"/>`;
+    }
+  }
+  let d=`M0 ${r()*H}`; for(let x=40;x<=W;x+=40) d+=` Q${x-20} ${r()*H} ${x} ${r()*H}`;       // rivière / route
+  s+=`<path d="${d}" fill="none" stroke="${m.c==="webgis"||m.c==="telecom"?"#e8a838":"#2b6cb0"}" stroke-width="3" stroke-opacity=".75"/>`;
+  s+=`<g stroke="rgba(255,255,255,.18)" stroke-width="1">`;
+  for(let x=50;x<W;x+=50) s+=`<line x1="${x}" y1="0" x2="${x}" y2="${H}"/>`;
+  for(let y=50;y<H;y+=50) s+=`<line x1="0" y1="${y}" x2="${W}" y2="${y}"/>`;
+  s+=`</g><g transform="translate(${W-34} 30)"><circle r="16" fill="rgba(255,255,255,.85)"/><path d="M0 -11 L5 4 L0 1 L-5 4Z" fill="#0a1628"/></g></svg>`;
+  return s;
+}
+
+let current = "all", visible = [];
+$("#filters").innerHTML = CATS.map(c => `<button class="filter ${c.k==="all"?"active":""}" data-k="${c.k}">${c.l}</button>`).join("");
+$("#total").textContent = MAPS.length;
+const catLabel = k => CATS.find(c=>c.k===k).l.replace(/^\S+\s/,"");
+
+function renderMaps(){
+  visible = MAPS.map((m,i)=>({...m,i})).filter(m => current==="all" || m.c===current);
+  $("#shown").textContent = visible.length;
+  $("#maps").innerHTML = visible.map((m,vi) => `
+    <article class="map-card" data-vi="${vi}">
+      <div class="map-thumb">${thumb(m,m.i)}<span class="cat">${esc(catLabel(m.c))}</span><span class="zoom">🔍 Voir le détail</span></div>
+      <div class="map-body"><h3>${esc(m.t)}</h3><p>${esc(m.d)}</p></div>
+    </article>`).join("");
+}
+$("#filters").addEventListener("click", e => {
+  const b = e.target.closest(".filter"); if(!b) return;
+  document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active", x===b));
+  current = b.dataset.k; renderMaps();
+});
+renderMaps();
+
+/* Modal */
+let idx = 0;
+function openModal(vi){
+  idx = (vi + visible.length) % visible.length;
+  const m = visible[idx];
+  $("#mImg").innerHTML = thumb(m,m.i);
+  $("#mCat").textContent = catLabel(m.c);
+  $("#mTitle").textContent = m.t;
+  $("#mDate").textContent = "📅 " + m.date;
+  $("#mTools").textContent = "🔧 " + m.tools;
+  const imgs = m.img ? [m.img, ...(m.more||[])] : [];
+  $("#mThumbs").innerHTML = imgs.length > 1 ? imgs.map((src,k)=>`<img src="${esc(src)}" alt="" class="${k?"":"on"}" data-src="${esc(src)}">`).join("") : "";
+  $("#mDesc").innerHTML = esc(m.d) + (m.link ? ` <br><br><a class="btn btn-primary" href="${esc(m.link)}" target="_blank" rel="noopener">${m.c==="pub"?"Consulter la publication ↗":m.link.endsWith(".pdf")?"Voir le PDF ↗":"Voir le projet ↗"}</a>` : "");
+  $("#modal").classList.add("open"); document.body.style.overflow="hidden";
+}
+function closeModal(){ $("#modal").classList.remove("open"); document.body.style.overflow=""; }
+$("#maps").addEventListener("click", e => { const c=e.target.closest(".map-card"); if(c) openModal(+c.dataset.vi); });
+$("#close").onclick = closeModal;
+$("#mThumbs").addEventListener("click", e => {
+  const t = e.target.closest("img"); if(!t) return;
+  $("#mImg").innerHTML = `<img src="${t.dataset.src}" alt="">`;
+  document.querySelectorAll("#mThumbs img").forEach(x=>x.classList.toggle("on", x===t));
+});
+$("#modal").addEventListener("click", e => { if(e.target.id==="modal") closeModal(); });
+$("#prev").onclick = () => openModal(idx-1);
+$("#next").onclick = () => openModal(idx+1);
+document.addEventListener("keydown", e => {
+  if(!$("#modal").classList.contains("open")) return;
+  if(e.key==="Escape") closeModal(); if(e.key==="ArrowLeft") openModal(idx-1); if(e.key==="ArrowRight") openModal(idx+1);
+});
+
+/* Texte tapé */
+(function type(){
+  const el = $("#typed"); let r=0, c=0, del=false;
+  (function tick(){
+    const w = ROLES[r];
+    el.textContent = w.slice(0, c += del ? -1 : 1);
+    let t = del ? 40 : 85;
+    if(!del && c===w.length){ del=true; t=1800; }
+    else if(del && c===0){ del=false; r=(r+1)%ROLES.length; t=300; }
+    setTimeout(tick, t);
+  })();
+})();
+
+/* Compteurs + apparition au scroll */
+const io = new IntersectionObserver(entries => entries.forEach(en => {
+  if(!en.isIntersecting) return;
+  en.target.classList.add("in"); io.unobserve(en.target);
+}), {threshold:.12});
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+const statsIO = new IntersectionObserver(entries => entries.forEach(en => {
+  if(!en.isIntersecting) return;
+  const el = en.target, end = +el.dataset.count, suf = el.dataset.suffix||"", t0 = performance.now();
+  (function step(now){
+    const p = Math.min((now-t0)/1400,1);
+    el.textContent = Math.round(end*(1-Math.pow(1-p,3))) + (p===1?suf:"");
+    if(p<1) requestAnimationFrame(step);
+  })(t0);
+  statsIO.unobserve(el);
+}), {threshold:.5});
+document.querySelectorAll("[data-count]").forEach(el => statsIO.observe(el));
+
+/* Nav : burger, lien actif, ombre, retour en haut */
+const burger=$("#burger"), links=$("#navLinks");
+burger.onclick = () => { burger.classList.toggle("open"); links.classList.toggle("open"); };
+links.addEventListener("click", e => { if(e.target.tagName==="A"){ burger.classList.remove("open"); links.classList.remove("open"); } });
+const sections=[...document.querySelectorAll("section[id]")];
+addEventListener("scroll", () => {
+  const y = scrollY;
+  $("#nav").classList.toggle("scrolled", y>20);
+  $("#toTop").classList.toggle("show", y>600);
+  let cur=""; sections.forEach(s => { if(y >= s.offsetTop-120) cur=s.id; });
+  links.querySelectorAll("a").forEach(a => a.classList.toggle("active", a.getAttribute("href")==="#"+cur));
+}, {passive:true});
+$("#toTop").onclick = () => scrollTo({top:0,behavior:"smooth"});
+
+/* Formulaire : ouvre le client mail (pas de serveur nécessaire) */
+$("#form").addEventListener("submit", e => {
+  e.preventDefault();
+  const subject = `[${$("#tp").value}] ${$("#fn").value} ${$("#ln").value}`;
+  const body = `${$("#msg").value}\n\n— ${$("#fn").value} ${$("#ln").value} (${$("#em").value})`;
+  location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  $("#success").classList.add("show"); e.target.reset();
+});
+$("#year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
