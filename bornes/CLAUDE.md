@@ -1,6 +1,7 @@
 # Contexte du projet pour Claude
 
-Projet : géoportail public et gratuit des bornes de recharge pour véhicules électriques à Bruxelles et en Belgique.
+Projet : carte publique et gratuite des bornes de recharge pour véhicules électriques en Belgique (Bruxelles, Flandre, Wallonie).
+En ligne : https://wilfridlutete-cpu.github.io/bornes/ (dossier bornes/ du dépôt du portfolio).
 
 ## Règles
 - Tout reste gratuit et sans serveur : site statique sur GitHub Pages, collecte par GitHub Actions.
@@ -30,6 +31,7 @@ region (Bruxelles-Capitale | Flandre | Wallonie), commune (commune administrativ
 puissance_kw (nombre ou null), classe (lente | acceleree | rapide | ultra | inconnue), courant (AC | DC | ""),
 prises (liste), points, payant (oui | non | ""), tarif (tag charge), paiement (liste : Carte bancaire, Application,
 Badge RFID, Sans identification), stationnement_payant (oui | non | ""), acces, horaires, h24 (booléen), verifie_le.
+Le fichier publié omet les propriétés vides ou par défaut ; la page les recrée (fonction upgrade).
 Le regroupement des opérateurs (liste RESEAUX) existe en double : script Python et index.html. Les garder identiques.
 
 ## Seuils de puissance
@@ -38,7 +40,10 @@ lente < 22 kW ≤ accélérée < 50 kW ≤ rapide < 150 kW ≤ ultra-rapide. DC 
 ## Vues de la page
 Carte (points colorés par vitesse, regroupés), Densité (carte de chaleur), Statistiques (barres), Liste (triable, distance).
 Fonds de plan : OSM, satellite Esri, CARTO clair et sombre.
-Couleurs : bleu marine (#13294b, structure et texte) et orange (#f28c28, actions et mise en avant).
+Couleurs : vert forêt (#0d3b2e, structure et texte) et vert feuille (#3ccf7a, actions) pour l'énergie propre ; ambre (#f2b632) réservé à l'ultra-rapide.
+Régions : boutons Toute la Belgique / Bruxelles / Flandre / Wallonie (zoom sur la région). Recherche d'adresse : Nominatim (OSM).
+Clic sur une borne : zoom + fiche ; « Vue 3D de la rue » ouvre MapLibre GL 4.7.1 (unpkg, chargé à la demande) avec le style
+OpenFreeMap « liberty » (bâtiments en relief, gratuit, sans clé) et l'imagerie Esri en option.
 
 ## Vérifier un changement
 1. `python scripts/fetch_bornes.py` se termine sans erreur et affiche un total par région.

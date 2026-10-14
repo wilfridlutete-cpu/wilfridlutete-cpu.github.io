@@ -337,8 +337,14 @@ def collect_vlaanderen() -> list[dict]:
     raw = [f for f in gj.get("features", []) if f.get("geometry") and f["geometry"].get("type") == "Point"]
     if raw:
         print(f"  champs disponibles : {', '.join(sorted(raw[0].get('properties', {})))}")
+    # Contrôle : les coordonnées doivent être des degrés situés en Belgique (sinon le service a ignoré srsName).
+    dans_be = [f for f in raw if 2.4 < f["geometry"]["coordinates"][0] < 6.5 and 49.4 < f["geometry"]["coordinates"][1] < 51.6]
+    if raw and len(dans_be) < 0.9 * len(raw):
+        print("  ! coordonnées flamandes inattendues : source ignorée, la Flandre reste couverte par OpenStreetMap",
+              file=sys.stderr)
+        return []
     feats = []
-    for f in raw:
+    for f in dans_be:
         p = f.get("properties", {})
         lon, lat = f["geometry"]["coordinates"][:2]
         op = str(pick(p, r"operator", r"uitbater", r"exploitant", r"cpo", r"beheerder") or "")
@@ -357,7 +363,25 @@ def collect_vlaanderen() -> list[dict]:
             commune=str(pick(p, r"gemeente", r"municipal", r"city") or ""), adresse=adresse,
             puissance_kw=kw, classe=power_class(kw), courant=courant(prises, kw), prises=prises,
             points=points, vehicules=["Voiture"])))
-    print(f"  {len(feats)} points (service flamand)")
+    # La couche peut lister chaque point de charge séparément : on regroupe ceux d'un même emplacement.
+    groupes = {}
+    for f in feats:
+        lon, lat = f["geometry"]["coordinates"]
+        k = (round(lon, 5), round(lat, 5), f["properties"]["reseau"])
+        if k not in groupes:
+            groupes[k] = f
+            f["properties"]["points"] = f["properties"]["points"] or 1
+            continue
+        g = groupes[k]["properties"]
+        p = f["properties"]
+        g["points"] += p["points"] or 1
+        if p["puissance_kw"] and (g["puissance_kw"] or 0) < p["puissance_kw"]:
+            g["puissance_kw"] = p["puissance_kw"]
+            g["classe"] = power_class(p["puissance_kw"])
+        g["prises"] = list(dict.fromkeys(g["prises"] + p["prises"]))
+        g["courant"] = courant(g["prises"], g["puissance_kw"])
+    feats = list(groupes.values())
+    print(f"  {len(feats)} emplacements (service flamand)")
     return feats
 
 
@@ -537,6 +561,15 @@ def fusionner(officiels: list[dict], osm: list[dict]) -> list[dict]:
 
 
 # ================================================================ écriture
+DEFAUTS = base_properties()
+
+
+def compacte(f: dict) -> dict:
+    """Retire les propriétés vides ou par défaut (la page les recrée) pour alléger le fichier publié."""
+    p = {k: v for k, v in f["properties"].items() if v not in ("", None, [], False) and not (k == "reseau" and v == "Non renseigné")}
+    return {"type": "Feature", "geometry": f["geometry"], "properties": p}
+
+
 def ecrire(features: list[dict]) -> None:
     OUT_DIR.mkdir(exist_ok=True)
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -552,7 +585,7 @@ def ecrire(features: list[dict]) -> None:
                 SRC_VL: "Departement Mobiliteit en Openbare Werken, Vlaamse overheid",
             },
         },
-        "features": features,
+        "features": [compacte(f) for f in features],
     }
     (OUT_DIR / "bornes.geojson").write_text(
         json.dumps(geojson, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

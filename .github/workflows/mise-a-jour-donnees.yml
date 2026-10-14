@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "17 2 * * *"   # chaque nuit vers 4 h, heure belge (02:17 UTC)
   workflow_dispatch:        # bouton « Run workflow » pour lancer à la main
+  push:                     # relance aussi quand le script de collecte change
+    branches: [main]
+    paths:
+      - "bornes/scripts/**"
+      - ".github/workflows/mise-a-jour-donnees.yml"
 
 permissions:
   contents: write
