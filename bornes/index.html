@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bornes de recharge Belgique</title>
+<meta name="description" content="Géoportail libre et gratuit des bornes de recharge pour véhicules électriques à Bruxelles et en Belgique, mis à jour chaque nuit depuis OpenStreetMap.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<style>
+  :root{
+    /* Bleu marine (structure, texte) + orange (actions, mise en avant) */
+    --navy:#13294b; --navy-2:#1d3a66; --orange:#f28c28; --orange-dark:#c2410c;
+    --bg:#f4f6fa; --panel:#ffffff; --fg:#13294b; --muted:#5a6a85; --line:#d9e0eb; --soft:#e9eef6;
+    --accent:#f28c28; --ink:#13294b; --bar:#13294b;
+    --c-lente:#7fa7dc; --c-acceleree:#2f5fa8; --c-rapide:#f28c28; --c-ultra:#c2410c; --c-inconnue:#94a0b4;
+    --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+    --body:"Source Sans 3","Segoe UI",Arial,sans-serif;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ --bg:#0b1526; --panel:#12203a; --fg:#e8edf5; --muted:#9fb0cc; --line:#263a5c; --soft:#1a2b4a; --ink:#ffffff; --bar:#6f9be0; --navy:#0e1f3d; color-scheme:dark }
+  }
+  :root[data-theme="dark"]{ --bg:#0b1526; --panel:#12203a; --fg:#e8edf5; --muted:#9fb0cc; --line:#263a5c; --soft:#1a2b4a; --ink:#ffffff; --bar:#6f9be0; --navy:#0e1f3d; color-scheme:dark }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{background:var(--bg);color:var(--fg);font:15px/1.45 var(--body);display:grid;grid-template-columns:350px 1fr;grid-template-rows:100%}
+  aside{--panel:var(--navy); --fg:#ffffff; --muted:#b9c6dc; --line:rgba(255,255,255,.2); --bg:rgba(255,255,255,.08); --soft:rgba(255,255,255,.12);
+    background:var(--navy);color:#fff;border-right:4px solid var(--orange);color-scheme:dark;overflow-y:auto;padding:20px 20px 28px;display:flex;flex-direction:column;gap:18px}
+  h1{font:700 22px/1.15 var(--display);margin:0;text-wrap:balance}
+  h1 span{color:var(--accent)}
+  .lead{margin:6px 0 0;color:var(--muted);font-size:14px}
+  .count{font:700 34px/1 var(--display);font-variant-numeric:tabular-nums}
+  .count small{display:block;font:400 13px var(--body);color:var(--muted);margin-top:4px}
+  .zones{display:flex;gap:6px}
+  .zones button{flex:1}
+  fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+  legend{font:600 12px var(--body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px}
+  label.chk{display:flex;align-items:center;gap:8px;cursor:pointer}
+  .dot{width:12px;height:12px;border-radius:50%;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.25)}
+  .n{margin-left:auto;color:var(--muted);font-variant-numeric:tabular-nums;font-size:13px}
+  aside select option{background:#fff;color:#13294b}
+  select,input[type=search]{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);font:inherit}
+  input[type=range]{width:100%;accent-color:var(--accent)}
+  .lbl{font-size:13px;color:var(--muted);display:flex;justify-content:space-between}
+  .lbl b{color:var(--fg);font-variant-numeric:tabular-nums}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chips label{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;font-size:13px;cursor:pointer}
+  .chips input{margin:0;accent-color:var(--accent)}
+  button,.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:9px 12px;border-radius:6px;border:1px solid var(--accent);background:var(--accent);color:#13294b;font:600 14px var(--body);cursor:pointer;text-decoration:none}
+  .btn.ghost,button.ghost{background:transparent;color:var(--accent)}
+  button:focus-visible,.btn:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  .row{display:flex;gap:8px;flex-wrap:wrap}
+  .row > *{flex:1 1 auto}
+  .foot{margin-top:auto;font-size:12.5px;color:var(--muted)}
+  .foot a{color:var(--accent)}
+  main{position:relative;display:flex;flex-direction:column;min-height:0}
+  .tabs{display:flex;gap:2px;background:var(--panel);border-bottom:1px solid var(--line);padding:0 12px;overflow-x:auto}
+  .tabs button{background:transparent;border:0;border-bottom:3px solid transparent;border-radius:0;color:var(--muted);padding:12px 14px;white-space:nowrap}
+  .tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--accent)}
+  .tabs button:hover{color:var(--ink)}
+  .stage{position:relative;flex:1;min-height:0}
+  #map{position:absolute;inset:0}
+  .overlay{position:absolute;inset:0;z-index:1001;background:var(--bg);overflow:auto;padding:22px}
+  .overlay[hidden]{display:none}
+  #status{position:absolute;z-index:1100;left:50%;top:14px;transform:translateX(-50%);background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:8px 14px;font-size:14px;box-shadow:0 2px 8px rgba(0,0,0,.12);max-width:90%}
+  #status[hidden]{display:none}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:22px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px}
+  .card b{display:block;font:700 26px/1.1 var(--display);font-variant-numeric:tabular-nums}
+  .card span{font-size:13px;color:var(--muted)}
+  .charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+  .chart{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px}
+  .chart h2{font:700 15px var(--display);margin:0 0 12px}
+  .bar{display:grid;grid-template-columns:minmax(90px,38%) 1fr auto;align-items:center;gap:8px;font-size:13px;margin:5px 0}
+  .bar .t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar .track{display:block;height:12px;background:var(--soft);border-radius:3px;overflow:hidden}
+  .bar .fill{display:block;height:100%;background:var(--bar);border-radius:3px}
+  .bar .v{font-variant-numeric:tabular-nums;color:var(--muted);min-width:42px;text-align:right}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--panel);border:1px solid var(--line)}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font:600 12px var(--body);text-transform:uppercase;letter-spacing:.04em;color:var(--muted);position:sticky;top:-22px;background:var(--panel);cursor:pointer;user-select:none}
+  tbody tr{cursor:pointer}
+  tbody tr:hover{background:var(--soft)}
+  td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .note{color:var(--muted);font-size:13px;margin:10px 0}
+  .popup h3{font:700 15px var(--display);margin:0 0 4px}
+  .popup dl{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;margin:6px 0;font-size:13px}
+  .popup dt{color:#5a6a85}
+  .popup h3{color:#13294b}
+  .popup a{color:#1d3a66;font-weight:600}
+  .popup dd{margin:0}
+  .popup .links{display:flex;flex-direction:column;gap:3px;font-size:13px}
+  .marker-cluster div{font:700 12px var(--body)}
+  .marker-cluster-small{background:rgba(19,41,75,.25)} .marker-cluster-small div{background:rgba(19,41,75,.85);color:#fff}
+  .marker-cluster-medium{background:rgba(242,140,40,.3)} .marker-cluster-medium div{background:rgba(242,140,40,.95);color:#13294b}
+  .marker-cluster-large{background:rgba(194,65,12,.3)} .marker-cluster-large div{background:rgba(194,65,12,.92);color:#fff}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  @media (max-width:760px){
+    body{grid-template-columns:1fr;grid-template-rows:auto auto;height:auto}
+    main{order:-1;height:72vh}
+    aside{border-right:0;border-top:1px solid var(--line);padding:16px}
+    .overlay{padding:16px}
+    .charts{grid-template-columns:1fr}
+    .hide-m{display:none}
+  }
+</style>
+</head>
+<body>
+<aside>
+  <header>
+    <h1>Bornes de recharge <span>Bruxelles &amp; Belgique</span></h1>
+    <p class="lead">Géoportail libre des points de recharge publics et semi-publics, mis à jour chaque nuit depuis OpenStreetMap.</p>
+  </header>
+
+  <div class="count" aria-live="polite"><span id="nb">—</span><small id="nb-label">bornes correspondant aux filtres</small></div>
+
+  <div class="zones">
+    <button type="button" class="ghost" data-zone="bxl">Bruxelles</button>
+    <button type="button" class="ghost" data-zone="be">Toute la Belgique</button>
+  </div>
+
+  <fieldset id="f-classe">
+    <legend>Vitesse de recharge</legend>
+    <label class="chk"><input type="checkbox" value="lente" checked> <span class="dot" style="background:var(--c-lente)"></span> Lente, moins de 22 kW <span class="n" data-n="lente"></span></label>
+    <label class="chk"><input type="checkbox" value="acceleree" checked> <span class="dot" style="background:var(--c-acceleree)"></span> Accélérée, 22 à 49 kW <span class="n" data-n="acceleree"></span></label>
+    <label class="chk"><input type="checkbox" value="rapide" checked> <span class="dot" style="background:var(--c-rapide)"></span> Rapide, 50 à 149 kW <span class="n" data-n="rapide"></span></label>
+    <label class="chk"><input type="checkbox" value="ultra" checked> <span class="dot" style="background:var(--c-ultra)"></span> Ultra-rapide, 150 kW et plus <span class="n" data-n="ultra"></span></label>
+    <label class="chk"><input type="checkbox" value="inconnue" checked> <span class="dot" style="background:var(--c-inconnue)"></span> Puissance non renseignée <span class="n" data-n="inconnue"></span></label>
+    <div class="lbl" style="margin-top:6px"><span>Puissance minimale</span><b id="kw-val">0 kW</b></div>
+    <input id="f-kw" type="range" min="0" max="7" step="1" value="0" aria-label="Puissance minimale">
+  </fieldset>
+
+  <fieldset>
+    <legend>Type de borne</legend>
+    <div class="chips" id="f-courant">
+      <label><input type="checkbox" value="AC" checked> AC (courant alternatif)</label>
+      <label><input type="checkbox" value="DC" checked> DC (charge rapide)</label>
+      <label><input type="checkbox" value="" checked> Non précisé</label>
+    </div>
+    <label for="f-prise" class="sr">Type de prise</label>
+    <select id="f-prise"><option value="">Tous les types de prise</option></select>
+    <label for="f-vehicule" class="sr">Véhicule</label>
+    <select id="f-vehicule">
+      <option value="">Tous les véhicules</option>
+      <option>Voiture</option><option>Vélo</option><option>Poids lourd</option>
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <legend>Opérateur et lieu</legend>
+    <label for="f-reseau" class="sr">Opérateur</label>
+    <select id="f-reseau"><option value="">Tous les opérateurs</option></select>
+    <label for="f-region" class="sr">Région</label>
+    <select id="f-region">
+      <option value="">Toutes les régions</option>
+      <option>Bruxelles-Capitale</option><option>Flandre</option><option>Wallonie</option>
+    </select>
+    <label for="f-commune" class="sr">Commune</label>
+    <select id="f-commune"><option value="">Toutes les communes</option></select>
+    <label for="f-lieu" class="sr">Type de lieu</label>
+    <select id="f-lieu"><option value="">Tous les types de lieu</option></select>
+    <input id="f-texte" type="search" placeholder="Nom, adresse, opérateur…" aria-label="Rechercher un nom, une adresse ou un opérateur">
+  </fieldset>
+
+  <fieldset>
+    <legend>Accès et paiement</legend>
+    <label for="f-acces" class="sr">Accès</label>
+    <select id="f-acces">
+      <option value="">Tous les accès</option>
+      <option value="public">Public (accès libre)</option>
+      <option value="clients">Clients (magasin, parking…)</option>
+      <option value="prive">Privé ou restreint</option>
+    </select>
+    <label for="f-payant" class="sr">Tarification</label>
+    <select id="f-payant">
+      <option value="">Gratuite ou payante</option>
+      <option value="oui">Payante</option>
+      <option value="non">Gratuite</option>
+    </select>
+    <div class="grid2">
+      <label class="chk"><input type="checkbox" id="f-h24"> Ouverte 24 h/24</label>
+      <label class="chk"><input type="checkbox" id="f-cb"> Carte bancaire</label>
+      <label class="chk"><input type="checkbox" id="f-multi"> 2 points et plus</label>
+      <label class="chk"><input type="checkbox" id="f-tarif"> Tarif affiché</label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Source des données</legend>
+    <label for="f-source" class="sr">Source</label>
+    <select id="f-source"><option value="">Toutes les sources</option></select>
+    <label class="chk"><input type="checkbox" id="f-mesure"> Puissance publiée uniquement (pas d’estimation)</label>
+  </fieldset>
+
+  <div class="row">
+    <button id="btn-loc" type="button">Bornes autour de moi</button>
+    <button id="btn-reset" type="button" class="ghost">Réinitialiser</button>
+  </div>
+  <div class="row">
+    <a class="btn ghost" href="data/bornes.geojson" download>GeoJSON</a>
+    <a class="btn ghost" href="data/bornes.csv" download>CSV</a>
+    <button id="btn-export" type="button" class="ghost">CSV filtré</button>
+  </div>
+
+  <p class="foot">
+    Données <a href="https://data.mobility.brussels" target="_blank" rel="noopener">Bruxelles Mobilité</a> et
+    <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© contributeurs OpenStreetMap</a> (licence ODbL).
+    <span id="maj"></span><br>
+    Une borne manque ? Ajoutez-la sur <a href="https://www.openstreetmap.org" target="_blank" rel="noopener">OpenStreetMap</a> : elle apparaîtra ici le lendemain.
+  </p>
+</aside>
+
+<main>
+  <nav class="tabs" role="tablist" aria-label="Vues">
+    <button role="tab" data-view="carte" aria-selected="true">Carte</button>
+    <button role="tab" data-view="densite" aria-selected="false">Densité</button>
+    <button role="tab" data-view="stats" aria-selected="false">Statistiques</button>
+    <button role="tab" data-view="liste" aria-selected="false">Liste</button>
+  </nav>
+  <div class="stage">
+    <div id="map" role="region" aria-label="Carte des bornes de recharge"></div>
+    <section id="v-stats" class="overlay" hidden aria-label="Statistiques"></section>
+    <section id="v-liste" class="overlay" hidden aria-label="Liste des bornes"></section>
+    <div id="status">Chargement des bornes…</div>
+  </div>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+<script>
+(function(){
+  const COLORS = {lente:'#7fa7dc', acceleree:'#2f5fa8', rapide:'#f28c28', ultra:'#c2410c', inconnue:'#94a0b4'};
+  const CLASSES = {lente:'Lente (< 22 kW)', acceleree:'Accélérée (22–49 kW)', rapide:'Rapide (50–149 kW)', ultra:'Ultra-rapide (≥ 150 kW)', inconnue:'Non renseignée'};
+  const KW_STEPS = [0, 7, 11, 22, 50, 100, 150, 300];
+  const ZONES = {bxl:[[50.763,4.243],[50.914,4.483]], be:[[49.49,2.54],[51.51,6.41]]};
+  const $ = id => document.getElementById(id);
+  const status = $('status');
+  const showStatus = (txt, ms) => { status.hidden = false; status.textContent = txt; if(ms) setTimeout(()=>status.hidden = true, ms); };
+
+  // --- Carte et fonds de plan ---
+  const map = L.map('map', {preferCanvas:true, zoomControl:true});
+  map.fitBounds(ZONES.bxl);
+  const fonds = {
+    'Plan (OpenStreetMap)': L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:19,
+      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">contributeurs OpenStreetMap</a>'}),
+    'Satellite (Esri)': L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom:19,
+      attribution:'Imagerie &copy; Esri, Maxar, Earthstar Geographics | Bornes &copy; <a href="https://www.openstreetmap.org/copyright">contributeurs OpenStreetMap</a>'}),
+    'Clair (CARTO)': L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {maxZoom:20, subdomains:'abcd',
+      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">contributeurs OpenStreetMap</a> &copy; CARTO'}),
+    'Sombre (CARTO)': L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {maxZoom:20, subdomains:'abcd',
+      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">contributeurs OpenStreetMap</a> &copy; CARTO'})
+  };
+  fonds['Plan (OpenStreetMap)'].addTo(map);
+  L.control.layers(fonds, null, {position:'topright'}).addTo(map);
+  L.control.scale({imperial:false}).addTo(map);
+
+  const cluster = L.markerClusterGroup({chunkedLoading:true, disableClusteringAtZoom:16, maxClusterRadius:50});
+  map.addLayer(cluster);
+  const heat = (L.heatLayer ? L.heatLayer([], {radius:20, blur:24, maxZoom:15, minOpacity:.35, gradient:{.2:'#2f5fa8', .45:'#7fa7dc', .7:'#f28c28', 1:'#c2410c'}}) : null);
+  const legendHeat = L.control({position:'bottomleft'});
+  legendHeat.onAdd = () => { const d = L.DomUtil.create('div'); d.style.cssText='background:var(--panel);color:var(--fg);padding:6px 10px;border-radius:6px;font-size:12px;border:1px solid var(--line)';
+    d.innerHTML = 'Densité de bornes : <span style="display:inline-block;width:90px;height:8px;vertical-align:middle;background:linear-gradient(90deg,#2f5fa8,#7fa7dc,#f28c28,#c2410c)"></span> faible → forte'; return d; };
+
+  let all = [], filtered = [], view = 'carte', userPos = null, sortKey = 'puissance_kw', sortDir = -1;
+
+  // --- Normalisation (aussi utilisée en mode « direct ») ---
+  const RESEAUX = [[/not published|^unknown$|^inconnu/i,'Non renseigné'],[/total|pitpoint/i,'TotalEnergies'],[/engie|vianeo|equans/i,'ENGIE Vianeo'],[/allego/i,'Allego'],
+    [/shell|newmotion|ubitricity/i,'Shell Recharge'],[/fastned/i,'Fastned'],[/ionity/i,'IONITY'],[/tesla/i,'Tesla'],
+    [/blue ?corner/i,'Blue Corner'],[/powerdale/i,'Powerdale'],[/electra/i,'Electra'],[/powerdot/i,'Powerdot'],[/izivia/i,'Izivia'],
+    [/luminus/i,'Luminus'],[/eneco/i,'Eneco'],[/wattif/i,'Wattif'],[/optimile/i,'Optimile'],
+    [/energy ?vision/i,'EnergyVision'],[/ieteren|power ?dale/i,'D’Ieteren Energy'],[/mobiflow/i,'Mobiflow'],[/ez ?charge/i,'EZ Charge'],
+    [/mobility ?plus|mobility\+/i,'Mobility Plus'],[/blink/i,'Blink Charging'],[/evbox/i,'EVBox'],[/e-?flux/i,'E-Flux'],[/50 ?five/i,'50five'],
+    [/chargepoint/i,'ChargePoint'],[/chargewell/i,'Chargewell'],[/lidl/i,'Lidl'],[/aldi/i,'Aldi'],
+    [/ikea/i,'IKEA'],[/colruyt|dats ?24/i,'DATS 24 (Colruyt)'],[/delhaize/i,'Delhaize'],[/interparking/i,'Interparking'],
+    [/indigo/i,'Indigo'],[/q8|kuwait/i,'Q8'],[/\bbp\b|aral|pulse/i,'bp pulse'],[/cambio/i,'Cambio'],[/bolt/i,'Bolt']];
+  const reseau = raw => { if(!raw || !raw.trim()) return 'Non renseigné'; for(const [re,n] of RESEAUX) if(re.test(raw)) return n; return raw.trim(); };
+  const SOCKETS = {type2:'Type 2', type2_cable:'Type 2 (câble)', type2_combo:'CCS', chademo:'CHAdeMO', tesla_supercharger:'Tesla', type1:'Type 1', type1_combo:'CCS1', schuko:'Prise domestique', typee:'Prise domestique', tesla_supercharger_ccs:'CCS', cee_blue:'CEE bleue'};
+  const DC = ['CCS','CHAdeMO','Tesla','CCS1'];
+  function kw(v){
+    if(!v) return null; let best=null;
+    String(v).split(/[;,/]/).forEach(p=>{ const m=p.trim().toLowerCase().match(/([\d.]+)\s*(kw|w|kva)?/); if(!m) return;
+      let n=parseFloat(m[1]); const u=m[2]||'kw'; if(u==='w'||(u==='kw'&&n>1000)) n/=1000; if(n>0&&n<=1000) best=best===null?n:Math.max(best,n); });
+    return best;
+  }
+  const classe = k => k==null?'inconnue':k<22?'lente':k<50?'acceleree':k<150?'rapide':'ultra';
+  function toFeature(el, region, commune){
+    const t = el.tags||{}; const lat = el.lat ?? (el.center&&el.center.lat), lon = el.lon ?? (el.center&&el.center.lon);
+    if(lat==null) return null;
+    const prises=[], p=[];
+    Object.entries(SOCKETS).forEach(([k,l])=>{ if(t['socket:'+k] && !['no','0'].includes(t['socket:'+k])){ if(!prises.includes(l)) prises.push(l); const v=kw(t['socket:'+k+':output']); if(v) p.push(v);} });
+    ['charging_station:output','maxpower','output'].forEach(k=>{ const v=kw(t[k]); if(v) p.push(v); });
+    const k = p.length?Math.max(...p):null;
+    const y = (...ks) => ks.some(x=>t[x]==='yes');
+    const pay=[];
+    if(y('payment:credit_cards','payment:debit_cards','payment:contactless','payment:visa','payment:mastercard','payment:maestro','payment:bancontact')) pay.push('Carte bancaire');
+    if(y('payment:app','authentication:app')) pay.push('Application');
+    if(y('authentication:membership_card','authentication:nfc','payment:rfid')) pay.push('Badge RFID');
+    if(y('authentication:none')) pay.push('Sans identification');
+    const op = t.operator||t.brand||t.network||''; const h = t.opening_hours||'';
+    const veh = [].concat(t.motorcar!=='no'?['Voiture']:[], t.bicycle==='yes'?['Vélo']:[], t.hgv==='yes'?['Poids lourd']:[]);
+    return {type:'Feature', geometry:{type:'Point', coordinates:[lon,lat]}, properties:{
+      source:'OpenStreetMap', ref:'', type_lieu:'', puissance_estimee:false, vehicules:veh,
+      osm_id: el.type+'/'+el.id, nom:t.name||'', operateur:op, reseau:reseau(op), region:region||'', commune:commune||t['addr:city']||'',
+      adresse:[t['addr:street'],t['addr:housenumber']].filter(Boolean).join(' '), puissance_kw:k, classe:classe(k),
+      courant: (prises.some(s=>DC.includes(s))||(k!=null&&k>=50))?'DC':(prises.length||k!=null)?'AC':'',
+      prises, points: t.capacity?parseInt(t.capacity,10)||null:null, payant:({yes:'oui',no:'non'})[t.fee]||'', tarif:t.charge||'',
+      paiement:pay, stationnement_payant:({yes:'oui',no:'non'})[t['parking:fee']]||'', acces:t.access||'', horaires:h, h24:h.trim()==='24/7',
+      verifie_le:t.check_date||t['survey:date']||''}};
+  }
+  // Complète un fichier généré par une ancienne version du script
+  function upgrade(f){
+    const p=f.properties;
+    if(!p.reseau) p.reseau = reseau(p.operateur);
+    if(p.courant===undefined) p.courant = ((p.prises||[]).some(s=>DC.includes(s))||(p.puissance_kw!=null&&p.puissance_kw>=50))?'DC':((p.prises||[]).length||p.puissance_kw!=null)?'AC':'';
+    if(!p.paiement) p.paiement=[]; if(p.h24===undefined) p.h24 = (p.horaires||'').trim()==='24/7';
+    if(!p.source) p.source = 'OpenStreetMap';
+    if(!p.vehicules || !p.vehicules.length) p.vehicules = ['Voiture'];
+    if(p.type_lieu===undefined) p.type_lieu = '';
+    return f;
+  }
+
+  // --- Chargement : fichier préparé chaque nuit, sinon requête Overpass en direct sur Bruxelles ---
+  async function load(){
+    try{
+      const r = await fetch('data/bornes.geojson', {cache:'no-cache'});
+      if(!r.ok) throw new Error(r.status);
+      const gj = await r.json();
+      if(gj.metadata && gj.metadata.genere_le)
+        $('maj').textContent = 'Mise à jour : ' + new Date(gj.metadata.genere_le).toLocaleString('fr-BE') + '.';
+      return gj.features.map(upgrade);
+    }catch(e){
+      showStatus('Interrogation directe d’OpenStreetMap pour Bruxelles (10 à 60 s)…');
+      return await loadLive();
+    }
+  }
+  async function loadLive(){
+    const q = '[out:json][timeout:180];area["ISO3166-2"="BE-BRU"]->.r;rel(area.r)["boundary"="administrative"]["admin_level"="8"];map_to_area->.cs;'+
+      'foreach.cs->.c(.c out tags;(node["amenity"="charging_station"](area.c);way["amenity"="charging_station"](area.c););out center tags;);';
+    const servers = ['https://overpass-api.de/api/interpreter','https://overpass.kumi.systems/api/interpreter'];
+    let js = null, last;
+    for(const url of servers){
+      try{ const r = await fetch(url, {method:'POST', body:'data=' + encodeURIComponent(q)}); if(!r.ok) throw new Error('HTTP '+r.status); js = await r.json(); break; }
+      catch(e){ last = e; }
+    }
+    if(!js) throw last || new Error('Overpass indisponible');
+    $('maj').textContent = 'Données en direct (Bruxelles uniquement).';
+    const out = [], seen = new Set(); let commune = '';
+    js.elements.forEach(el=>{
+      if(el.type==='area'){ commune = (el.tags&&(el.tags['name:fr']||el.tags.name))||''; return; }
+      const key = el.type+'/'+el.id; if(seen.has(key)) return; seen.add(key);
+      const f = toFeature(el, 'Bruxelles-Capitale', commune); if(f) out.push(f);
+    });
+    return out;
+  }
+
+  // --- Fenêtre d'information ---
+  function esc(s){ return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  const fmtKw = (v, est) => v==null ? 'non renseignée' : (est?'≈ ':'') + (Math.round(v*10)/10).toLocaleString('fr-BE') + ' kW';
+  const ACCES = {yes:'Public', public:'Public', customers:'Clients', permissive:'Toléré', private:'Privé', destination:'Destination', no:'Interdit', permit:'Sur autorisation'};
+  function popup(f){
+    const p=f.properties, [lon,lat]=f.geometry.coordinates;
+    const rows = [
+      ['Opérateur', p.operateur && p.operateur!==p.reseau ? p.reseau+' ('+p.operateur+')' : p.reseau],
+      ['Puissance max.', fmtKw(p.puissance_kw, p.puissance_estimee) + ' · ' + CLASSES[p.classe] + (p.puissance_estimee ? ' (estimée d’après le type de courant)' : '')],
+      ['Courant', p.courant], ['Type de lieu', p.type_lieu],
+      ['Prises', (p.prises||[]).join(', ')], ['Points de charge', p.points],
+      ['Adresse', [p.adresse, p.commune].filter(Boolean).join(', ')],
+      ['Recharge payante', p.payant], ['Tarif', p.tarif], ['Paiement', (p.paiement||[]).join(', ')],
+      ['Stationnement payant', p.stationnement_payant], ['Accès', ACCES[p.acces]||p.acces], ['Horaires', p.h24?'24 h/24, 7 j/7':p.horaires],
+      ['Vérifiée le', p.verifie_le], ['Source', p.source],
+      ['Distance', userPos ? (map.distance(userPos,[lat,lon])/1000).toFixed(1).replace('.',',')+' km' : '']
+    ].filter(r=>r[1]!=null && r[1]!=='');
+    return '<div class="popup"><h3>'+esc(p.nom||p.reseau||'Borne de recharge')+'</h3><dl>'+
+      rows.map(r=>'<dt>'+r[0]+'</dt><dd>'+esc(r[1])+'</dd>').join('')+'</dl><div class="links">'+
+      '<a href="https://www.google.com/maps/dir/?api=1&destination='+lat+','+lon+'" target="_blank" rel="noopener">Itinéraire (Google Maps)</a>'+
+      '<a href="https://www.google.com/maps/@?api=1&map_action=pano&viewpoint='+lat+','+lon+'" target="_blank" rel="noopener">Vue de la rue (Street View)</a>'+
+      (p.osm_id ? '<a href="https://www.openstreetmap.org/'+esc(p.osm_id)+'" target="_blank" rel="noopener">Voir ou corriger sur OpenStreetMap</a>' : '')+'</div></div>';
+  }
+
+  // --- Filtres ---
+  function accesGroupe(a){ if(!a||a==='yes'||a==='public'||a==='permissive') return 'public'; if(a==='customers'||a==='destination') return 'clients'; return 'prive'; }
+  function readFilters(){
+    return {
+      classes: [...document.querySelectorAll('#f-classe input:checked')].map(i=>i.value),
+      kwMin: KW_STEPS[+$('f-kw').value],
+      courants: [...document.querySelectorAll('#f-courant input:checked')].map(i=>i.value),
+      prise: $('f-prise').value, reseau: $('f-reseau').value, region: $('f-region').value, commune: $('f-commune').value,
+      txt: $('f-texte').value.trim().toLowerCase(), acces: $('f-acces').value,
+      lieu: $('f-lieu').value, vehicule: $('f-vehicule').value, source: $('f-source').value, mesure: $('f-mesure').checked, payant: $('f-payant').value,
+      h24: $('f-h24').checked, cb: $('f-cb').checked, multi: $('f-multi').checked, tarif: $('f-tarif').checked
+    };
+  }
+  function match(p, F, ignoreClasse){
+    if(!ignoreClasse && !F.classes.includes(p.classe)) return false;
+    if(F.kwMin && !(p.puissance_kw!=null && p.puissance_kw>=F.kwMin)) return false;
+    if(!F.courants.includes(p.courant||'')) return false;
+    if(F.prise && !(p.prises||[]).includes(F.prise)) return false;
+    if(F.reseau && p.reseau!==F.reseau) return false;
+    if(F.region && p.region!==F.region) return false;
+    if(F.commune && p.commune!==F.commune) return false;
+    if(F.acces && accesGroupe(p.acces)!==F.acces) return false;
+    if(F.lieu && (p.type_lieu||'Non précisé')!==F.lieu) return false;
+    if(F.vehicule && !(p.vehicules||[]).includes(F.vehicule)) return false;
+    if(F.source && p.source!==F.source) return false;
+    if(F.mesure && (p.puissance_estimee || p.puissance_kw==null)) return false;
+    if(F.payant && p.payant!==F.payant) return false;
+    if(F.h24 && !p.h24) return false;
+    if(F.cb && !(p.paiement||[]).includes('Carte bancaire')) return false;
+    if(F.multi && !(p.points>=2)) return false;
+    if(F.tarif && !p.tarif) return false;
+    if(F.txt && !(p.nom+' '+p.operateur+' '+p.reseau+' '+p.commune+' '+p.adresse).toLowerCase().includes(F.txt)) return false;
+    return true;
+  }
+
+  function render(){
+    const F = readFilters();
+    $('kw-val').textContent = F.kwMin ? '≥ '+F.kwMin+' kW' : 'toutes';
+    const counts = {lente:0, acceleree:0, rapide:0, ultra:0, inconnue:0};
+    filtered = [];
+    all.forEach(f=>{ const p=f.properties; if(!match(p,F,true)) return; counts[p.classe]++; if(F.classes.includes(p.classe)) filtered.push(f); });
+    $('nb').textContent = filtered.length.toLocaleString('fr-BE');
+    document.querySelectorAll('[data-n]').forEach(el=>el.textContent = counts[el.dataset.n].toLocaleString('fr-BE'));
+    drawMap(); if(view==='stats') drawStats(); if(view==='liste') drawList();
+  }
+
+  function drawMap(){
+    cluster.clearLayers();
+    if(view==='densite' && heat && map.hasLayer(heat)){
+      heat.setLatLngs(filtered.map(f=>[f.geometry.coordinates[1], f.geometry.coordinates[0], Math.min(1, .35 + (f.properties.points||1)*.15)]));
+      return;
+    }
+    cluster.addLayers(filtered.map(f=>{
+      const [lon,lat]=f.geometry.coordinates, p=f.properties;
+      return L.circleMarker([lat,lon],{radius:p.classe==='ultra'||p.classe==='rapide'?7:6, weight:2, color:'#fff', fillColor:COLORS[p.classe], fillOpacity:.95}).bindPopup(()=>popup(f));
+    }));
+  }
+
+  // --- Statistiques ---
+  function bars(title, entries, opts={}){
+    const max = Math.max(1, ...entries.map(e=>e[1]));
+    return '<div class="chart"><h2>'+esc(title)+'</h2>'+ (entries.length ? entries.map(([k,v,c])=>
+      '<div class="bar"><span class="t" title="'+esc(k)+'">'+esc(k)+'</span><span class="track"><span class="fill" style="width:'+(v/max*100).toFixed(1)+'%;'+(c?'background:'+c:'')+'"></span></span><span class="v">'+v.toLocaleString('fr-BE')+(opts.suffix||'')+'</span></div>').join('')
+      : '<p class="note">Aucune donnée.</p>') + (opts.note?'<p class="note">'+opts.note+'</p>':'') + '</div>';
+  }
+  function tally(fn){ const m=new Map(); filtered.forEach(f=>{ [].concat(fn(f.properties)).forEach(k=>{ if(k==null||k==='') return; m.set(k,(m.get(k)||0)+1); }); }); return [...m.entries()].sort((a,b)=>b[1]-a[1]); }
+  function drawStats(){
+    const n = filtered.length;
+    const points = filtered.reduce((s,f)=>s+(f.properties.points||1),0);
+    const known = filtered.filter(f=>f.properties.puissance_kw!=null);
+    const publiee = filtered.filter(f=>f.properties.puissance_kw!=null && !f.properties.puissance_estimee).length;
+    const rapides = filtered.filter(f=>['rapide','ultra'].includes(f.properties.classe)).length;
+    const nbRes = new Set(filtered.map(f=>f.properties.reseau)).size;
+    const cls = Object.keys(CLASSES).map(k=>[CLASSES[k], filtered.filter(f=>f.properties.classe===k).length, COLORS[k]]);
+    const reseaux = tally(p=>p.reseau);
+    const top = reseaux.slice(0,15);
+    const communes = tally(p=>p.commune).slice(0,19);
+    const kwRes = new Map(); known.forEach(f=>{ const p=f.properties; const o=kwRes.get(p.reseau)||[0,0]; o[0]+=p.puissance_kw; o[1]++; kwRes.set(p.reseau,o); });
+    const moy = [...kwRes.entries()].filter(e=>e[1][1]>=5).map(e=>[e[0], Math.round(e[1][0]/e[1][1])]).sort((a,b)=>b[1]-a[1]).slice(0,12);
+    $('v-stats').innerHTML =
+      '<div class="cards">'+
+        '<div class="card"><b>'+n.toLocaleString('fr-BE')+'</b><span>bornes (stations)</span></div>'+
+        '<div class="card"><b>'+points.toLocaleString('fr-BE')+'</b><span>points de charge estimés</span></div>'+
+        '<div class="card"><b>'+rapides.toLocaleString('fr-BE')+'</b><span>bornes rapides (≥ 50 kW)</span></div>'+
+        '<div class="card"><b>'+nbRes.toLocaleString('fr-BE')+'</b><span>opérateurs différents</span></div>'+
+        '<div class="card"><b>'+(n?Math.round(publiee/n*100):0)+' %</b><span>avec puissance publiée en kW</span></div>'+
+      '</div><div class="charts">'+
+        bars('Bornes par opérateur (15 premiers)', top, {note: reseaux.length>15 ? (reseaux.length-15)+' autres opérateurs non affichés.' : ''})+
+        bars('Bornes par vitesse de recharge', cls)+
+        bars('Bornes par type de prise', tally(p=>p.prises))+
+        bars('Bornes par commune', communes, {note:'Communes rattachées lors de la collecte nocturne (limites communales OpenStreetMap). Vide tant que la première collecte n’a pas tourné.'})+
+        bars('Puissance moyenne par opérateur', moy, {suffix:' kW', note:'Opérateurs ayant au moins 5 bornes à puissance connue ou estimée.'})+
+        bars('Moyens de paiement indiqués', tally(p=>p.paiement), {note:'Information publiée surtout par OpenStreetMap.'})+
+        bars('Bornes par type de lieu', tally(p=>p.type_lieu||'Non précisé'))+
+        bars('Bornes par source de données', tally(p=>p.source))+
+      '</div><p class="note">Points de charge : valeur « capacity » d’OpenStreetMap, 1 par défaut. À Bruxelles, la source principale est le registre officiel de Bruxelles Mobilité ; ailleurs, OpenStreetMap. Les puissances marquées ≈ sont estimées d’après le type de courant (monophasé ≈ 7,4 kW, triphasé ≈ 22 kW, continu ≥ 50 kW), car le registre ne publie pas la puissance en kW.</p>';
+  }
+
+  // --- Liste ---
+  const COLS = [['nom','Borne'],['reseau','Opérateur'],['puissance_kw','Puissance'],['prises','Prises'],['commune','Commune'],['payant','Payant'],['distance','Distance']];
+  function drawList(){
+    const rows = filtered.map(f=>{ const [lon,lat]=f.geometry.coordinates; return {f, d: userPos ? map.distance(userPos,[lat,lon]) : null}; });
+    const val = (r,k)=> k==='distance' ? r.d : k==='prises' ? (r.f.properties.prises||[]).join(', ') : r.f.properties[k];
+    rows.sort((a,b)=>{ let x=val(a,sortKey), y=val(b,sortKey); if(x==null||x==='') return 1; if(y==null||y==='') return -1;
+      return (typeof x==='number' ? x-y : String(x).localeCompare(String(y),'fr')) * sortDir; });
+    const shown = rows.slice(0,500);
+    $('v-liste').innerHTML = '<p class="note">'+rows.length.toLocaleString('fr-BE')+' bornes'+(rows.length>500?', 500 premières affichées':'')+
+      '. Cliquez sur une ligne pour la voir sur la carte, sur un titre de colonne pour trier.'+(userPos?'':' Utilisez « Bornes autour de moi » pour trier par distance.')+'</p>'+
+      '<table><thead><tr>'+COLS.filter(c=>c[0]!=='distance'||userPos).map(c=>'<th data-k="'+c[0]+'" class="'+(['prises','payant'].includes(c[0])?'hide-m':'')+'">'+c[1]+(sortKey===c[0]?(sortDir>0?' ▲':' ▼'):'')+'</th>').join('')+'</tr></thead><tbody>'+
+      shown.map((r,i)=>{ const p=r.f.properties; return '<tr data-i="'+i+'"><td>'+esc(p.nom||p.adresse||'—')+'</td><td>'+esc(p.reseau)+'</td><td class="num"><span class="dot" style="display:inline-block;vertical-align:-1px;background:'+COLORS[p.classe]+'"></span> '+esc(p.puissance_kw!=null?fmtKw(p.puissance_kw,p.puissance_estimee):'—')+'</td><td class="hide-m">'+esc((p.prises||[]).join(', '))+'</td><td>'+esc(p.commune)+'</td><td class="hide-m">'+esc(p.payant)+'</td>'+(userPos?'<td class="num">'+(r.d/1000).toFixed(1).replace('.',',')+' km</td>':'')+'</tr>'; }).join('')+
+      '</tbody></table>';
+    $('v-liste').querySelectorAll('th').forEach(th=>th.addEventListener('click',()=>{ const k=th.dataset.k; if(sortKey===k) sortDir*=-1; else { sortKey=k; sortDir = (k==='puissance_kw')?-1:1; } drawList(); }));
+    $('v-liste').querySelectorAll('tbody tr').forEach(tr=>tr.addEventListener('click',()=>{ const f=shown[+tr.dataset.i].f; setView('carte');
+      const [lon,lat]=f.geometry.coordinates; map.setView([lat,lon],17); L.popup().setLatLng([lat,lon]).setContent(popup(f)).openOn(map); }));
+  }
+
+  // --- Vues ---
+  function setView(v){
+    view = v;
+    document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-selected', String(b.dataset.view===v)));
+    $('v-stats').hidden = v!=='stats'; $('v-liste').hidden = v!=='liste';
+    if(heat){ if(v==='densite'){ map.addLayer(heat); legendHeat.addTo(map); } else { map.removeLayer(heat); legendHeat.remove(); } }
+    render(); setTimeout(()=>map.invalidateSize(), 50);
+  }
+  document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));
+
+  // --- Listes déroulantes dépendantes des données ---
+  function fillSelect(id, values, keep){
+    const sel=$(id), cur=sel.value; sel.length=1;
+    values.forEach(([v,n])=>{ const o=document.createElement('option'); o.value=v; o.textContent=v+(n!=null?' ('+n.toLocaleString('fr-BE')+')':''); sel.appendChild(o); });
+    if(keep && values.some(x=>x[0]===cur)) sel.value=cur;
+  }
+  function communesOptions(){
+    const region=$('f-region').value, m=new Map();
+    all.forEach(f=>{ const p=f.properties; if(!p.commune || (region && p.region!==region)) return; m.set(p.commune,(m.get(p.commune)||0)+1); });
+    fillSelect('f-commune', [...m.entries()].sort((a,b)=>a[0].localeCompare(b[0],'fr')), true);
+    $('f-commune').disabled = $('f-commune').length<=1;
+  }
+
+  // --- Événements ---
+  document.querySelectorAll('#f-classe input, #f-courant input, #f-prise, #f-reseau, #f-commune, #f-acces, #f-lieu, #f-vehicule, #f-source, #f-mesure, #f-payant, #f-h24, #f-cb, #f-multi, #f-tarif, #f-kw')
+    .forEach(el=>el.addEventListener(el.type==='range'?'input':'change', render));
+  $('f-region').addEventListener('change', ()=>{ communesOptions(); render(); });
+  let timer; $('f-texte').addEventListener('input', ()=>{ clearTimeout(timer); timer=setTimeout(render, 250); });
+  $('f-commune').addEventListener('change', ()=>{ const c=$('f-commune').value; if(!c) return;
+    const pts=all.filter(f=>f.properties.commune===c).map(f=>[f.geometry.coordinates[1],f.geometry.coordinates[0]]); if(pts.length) map.fitBounds(pts,{padding:[30,30],maxZoom:15}); });
+  document.querySelectorAll('[data-zone]').forEach(b=>b.addEventListener('click',()=>{
+    const z=b.dataset.zone; map.fitBounds(ZONES[z]);
+    $('f-region').value = z==='bxl' && all.some(f=>f.properties.region==='Bruxelles-Capitale') ? 'Bruxelles-Capitale' : '';
+    communesOptions(); render(); }));
+  $('btn-reset').addEventListener('click',()=>{
+    document.querySelectorAll('#f-classe input, #f-courant input').forEach(i=>i.checked=true);
+    ['f-h24','f-cb','f-multi','f-tarif','f-mesure'].forEach(id=>$(id).checked=false);
+    ['f-prise','f-reseau','f-region','f-commune','f-acces','f-payant','f-texte','f-lieu','f-vehicule','f-source'].forEach(id=>$(id).value='');
+    $('f-kw').value=0; communesOptions(); render(); });
+  let userLayer=null;
+  $('btn-loc').addEventListener('click', ()=>{
+    if(!navigator.geolocation){ showStatus('La géolocalisation n’est pas disponible sur cet appareil.', 4000); return; }
+    navigator.geolocation.getCurrentPosition(pos=>{
+      userPos=L.latLng(pos.coords.latitude,pos.coords.longitude);
+      if(userLayer) map.removeLayer(userLayer);
+      userLayer=L.layerGroup([L.circle(userPos,{radius:1000,color:'#f28c28',weight:2,fillOpacity:.08}), L.circleMarker(userPos,{radius:7,color:'#fff',weight:3,fillColor:'#13294b',fillOpacity:1})]).addTo(map);
+      map.setView(userPos, 15); sortKey='distance'; sortDir=1; render();
+    }, ()=>showStatus('Position refusée : autorisez la localisation dans votre navigateur.', 4000));
+  });
+  $('btn-export').addEventListener('click', ()=>{
+    const cols=['source','osm_id','ref','type_lieu','puissance_estimee','vehicules','nom','operateur','reseau','region','commune','adresse','puissance_kw','classe','courant','prises','points','payant','tarif','paiement','acces','horaires','lat','lon'];
+    const q=v=>{ v=v==null?'':Array.isArray(v)?v.join('|'):String(v); return /[",\n;]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v; };
+    const lines=[cols.join(',')].concat(filtered.map(f=>{ const p=Object.assign({},f.properties,{lon:f.geometry.coordinates[0],lat:f.geometry.coordinates[1]}); return cols.map(c=>q(p[c])).join(','); }));
+    const blob=new Blob(['﻿'+lines.join('\n')],{type:'text/csv;charset=utf-8'});
+    const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bornes-filtrees.csv'; document.body.appendChild(a); a.click(); a.remove();
+  });
+
+  // --- Démarrage ---
+  load().then(features=>{
+    all = features;
+    fillSelect('f-prise', [...new Set(all.flatMap(f=>f.properties.prises||[]))].sort().map(p=>[p,null]));
+    const res=new Map(); all.forEach(f=>res.set(f.properties.reseau,(res.get(f.properties.reseau)||0)+1));
+    fillSelect('f-reseau', [...res.entries()].sort((a,b)=>b[1]-a[1]));
+    const count = fn => { const m=new Map(); all.forEach(f=>{ const k=fn(f.properties); m.set(k,(m.get(k)||0)+1); }); return [...m.entries()].sort((a,b)=>b[1]-a[1]); };
+    fillSelect('f-lieu', count(p=>p.type_lieu||'Non précisé'));
+    fillSelect('f-source', count(p=>p.source));
+    const regions = new Set(all.map(f=>f.properties.region).filter(Boolean));
+    if(regions.size<2){ $('f-region').disabled = true; document.querySelector('[data-zone="be"]').disabled = !regions.size || regions.has('Bruxelles-Capitale') && regions.size===1; }
+    communesOptions(); render(); status.hidden = true;
+  }).catch(err=>{
+    showStatus('Impossible de charger les bornes (' + err.message + '). Réessayez dans quelques minutes.');
+  });
+})();
+</script>
+</body>
+</html>
