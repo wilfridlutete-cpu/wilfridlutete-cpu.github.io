@@ -39,6 +39,9 @@ SRC_VL = "Vlaanderen (MOW)"
 # ---------------------------------------------------------------- sources officielles
 BXL_WFS = ("https://data.mobility.brussels/geoserver/bm_equipment/wfs?service=WFS&version=2.0.0"
            "&request=GetFeature&typeNames=bm_equipment:evse&outputFormat=application/json&srsName=EPSG:4326")
+URBIS_COMMUNES = ("https://geoservices-urbis.irisnet.be/geoserver/urbisvector/wfs?service=WFS&version=2.0.0"
+                  "&request=GetFeature&typeNames=urbisvector:Municipalities&outputFormat=application/json"
+                  "&srsName=EPSG:4326&propertyName=NAMEFRE,GEOM")
 VL_WFS = ("https://geoserver.gis.cloud.mow.vlaanderen.be/geoserver/beleid/wfs?service=WFS&version=2.0.0"
           "&request=GetFeature&typeNames=beleid:laadpunten_public&outputFormat=application/json&srsName=EPSG:4326")
 
@@ -560,6 +563,65 @@ def fusionner(officiels: list[dict], osm: list[dict]) -> list[dict]:
     return officiels + gardes
 
 
+# ================================================================ communes bruxelloises (UrbIS)
+def dans_anneau(x: float, y: float, anneau) -> bool:
+    dedans = False
+    j = len(anneau) - 1
+    for i in range(len(anneau)):
+        xi, yi = anneau[i][:2]
+        xj, yj = anneau[j][:2]
+        if (yi > y) != (yj > y) and x < (xj - xi) * (y - yi) / (yj - yi) + xi:
+            dedans = not dedans
+        j = i
+    return dedans
+
+
+def dans_polygone(x: float, y: float, geom: dict) -> bool:
+    polys = geom["coordinates"] if geom["type"] == "MultiPolygon" else [geom["coordinates"]]
+    for poly in polys:
+        if dans_anneau(x, y, poly[0]) and not any(dans_anneau(x, y, trou) for trou in poly[1:]):
+            return True
+    return False
+
+
+def communes_bruxelles(features: list[dict]) -> None:
+    """Rattache chaque borne bruxelloise sans commune à l'une des 19 communes (limites officielles UrbIS)."""
+    cibles = [f for f in features if f["properties"]["region"] == "Bruxelles-Capitale" and not f["properties"]["commune"]]
+    if not cibles:
+        return
+    try:
+        gj = http(URBIS_COMMUNES, timeout=180)
+    except Exception as exc:
+        print(f"  ! limites communales UrbIS indisponibles ({exc})", file=sys.stderr)
+        return
+    communes = []
+    for c in gj.get("features", []):
+        g = c.get("geometry")
+        nom = (c.get("properties") or {}).get("NAMEFRE")
+        if not g or not nom or g["type"] not in ("Polygon", "MultiPolygon"):
+            continue
+        anneaux = [p[0] for p in (g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]])]
+        if anneaux and anneaux[0] and anneaux[0][0][0] > 40:  # axes inversés (lat, lon) : on remet dans l'ordre
+            inv = lambda r: [[pt[1], pt[0]] for pt in r]
+            if g["type"] == "Polygon":
+                g = {"type": "Polygon", "coordinates": [inv(r) for r in g["coordinates"]]}
+            else:
+                g = {"type": "MultiPolygon", "coordinates": [[inv(r) for r in p] for p in g["coordinates"]]}
+            anneaux = [p[0] for p in (g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]])]
+        xs = [pt[0] for r in anneaux for pt in r]
+        ys = [pt[1] for r in anneaux for pt in r]
+        communes.append((nom.strip(), g, (min(xs), min(ys), max(xs), max(ys))))
+    n = 0
+    for f in cibles:
+        x, y = f["geometry"]["coordinates"]
+        for nom, g, (x0, y0, x1, y1) in communes:
+            if x0 <= x <= x1 and y0 <= y <= y1 and dans_polygone(x, y, g):
+                f["properties"]["commune"] = nom
+                n += 1
+                break
+    print(f"Communes bruxelloises (UrbIS) : {n} bornes rattachées sur {len(cibles)}")
+
+
 # ================================================================ écriture
 DEFAUTS = base_properties()
 
@@ -627,6 +689,7 @@ def main() -> None:
     if offline:
         if len(officiels) < 500:
             sys.exit("Copie locale absente ou incomplète : fichiers non modifiés.")
+        communes_bruxelles(officiels)
         ecrire(officiels)
         return
 
@@ -636,7 +699,9 @@ def main() -> None:
     if len(osm) < 1000:
         # Garde-fou : ne jamais écraser un bon fichier par une collecte ratée.
         sys.exit(f"Seulement {len(osm)} bornes OpenStreetMap : collecte jugée incomplète, fichiers non modifiés.")
-    ecrire(fusionner(officiels, osm))
+    toutes = fusionner(officiels, osm)
+    communes_bruxelles(toutes)
+    ecrire(toutes)
 
 
 if __name__ == "__main__":
