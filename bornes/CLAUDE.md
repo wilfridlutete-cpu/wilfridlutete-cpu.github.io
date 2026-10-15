@@ -41,12 +41,13 @@ lente < 22 kW ≤ accélérée < 50 kW ≤ rapide < 150 kW ≤ ultra-rapide. DC 
 Carte (points colorés par vitesse, regroupés), Trajet et recharge (planificateur), Densité (carte de chaleur), Statistiques (barres), Liste (triable, distance).
 Fonds de plan : OSM, satellite Esri, CARTO clair et sombre.
 Couleurs : vert forêt (#0d3b2e, structure et texte) et vert feuille (#3ccf7a, actions) pour l'énergie propre ; ambre (#f2b632) réservé à l'ultra-rapide.
-Régions : boutons Toute la Belgique / Bruxelles / Flandre / Wallonie (zoom sur la région). Recherche d'adresse : Nominatim (OSM).
+Régions : boutons Toute la Belgique / Bruxelles / Flandre / Wallonie (zoom sur la région). Barre de recherche : une adresse (Nominatim, repli Photon/komoot ; bulle « Itinéraire et recharge jusqu'ici ») ou un trajet
+(« Ixelles → Namur », « Ixelles - Namur », « de Bruxelles à Liège », « … vers … ») qui ouvre l'onglet Trajet et lance le calcul (fonction lireTrajet).
 Clic sur une borne : zoom + fiche ; « Vue 3D de la rue » ouvre MapLibre GL 4.7.1 (unpkg, chargé à la demande) avec le style
 OpenFreeMap « liberty » (bâtiments en relief, gratuit, sans clé) et l'imagerie Esri en option.
 
 ## Trajet et recharge (onglet « Trajet et recharge »)
-- Itinéraire : OSRM public (router.project-osrm.org, gratuit, sans clé) ; géocodage : Nominatim.
+- Itinéraire : OSRM public (router.project-osrm.org, gratuit, sans clé) ; géocodage : chercherLieu (Nominatim, puis Photon si échec).
 - Bornes candidates : à moins de « écart max. » km de la route (projection locale, polyligne simplifiée à 150 m),
   accès non privé, véhicule Voiture, atteignables avant la réserve choisie.
 - Trois catégories selon la puissance de la borne : rapide ≥ 50 kW, moyenne 22–49 kW, lente < 22 kW (inconnue : DC → 50 kW, sinon 11 kW).

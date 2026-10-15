@@ -196,8 +196,8 @@
     <button type="button" data-region="Wallonie" aria-pressed="false">Wallonie <small data-nr="Wallonie"></small></button>
   </div>
   <form class="adresse" id="f-adresse">
-    <label for="q-adresse" class="sr">Aller à une adresse ou une commune</label>
-    <input id="q-adresse" type="search" placeholder="Aller à une adresse, une commune…" autocomplete="off">
+    <label for="q-adresse" class="sr">Aller à une adresse, ou calculer un trajet (ex. Ixelles → Namur)</label>
+    <input id="q-adresse" type="search" placeholder="Adresse, ou trajet : Ixelles → Namur" autocomplete="off">
     <button type="submit">Aller</button>
   </form>
 
@@ -768,20 +768,55 @@
   }
   document.querySelectorAll('[data-region]').forEach(b=>b.addEventListener('click',()=>setRegion(b.dataset.region)));
 
-  // Aller à une adresse (géocodage Nominatim d'OpenStreetMap, limité à la Belgique)
+  // Géocodage : Nominatim (OSM), puis Photon (OSM, komoot) si Nominatim ne répond pas ou ne trouve rien.
+  async function chercherLieu(q, pays){
+    try{
+      const r = await fetch('https://nominatim.openstreetmap.org/search?format=json&limit=1&accept-language=fr&countrycodes='+(pays||'be')+'&q='+encodeURIComponent(q));
+      if(r.ok){ const js = await r.json();
+        if(js.length) return {ll:[+js[0].lat, +js[0].lon], nom: js[0].display_name.split(',').slice(0,2).join(',')}; }
+    }catch(e){}
+    try{
+      const r = await fetch('https://photon.komoot.io/api/?limit=1&lang=fr&lat=50.85&lon=4.35&bbox=2.4,49.4,6.5,51.6&q='+encodeURIComponent(q));
+      if(r.ok){ const js = await r.json(), f = js.features && js.features[0];
+        if(f){ const p=f.properties||{}; return {ll:[f.geometry.coordinates[1], f.geometry.coordinates[0]],
+          nom: [p.name, p.street && (p.street+(p.housenumber?' '+p.housenumber:'')), p.city].filter(Boolean).slice(0,2).join(', ') || q}; } }
+    }catch(e){}
+    return null;
+  }
+  // « Ixelles → Namur », « Ixelles - Namur », « de Bruxelles à Liège », « Bruxelles vers Gand » : c'est un trajet.
+  function lireTrajet(q){
+    let m = q.match(/^\s*(?:de|depuis)\s+(.+?)\s+(?:à|a|vers|jusqu[’']?à)\s+(.+)$/i);
+    if(m) return [m[1], m[2]];
+    m = q.split(/\s*(?:→|->|=>|>|\s[-–—]\s|\svers\s|\sjusqu[’']?à\s)\s*/i).map(s=>s.trim()).filter(Boolean);
+    return m.length===2 ? m : null;
+  }
   let repere=null;
   $('f-adresse').addEventListener('submit', async e=>{
     e.preventDefault(); const q=$('q-adresse').value.trim(); if(!q) return;
-    try{
-      const r = await fetch('https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=be&accept-language=fr&q='+encodeURIComponent(q));
-      const js = await r.json();
-      if(!js.length){ showStatus('Adresse introuvable en Belgique : vérifiez l’orthographe.', 4000); return; }
-      const ll=[+js[0].lat, +js[0].lon];
-      if(repere) map.removeLayer(repere);
-      repere=L.circleMarker(ll,{radius:9,color:'#0d3b2e',weight:3,fillColor:'#fff',fillOpacity:1}).bindTooltip(js[0].display_name.split(',').slice(0,2).join(','),{className:'tip',permanent:false}).addTo(map);
-      userPos = L.latLng(ll); sortKey='distance'; sortDir=1;
-      map.flyTo(ll, 16, {duration:1.1}); render();
-    }catch(err){ showStatus('Recherche d’adresse indisponible pour le moment. Réessayez plus tard.', 4000); }
+    const trajet = lireTrajet(q);
+    if(trajet){
+      $('t-dep').value = trajet[0]; $('t-arr').value = trajet[1];
+      setView('itineraire'); calculerTrajet(); return;
+    }
+    showStatus('Recherche de « '+q+' »…');
+    const lieu = await chercherLieu(q);
+    if(!lieu){ showStatus('Adresse introuvable en Belgique : vérifiez l’orthographe, ou tapez un trajet comme « Ixelles → Namur ».', 5000); return; }
+    status.hidden = true;
+    if(repere) map.removeLayer(repere);
+    const bulle = document.createElement('div'); bulle.className='popup';
+    bulle.innerHTML = '<h3>'+esc(lieu.nom)+'</h3><div class="actions"><button type="button">Itinéraire et recharge jusqu’ici</button><button type="button" class="ghost">Bornes autour de ce point</button></div>';
+    const [bTrajet, bListe] = bulle.querySelectorAll('button');
+    bTrajet.addEventListener('click', ()=>{
+      $('t-arr').value = lieu.nom;
+      if(!$('t-dep').value && posDepart) $('t-dep').value = 'Ma position';
+      setView('itineraire');
+      if($('t-dep').value) calculerTrajet(); else $('t-dep').focus();
+    });
+    bListe.addEventListener('click', ()=>setView('liste'));
+    repere = L.circleMarker(lieu.ll,{radius:9,color:'#0d3b2e',weight:3,fillColor:'#fff',fillOpacity:1}).bindPopup(bulle,{maxWidth:300}).addTo(map);
+    userPos = L.latLng(lieu.ll); sortKey='distance'; sortDir=1;
+    map.flyTo(lieu.ll, 16, {duration:1.1}); render();
+    map.once('moveend', ()=>repere && repere.openPopup());
   });
   $('btn-reset').addEventListener('click',()=>{
     document.querySelectorAll('#f-classe input, #f-courant input').forEach(i=>i.checked=true);
@@ -792,7 +827,7 @@
   $('btn-loc').addEventListener('click', ()=>{
     if(!navigator.geolocation){ showStatus('La géolocalisation n’est pas disponible sur cet appareil.', 4000); return; }
     navigator.geolocation.getCurrentPosition(pos=>{
-      userPos=L.latLng(pos.coords.latitude,pos.coords.longitude);
+      userPos=L.latLng(pos.coords.latitude,pos.coords.longitude); posDepart=[pos.coords.latitude,pos.coords.longitude];
       if(userLayer) map.removeLayer(userLayer);
       userLayer=L.layerGroup([L.circle(userPos,{radius:1000,color:'#1f8a57',weight:2,fillOpacity:.08}), L.circleMarker(userPos,{radius:7,color:'#fff',weight:3,fillColor:'#0d3b2e',fillOpacity:1})]).addTo(map);
       map.setView(userPos, 15); sortKey='distance'; sortDir=1; render();
@@ -858,13 +893,11 @@
     q=q.trim();
     if(/^ma position$/i.test(q)){
       if(posDepart) return {ll:posDepart, nom:'Ma position'};
-      if(userPos) return {ll:[userPos.lat,userPos.lng], nom:'Ma position'};
       throw new Error('position inconnue : cliquez sur « Ma position »');
     }
-    const r = await fetch('https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=be,fr,nl,lu,de&accept-language=fr&q='+encodeURIComponent(q));
-    const js = await r.json();
-    if(!js.length) throw new Error('adresse introuvable : « '+q+' »');
-    return {ll:[+js[0].lat, +js[0].lon], nom: js[0].display_name.split(',').slice(0,2).join(',')};
+    const lieu = await chercherLieu(q, 'be,fr,nl,lu,de');
+    if(!lieu) throw new Error('adresse introuvable : « '+q+' »');
+    return lieu;
   }
   async function itineraire(a, b){
     const url='https://router.project-osrm.org/route/v1/driving/'+a[1]+','+a[0]+';'+b[1]+','+b[0]+'?overview=full&geometries=geojson';
