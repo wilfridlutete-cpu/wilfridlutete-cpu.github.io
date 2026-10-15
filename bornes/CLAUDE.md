@@ -38,14 +38,26 @@ Le regroupement des opérateurs (liste RESEAUX) existe en double : script Python
 lente < 22 kW ≤ accélérée < 50 kW ≤ rapide < 150 kW ≤ ultra-rapide. DC = prise CCS/CHAdeMO/Tesla ou ≥ 50 kW.
 
 ## Vues de la page
-Carte (points colorés par vitesse, regroupés), Densité (carte de chaleur), Statistiques (barres), Liste (triable, distance).
+Carte (points colorés par vitesse, regroupés), Trajet et recharge (planificateur), Densité (carte de chaleur), Statistiques (barres), Liste (triable, distance).
 Fonds de plan : OSM, satellite Esri, CARTO clair et sombre.
 Couleurs : vert forêt (#0d3b2e, structure et texte) et vert feuille (#3ccf7a, actions) pour l'énergie propre ; ambre (#f2b632) réservé à l'ultra-rapide.
 Régions : boutons Toute la Belgique / Bruxelles / Flandre / Wallonie (zoom sur la région). Recherche d'adresse : Nominatim (OSM).
 Clic sur une borne : zoom + fiche ; « Vue 3D de la rue » ouvre MapLibre GL 4.7.1 (unpkg, chargé à la demande) avec le style
 OpenFreeMap « liberty » (bâtiments en relief, gratuit, sans clé) et l'imagerie Esri en option.
 
+## Trajet et recharge (onglet « Trajet et recharge »)
+- Itinéraire : OSRM public (router.project-osrm.org, gratuit, sans clé) ; géocodage : Nominatim.
+- Bornes candidates : à moins de « écart max. » km de la route (projection locale, polyligne simplifiée à 150 m),
+  accès non privé, véhicule Voiture, atteignables avant la réserve choisie.
+- Trois catégories selon la puissance de la borne : rapide ≥ 50 kW, moyenne 22–49 kW, lente < 22 kW (inconnue : DC → 50 kW, sinon 11 kW).
+- Prix, dans l'ordre : `payant = non` → gratuit ; tag OSM `charge` lisible (fonction lireTarif) ; PRIX_OPERATEUR (tarifs publics connus) ;
+  sinon prix de référence par classe, réglables dans le formulaire.
+- Durée : énergie / (min(puissance borne, puissance voiture) × 0,8 en DC ou 0,92 en AC). Énergie facturée = énergie batterie × 1,07.
+- Classement : coût + (durée de charge + détour) × valeur du temps (€/h). Un premier choix et deux autres par catégorie.
+- Pas de connexion directe à la voiture (API constructeur = clé secrète + serveur, contraire aux règles). Niveau de batterie saisi à la main
+  ou passé dans l'URL : `?batterie=45&depart=…&arrivee=…&vehicule=vw-id3`. Réglages mémorisés en localStorage (`bornes-trajet`).
+
 ## Vérifier un changement
 1. `python scripts/fetch_bornes.py` se termine sans erreur et affiche un total par région.
-2. `python -m http.server 8000`, ouvrir http://localhost:8000 : la carte s'affiche, les filtres changent le compteur, une fenêtre s'ouvre au clic, les 4 onglets fonctionnent.
+2. `python -m http.server 8000`, ouvrir http://localhost:8000 : la carte s'affiche, les filtres changent le compteur, une fenêtre s'ouvre au clic, les 5 onglets fonctionnent ; l'onglet Trajet calcule un trajet (ex. `?batterie=15&depart=Bruxelles&arrivee=Namur`).
 3. Tester aussi en largeur mobile (environ 400 px).

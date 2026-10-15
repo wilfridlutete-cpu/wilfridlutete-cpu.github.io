@@ -243,6 +243,9 @@ textarea{min-height:130px;resize:vertical}
 form .btn{width:100%;justify-content:center}
 .success{display:none;margin-top:1rem;padding:1rem;border-radius:10px;background:#f0fdf4;border:1px solid #86efac;color:var(--green);font-size:.9rem}
 .success.show{display:block}
+.success.err{background:#fef2f2;border-color:#fca5a5;color:#b91c1c}
+.success.err a{color:inherit;font-weight:700}
+form .btn:disabled{opacity:.65;cursor:wait;transform:none}
 @media (max-width:860px){.contact-grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
 
 /* ---------- FOOTER ---------- */
@@ -387,8 +390,9 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:2.5rem var(--px
         </select>
       </div>
       <div class="field"><label for="msg">Message</label><textarea id="msg" required></textarea></div>
-      <button class="btn btn-primary" type="submit">Envoyer le message →</button>
-      <div class="success" id="success">✅ Merci ! Votre logiciel de messagerie va s'ouvrir pour envoyer le message.</div>
+      <input type="text" name="_honey" id="honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+      <button class="btn btn-primary" type="submit" id="send">Envoyer le message →</button>
+      <div class="success" id="success" role="status" aria-live="polite"></div>
     </form>
   </div>
 </section>
@@ -660,13 +664,38 @@ addEventListener("scroll", () => {
 }, {passive:true});
 $("#toTop").onclick = () => scrollTo({top:0,behavior:"smooth"});
 
-/* Formulaire : ouvre le client mail (pas de serveur nécessaire) */
-$("#form").addEventListener("submit", e => {
+/* Formulaire : envoi direct vers la boîte mail via FormSubmit (gratuit, sans serveur ni clé).
+   Si le service ne répond pas, on propose l'envoi par le logiciel de messagerie. */
+$("#form").addEventListener("submit", async e => {
   e.preventDefault();
-  const subject = `[${$("#tp").value}] ${$("#fn").value} ${$("#ln").value}`;
-  const body = `${$("#msg").value}\n\n— ${$("#fn").value} ${$("#ln").value} (${$("#em").value})`;
-  location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  $("#success").classList.add("show"); e.target.reset();
+  const form = e.target, btn = $("#send"), box = $("#success");
+  if($("#honey").value) return;                       // robot : on ignore
+  const nom = `${$("#fn").value.trim()} ${$("#ln").value.trim()}`;
+  const subject = `[Portfolio · ${$("#tp").value}] ${nom}`;
+  const body = `${$("#msg").value}\n\n— ${nom} (${$("#em").value})`;
+  btn.disabled = true; btn.textContent = "Envoi en cours…";
+  box.className = "success";
+  try{
+    const r = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
+      method:"POST",
+      headers:{"Content-Type":"application/json", "Accept":"application/json"},
+      body: JSON.stringify({
+        "Prénom": $("#fn").value.trim(), "Nom": $("#ln").value.trim(), "Email": $("#em").value.trim(),
+        "Type de demande": $("#tp").value, "Message": $("#msg").value,
+        _subject: subject, _replyto: $("#em").value.trim(), _template:"table", _captcha:"false"
+      })
+    });
+    const js = await r.json().catch(()=>({}));
+    if(!r.ok || String(js.success) !== "true") throw new Error(js.message || r.status);
+    box.textContent = "✅ Merci ! Votre message a bien été envoyé. Je vous réponds au plus vite.";
+    box.classList.add("show"); form.reset();
+  }catch(err){
+    const href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    box.innerHTML = `L'envoi automatique n'a pas fonctionné. <a href="${href}">Cliquez ici pour envoyer le message depuis votre messagerie</a>, ou écrivez directement à ${EMAIL}.`;
+    box.classList.add("show","err");
+  }finally{
+    btn.disabled = false; btn.textContent = "Envoyer le message →";
+  }
 });
 $("#year").textContent = new Date().getFullYear();
 </script>

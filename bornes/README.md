@@ -9,8 +9,12 @@ Les doublons entre sources sont fusionnés automatiquement.
 
 ## Ce que fait le géoportail
 
-**Quatre vues**
+**Cinq vues**
 - **Carte** : chaque borne colorée selon sa vitesse de recharge, regroupée quand on dézoome.
+- **Trajet et recharge** : saisissez départ, arrivée, véhicule et niveau de batterie. La page trace l'itinéraire, indique où la batterie
+  atteindra la réserve et propose trois choix le long de la route : recharge rapide, moyenne et lente, chacune avec son coût estimé,
+  sa durée de charge et le détour, classées selon le prix et la durée. Un clic ouvre l'itinéraire Google Maps avec l'arrêt.
+  Lien direct possible : `?batterie=45&depart=Ixelles&arrivee=Namur`.
 - **Densité** : carte de chaleur pour repérer les zones bien ou mal équipées.
 - **Statistiques** : bornes par opérateur, par vitesse, par prise, par commune, puissance moyenne par opérateur, moyens de paiement.
 - **Liste** : tableau triable (puissance, opérateur, commune, distance) ; un clic place la borne sur la carte.
@@ -64,6 +68,13 @@ Sans le dossier `data/`, la page interroge OpenStreetMap en direct, pour Bruxell
 Le registre bruxellois ne publie pas la puissance en kW (seulement la tension et le type de courant).
 Pour ces bornes, la puissance est **estimée** (monophasé ≈ 7,4 kW, triphasé ≈ 22 kW, continu ≥ 50 kW) et affichée avec « ≈ ».
 La case « Puissance publiée uniquement » masque ces estimations.
+
+## À savoir sur les prix et la batterie
+
+Peu de bornes publient leur tarif (environ 1 %). Le prix affiché vient, dans l'ordre : du tarif publié sur la borne (OpenStreetMap),
+du tarif public de l'opérateur quand il est connu, sinon d'un prix de référence par vitesse (réglable : par défaut 0,45 à 0,69 €/kWh).
+Il est toujours indiqué d'où vient le prix. La lecture directe de la batterie dans la voiture n'est pas possible sur un site gratuit
+sans serveur (les API des constructeurs exigent une clé secrète) : le niveau se saisit à la main ou se passe dans l'adresse de la page.
 
 ## Pourquoi pas Google Maps ou Chargemap ?
 
