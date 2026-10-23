@@ -26,7 +26,7 @@ Bruxelles Mobilité,,a35724ee-d4dc-11ee-943c-42010aa40fc0,,EnergyVision,EnergyVi
 Bruxelles Mobilité,,d03b2714-2469-11ed-b51d-42010aa40015,,EnergyVision,EnergyVision,Bruxelles-Capitale,Woluwe-Saint-Pierre,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8328,4.4396
 Bruxelles Mobilité,,3c365a5a-507b-11ed-b974-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Uccle,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8012,4.3427
 Bruxelles Mobilité,,4901a958-07ed-11ef-958f-42010aa40043,,Blink Charging,Blink Charging,Bruxelles-Capitale,Ixelles,,,22.0,oui,acceleree,AC,Type 2,12,Voiture,,,,,,,non,,50.8162,4.3831
-Bruxelles Mobilité,,603c89c8-af26-11ee-9617-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Ixelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8401,4.3736
+Bruxelles Mobilité,,603c89c8-af26-11ee-9617-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8401,4.3736
 Bruxelles Mobilité,,d0b5294a-5ed7-11ec-b4cf-42010a840003,,Allego,Allego,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,8,Voiture,,,,,,,non,,50.8456,4.3582
 Bruxelles Mobilité,,0aa2086c-b60b-11ee-9c83-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Etterbeek,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8367,4.3758
 Bruxelles Mobilité,node/12104396179,795d2796-ac01-11ee-a193-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Saint-Gilles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8313,4.3451
@@ -144,7 +144,7 @@ Bruxelles Mobilité,node/12897055696,fde9fc70-e916-11ea-ba49-42010a840014,,Total
 Bruxelles Mobilité,,ca735b9c-8a36-11ee-9a4e-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Anderlecht,,,7.4,oui,lente,AC,Type 2,4,Voiture,,,,,,,non,,50.8415,4.289
 Bruxelles Mobilité,,49170734-b612-11ef-a400-42010aa40043,,Allego,Allego,Bruxelles-Capitale,Ixelles,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8175,4.3954
 Bruxelles Mobilité,,f4080796-e19c-11ef-9e37-42010aa400b8,,EnergyVision,EnergyVision,Bruxelles-Capitale,Uccle,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.796,4.3232
-Bruxelles Mobilité,,0779e628-1b41-11ef-a92d-42010aa40043,,Blue Corner,Blue Corner,Bruxelles-Capitale,Ixelles,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8407,4.3743
+Bruxelles Mobilité,,0779e628-1b41-11ef-a92d-42010aa40043,,Blue Corner,Blue Corner,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8407,4.3743
 Bruxelles Mobilité,,9f908cd0-e16e-11ee-9a8b-42010aa400b8,,EnergyVision,EnergyVision,Bruxelles-Capitale,Molenbeek-Saint-Jean,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8499,4.3244
 Bruxelles Mobilité,,ccd3013c-2469-11ed-bd1e-42010aa40040,,EnergyVision,EnergyVision,Bruxelles-Capitale,Woluwe-Saint-Pierre,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8393,4.4587
 Bruxelles Mobilité,,e058027a-f839-11ee-beff-42010aa400b8,,EnergyVision,EnergyVision,Bruxelles-Capitale,Berchem-Sainte-Agathe,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8672,4.2871
@@ -469,7 +469,7 @@ Bruxelles Mobilité,,44344710-a9a5-11ee-b94e-42010aa40fc0,,EnergyVision,EnergyVi
 Bruxelles Mobilité,,8dfe7604-25ec-11ea-b829-42010a840003,,Blink Charging,Blink Charging,Bruxelles-Capitale,Anderlecht,,,22.0,oui,acceleree,AC,Type 2,20,Voiture,,,,,,,non,,50.8359,4.331
 Bruxelles Mobilité,,35e6b022-4f3c-11e8-88fa-42010a840002,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Anderlecht,,Parking,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8386,4.3291
 Bruxelles Mobilité,node/13048354181,873a2d54-ed6d-11ec-847f-42010aa40fd5,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Watermael-Boitsfort,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8081,4.404
-Bruxelles Mobilité,,715e38ae-e0a5-11ee-9b33-42010aa400b8,,EnergyVision,EnergyVision,Bruxelles-Capitale,Ixelles,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8301,4.3615
+Bruxelles Mobilité,,715e38ae-e0a5-11ee-9b33-42010aa400b8,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8301,4.3615
 Bruxelles Mobilité,,e2105098-9080-11ee-92c1-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Anderlecht,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8441,4.2897
 Bruxelles Mobilité,node/10793231188,e5393fbe-6773-11ed-bd70-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Evere,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,oui,,,,yes,,non,,50.8634,4.4032
 Bruxelles Mobilité,,7f381e6a-8f59-11ee-bc62-42010aa40fcd,,EnergyVision,EnergyVision,Bruxelles-Capitale,Uccle,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.7746,4.3391
@@ -487,7 +487,7 @@ Bruxelles Mobilité,node/12174419164,74d00bbc-c2bb-11eb-b28f-42010a840007,,Total
 Bruxelles Mobilité,,f8a7524e-523c-11ed-a5c0-42010aa4001d,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Woluwe-Saint-Lambert,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8412,4.4315
 Bruxelles Mobilité,,510cc578-85bd-11ed-9d09-42010aa4002c,,EnergyVision,EnergyVision,Bruxelles-Capitale,Uccle,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.7988,4.3211
 Bruxelles Mobilité,,d0dcfd10-f90a-11ee-af7f-42010aa400b8,,50five Belux,50five,Bruxelles-Capitale,Anderlecht,,Autre,22.0,oui,acceleree,AC,Type 2,26,Voiture,,,,,,,non,,50.8201,4.3067
-Bruxelles Mobilité,,59d0e5c4-4b3c-11ed-ac5a-42010aa4002e,,Optimile,Optimile,Bruxelles-Capitale,Koekelberg,,,22.0,oui,acceleree,AC,Type 2,8,Voiture,,,,,,,non,,50.8593,4.324
+Bruxelles Mobilité,,59d0e5c4-4b3c-11ed-ac5a-42010aa4002e,,Optimile,Optimile,Bruxelles-Capitale,Molenbeek-Saint-Jean,,,22.0,oui,acceleree,AC,Type 2,8,Voiture,,,,,,,non,,50.8593,4.324
 Bruxelles Mobilité,,d23d577e-6773-11ed-bfaf-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Bruxelles,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8493,4.3627
 Bruxelles Mobilité,,7a1b5dd8-ac01-11ee-b69a-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Saint-Gilles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8284,4.3394
 Bruxelles Mobilité,,e9ff43f8-8e24-11ee-8a80-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Uccle,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.7961,4.347
@@ -512,7 +512,7 @@ Bruxelles Mobilité,,7ddbe384-ac01-11ee-b38c-42010aa40fc0,,EnergyVision,EnergyVi
 Bruxelles Mobilité,,ea0af41e-7f89-11ed-aee9-42010aa4005f,,EnergyVision,EnergyVision,Bruxelles-Capitale,Schaerbeek,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.856,4.3722
 Bruxelles Mobilité,,1a6b9270-9925-11ee-8ce7-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Schaerbeek,,,7.4,oui,lente,AC,Type 2,4,Voiture,,,,,,,non,,50.8714,4.3704
 Bruxelles Mobilité,,58a5dad8-77fb-11ed-b34e-42010aa4005b,,EnergyVision,EnergyVision,Bruxelles-Capitale,Anderlecht,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8288,4.2915
-Bruxelles Mobilité,,be938026-9b80-11ee-b5c7-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Ixelles,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8411,4.3697
+Bruxelles Mobilité,,be938026-9b80-11ee-b5c7-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8411,4.3697
 Bruxelles Mobilité,node/11017415657,07e6c6fe-7745-11ed-b087-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Bruxelles,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,50.851,4.3563
 Bruxelles Mobilité,,d30bb49e-e16f-11ee-ae58-42010aa400b8,,EnergyVision,EnergyVision,Bruxelles-Capitale,Ixelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8048,4.3882
 Bruxelles Mobilité,,fb0be6a2-6773-11ed-8735-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Uccle,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8099,4.3692
@@ -578,7 +578,7 @@ Bruxelles Mobilité,,d108e91a-ffc8-11ee-9854-42010aa40043,,Electra,Electra,Bruxe
 Bruxelles Mobilité,,35db44d2-e7b9-11ee-a2b7-42010aa400b8,,EnergyVision,EnergyVision,Bruxelles-Capitale,Berchem-Sainte-Agathe,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8585,4.2865
 Bruxelles Mobilité,,72ec65fc-bcae-11ef-b81c-42010aa400b8,,EZ Charge,EZ Charge,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,11,Voiture,,,,,,,non,,50.8355,4.3531
 Bruxelles Mobilité,node/9160789588,7dc2649c-bd38-11ea-a334-42010a840ff6,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Ixelles,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,oui,,,,,,non,,50.8132,4.3918
-Bruxelles Mobilité,,959c7f0c-79b5-11ee-960f-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.7946,4.3754
+Bruxelles Mobilité,,959c7f0c-79b5-11ee-960f-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Uccle,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.7946,4.3754
 Bruxelles Mobilité,,b41cdb22-dd81-11ee-998f-42010aa400b8,,EnergyVision,EnergyVision,Bruxelles-Capitale,Woluwe-Saint-Pierre,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8383,4.422
 Bruxelles Mobilité,,bf5213c4-9b80-11ee-b300-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,7.4,oui,lente,AC,Type 2,6,Voiture,,,,,,,non,,50.8551,4.3533
 Bruxelles Mobilité,node/10121476884,526db8f6-7090-11ed-a87e-42010aa4007b,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,oui,,,,,,non,,50.8955,4.3599
@@ -621,7 +621,7 @@ Bruxelles Mobilité,,2069e334-0b29-11ec-a86c-42010a840003,,Allego,Allego,Bruxell
 Bruxelles Mobilité,,28104e4e-afef-11ee-8ebe-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Ixelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8107,4.3886
 Bruxelles Mobilité,,77ea8e04-77f9-11ed-86c2-42010aa40040,,EnergyVision,EnergyVision,Bruxelles-Capitale,Anderlecht,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8304,4.3084
 Bruxelles Mobilité,,d13e7c10-eadd-11ee-8d2f-42010aa400b8,,Optiload,Optiload,Bruxelles-Capitale,Molenbeek-Saint-Jean,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.861,4.344
-Bruxelles Mobilité,,e8c0db8c-1afa-11f0-8b19-42010aa400b8,,Mobiflow,Mobiflow,Bruxelles-Capitale,Ixelles,,,22.0,oui,acceleree,AC,Type 2,33,Voiture,,,,,,,non,,50.8408,4.3715
+Bruxelles Mobilité,,e8c0db8c-1afa-11f0-8b19-42010aa400b8,,Mobiflow,Mobiflow,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,33,Voiture,,,,,,,non,,50.8408,4.3715
 Bruxelles Mobilité,,32d24712-9895-11ef-948f-42010aa400b8,,Maxem Energy,Maxem Energy,Bruxelles-Capitale,Schaerbeek,,Voirie,22.0,oui,acceleree,AC,Type 2,6,Voiture,,,,,,,non,,50.879,4.3925
 Bruxelles Mobilité,,2366b0a8-a921-11ec-8d01-42010a840015,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Anderlecht,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8183,4.2619
 Bruxelles Mobilité,,37431f48-f03e-11ed-a8bc-42010aa40fc0,,emyon,emyon,Bruxelles-Capitale,Uccle,,Parking,7.4,oui,lente,AC,Type 2 (câble),1,Voiture,,,,,,,non,,50.7953,4.3538
@@ -736,7 +736,7 @@ Bruxelles Mobilité,,53daa5f4-d0ee-11ee-8e1b-42010aa40fc0,,Certipower,Certipower
 Bruxelles Mobilité,,cb3c185e-6eef-11ef-b1d4-42010aa400b8,,EVECHARGE,EVECHARGE,Bruxelles-Capitale,Auderghem,,Parking,22.0,oui,acceleree,AC,Type 2,4,Voiture,,,,,,,non,,50.8089,4.4427
 Bruxelles Mobilité,,5cf503ca-1c5f-11ef-89eb-42010aa400b8,,Optiload,Optiload,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.881,4.3412
 Bruxelles Mobilité,,f86ea7c8-6499-11ec-8780-42010a840003,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Forest,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8144,4.3251
-Bruxelles Mobilité,,239213d0-0255-11ef-99c4-42010aa40043,,Tesla Destination,Tesla,Bruxelles-Capitale,Ixelles,,,22.0,oui,acceleree,AC,Type 2,1,Voiture,,,,,,,non,,50.8398,4.3675
+Bruxelles Mobilité,,239213d0-0255-11ef-99c4-42010aa40043,,Tesla Destination,Tesla,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,1,Voiture,,,,,,,non,,50.8398,4.3675
 Bruxelles Mobilité,,69b735ee-9ab7-11ee-9715-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Anderlecht,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8443,4.315
 Bruxelles Mobilité,,69816570-fea2-11ec-8c23-42010aa40ff0,,DATS 24,DATS 24 (Colruyt),Bruxelles-Capitale,Schaerbeek,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8672,4.3781
 Bruxelles Mobilité,,f59b68dc-6773-11ed-b32e-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Forest,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.813,4.3224
@@ -820,7 +820,7 @@ Bruxelles Mobilité,node/12897257988,c82300b8-6773-11ed-b4f5-42010aa40fc0,,Total
 Bruxelles Mobilité,,93e0db88-7fd1-11ed-b074-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Anderlecht,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8235,4.317
 Bruxelles Mobilité,node/12887316333,c94726cc-6773-11ed-a13c-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Etterbeek,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,oui,,,,,24/7,oui,,50.8365,4.397
 Bruxelles Mobilité,node/11585729482,1d9842aa-466d-11e9-9897-42010a840003,charge.brussels,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Saint-Gilles,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,50.8292,4.3577
-Bruxelles Mobilité,,2209f9a6-661f-11e9-802f-42010a840003,,Blink Charging,Blink Charging,Bruxelles-Capitale,Bruxelles,,Parking couvert,22.0,oui,acceleree,AC,Type 2,22,Voiture,,,,,,,non,,50.8277,4.3731
+Bruxelles Mobilité,,2209f9a6-661f-11e9-802f-42010a840003,,Blink Charging,Blink Charging,Bruxelles-Capitale,Ixelles,,Parking couvert,22.0,oui,acceleree,AC,Type 2,22,Voiture,,,,,,,non,,50.8277,4.3731
 Bruxelles Mobilité,,ae15931e-1f84-11ef-a167-42010aa400b8,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8185,4.3692
 Bruxelles Mobilité,,ae761ac6-0431-11f0-8dad-42010aa400b8,,Mobiflow,Mobiflow,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,13,Voiture,,,,,,,non,,50.8259,4.3659
 Bruxelles Mobilité,node/11401427228,c4a1496e-92dc-11ee-af68-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,oui,,,,,,non,,50.8918,4.3842
@@ -854,7 +854,7 @@ Bruxelles Mobilité,,bcc33d0c-b961-11ec-a5ad-42010a84006e,,TotalEnergies,TotalEn
 Bruxelles Mobilité,,c8c17f2c-2db2-11ed-a47a-42010aa40fdd,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Bruxelles,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8567,4.348
 Bruxelles Mobilité,,cbeb1a0a-6773-11ed-8bab-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Saint-Gilles,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8351,4.3543
 Bruxelles Mobilité,,edc5d44a-6aa6-11ed-8564-42010aa40fc0,,D’Ieteren Energy,D’Ieteren Energy,Bruxelles-Capitale,Bruxelles,,Voirie,22.0,oui,acceleree,AC,Type 2,3,Voiture,,,,,,,non,,50.8974,4.3952
-Bruxelles Mobilité,,e050ac62-6773-11ed-a292-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Bruxelles,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.7972,4.375
+Bruxelles Mobilité,,e050ac62-6773-11ed-a292-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Uccle,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.7972,4.375
 Bruxelles Mobilité,node/10051911428,098d3a84-9b8f-11ec-ae6e-42010a840050,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Jette,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,oui,,,,,,non,,50.8852,4.3224
 Bruxelles Mobilité,node/11293353238,3c4055a6-7293-11ee-b5f6-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Auderghem,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,oui,,,,,,non,,50.8185,4.4065
 Bruxelles Mobilité,,0fd53af2-fd93-11ec-83df-42010aa40fc0,,Allego,Allego,Bruxelles-Capitale,Watermael-Boitsfort,,,22.0,oui,acceleree,AC,Type 2,10,Voiture,,,,,,,non,,50.8168,4.3962
@@ -877,7 +877,7 @@ Bruxelles Mobilité,,7d25627e-5d6b-11ee-970d-42010aa40fc0,,EnergyVision,EnergyVi
 Bruxelles Mobilité,,185529da-1b41-11ef-88ad-42010aa40043,,Blue Corner,Blue Corner,Bruxelles-Capitale,Evere,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.866,4.4034
 Bruxelles Mobilité,node/13045453389,270ffcac-db56-11ec-9d93-42010aa40043,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Woluwe-Saint-Pierre,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8264,4.4103
 Bruxelles Mobilité,,86510668-ed71-11ef-8e30-42010aa400b8,,D’Ieteren Energy,D’Ieteren Energy,Bruxelles-Capitale,Anderlecht,,Autre,22.0,oui,acceleree,AC,Type 2,4,Voiture,,,,,,,non,,50.8372,4.3286
-Bruxelles Mobilité,,2d7c1528-aa6f-11ee-b525-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Ixelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8312,4.3643
+Bruxelles Mobilité,,2d7c1528-aa6f-11ee-b525-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8312,4.3643
 Bruxelles Mobilité,node/12056168807,4748f1fc-e93d-11ea-ad30-42010a840fef,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Etterbeek,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,oui,,,,,,non,,50.8277,4.4058
 Bruxelles Mobilité,node/8645192582,824f582e-e93b-11ea-92b4-42010a840014,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Schaerbeek,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,yes,,non,,50.8642,4.3741
 Bruxelles Mobilité,node/10845799920,97501b68-0ec1-11eb-aabb-42010a840feb,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Woluwe-Saint-Lambert,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8465,4.4141
@@ -1033,7 +1033,7 @@ Bruxelles Mobilité,,57ee221e-6222-11ee-9034-42010aa40fc0,,EnergyVision,EnergyVi
 Bruxelles Mobilité,,a98a7c48-6a67-11ed-801a-42010aa40004,,EnergyVision,EnergyVision,Bruxelles-Capitale,Schaerbeek,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8682,4.3612
 Bruxelles Mobilité,,63ffa57e-622d-11ec-9fc6-42010a840003,,Blue Corner,Blue Corner,Bruxelles-Capitale,Forest,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.807,4.3283
 Bruxelles Mobilité,,67e9f862-fb67-11ee-a817-42010aa400b8,,NUMOBI,NUMOBI,Bruxelles-Capitale,Koekelberg,,Autre,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8654,4.3182
-Bruxelles Mobilité,,bf53b34c-ad03-11ef-a711-42010aa400b8,,Pluginvest,Pluginvest,Bruxelles-Capitale,Ixelles,,,22.0,oui,acceleree,AC,Type 2 (câble),2,Voiture,,,,,,,non,,50.8319,4.364
+Bruxelles Mobilité,,bf53b34c-ad03-11ef-a711-42010aa400b8,,Pluginvest,Pluginvest,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2 (câble),2,Voiture,,,,,,,non,,50.8319,4.364
 Bruxelles Mobilité,,8905d5d0-fe90-11ee-bfb4-42010aa400b8,,50five Belux,50five,Bruxelles-Capitale,Bruxelles,,Autre,22.0,oui,acceleree,AC,Type 2,4,Voiture,,,,,,,non,,50.8821,4.3804
 Bruxelles Mobilité,node/9831451399,0ae216f0-6774-11ed-8ce0-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Jette,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,oui,,,,,,non,,50.8866,4.3184
 Bruxelles Mobilité,,6e6afcde-e6b5-11e9-bc01-42010a840fe4,,EVBox,EVBox,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,4,Voiture,,,,,,,non,,50.909,4.3962
@@ -1046,7 +1046,7 @@ Bruxelles Mobilité,,ed0c2fbc-5eaf-11ec-91c7-42010a84004a,,Mobility Plus,Mobilit
 Bruxelles Mobilité,,4c9453e6-5ca2-11ee-b099-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Forest,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8007,4.3163
 Bruxelles Mobilité,,110feb10-6774-11ed-b041-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Woluwe-Saint-Lambert,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8505,4.429
 Bruxelles Mobilité,,f1b0ebca-7605-11ed-9512-42010aa4005c,,EnergyVision,EnergyVision,Bruxelles-Capitale,Uccle,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.7995,4.3243
-Bruxelles Mobilité,,13e07dfe-a22b-11ed-8b1a-42010aa40fd8,,DATS 24,DATS 24 (Colruyt),Bruxelles-Capitale,Koekelberg,,,22.0,oui,acceleree,AC,Type 2,4,Voiture,,,,,,,non,,50.8568,4.3206
+Bruxelles Mobilité,,13e07dfe-a22b-11ed-8b1a-42010aa40fd8,,DATS 24,DATS 24 (Colruyt),Bruxelles-Capitale,Molenbeek-Saint-Jean,,,22.0,oui,acceleree,AC,Type 2,4,Voiture,,,,,,,non,,50.8568,4.3206
 Bruxelles Mobilité,,a5155774-ae89-11ef-8bda-42010aa400b8,,Mobiflow,Mobiflow,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2 (câble),69,Voiture,,,,,,,non,,50.8533,4.3541
 Bruxelles Mobilité,,6bca74ec-45d8-11ee-a627-42010aa40fc0,,EZ Charge,EZ Charge,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8394,4.3385
 Bruxelles Mobilité,node/11557743906,6e2dec3e-bc82-11ee-9805-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,oui,,,,,,non,,50.8959,4.3575
@@ -1148,7 +1148,7 @@ Bruxelles Mobilité,,cfb842a4-7f37-11ec-83ad-42010a840006,,TotalEnergies,TotalEn
 Bruxelles Mobilité,node/11697161450,56fee932-af26-11ee-8148-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Schaerbeek,,,7.4,oui,lente,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,50.8623,4.3727
 Bruxelles Mobilité,,d820e3a4-ba67-11ec-b39d-42010a84006a,,DATS 24,DATS 24 (Colruyt),Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.873,4.3408
 Bruxelles Mobilité,way/1454485021,14bb29a0-6774-11ed-b21b-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Bruxelles,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.7994,4.3929
-Bruxelles Mobilité,,bfe0c980-025e-11ef-b7e9-42010aa40043,,Tesla Destination,Tesla,Bruxelles-Capitale,Saint-Gilles,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.83,4.3607
+Bruxelles Mobilité,,bfe0c980-025e-11ef-b7e9-42010aa40043,,Tesla Destination,Tesla,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.83,4.3607
 Bruxelles Mobilité,,1c250808-7823-11ee-9735-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Watermael-Boitsfort,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.7955,4.4178
 Bruxelles Mobilité,,3acf0fc6-4f3c-11e8-b565-42010a840002,,Spirii,Spirii,Bruxelles-Capitale,Uccle,,Parking,50.0,oui,rapide,DC,CHAdeMO|CCS,6,Voiture,,,,,,,non,,50.8041,4.3728
 Bruxelles Mobilité,,ce1963ca-ff87-11ed-84ae-42010aa40fdd,,EZ Charge,EZ Charge,Bruxelles-Capitale,Anderlecht,,,7.4,oui,lente,AC,Type 2,1,Voiture,,,,,,,non,,50.8448,4.2938
@@ -1181,7 +1181,7 @@ Bruxelles Mobilité,,690634f6-9ab7-11ee-bb5c-42010aa40fc0,,EnergyVision,EnergyVi
 Bruxelles Mobilité,,53c40698-e941-11ea-bf4d-42010a840014,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Woluwe-Saint-Lambert,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8498,4.4599
 Bruxelles Mobilité,,07786898-25ba-11ee-8149-42010aa40fc0,,Interparking,Interparking,Bruxelles-Capitale,Woluwe-Saint-Lambert,,Autre,22.0,oui,acceleree,AC,Type 2,12,Voiture,,,,,,,non,,50.847,4.4388
 Bruxelles Mobilité,,179cccb6-7f36-11ee-ac40-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Uccle,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.797,4.3201
-Bruxelles Mobilité,,0b2179da-b60b-11ee-b778-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8297,4.3684
+Bruxelles Mobilité,,0b2179da-b60b-11ee-b778-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Ixelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8297,4.3684
 Bruxelles Mobilité,,7e295562-7569-11ed-b56f-42010aa40073,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8505,4.3661
 Bruxelles Mobilité,,eee3c9c8-88a4-11ee-b2c2-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Uccle,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.798,4.326
 Bruxelles Mobilité,node/12056610005,a3081ce0-6a67-11ed-8123-42010aa40fce,,EnergyVision,EnergyVision,Bruxelles-Capitale,Schaerbeek,,,7.4,oui,lente,AC,Type 2,2,Voiture,oui,,,,,,non,,50.8597,4.369
@@ -1241,7 +1241,7 @@ Bruxelles Mobilité,,4d16920a-99ee-11ee-92e1-42010aa40fc0,,EnergyVision,EnergyVi
 Bruxelles Mobilité,,29e18a82-ae5d-11ee-a6ff-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Woluwe-Saint-Pierre,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8355,4.4551
 Bruxelles Mobilité,node/14160981902,698a487a-e302-11ee-a942-42010aa400b8,,EnergyVision,EnergyVision,Bruxelles-Capitale,Ixelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,2026-09-07,50.8315,4.3719
 Bruxelles Mobilité,,ed3446aa-1b40-11ef-a7fd-42010aa40043,,Blue Corner,Blue Corner,Bruxelles-Capitale,Schaerbeek,,,7.4,oui,lente,AC,Type 2,1,Voiture,,,,,,,non,,50.8492,4.3952
-Bruxelles Mobilité,,e85fd6e6-f2e8-11ef-b455-42010aa400b8,,Mobiflow,Mobiflow,Bruxelles-Capitale,Ixelles,,,22.0,oui,acceleree,AC,Type 2,11,Voiture,,,,,,,non,,50.8407,4.3694
+Bruxelles Mobilité,,e85fd6e6-f2e8-11ef-b455-42010aa400b8,,Mobiflow,Mobiflow,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,11,Voiture,,,,,,,non,,50.8407,4.3694
 Bruxelles Mobilité,,374a817c-7f15-11ea-8cea-42010a840003,,Blue Corner,Blue Corner,Bruxelles-Capitale,Saint-Gilles,,,22.0,oui,acceleree,AC,Type 2,1,Voiture,,,,,,,non,,50.8339,4.3498
 Bruxelles Mobilité,,e66a29c4-6ccd-11ee-a142-42010aa40fc0,,Blue Corner,Blue Corner,Bruxelles-Capitale,Ixelles,,,22.0,oui,acceleree,AC,Type 2,9,Voiture,,,,,,,non,,50.8373,4.3716
 Bruxelles Mobilité,node/10911331121,02c23b9a-57fc-11ec-a188-42010a840076,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Jette,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,oui,,,,,,non,,50.8755,4.3317
@@ -1282,7 +1282,7 @@ Bruxelles Mobilité,,c26a865c-67a2-11ee-ada3-42010aa40fc0,,EnergyVision,EnergyVi
 Bruxelles Mobilité,,3d44be2c-3329-11ef-9079-42010aa400b8,,Certipower,Certipower,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,20,Voiture,,,,,,,non,,50.8908,4.3925
 Bruxelles Mobilité,,f67f746a-c202-11ee-8dff-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Molenbeek-Saint-Jean,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8489,4.334
 Bruxelles Mobilité,,471c830c-a9a5-11ee-aa20-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Anderlecht,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.85,4.2873
-Bruxelles Mobilité,,85e7eaee-8ad0-11ed-98df-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Koekelberg,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8591,4.324
+Bruxelles Mobilité,,85e7eaee-8ad0-11ed-98df-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Molenbeek-Saint-Jean,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8591,4.324
 Bruxelles Mobilité,,0cbe9282-b60b-11ee-ad94-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Auderghem,,,7.4,oui,lente,AC,Type 2,4,Voiture,,,,,,,non,,50.8106,4.4378
 Bruxelles Mobilité,,a6c74902-76d6-11ed-a2e9-42010aa4002f,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8519,4.3433
 Bruxelles Mobilité,,e4521b94-fde3-11ef-b309-42010aa400b8,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Forest,,Voirie,22.0,oui,acceleree,AC,Type 2,24,Voiture,,,,,,,non,,50.808,4.3074
@@ -1342,7 +1342,7 @@ Bruxelles Mobilité,,b621ea4e-dcb8-11ee-8e57-42010aa400b8,,EnergyVision,EnergyVi
 Bruxelles Mobilité,,aff37248-90e0-11ed-adaa-42010aa40038,,EnergyVision,EnergyVision,Bruxelles-Capitale,Anderlecht,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8436,4.2868
 Bruxelles Mobilité,,990d5fdc-ed58-11ee-86ef-42010aa40043,,Allego,Allego,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,13,Voiture,,,,,,,non,,50.8646,4.3492
 Bruxelles Mobilité,,186ceb62-7f36-11ee-9a1f-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.7951,4.379
-Bruxelles Mobilité,,050ae3c2-885a-11ed-991c-42010aa4002e,,EnergyVision,EnergyVision,Bruxelles-Capitale,Evere,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8707,4.3956
+Bruxelles Mobilité,,050ae3c2-885a-11ed-991c-42010aa4002e,,EnergyVision,EnergyVision,Bruxelles-Capitale,Schaerbeek,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8707,4.3956
 Bruxelles Mobilité,,ab3195d8-473b-11ef-be85-42010aa40043,,Blue Corner,Blue Corner,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,13,Voiture,,,,,,,non,,50.8283,4.3655
 Bruxelles Mobilité,node/13426273129,e284c810-6773-11ed-b891-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Schaerbeek,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8624,4.36
 Bruxelles Mobilité,,ead5c28c-7292-11ee-b5b6-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Koekelberg,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8633,4.3202
@@ -1404,7 +1404,7 @@ Bruxelles Mobilité,,b8d4ce96-ab03-11ee-8fc6-42010aa40059,,EnergyVision,EnergyVi
 Bruxelles Mobilité,,b9dee1be-5497-11ed-82f0-42010aa40024,,Mobiflow,Mobiflow,Bruxelles-Capitale,Bruxelles,,,50.0,oui,rapide,DC,Type 2|CCS,8,Voiture,,,,,,,non,,50.8468,4.3637
 Bruxelles Mobilité,,6675d52e-41c5-11ef-8abf-42010aa40043,,Blue Corner,Blue Corner,Bruxelles-Capitale,Saint-Gilles,,,22.0,oui,acceleree,AC,Type 2,8,Voiture,,,,,,,non,,50.8346,4.3418
 Bruxelles Mobilité,,8836cf98-36cd-11ec-80d1-42010a840003,,PluginCompany,PluginCompany,Bruxelles-Capitale,Uccle,,,7.4,oui,lente,AC,Type 2,1,Voiture,,,,,,,non,,50.7914,4.3328
-Bruxelles Mobilité,,105834cc-8039-11ef-a36f-42010aa400b8,,D’Ieteren Energy,D’Ieteren Energy,Bruxelles-Capitale,Ixelles,,Voirie,22.0,oui,acceleree,AC,Type 2,10,Voiture,,,,,,,non,,50.8385,4.371
+Bruxelles Mobilité,,105834cc-8039-11ef-a36f-42010aa400b8,,D’Ieteren Energy,D’Ieteren Energy,Bruxelles-Capitale,Bruxelles,,Voirie,22.0,oui,acceleree,AC,Type 2,10,Voiture,,,,,,,non,,50.8385,4.371
 Bruxelles Mobilité,,6ce1ab9a-bc82-11ee-b233-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Saint-Gilles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8181,4.358
 Bruxelles Mobilité,node/11579809997,f5c926ce-c202-11ee-9ec2-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Saint-Gilles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8255,4.3481
 Bruxelles Mobilité,node/10911380447,0f78d514-7295-11ee-8ad5-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Jette,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,oui,,,,,,non,,50.8747,4.3285
@@ -1435,11 +1435,11 @@ Bruxelles Mobilité,,4bdfe2b6-e942-11ea-9da7-42010a840014,,TotalEnergies,TotalEn
 Bruxelles Mobilité,way/1431663237,697a74e0-7509-11ec-902e-42010a840003,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Watermael-Boitsfort,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.7908,4.422
 Bruxelles Mobilité,,c814aff0-325f-11ef-86fd-42010aa400b8,,EZ Charge,EZ Charge,Bruxelles-Capitale,Schaerbeek,,,50.0,oui,rapide,DC,CCS,4,Voiture,,,,,,,non,,50.8701,4.3851
 Bruxelles Mobilité,,f7aa28ea-f0d7-11ee-89b3-42010aa400b8,,Electra,Electra,Bruxelles-Capitale,Jette,,Parking,50.0,oui,rapide,DC,CCS,6,Voiture,,,,,,,non,,50.8778,4.3282
-Bruxelles Mobilité,,4876eb78-b8ce-11ef-8196-42010aa400b8,,D’Ieteren Energy,D’Ieteren Energy,Bruxelles-Capitale,Koekelberg,,,22.0,oui,acceleree,AC,Type 2 (câble),4,Voiture,,,,,,,non,,50.8582,4.3204
+Bruxelles Mobilité,,4876eb78-b8ce-11ef-8196-42010aa400b8,,D’Ieteren Energy,D’Ieteren Energy,Bruxelles-Capitale,Molenbeek-Saint-Jean,,,22.0,oui,acceleree,AC,Type 2 (câble),4,Voiture,,,,,,,non,,50.8582,4.3204
 Bruxelles Mobilité,,7aca25b0-ed39-11ee-800d-42010aa400b8,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.85,4.3407
 Bruxelles Mobilité,,0ddd47fe-4db4-11ee-90af-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Evere,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8615,4.4001
 Bruxelles Mobilité,,c1e606a0-1b40-11ef-ae97-42010aa40043,,Blue Corner,Blue Corner,Bruxelles-Capitale,Anderlecht,,,7.4,oui,lente,AC,Type 2,1,Voiture,,,,,,,non,,50.8405,4.307
-Bruxelles Mobilité,node/11826885627,9ba5e366-76d2-11ed-be69-42010aa40045,,EnergyVision,EnergyVision,Bruxelles-Capitale,Ixelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,customers,,non,,50.8395,4.3722
+Bruxelles Mobilité,node/11826885627,9ba5e366-76d2-11ed-be69-42010aa40045,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,customers,,non,,50.8395,4.3722
 Bruxelles Mobilité,,8d811048-81cd-11ed-a8a6-42010aa40036,,EnergyVision,EnergyVision,Bruxelles-Capitale,Saint-Josse-ten-Noode,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8527,4.3677
 Bruxelles Mobilité,,459dda1c-a9a5-11ee-9a05-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Ixelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8118,4.387
 Bruxelles Mobilité,,7e47252a-2b32-11f0-b75b-42010aa400b8,,Blink Charging,Blink Charging,Bruxelles-Capitale,Watermael-Boitsfort,,,22.0,oui,acceleree,AC,Type 2,58,Voiture,,,,,,,non,,50.8029,4.4259
@@ -1468,7 +1468,7 @@ Bruxelles Mobilité,node/11506469597,79f6e468-ab38-11ee-a31e-42010aa40fc0,,Energ
 Bruxelles Mobilité,,c1e66746-2c14-11ef-a0df-42010aa400b8,,EnergyVision,EnergyVision,Bruxelles-Capitale,Etterbeek,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8293,4.3821
 Bruxelles Mobilité,node/12897332462,67cb9686-bc35-11ee-aca6-42010aa4000a,,EnergyVision,EnergyVision,Bruxelles-Capitale,Ixelles,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,oui,,,,,,non,,50.8337,4.3597
 Bruxelles Mobilité,,94aa5872-db25-11ee-9e28-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Etterbeek,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8266,4.3874
-Bruxelles Mobilité,,4eda0cf2-99ee-11ee-8296-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Koekelberg,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8585,4.3187
+Bruxelles Mobilité,,4eda0cf2-99ee-11ee-8296-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Molenbeek-Saint-Jean,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8585,4.3187
 Bruxelles Mobilité,,17402a7e-7f36-11ee-ad7d-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Uccle,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.797,4.3216
 Bruxelles Mobilité,,0ff350fc-d785-11ec-896f-42010aa40016,,EnergyVision,EnergyVision,Bruxelles-Capitale,Woluwe-Saint-Pierre,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8297,4.4105
 Bruxelles Mobilité,,7d27a322-d1e6-11ef-863d-42010aa400b8,,EZ Charge,EZ Charge,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,4,Voiture,,,,,,,non,,50.8242,4.3646
@@ -1529,7 +1529,7 @@ Bruxelles Mobilité,node/12897292211,1fcb702a-d53e-11ec-ab1f-42010a840003,,Total
 Bruxelles Mobilité,node/10815067621,e27e6132-4603-11ed-9856-42010aa40056,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Molenbeek-Saint-Jean,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,oui,,,,,,non,,50.8637,4.3447
 Bruxelles Mobilité,node/11262900597,aebfc26e-8324-11ee-ac11-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Forest,,,7.4,oui,lente,AC,Type 2,2,Voiture,oui,,,,,,non,,50.826,4.3373
 Bruxelles Mobilité,node/12104165821,7c02c320-ac01-11ee-aa56-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Saint-Gilles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8333,4.3559
-Bruxelles Mobilité,,84a902d2-a207-11ed-a6ad-42010aa40069,,EnergyVision,EnergyVision,Bruxelles-Capitale,Anderlecht,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8396,4.3358
+Bruxelles Mobilité,,84a902d2-a207-11ed-a6ad-42010aa40069,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8396,4.3358
 Bruxelles Mobilité,node/9779866729,0b87f2aa-6774-11ed-b629-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Jette,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,oui,,,,,,non,,50.8901,4.311
 Bruxelles Mobilité,,2c505f74-aa6f-11ee-9083-42010aa40fc0,,EnergyVision,EnergyVision,Bruxelles-Capitale,Watermael-Boitsfort,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8041,4.3941
 Bruxelles Mobilité,node/9865084997,da4acdfc-6773-11ed-8195-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Auderghem,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8238,4.4086
@@ -1599,7 +1599,7 @@ Bruxelles Mobilité,,47344dfc-a9a5-11ee-b646-42010aa40fc0,,EnergyVision,EnergyVi
 Bruxelles Mobilité,node/8555564009,89974490-8718-11eb-bcf9-42010a840053,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Schaerbeek,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,oui,,,,yes,,non,,50.848,4.3949
 Bruxelles Mobilité,,0ff42b7e-5411-11eb-b91a-42010a84003a,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Uccle,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.7964,4.3356
 Bruxelles Mobilité,,dd368d1e-6520-11eb-baff-42010a840060,,Mobility Plus,Mobility Plus,Bruxelles-Capitale,Evere,,,22.0,oui,acceleree,AC,Type 2,4,Voiture,,,,,,,non,,50.8699,4.4057
-Bruxelles Mobilité,,96c9291a-dfdc-11ee-992d-42010aa400b8,,EnergyVision,EnergyVision,Bruxelles-Capitale,Koekelberg,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8588,4.3238
+Bruxelles Mobilité,,96c9291a-dfdc-11ee-992d-42010aa400b8,,EnergyVision,EnergyVision,Bruxelles-Capitale,Molenbeek-Saint-Jean,,,22.0,oui,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.8588,4.3238
 Bruxelles Mobilité,node/9983264152,7e36b47c-4e6a-11ec-8657-42010a840003,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Schaerbeek,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,oui,,,,,,non,,50.8561,4.3925
 Bruxelles Mobilité,,0866a3a2-6fa9-11ef-8695-42010aa400b8,,EnergyVision,EnergyVision,Bruxelles-Capitale,Woluwe-Saint-Lambert,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8371,4.4407
 Bruxelles Mobilité,,0fb6ee9e-1b41-11ef-8e22-42010aa40043,,Blue Corner,Blue Corner,Bruxelles-Capitale,Bruxelles,,,22.0,oui,acceleree,AC,Type 2,8,Voiture,,,,,,,non,,50.8429,4.3524
@@ -1720,7 +1720,7 @@ Bruxelles Mobilité,,937609a4-7237-11ed-9d94-42010aa4003c,,EnergyVision,EnergyVi
 Bruxelles Mobilité,,7e7b6ec6-8807-11ef-892d-42010aa400b8,,EnergyVision,EnergyVision,Bruxelles-Capitale,Uccle,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.7863,4.3523
 Bruxelles Mobilité,,87229b82-1b40-11ef-9fa3-42010aa40043,,Blue Corner,Blue Corner,Bruxelles-Capitale,Saint-Josse-ten-Noode,,,22.0,oui,acceleree,AC,Type 2,18,Voiture,,,,,,,non,,50.8586,4.3574
 Bruxelles Mobilité,,b4fba672-f205-11ec-99f8-42010aa40fdd,,Eneco,Eneco,Bruxelles-Capitale,Bruxelles,,Autre,22.0,oui,acceleree,AC,Type 2,1,Voiture,,,,,,,non,,50.8993,4.3678
-Bruxelles Mobilité,,b7e17c2a-8f68-11ee-9295-42010aa40fe5,,EnergyVision,EnergyVision,Bruxelles-Capitale,Bruxelles,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.7951,4.3733
+Bruxelles Mobilité,,b7e17c2a-8f68-11ee-9295-42010aa40fe5,,EnergyVision,EnergyVision,Bruxelles-Capitale,Uccle,,,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.7951,4.3733
 Bruxelles Mobilité,,baf9f802-e8f8-11ea-871d-42010a840fdd,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Watermael-Boitsfort,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8107,4.4005
 Bruxelles Mobilité,,11a706c8-e93e-11ea-8b8c-42010a840fef,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Berchem-Sainte-Agathe,,Voirie,7.4,oui,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.8668,4.3078
 Bruxelles Mobilité,node/11267220563,0a1fb1d2-6774-11ed-a9c5-42010aa40fc0,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Woluwe-Saint-Lambert,,Voirie,22.0,oui,acceleree,AC,Type 2,2,Voiture,oui,,,,yes,,non,,50.8403,4.4025
@@ -6138,6 +6138,7 @@ OpenStreetMap,node/14300057387,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non
 OpenStreetMap,node/14300668974,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.042238,3.729319
 OpenStreetMap,node/14300953339,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,private,,non,,51.04328,3.731843
 OpenStreetMap,node/14307518153,,Aers Truckplaza,,Non renseigné,Flandre,Brugge,,,,non,inconnue,,,12,Poids lourd,oui,,,,,,non,,51.29834,3.255575
+OpenStreetMap,node/14308676558,,,,Non renseigné,Flandre,Koksijde,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.140383,2.708003
 OpenStreetMap,way/172153661,,Gentbrugge Noord,Fastned,Fastned,Flandre,Gent,,,,non,inconnue,,,20,Voiture,,,,,,,non,,51.042915,3.78438
 OpenStreetMap,way/316645481,,Boostcharge Mammoetcenter Roeselare,Boostcharge,Boostcharge,Flandre,Roeselare,Brugsesteenweg 413,,300.0,non,ultra,DC,CCS,16,Voiture|Poids lourd,oui,,,non,,24/7,oui,,50.967903,3.119546
 OpenStreetMap,way/385098097,,Q8 electric Veldwezelt,Q8 electric,Q8,Flandre,Lanaken,,,300.0,non,ultra,DC,CCS,,Voiture,,,,,,,non,,50.860364,5.621386
