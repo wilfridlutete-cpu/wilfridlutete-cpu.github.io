@@ -2231,7 +2231,7 @@ OpenStreetMap,node/6815486098,,,Last Mile Solutions,Last Mile Solutions,Flandre,
 OpenStreetMap,node/6822020751,,,,Non renseigné,Flandre,Brugge,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.203678,3.198614
 OpenStreetMap,node/6825176762,,Q8 Electric,Q8,Q8,Flandre,Turnhout,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.321067,4.966721
 OpenStreetMap,node/6838078788,,BEALLEGO002145,Allego,Allego,Flandre,Buggenhout,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.015225,4.203322
-OpenStreetMap,node/6838112397,,Allego  BEALLEGO002199,Allego,Allego,Flandre,Buggenhout,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,51.013155,4.192287
+OpenStreetMap,node/6838112397,,Allego BEALLEGO002199,Allego,Allego,Flandre,Buggenhout,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,51.013155,4.192287
 OpenStreetMap,node/6853688757,,DATS 24,DATS 24,DATS 24 (Colruyt),Flandre,Veurne,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.071531,2.669141
 OpenStreetMap,node/6853725512,,,Allego,Allego,Flandre,Veurne,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.070484,2.665187
 OpenStreetMap,node/6875082693,,,,Non renseigné,Flandre,Oud-Heverlee,,,,non,inconnue,,,2,Voiture|Vélo,non,,,,,24/7,oui,,50.822392,4.654569
@@ -6533,6 +6533,7 @@ OpenStreetMap,way/1569461739,,Izegem - Delhaize,Electra,Electra,Flandre,Izegem,,
 OpenStreetMap,way/1569478390,,Ninove - Burger King,Electra,Electra,Flandre,Ninove,,,300.0,non,ultra,DC,CCS,6,Voiture,oui,,,,,,non,,50.835503,4.007577
 OpenStreetMap,way/1571038646,,,Q8 electric,Q8,Flandre,Herenthout,,,200.0,non,ultra,DC,CCS,4,Voiture,,,,,,,non,,51.134616,4.760731
 OpenStreetMap,way/1571124538,,Hyperfast Carrefour Laakdal,Hyperfast,Hyperfast,Flandre,Laakdal,,,300.0,non,ultra,DC,Type 2|CCS,6,Voiture,,,,,,,non,,51.087452,5.069095
+OpenStreetMap,way/1571371471,,,DATS 24,DATS 24 (Colruyt),Flandre,Vosselaar,,,400.0,non,ultra,DC,Type 2|CCS,10,Voiture,oui,,,,,,non,,51.315735,4.900646
 OpenStreetMap,node/3002112311,,Nivelles-Sud Supercharger,Tesla,Tesla,Wallonie,Nivelles,Chaussée de Mons 22,,150.0,non,ultra,DC,CCS|Tesla,12,Voiture,oui,,,non,customers,24/7,oui,,50.588808,4.308028
 OpenStreetMap,node/3470476488,,,ZE-MO,ZE-MO,Wallonie,Viroinval,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.074039,4.548029
 OpenStreetMap,node/3478789457,,e-mobile,esa,esa,Wallonie,Ellezelles,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.694617,3.721798
@@ -7172,6 +7173,7 @@ OpenStreetMap,node/14276398844,,,Optiload,Optiload,Wallonie,Charleroi,,,,non,inc
 OpenStreetMap,node/14291623817,,,Electra,Electra,Wallonie,Fontaine-l'Évêque,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.434573,4.334527
 OpenStreetMap,node/14291623818,,,Electra,Electra,Wallonie,Fontaine-l'Évêque,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.434557,4.334631
 OpenStreetMap,node/14291623819,,,Electra,Electra,Wallonie,Fontaine-l'Évêque,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.434595,4.33464
+OpenStreetMap,node/14316660100,,,,Non renseigné,Wallonie,Arlon,,,,non,inconnue,,,,Voiture,,,,,,,non,,49.675505,5.794796
 OpenStreetMap,way/467642349,,,Alfen,Alfen,Wallonie,Villers-la-Ville,,,,non,inconnue,,,2,Voiture,oui,,Carte bancaire,,yes,,non,,50.576294,4.530271
 OpenStreetMap,way/519886100,,,Ville de Mons,Ville de Mons,Wallonie,Mons,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,50.439767,3.963572
 OpenStreetMap,way/537391924,,,,Non renseigné,Wallonie,Saint-Nicolas,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.645969,5.524703
