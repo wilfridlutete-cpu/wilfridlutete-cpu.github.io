@@ -1,32 +1,32 @@
 {
-  "genere_le": "2026-10-28T08:31:03Z",
-  "total": 7260,
-  "points": 26446,
+  "genere_le": "2026-10-29T08:38:29Z",
+  "total": 7266,
+  "points": 26465,
   "par_source": {
     "Bruxelles Mobilité": 1752,
-    "OpenStreetMap": 5508
+    "OpenStreetMap": 5514
   },
   "par_region": {
     "Bruxelles-Capitale": 1967,
-    "Flandre": 4573,
-    "Wallonie": 720
+    "Flandre": 4577,
+    "Wallonie": 722
   },
   "par_classe": {
     "lente": 1385,
     "acceleree": 1240,
     "rapide": 222,
-    "inconnue": 4056,
-    "ultra": 357
+    "inconnue": 4059,
+    "ultra": 360
   },
   "par_reseau": {
-    "Non renseigné": 2046,
+    "Non renseigné": 2049,
     "Allego": 1057,
     "TotalEnergies": 1023,
     "EnergyVision": 848,
     "ENGIE Vianeo": 284,
     "Blue Corner": 197,
     "DATS 24 (Colruyt)": 143,
-    "Electra": 118,
+    "Electra": 119,
     "Lidl": 107,
     "EVBox": 72,
     "Mobility Plus": 52,
@@ -38,8 +38,8 @@
     "Tesla": 41,
     "Sparki": 39,
     "Smappee": 37,
+    "Q8": 36,
     "Blink Charging": 35,
-    "Q8": 35,
     "Last Mile Solutions": 35,
     "EZ Charge": 31,
     "E-Flux": 27,
@@ -56,7 +56,7 @@
     "Eneco": 17,
     "PowerGo": 15,
     "Optimile": 14,
-    "Certipower": 12,
+    "Certipower": 13,
     "ZE-MO": 12,
     "Circle K": 11,
     "EV-Point": 10,
