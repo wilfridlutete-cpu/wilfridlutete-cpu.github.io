@@ -1,31 +1,31 @@
 {
-  "genere_le": "2026-11-01T09:41:01Z",
-  "total": 7274,
-  "points": 26504,
+  "genere_le": "2026-11-02T09:32:11Z",
+  "total": 7281,
+  "points": 26524,
   "par_source": {
     "Bruxelles Mobilité": 1752,
-    "OpenStreetMap": 5522
+    "OpenStreetMap": 5529
   },
   "par_region": {
     "Bruxelles-Capitale": 1967,
-    "Flandre": 4583,
+    "Flandre": 4590,
     "Wallonie": 724
   },
   "par_classe": {
     "lente": 1385,
     "acceleree": 1240,
     "rapide": 222,
-    "inconnue": 4067,
+    "inconnue": 4074,
     "ultra": 360
   },
   "par_reseau": {
-    "Non renseigné": 2052,
+    "Non renseigné": 2056,
     "Allego": 1057,
     "TotalEnergies": 1023,
     "EnergyVision": 848,
     "ENGIE Vianeo": 284,
     "Blue Corner": 197,
-    "DATS 24 (Colruyt)": 143,
+    "DATS 24 (Colruyt)": 145,
     "Electra": 121,
     "Lidl": 107,
     "EVBox": 72,
@@ -294,6 +294,7 @@
     "L'Histoire": 1,
     "Mezzo Geel": 1,
     "Stad Roeselare": 1,
+    "Bruno": 1,
     "ETAP": 1,
     "GET": 1,
     "ECOOP 2x DC": 1,
