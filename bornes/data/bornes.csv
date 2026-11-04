@@ -1957,7 +1957,7 @@ OpenStreetMap,node/13802009518,,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,
 OpenStreetMap,node/13905837597,,,,Non renseigné,Bruxelles-Capitale,Woluwe-Saint-Lambert,,,,non,inconnue,,,,Voiture,,,,,,,non,2026-06-02,50.843635,4.404964
 OpenStreetMap,node/13905845294,,,,Non renseigné,Bruxelles-Capitale,Woluwe-Saint-Lambert,,,,non,inconnue,,,,Voiture,,,,,,,non,2026-06-02,50.844286,4.404877
 OpenStreetMap,node/13938569335,,,,Non renseigné,Bruxelles-Capitale,Bruxelles,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.84165,4.367756
-OpenStreetMap,node/14067098905,,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Molenbeek-Saint-Jean,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,50.855864,4.322069
+OpenStreetMap,node/14067098905,,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Molenbeek-Saint-Jean,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,yes,,non,,50.855864,4.322069
 OpenStreetMap,node/14091227190,,,,Non renseigné,Bruxelles-Capitale,Schaerbeek,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,2026-08-13,50.875669,4.38183
 OpenStreetMap,node/14213876692,,,,Non renseigné,Bruxelles-Capitale,Bruxelles,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.828751,4.36296
 OpenStreetMap,node/14221076962,,,,Non renseigné,Bruxelles-Capitale,Uccle,,,,non,inconnue,,,,Vélo,,,,,private,,non,,50.797487,4.357786
