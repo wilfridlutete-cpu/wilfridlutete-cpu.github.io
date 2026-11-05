@@ -6167,7 +6167,7 @@ OpenStreetMap,way/316645481,,Boostcharge Mammoetcenter Roeselare,Boostcharge,Boo
 OpenStreetMap,way/385098097,,Q8 electric Veldwezelt,Q8 electric,Q8,Flandre,Lanaken,,,300.0,non,ultra,DC,CCS,,Voiture,,,,,,,non,,50.860364,5.621386
 OpenStreetMap,way/467578502,,,Allego,Allego,Flandre,Hasselt,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.940083,5.306856
 OpenStreetMap,way/489957730,,Aquatreat Parking,,Non renseigné,Flandre,Aarschot,,,,non,inconnue,,,3,Voiture,,,,,,,non,,50.983086,4.814245
-OpenStreetMap,way/554724830,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,AC,Prise domestique,3,Vélo,oui,,,,yes,24/7,oui,,51.03641,3.709322
+OpenStreetMap,way/554724830,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,AC,Prise domestique,3,Vélo,oui,,,,yes,24/7,oui,,51.036409,3.709323
 OpenStreetMap,way/701442220,,Circle K Eindhout,Circle K,Circle K,Flandre,Laakdal,,,175.0,non,ultra,DC,CCS|CHAdeMO,4,Voiture,,,,non,yes,24/7,oui,,51.11096,5.021408
 OpenStreetMap,way/767375449,,,Allego,Allego,Flandre,Hove,,,,non,inconnue,,,1,Voiture,oui,,,,yes,,non,,51.144751,4.467172
 OpenStreetMap,way/767375451,,,Allego,Allego,Flandre,Hove,,,,non,inconnue,,,1,Voiture,oui,,,,yes,,non,,51.144764,4.467247
@@ -7199,6 +7199,8 @@ OpenStreetMap,node/14321443270,,,EnergyVision,EnergyVision,Wallonie,Andenne,,,,n
 OpenStreetMap,node/14321443271,,,EnergyVision,EnergyVision,Wallonie,Andenne,,,,non,inconnue,AC,Type 2,,Voiture,oui,,,,,,non,,50.496572,5.094267
 OpenStreetMap,node/14331141813,,,Electra,Electra,Wallonie,Baelen,,,,non,inconnue,,,4,Voiture,,,,,,,non,,50.648236,6.001364
 OpenStreetMap,node/14333647656,,,EZ Charge,EZ Charge,Wallonie,Gembloux,,,,non,inconnue,,,1,Voiture,oui,,,,yes,,non,,50.581215,4.721433
+OpenStreetMap,node/14350349010,,,,Non renseigné,Wallonie,Andenne,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491525,5.093261
+OpenStreetMap,node/14350349011,,,,Non renseigné,Wallonie,Andenne,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.49157,5.093257
 OpenStreetMap,way/467642349,,,Alfen,Alfen,Wallonie,Villers-la-Ville,,,,non,inconnue,,,2,Voiture,oui,,Carte bancaire,,yes,,non,,50.576294,4.530271
 OpenStreetMap,way/519886100,,,Ville de Mons,Ville de Mons,Wallonie,Mons,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,50.439767,3.963572
 OpenStreetMap,way/537391924,,,,Non renseigné,Wallonie,Saint-Nicolas,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.645969,5.524703
