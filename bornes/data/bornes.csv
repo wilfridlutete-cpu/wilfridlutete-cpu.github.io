@@ -1959,7 +1959,7 @@ OpenStreetMap,node/13905845294,,,,Non renseigné,Bruxelles-Capitale,Woluwe-Saint
 OpenStreetMap,node/13938569335,,,,Non renseigné,Bruxelles-Capitale,Bruxelles,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.84165,4.367756
 OpenStreetMap,node/14067098905,,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Molenbeek-Saint-Jean,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,yes,,non,,50.855864,4.322069
 OpenStreetMap,node/14091227190,,,,Non renseigné,Bruxelles-Capitale,Schaerbeek,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,2026-08-13,50.875669,4.38183
-OpenStreetMap,node/14213876692,,,,Non renseigné,Bruxelles-Capitale,Bruxelles,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.828751,4.36296
+OpenStreetMap,node/14213876692,,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Bruxelles,,,7.0,non,lente,AC,Type 2,,Voiture,,,,,,,non,,50.828751,4.36296
 OpenStreetMap,node/14221076962,,,,Non renseigné,Bruxelles-Capitale,Uccle,,,,non,inconnue,,,,Vélo,,,,,private,,non,,50.797487,4.357786
 OpenStreetMap,way/1321577876,,,EnergyDrive,EnergyDrive,Bruxelles-Capitale,Watermael-Boitsfort,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,24/7,oui,,50.804191,4.428083
 OpenStreetMap,way/1355092336,,,Fastned,Fastned,Bruxelles-Capitale,Bruxelles,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.838163,4.360393
@@ -6150,7 +6150,7 @@ OpenStreetMap,node/14325021345,,,,Non renseigné,Flandre,Tielt,,,,non,inconnue,A
 OpenStreetMap,node/14325021702,,,,Non renseigné,Flandre,Wingene,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,non,yes,24/7,oui,,51.041661,3.405596
 OpenStreetMap,node/14325316173,,,,Non renseigné,Flandre,Koksijde,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.142663,2.702581
 OpenStreetMap,node/14331270291,,,Mezzo Geel,Mezzo Geel,Flandre,Geel,,,,non,inconnue,,,26,Voiture,oui,0.40-0.50 EUR/kWh,,,customers,,non,,51.121431,4.94163
-OpenStreetMap,node/14333180262,,,Stad Roeselare,Stad Roeselare,Flandre,Roeselare,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,50.962114,3.134006
+OpenStreetMap,node/14333180262,,,Stad Roeselare,Stad Roeselare,Flandre,Roeselare,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,non,yes,24/7,oui,,50.962114,3.134006
 OpenStreetMap,node/14336963548,,,,Non renseigné,Flandre,Merelbeke-Melle,,,,non,inconnue,,,4,Voiture,,,,,,,non,,51.013884,3.752083
 OpenStreetMap,node/14337045341,,,,Non renseigné,Flandre,Nieuwpoort,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.144133,2.707016
 OpenStreetMap,node/14337045342,,,,Non renseigné,Flandre,Nieuwpoort,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.144117,2.706973
@@ -6162,6 +6162,7 @@ OpenStreetMap,node/14338931168,,,,Non renseigné,Flandre,Beersel,,,,non,inconnue
 OpenStreetMap,node/14339452766,,,Bruno,Bruno,Flandre,Pelt,,,,non,inconnue,,,8,Vélo,,,,,customers,24/7,oui,,51.215204,5.377402
 OpenStreetMap,node/14340362092,,,DATS 24,DATS 24 (Colruyt),Flandre,Laakdal,,,,non,inconnue,,,2,Voiture,non,,,,yes,24/7,oui,,51.08067,5.031822
 OpenStreetMap,node/14340374807,,,DATS 24,DATS 24 (Colruyt),Flandre,Laakdal,,,,non,inconnue,,,2,Voiture,non,,,,yes,24/7,oui,,51.08072,5.031775
+OpenStreetMap,node/14352956593,,,Allego,Allego,Flandre,Herentals,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.181068,4.830729
 OpenStreetMap,way/172153661,,Gentbrugge Noord,Fastned,Fastned,Flandre,Gent,,,,non,inconnue,,,20,Voiture,,,,,,,non,,51.042915,3.78438
 OpenStreetMap,way/316645481,,Boostcharge Mammoetcenter Roeselare,Boostcharge,Boostcharge,Flandre,Roeselare,Brugsesteenweg 413,,300.0,non,ultra,DC,CCS,16,Voiture|Poids lourd,oui,,,non,,24/7,oui,,50.967903,3.119546
 OpenStreetMap,way/385098097,,Q8 electric Veldwezelt,Q8 electric,Q8,Flandre,Lanaken,,,300.0,non,ultra,DC,CCS,,Voiture,,,,,,,non,,50.860364,5.621386
