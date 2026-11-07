@@ -1,37 +1,37 @@
 {
-  "genere_le": "2026-11-06T09:25:43Z",
-  "total": 7284,
-  "points": 26528,
+  "genere_le": "2026-11-07T08:49:54Z",
+  "total": 7290,
+  "points": 26540,
   "par_source": {
     "Bruxelles Mobilité": 1752,
-    "OpenStreetMap": 5532
+    "OpenStreetMap": 5538
   },
   "par_region": {
     "Bruxelles-Capitale": 1967,
-    "Flandre": 4591,
-    "Wallonie": 726
+    "Flandre": 4596,
+    "Wallonie": 727
   },
   "par_classe": {
     "lente": 1386,
     "acceleree": 1241,
     "rapide": 222,
-    "inconnue": 4075,
-    "ultra": 360
+    "inconnue": 4080,
+    "ultra": 361
   },
   "par_reseau": {
-    "Non renseigné": 2057,
-    "Allego": 1058,
+    "Non renseigné": 2056,
+    "Allego": 1059,
     "TotalEnergies": 1024,
     "EnergyVision": 848,
-    "ENGIE Vianeo": 284,
+    "ENGIE Vianeo": 285,
     "Blue Corner": 197,
-    "DATS 24 (Colruyt)": 145,
+    "DATS 24 (Colruyt)": 146,
     "Electra": 121,
     "Lidl": 107,
-    "EVBox": 72,
+    "EVBox": 73,
     "Mobility Plus": 52,
     "Shell Recharge": 48,
-    "Mobiflow": 46,
+    "Mobiflow": 47,
     "Fastned": 45,
     "IONITY": 42,
     "D’Ieteren Energy": 41,
@@ -54,7 +54,7 @@
     "STIB/MIVB": 18,
     "Alfen": 18,
     "Eneco": 17,
-    "PowerGo": 15,
+    "PowerGo": 16,
     "Optimile": 14,
     "Certipower": 13,
     "ZE-MO": 12,
@@ -295,6 +295,7 @@
     "Mezzo Geel": 1,
     "Stad Roeselare": 1,
     "Bruno": 1,
+    "Huawei": 1,
     "ETAP": 1,
     "GET": 1,
     "ECOOP 2x DC": 1,
