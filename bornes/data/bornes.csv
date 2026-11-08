@@ -4734,7 +4734,7 @@ OpenStreetMap,node/12378393835,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non
 OpenStreetMap,node/12378482583,,,Ecotap,Ecotap,Flandre,Alken,,,,non,inconnue,,,3,Voiture,,,,,,,non,,50.878267,5.302926
 OpenStreetMap,node/12379167188,,,Engie,ENGIE Vianeo,Flandre,Zonhoven,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,50.99047,5.366879
 OpenStreetMap,node/12382146787,,,Blink,Blink Charging,Flandre,Diepenbeek,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.907212,5.426433
-OpenStreetMap,node/12382826273,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,24/7,oui,,51.057868,3.737488
+OpenStreetMap,node/12382826273,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,24/7,oui,,51.057868,3.737488
 OpenStreetMap,node/12382826280,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.05581,3.733229
 OpenStreetMap,node/12382826283,,,Smoov Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.057414,3.73315
 OpenStreetMap,node/12382964206,,,Q8,Q8,Flandre,Waasmunster,,,,non,inconnue,,,14,Voiture,,,,,,,non,,51.128071,4.079422
@@ -4827,7 +4827,7 @@ OpenStreetMap,node/12505579832,,,,Non renseigné,Flandre,Overijse,,,,non,inconnu
 OpenStreetMap,node/12507077307,,,Engie,ENGIE Vianeo,Flandre,Lommel,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,,yes,,non,,51.199884,5.301523
 OpenStreetMap,node/12507454769,,,,Non renseigné,Flandre,Oudsbergen,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.104339,5.537874
 OpenStreetMap,node/12507454770,,,,Non renseigné,Flandre,Oudsbergen,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.104403,5.537882
-OpenStreetMap,node/12515597441,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.060508,3.730836
+OpenStreetMap,node/12515597441,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,24/7,oui,,51.060508,3.730836
 OpenStreetMap,node/12516749728,,,,Non renseigné,Flandre,Oudenaarde,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.842939,3.663306
 OpenStreetMap,node/12522951767,,,TotalEnergies,TotalEnergies,Flandre,De Haan,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,51.298937,3.081854
 OpenStreetMap,node/12527814120,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.059368,3.712029
@@ -4865,7 +4865,7 @@ OpenStreetMap,node/12572100363,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,
 OpenStreetMap,node/12572100364,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,4,Voiture,,,,,,,non,,51.074277,3.722222
 OpenStreetMap,node/12573780274,,,DATS 24,DATS 24 (Colruyt),Flandre,Lievegem,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,Application,non,permissive,24/7,oui,,51.100986,3.61189
 OpenStreetMap,node/12573942527,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.058568,3.741712
-OpenStreetMap,node/12574360036,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.063902,3.750709
+OpenStreetMap,node/12574360036,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.063902,3.750709
 OpenStreetMap,node/12574360049,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.056351,3.755448
 OpenStreetMap,node/12574569127,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.051036,3.737373
 OpenStreetMap,node/12574569167,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,51.045541,3.743528
