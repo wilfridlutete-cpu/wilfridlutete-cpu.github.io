@@ -1961,6 +1961,8 @@ OpenStreetMap,node/14067098905,,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,
 OpenStreetMap,node/14091227190,,,,Non renseigné,Bruxelles-Capitale,Schaerbeek,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,2026-08-13,50.875669,4.38183
 OpenStreetMap,node/14213876692,,,TotalEnergies,TotalEnergies,Bruxelles-Capitale,Bruxelles,,,7.0,non,lente,AC,Type 2,,Voiture,,,,,,,non,,50.828751,4.36296
 OpenStreetMap,node/14221076962,,,,Non renseigné,Bruxelles-Capitale,Uccle,,,,non,inconnue,,,,Vélo,,,,,private,,non,,50.797487,4.357786
+OpenStreetMap,node/14361464131,,,Engie,ENGIE Vianeo,Bruxelles-Capitale,Auderghem,,,,non,inconnue,,,2,Voiture,,,,,,,non,2026-11-09,50.822479,4.411485
+OpenStreetMap,node/14361485770,,,Engie,ENGIE Vianeo,Bruxelles-Capitale,Auderghem,,,,non,inconnue,,,2,Voiture,,,,,,,non,2026-11-09,50.821796,4.42224
 OpenStreetMap,way/1321577876,,,EnergyDrive,EnergyDrive,Bruxelles-Capitale,Watermael-Boitsfort,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,24/7,oui,,50.804191,4.428083
 OpenStreetMap,way/1355092336,,,Fastned,Fastned,Bruxelles-Capitale,Bruxelles,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.838163,4.360393
 OpenStreetMap,way/1424147440,,,,Non renseigné,Bruxelles-Capitale,Watermael-Boitsfort,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,50.798535,4.417591
@@ -1976,7 +1978,7 @@ OpenStreetMap,node/1971477355,,,TotalEnergies,TotalEnergies,Flandre,Brugge,,,,no
 OpenStreetMap,node/2044848856,,,Engie,ENGIE Vianeo,Flandre,Dessel,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,51.240458,5.092639
 OpenStreetMap,node/2061569113,,,BlueCorner,Blue Corner,Flandre,Lier,,,,non,inconnue,,,2,Voiture|Vélo,non,,,,,,non,,51.129114,4.569628
 OpenStreetMap,node/2172292937,,,Allego,Allego,Flandre,Turnhout,,,,non,inconnue,,,,Voiture|Vélo,,,,,yes,,non,,51.324514,4.947182
-OpenStreetMap,node/2385220185,,,wattify,Wattif,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,2020,51.025663,3.69289
+OpenStreetMap,node/2385220185,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,2020,51.025663,3.69289
 OpenStreetMap,node/2402092305,,,Blue Corner,Blue Corner,Flandre,Geel,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.161715,4.987154
 OpenStreetMap,node/2405928010,,,Alfen,Alfen,Flandre,Tervuren,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,50.835716,4.560652
 OpenStreetMap,node/2565558291,,,,Non renseigné,Flandre,Maaseik,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.058268,5.628769
@@ -2001,7 +2003,7 @@ OpenStreetMap,node/4432582897,,,oplaadstation voor elektrische voertuigen,oplaad
 OpenStreetMap,node/4505200993,,,Blue Corner,Blue Corner,Flandre,Mechelen,,,,non,inconnue,AC,Prise domestique,6,Vélo,,,,,,24/7,oui,,51.02932,4.484218
 OpenStreetMap,node/4605559520,,,,Non renseigné,Flandre,Aalter,,,,non,inconnue,,,4,Voiture|Vélo,,,,,yes,24/7,oui,,51.083676,3.44857
 OpenStreetMap,node/4677910520,,Luc's Paal,Partago cvba,Partago cvba,Flandre,Merelbeke-Melle,Koningin Elisabethlaan 58,,,non,inconnue,,,1,Voiture,,,,,,,non,,51.016236,3.757401
-OpenStreetMap,node/4677910524,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.043232,3.731658
+OpenStreetMap,node/4677910524,,,Blue Corner,Blue Corner,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.043228,3.731634
 OpenStreetMap,node/4682426266,,,,Non renseigné,Flandre,Zwevegem,,,,non,inconnue,,,,Voiture|Vélo,,,,,,,non,,50.750847,3.369514
 OpenStreetMap,node/4709528053,,,McDonald's,McDonald's,Flandre,Halle,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,non,customers,24/7,oui,,50.736885,4.230551
 OpenStreetMap,node/4845709089,,,,Non renseigné,Flandre,Beerse,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.31141,4.868186
@@ -2065,8 +2067,8 @@ OpenStreetMap,node/5430009726,,,EVBox,EVBox,Flandre,Leuven,,,,non,inconnue,AC,Ty
 OpenStreetMap,node/5435895398,,,,Non renseigné,Flandre,Wetteren,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.983776,3.84431
 OpenStreetMap,node/5435896863,,,Allego,Allego,Flandre,Wetteren,,,,non,inconnue,,,,Voiture,,,,,,24/7,oui,,51.005087,3.88775
 OpenStreetMap,node/5452331925,,,smoov,smoov,Flandre,Lanaken,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,,non,,50.922534,5.699722
-OpenStreetMap,node/5469313896,,,,Non renseigné,Flandre,Roeselare,,,,non,inconnue,,,2,Voiture|Vélo,,,,,,,non,,50.944011,3.126326
-OpenStreetMap,node/5480886476,,,,Non renseigné,Flandre,Roeselare,,,,non,inconnue,,,6,Vélo,oui,,,,,,non,,50.944049,3.126319
+OpenStreetMap,node/5469313896,,,,Non renseigné,Flandre,Roeselare,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.944011,3.126326
+OpenStreetMap,node/5480886476,,,,Non renseigné,Flandre,Roeselare,,,,non,inconnue,,,6,Vélo,,,,,,,non,,50.944049,3.126319
 OpenStreetMap,node/5491799499,,,Molenhoeve,Molenhoeve,Flandre,Gistel,,,,non,inconnue,,,,Voiture|Vélo,non,,,,customers,,non,,51.15875,2.975153
 OpenStreetMap,node/5491815806,,,,Non renseigné,Flandre,Diksmuide,,,,non,inconnue,,,,Voiture|Vélo,non,,,,customers,,non,,51.035952,2.836998
 OpenStreetMap,node/5511881799,,Allego - Veemarkt,Allego,Allego,Flandre,Ronse,Veemarkt 12,,11.0,non,lente,AC,Type 2,2,Voiture,oui,,,non,yes,24/7,oui,,50.748784,3.604571
@@ -2208,6 +2210,8 @@ OpenStreetMap,node/6609000968,,,,Non renseigné,Flandre,Herent,,,,non,inconnue,,
 OpenStreetMap,node/6611815890,,Allego laadpunt,Allego,Allego,Flandre,Westerlo,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.090098,4.910029
 OpenStreetMap,node/6614933275,,,Allego,Allego,Flandre,Halle,,,11.0,non,lente,AC,Type 2,2,Voiture,oui,,Application,non,yes,24/7,oui,,50.74354,4.253313
 OpenStreetMap,node/6632839325,,Laadpaal Belegstraat 54,Blue Corner,Blue Corner,Flandre,Antwerpen,,,,non,inconnue,,,2,Voiture,oui,,Carte bancaire,,yes,,non,,51.204414,4.396367
+OpenStreetMap,node/6656013178,,DATS 24,DATS 24,DATS 24 (Colruyt),Flandre,,,,,non,inconnue,,,2,Voiture,oui,,Application,,customers,,non,,50.812604,5.151473
+OpenStreetMap,node/6656027592,,DATS 24,DATS 24,DATS 24 (Colruyt),Flandre,,,,,non,inconnue,,,2,Voiture,oui,,Application,,customers,,non,,50.812616,5.151565
 OpenStreetMap,node/6656034998,,Allego,Allego,Allego,Flandre,Sint-Truiden,,,,non,inconnue,,,8,Voiture,oui,,,,,,non,,50.795681,5.206558
 OpenStreetMap,node/6658873330,,IONITY Wetteren Noord,Ionity,IONITY,Flandre,Wetteren,,,350.0,non,ultra,DC,CCS,4,Voiture,oui,,Application|Badge RFID,,yes,24/7,oui,,50.970787,3.844268
 OpenStreetMap,node/6658873331,,IONITY Wetteren Zuid,Ionity,IONITY,Flandre,Wetteren,,,350.0,non,ultra,DC,CCS,6,Voiture,oui,,Application|Badge RFID,,yes,24/7,oui,,50.969472,3.841743
@@ -2228,7 +2232,7 @@ OpenStreetMap,node/6815486098,,,Last Mile Solutions,Last Mile Solutions,Flandre,
 OpenStreetMap,node/6822020751,,,,Non renseigné,Flandre,Brugge,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.203678,3.198614
 OpenStreetMap,node/6825176762,,Q8 Electric,Q8,Q8,Flandre,Turnhout,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.321067,4.966721
 OpenStreetMap,node/6838078788,,BEALLEGO002145,Allego,Allego,Flandre,Buggenhout,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.015225,4.203322
-OpenStreetMap,node/6838112397,,Allego BEALLEGO002199,Allego,Allego,Flandre,Buggenhout,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,51.013155,4.192287
+OpenStreetMap,node/6838112397,,Allego  BEALLEGO002199,Allego,Allego,Flandre,Buggenhout,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,51.013155,4.192287
 OpenStreetMap,node/6853688757,,DATS 24,DATS 24,DATS 24 (Colruyt),Flandre,Veurne,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.071531,2.669141
 OpenStreetMap,node/6853725512,,,Allego,Allego,Flandre,Veurne,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.070484,2.665187
 OpenStreetMap,node/6875082693,,,,Non renseigné,Flandre,Oud-Heverlee,,,,non,inconnue,,,2,Voiture|Vélo,non,,,,,24/7,oui,,50.822392,4.654569
@@ -2244,6 +2248,7 @@ OpenStreetMap,node/6948776225,,,DATS 24,DATS 24 (Colruyt),Flandre,Sint-Niklaas,,
 OpenStreetMap,node/6987404370,,,Allego,Allego,Flandre,Brugge,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.330534,3.213304
 OpenStreetMap,node/6996919252,,Allego Charging Station,,Non renseigné,Flandre,Wevelgem,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.842679,3.202794
 OpenStreetMap,node/7005967183,,,Allego,Allego,Flandre,Brugge,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.214497,3.207447
+OpenStreetMap,node/7025536636,,,Allego,Allego,Flandre,,,,,non,inconnue,,,3,Voiture,,,,,,24/7,oui,,51.072061,5.146546
 OpenStreetMap,node/7031052702,,ChargePoint,Allego,Allego,Flandre,Hoegaarden,,,11.0,non,lente,AC,Type 2,11,Voiture,,,,,,,non,,50.773534,4.901481
 OpenStreetMap,node/7042068486,,,,Non renseigné,Flandre,Zulte,,,,non,inconnue,,,,Voiture|Vélo,,,,,,,non,,50.958812,3.487359
 OpenStreetMap,node/7042254096,,,Luminus,Luminus,Flandre,Antwerpen,,,,non,inconnue,,,4,Voiture,,,,,,,non,2019-07-11,51.247012,4.41875
@@ -2282,8 +2287,8 @@ OpenStreetMap,node/7184732257,,,Delhaize,Delhaize,Flandre,Blankenberge,,,,non,in
 OpenStreetMap,node/7255698370,,Allego,Allego,Allego,Flandre,Brecht,,,,non,inconnue,AC,Type 2,2,,oui,,,,yes,,non,,51.292215,4.579111
 OpenStreetMap,node/7287917967,,,,Non renseigné,Flandre,Laakdal,,,,non,inconnue,,,4,Vélo,non,,,,yes,,non,,51.105333,5.003599
 OpenStreetMap,node/7297039012,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.094309,3.726289
-OpenStreetMap,node/7307246358,,,wattify,Wattif,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,2020,51.025635,3.69297
-OpenStreetMap,node/7307246373,,,wattify,Wattif,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,2020,51.025608,3.692948
+OpenStreetMap,node/7307246358,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,2020,51.025635,3.69297
+OpenStreetMap,node/7307246373,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,2020,51.025608,3.692948
 OpenStreetMap,node/7312672847,,,,Non renseigné,Flandre,Aartselaar,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.127654,4.374554
 OpenStreetMap,node/7315573549,,,Blue Corner,Blue Corner,Flandre,Antwerpen,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.208967,4.401653
 OpenStreetMap,node/7316511658,,,Allego,Allego,Flandre,Rumst,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.101487,4.417507
@@ -2294,6 +2299,7 @@ OpenStreetMap,node/7375917733,,,,Non renseigné,Flandre,Tielt,,,,non,inconnue,,,
 OpenStreetMap,node/7384422496,,,Allego,Allego,Flandre,Westerlo,,,,non,inconnue,,,2,Voiture,,,,,yes,24/7,oui,,51.092655,4.920887
 OpenStreetMap,node/7391425676,,,,Non renseigné,Flandre,Overijse,,,,non,inconnue,,,1,Voiture,,,,,yes,,non,,50.770145,4.534884
 OpenStreetMap,node/7391632184,,,Allego,Allego,Flandre,Scherpenheuvel-Zichem,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.964955,4.946573
+OpenStreetMap,node/7397317542,,,,Non renseigné,Flandre,,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.087446,5.069298
 OpenStreetMap,node/7408062533,,,allego,Allego,Flandre,Bertem,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,50.863463,4.630134
 OpenStreetMap,node/7423805793,,,,Non renseigné,Flandre,Torhout,,,,non,inconnue,,,2,Voiture|Vélo,,,,,,24/7,oui,,51.077586,3.061851
 OpenStreetMap,node/7441506543,,,Allego,Allego,Flandre,De Haan,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.296693,3.083674
@@ -2339,7 +2345,7 @@ OpenStreetMap,node/7809648013,,,Allego,Allego,Flandre,Ternat,,,,non,inconnue,,,6
 OpenStreetMap,node/7825779144,,Allego - Emelgemseplein 1,Allego,Allego,Flandre,Izegem,Emelgemseplein 1,,11.0,non,lente,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,50.922633,3.230458
 OpenStreetMap,node/7833577577,,,Blue Corner,Blue Corner,Flandre,Antwerpen,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.178376,4.430241
 OpenStreetMap,node/7836746679,,,Villa Monique,Villa Monique,Flandre,Koksijde,,,,non,inconnue,,,2,Voiture,oui,5 EUR/2 hours,,,permissive,,non,,51.113526,2.636109
-OpenStreetMap,node/7837086973,,,Shell Recharge Solutions,Shell Recharge,Flandre,Koksijde,,,,non,inconnue,,,12,Voiture,oui,,,,yes,,non,2026-08-22,51.098991,2.629363
+OpenStreetMap,node/7837086973,,,Shell Recharge Solutions,Shell Recharge,Flandre,Koksijde,,,,non,inconnue,,,4,Voiture,oui,,,,,,non,,51.099406,2.629557
 OpenStreetMap,node/7862294884,,,Blue Corner,Blue Corner,Flandre,Mechelen,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.029337,4.484164
 OpenStreetMap,node/7864108055,,,Allego,Allego,Flandre,Nieuwpoort,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.134302,2.753942
 OpenStreetMap,node/7864142747,,,,Non renseigné,Flandre,Boechout,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.175183,4.524353
@@ -2363,8 +2369,8 @@ OpenStreetMap,node/7992636696,,,,Non renseigné,Flandre,Leuven,,,,non,inconnue,A
 OpenStreetMap,node/8007924467,,,,Non renseigné,Flandre,Halen,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.931916,5.070659
 OpenStreetMap,node/8012545095,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.02953,3.717509
 OpenStreetMap,node/8018476048,,Fastned Oostende luchthaven,Fastned,Fastned,Flandre,Oostende,Nieuwpoortsesteenweg,,300.0,non,ultra,DC,CCS|CHAdeMO,4,Voiture,oui,,Carte bancaire|Application|Badge RFID,non,yes,24/7,oui,,51.20551,2.871379
-OpenStreetMap,node/8018570943,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,non,,,,,,non,,51.034306,3.689597
-OpenStreetMap,node/8018570944,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,1,Voiture,non,,,,private,,non,,51.03591,3.69421
+OpenStreetMap,node/8018570943,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,1,Voiture,non,,,,,,non,,51.034283,3.689637
+OpenStreetMap,node/8018570944,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,1,Voiture,non,,,,,,non,,51.035899,3.694238
 OpenStreetMap,node/8018582177,,,Allego,Allego,Flandre,Hoeilaart,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.76838,4.471878
 OpenStreetMap,node/8022404145,,IONITY Veurne,Ionity,IONITY,Flandre,Veurne,,,350.0,non,ultra,DC,CCS,4,Voiture,oui,,Application|Badge RFID,,,24/7,oui,,51.064393,2.673562
 OpenStreetMap,node/8022498293,,IONITY Wetteren Noord,Ionity,IONITY,Flandre,Wetteren,,,50.0,non,rapide,DC,Type 2|CCS|CHAdeMO,2,Voiture,oui,,Application|Badge RFID,,yes,24/7,oui,,50.970689,3.843953
@@ -2373,6 +2379,7 @@ OpenStreetMap,node/8043772200,,,,Non renseigné,Flandre,Kruisem,,,,non,inconnue,
 OpenStreetMap,node/8054042537,,,Gemeente Aalter,Gemeente Aalter,Flandre,Aalter,,,,non,inconnue,,,3,Voiture|Vélo,non,,,non,yes,,non,,51.092914,3.450364
 OpenStreetMap,node/8062455323,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,AC,Type 2,1,Voiture,oui,,,,yes,24/7,oui,,51.038636,3.728369
 OpenStreetMap,node/8065045470,,Allego,Allego,Allego,Flandre,Waregem,Zuiderlaan 46,,11.0,non,lente,AC,Type 2,2,Voiture,oui,,Carte bancaire,non,yes,24/7,oui,,50.881651,3.433233
+OpenStreetMap,node/8075889477,,,Allego,Allego,Flandre,,,,,non,inconnue,,,6,Voiture,,,,,,24/7,oui,,51.052162,3.707435
 OpenStreetMap,node/8078230398,,,Allego Belgie,Allego,Flandre,Aalst,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,50.940318,4.016958
 OpenStreetMap,node/8078251804,,,B&B HofBeygaert,B&B HofBeygaert,Flandre,Aalst,,,,non,inconnue,,,2,Voiture,oui,,,,customers,,non,,50.9419,4.019583
 OpenStreetMap,node/8082849737,,,Allego,Allego,Flandre,Schilde,,,,non,inconnue,,,2,Voiture,oui,,,non,yes,24/7,oui,,51.234755,4.581582
@@ -2471,7 +2478,7 @@ OpenStreetMap,node/8517413434,,,,Non renseigné,Flandre,Grimbergen,,,,non,inconn
 OpenStreetMap,node/8517413435,,,,Non renseigné,Flandre,Grimbergen,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.970575,4.3876
 OpenStreetMap,node/8517724987,,,Allego,Allego,Flandre,Tessenderlo-Ham,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,51.069262,5.126132
 OpenStreetMap,node/8527701975,,,Allego,Allego,Flandre,Lille,,,,non,inconnue,,,2,Voiture,,,,,yes,24/7,oui,,51.264591,4.788639
-OpenStreetMap,node/8527712622,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.050544,3.664274
+OpenStreetMap,node/8527712622,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.050592,3.664237
 OpenStreetMap,node/8527712623,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,AC,Type 2,1,Voiture,oui,,Carte bancaire,,yes,,non,,51.048791,3.658188
 OpenStreetMap,node/8531294994,,,ecotap,ecotap,Flandre,Lommel,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.25354,5.325294
 OpenStreetMap,node/8532537985,,,,Non renseigné,Flandre,Lier,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.135281,4.560256
@@ -2638,7 +2645,7 @@ OpenStreetMap,node/8980658186,,,Allego,Allego,Flandre,Leuven,,,,non,inconnue,AC,
 OpenStreetMap,node/8986682884,,,,Non renseigné,Flandre,Knokke-Heist,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.352202,3.289072
 OpenStreetMap,node/8987340194,,,,Non renseigné,Flandre,Tessenderlo-Ham,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.087791,5.125959
 OpenStreetMap,node/8987840797,,,,Non renseigné,Flandre,Knokke-Heist,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.35168,3.289864
-OpenStreetMap,node/8988443317,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.077728,3.752434
+OpenStreetMap,node/8988443317,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.077728,3.752434
 OpenStreetMap,node/8988443517,,,BlueCorner,Blue Corner,Flandre,Gent,,,,non,inconnue,AC,Type 2,4,Voiture,oui,,Application,non,yes,24/7,oui,,51.073305,3.739862
 OpenStreetMap,node/8993063158,,,Allego,Allego,Flandre,Boom,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,,non,,51.101626,4.383548
 OpenStreetMap,node/8996670833,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,yes,,non,,51.062128,3.74922
@@ -2672,7 +2679,7 @@ OpenStreetMap,node/9071302375,,,,Non renseigné,Flandre,Zonhoven,,,,non,inconnue
 OpenStreetMap,node/9071610070,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.034216,3.739576
 OpenStreetMap,node/9071610071,,,Ecotap,Ecotap,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,Badge RFID,,private,,non,,51.03751,3.736063
 OpenStreetMap,node/9071610072,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.037652,3.742376
-OpenStreetMap,node/9071610073,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,private,,non,,51.041797,3.740594
+OpenStreetMap,node/9071610073,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.041797,3.740594
 OpenStreetMap,node/9071610074,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.038455,3.746216
 OpenStreetMap,node/9071610075,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.041703,3.743628
 OpenStreetMap,node/9071673373,,,Optimile,Optimile,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.033343,3.737449
@@ -2741,7 +2748,7 @@ OpenStreetMap,node/9233734430,,,,Non renseigné,Flandre,Kruisem,,,,non,inconnue,
 OpenStreetMap,node/9243411480,,,Allego,Allego,Flandre,Turnhout,,,11.0,non,lente,AC,Type 2,2,Voiture,,,,,yes,,non,,51.315665,4.931261
 OpenStreetMap,node/9248665388,,,Allego,Allego,Flandre,Oosterzele,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,50.937475,3.777908
 OpenStreetMap,node/9249788770,,,,Non renseigné,Flandre,Ieper,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.869594,2.894086
-OpenStreetMap,node/9259872899,,ebike,,Non renseigné,Flandre,Leuven,,,,non,inconnue,,,,Voiture|Vélo,non,,,,,,non,,50.899352,4.707661
+OpenStreetMap,node/9259872899,,ebike,,Non renseigné,Flandre,Leuven,,,,non,inconnue,,,,Voiture,non,,,,,,non,,50.899352,4.707661
 OpenStreetMap,node/9260737886,,,,Non renseigné,Flandre,Knokke-Heist,,,,non,inconnue,,,4,Voiture|Vélo,,,,,,,non,,51.343306,3.287836
 OpenStreetMap,node/9261076100,,,,Non renseigné,Flandre,Mechelen,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.013661,4.442374
 OpenStreetMap,node/9264072495,,,Allego,Allego,Flandre,Scherpenheuvel-Zichem,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.021467,4.997999
@@ -2762,6 +2769,7 @@ OpenStreetMap,node/9341257634,,,Allego,Allego,Flandre,Mortsel,,,,non,inconnue,,,
 OpenStreetMap,node/9345499079,,Allego oplaadpunt,,Non renseigné,Flandre,Zaventem,Namenstraat 18,,,non,inconnue,,,,Voiture,,,,,,,non,,50.880515,4.504843
 OpenStreetMap,node/9349198236,,,,Non renseigné,Flandre,Zaventem,,,,non,inconnue,,,2,Voiture,non,,,,customers,,non,,50.870912,4.491605
 OpenStreetMap,node/9349198237,,,,Non renseigné,Flandre,Zaventem,,,,non,inconnue,,,2,Voiture,non,,,,customers,,non,,50.870916,4.49162
+OpenStreetMap,node/9349414693,,,Allego,Allego,Flandre,,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,50.97861,3.695128
 OpenStreetMap,node/9350973815,,,,Non renseigné,Flandre,Mechelen,,,,non,inconnue,,,,Voiture,,,,,private,,non,,51.060767,4.458898
 OpenStreetMap,node/9353776430,,,Allego,Allego,Flandre,Schilde,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.231906,4.582879
 OpenStreetMap,node/9358291706,,,Allego,Allego,Flandre,Geel,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,Application,non,yes,24/7,oui,,51.169149,4.989955
@@ -2770,7 +2778,7 @@ OpenStreetMap,node/9358403242,,,Allego,Allego,Flandre,Kortenberg,,,,non,inconnue
 OpenStreetMap,node/9358504536,,,Allego,Allego,Flandre,Kontich,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.125767,4.465595
 OpenStreetMap,node/9358538807,,,Allego,Allego,Flandre,Kontich,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.135213,4.47463
 OpenStreetMap,node/9358563040,,,Allego,Allego,Flandre,Kontich,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.134203,4.443953
-OpenStreetMap,node/9358590427,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.046156,3.723563
+OpenStreetMap,node/9358590427,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.046155,3.723526
 OpenStreetMap,node/9359170285,,Allego,Allego,Allego,Flandre,Waregem,Tjollensstraat 2,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,Carte bancaire,non,yes,24/7,oui,2026-04-21,50.88681,3.417231
 OpenStreetMap,node/9370320410,,,Zonhoekje,Zonhoekje,Flandre,Zele,,,,non,inconnue,AC,Prise domestique,6,Vélo,oui,,,,customers,24/7,oui,,51.05549,4.040177
 OpenStreetMap,node/9376675965,,,Optimile,Optimile,Flandre,Halle,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,Application,non,yes,Mo-Sa 09:00-19:30,non,,50.731369,4.232201
@@ -2780,7 +2788,7 @@ OpenStreetMap,node/9381858693,,,Allego,Allego,Flandre,Ieper,,,,non,inconnue,,,2,
 OpenStreetMap,node/9386071610,,Fastned Carpool Bekkevoort,Fastned,Fastned,Flandre,Bekkevoort,,,300.0,non,ultra,DC,CCS|CHAdeMO,4,Voiture,oui,,Application|Badge RFID,,,24/7,oui,,50.95202,4.998123
 OpenStreetMap,node/9387739518,,,,Non renseigné,Flandre,Brugge,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.214522,3.2497
 OpenStreetMap,node/9391315305,,Allego - Hoveniersstraat,Allego,Allego,Flandre,Kortrijk,Hoveniersstraat 36,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,oui,yes,24/7,oui,,50.822958,3.266047
-OpenStreetMap,node/9392835332,,Allego charging station,Allego,Allego,Flandre,Laarne,,,11.0,non,lente,AC,Type 2,,Voiture,oui,,Badge RFID,,,24/7,oui,,51.034057,3.892619
+OpenStreetMap,node/9392835332,,Allego charging station,Allego,Allego,Flandre,Laarne,,,,non,inconnue,AC,Type 2,,Voiture,oui,,Badge RFID,,,24/7,oui,,51.034057,3.892619
 OpenStreetMap,node/9394267822,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,4,Voiture,,,,,,,non,,51.031358,3.688124
 OpenStreetMap,node/9396443022,,,,Non renseigné,Flandre,Hasselt,,,,non,inconnue,,,,Voiture|Vélo,,,,,,,non,,50.859151,5.389849
 OpenStreetMap,node/9404343417,,,,Non renseigné,Flandre,Brasschaat,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,,51.289836,4.496211
@@ -2853,7 +2861,7 @@ OpenStreetMap,node/9531221985,,"Allego - Sportcentrum, Heilige Hartstraat 15",Al
 OpenStreetMap,node/9531221986,,Allego - Parking Wijngaardstraat 15,Allego,Allego,Flandre,Izegem,,,11.0,non,lente,AC,Type 2,2,Voiture,oui,0.363EUR/kWh,Carte bancaire,,yes,24/7,oui,,50.919899,3.211486
 OpenStreetMap,node/9533329869,,Lidl Wolvertem,Lidl,Lidl,Flandre,Meise,,,50.0,non,rapide,DC,Type 2|CCS|CHAdeMO,2,Voiture,oui,,,non,customers,,non,,50.948187,4.31512
 OpenStreetMap,node/9533329870,,Lidl Sint-Pieters-Leeuw,Lidl,Lidl,Flandre,Sint-Pieters-Leeuw,,,50.0,non,rapide,DC,Type 2|CCS|CHAdeMO,2,Voiture,oui,,,non,customers,,non,,50.794072,4.283106
-OpenStreetMap,node/9533383363,,Lidl Retie - Turnhoutsebaan,Lidl,Lidl,Flandre,Retie,,,50.0,non,rapide,DC,Type 2|CCS|CHAdeMO,2,Voiture,oui,,,non,customers,,non,,51.270742,5.078549
+OpenStreetMap,node/9533383363,,Lidl Retie - Turnhoutsebaan,Lidl,Lidl,Flandre,Retie,,,50.0,non,rapide,DC,Type 2|CCS|CHAdeMO,2,Voiture,oui,,,non,customers,,non,,51.270735,5.078562
 OpenStreetMap,node/9535686049,,Lidl Rijkevorsel,Lidl,Lidl,Flandre,Rijkevorsel,,,50.0,non,rapide,DC,Type 2|CCS|CHAdeMO,2,Voiture,oui,,,non,customers,,non,,51.346554,4.766959
 OpenStreetMap,node/9535748390,,Lidl Lille,Lidl,Lidl,Flandre,Lille,,,50.0,non,rapide,DC,Type 2|CCS|CHAdeMO,2,Voiture,oui,,,non,customers,,non,,51.233494,4.830392
 OpenStreetMap,node/9535748391,,Lidl Diksmuide,Lidl,Lidl,Flandre,Diksmuide,,,50.0,non,rapide,DC,Type 2|CCS|CHAdeMO,2,Voiture,oui,,,non,customers,,non,,51.033052,2.872899
@@ -2867,6 +2875,7 @@ OpenStreetMap,node/9547106191,,Lidl Melle,Lidl,Lidl,Flandre,Merelbeke-Melle,,,50
 OpenStreetMap,node/9547106192,,Lidl Destelbergen,Lidl,Lidl,Flandre,Destelbergen,,,50.0,non,rapide,DC,Type 2|CCS|CHAdeMO,2,Voiture,oui,,,non,customers,,non,,51.051592,3.761486
 OpenStreetMap,node/9547106193,,Lidl Zelzate,Lidl,Lidl,Flandre,Zelzate,,,50.0,non,rapide,DC,Type 2|CCS|CHAdeMO,2,Voiture,oui,,,non,customers,,non,,51.19751,3.825444
 OpenStreetMap,node/9549501299,,Lidl Sint-Genesius-Rode,Lidl,Lidl,Flandre,Sint-Genesius-Rode,,,50.0,non,rapide,DC,Type 2|CCS|CHAdeMO,2,Voiture,oui,,,non,customers,,non,,50.737748,4.331999
+OpenStreetMap,node/9550018249,,DATS 24,DATS 24,DATS 24 (Colruyt),Flandre,,,,,non,inconnue,,,2,Voiture,oui,,,,customers,,non,,50.775613,5.458545
 OpenStreetMap,node/9550018259,,,Allego,Allego,Flandre,Tongeren-Borgloon,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,50.774128,5.460646
 OpenStreetMap,node/9550192523,,Lidl Schoten,Lidl,Lidl,Flandre,Schoten,,,50.0,non,rapide,DC,Type 2|CCS|CHAdeMO,2,Voiture,oui,,,non,customers,,non,,51.260961,4.506731
 OpenStreetMap,node/9550192524,,Lidl Kontich,Lidl,Lidl,Flandre,Kontich,,,50.0,non,rapide,DC,Type 2|CCS|CHAdeMO,2,Voiture,oui,,,non,customers,,non,,51.137849,4.436855
@@ -2902,6 +2911,7 @@ OpenStreetMap,node/9568665282,,,,Non renseigné,Flandre,Aarschot,,,,non,inconnue
 OpenStreetMap,node/9569734223,,Tesla Supercharger,Tesla,Tesla,Flandre,Izegem,,,,non,inconnue,,,22,Voiture,,,,,customers,,non,,50.922689,3.235203
 OpenStreetMap,node/9569734225,,"Allego - Rustoord, Weststraat 55",Allego,Allego,Flandre,Ingelmunster,Weststraat 55,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,0.39EUR/kWh,Carte bancaire,,yes,24/7,oui,,50.921489,3.247417
 OpenStreetMap,node/9569734226,,"Allego - Marktplein, Gravinnestraat 3",Allego,Allego,Flandre,Ingelmunster,Gravinnestraat 3,,11.0,non,lente,AC,Type 2,2,Voiture,oui,0.39EUR/kWh,Carte bancaire,,yes,24/7,oui,,50.920444,3.254135
+OpenStreetMap,node/9569755525,,,EV-Point,EV-Point,Flandre,,,,,non,inconnue,,,2,Voiture,non,,,,car_sharing,,non,,51.317627,4.981688
 OpenStreetMap,node/9570692545,,,,Non renseigné,Flandre,Maasmechelen,,,,non,inconnue,AC,Prise domestique,,,,,,,yes,24/7,oui,,50.963192,5.695763
 OpenStreetMap,node/9570724653,,,,Non renseigné,Flandre,Maasmechelen,,,,non,inconnue,AC,Prise domestique,,Vélo,,,,,,,non,,51.001336,5.707785
 OpenStreetMap,node/9571716831,,,engie,ENGIE Vianeo,Flandre,Sint-Niklaas,,,,non,inconnue,,,6,Voiture|Vélo,,,,,,,non,,51.16195,4.139602
@@ -2934,7 +2944,7 @@ OpenStreetMap,node/9594480740,,,,Non renseigné,Flandre,Koekelare,,,,non,inconnu
 OpenStreetMap,node/9595004930,,,,Non renseigné,Flandre,Genk,,,,non,inconnue,AC,Prise domestique,,Vélo,,,,,,,non,,50.965927,5.500372
 OpenStreetMap,node/9596890962,,,,Non renseigné,Flandre,Wortegem-Petegem,,,,non,inconnue,AC,Prise domestique,,Vélo,,,,,,,non,,50.836866,3.558343
 OpenStreetMap,node/9596927574,,,,Non renseigné,Flandre,Wortegem-Petegem,,,,non,inconnue,AC,Prise domestique,,Vélo,,,,,,,non,,50.813425,3.535092
-OpenStreetMap,node/9599166396,,,,Non renseigné,Flandre,Pelt,,,,non,inconnue,AC,Prise domestique,,Vélo,,,,,,,non,,51.23103,5.42415
+OpenStreetMap,node/9599166396,,,,Non renseigné,Flandre,Pelt,,,,non,inconnue,AC,Prise domestique,,Vélo,,,,,,,non,,51.231127,5.42451
 OpenStreetMap,node/9599178777,,,,Non renseigné,Flandre,Pelt,,,,non,inconnue,AC,Prise domestique,,Vélo,,,,,,,non,,51.234097,5.418989
 OpenStreetMap,node/9599180784,,,,Non renseigné,Flandre,Pelt,,,,non,inconnue,AC,Prise domestique,,Vélo,,,,,,,non,,51.249038,5.41611
 OpenStreetMap,node/9599190295,,,,Non renseigné,Flandre,Pelt,,,,non,inconnue,AC,Prise domestique,,Vélo,,,,,,,non,,51.211785,5.428416
@@ -2974,7 +2984,7 @@ OpenStreetMap,node/9633278314,,,,Non renseigné,Flandre,Kasterlee,,,,non,inconnu
 OpenStreetMap,node/9633441918,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.038235,3.690845
 OpenStreetMap,node/9633480273,,,EVBOX,EVBox,Flandre,Schoten,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.266845,4.463655
 OpenStreetMap,node/9633830059,,,Blue Corner,Blue Corner,Flandre,Scherpenheuvel-Zichem,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.997468,4.991756
-OpenStreetMap,node/9633941416,,,Allego,Allego,Flandre,Asse,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,Application,,yes,24/7,oui,,50.910646,4.194232
+OpenStreetMap,node/9633941416,,,Allego,Allego,Flandre,Asse,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,Application,,yes,24/7,oui,,50.910654,4.194251
 OpenStreetMap,node/9641576740,,,VitaeMobility,VitaeMobility,Flandre,Oud-Turnhout,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.324709,4.97782
 OpenStreetMap,node/9641577526,,,EVBOX,EVBox,Flandre,Oud-Turnhout,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,51.324149,4.970222
 OpenStreetMap,node/9641580729,,,VitaeMobility,VitaeMobility,Flandre,Oud-Turnhout,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.336847,4.976452
@@ -3069,7 +3079,7 @@ OpenStreetMap,node/9718499210,,,,Non renseigné,Flandre,Brugge,,,,non,inconnue,,
 OpenStreetMap,node/9720762679,,,Allego,Allego,Flandre,Grobbendonk,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.191848,4.737827
 OpenStreetMap,node/9720819585,,,Allego,Allego,Flandre,Grobbendonk,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.189303,4.739476
 OpenStreetMap,node/9720830535,,,Allego,Allego,Flandre,Grobbendonk,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.164235,4.744745
-OpenStreetMap,node/9720832390,,,,Non renseigné,Flandre,Harelbeke,,,,non,inconnue,,,4,Vélo,non,,,,yes,,non,,50.840655,3.324296
+OpenStreetMap,node/9720832390,,,,Non renseigné,Flandre,Harelbeke,,,,non,inconnue,,,4,Vélo,,,,,yes,,non,,50.840655,3.324296
 OpenStreetMap,node/9720843377,,,Allego,Allego,Flandre,Herentals,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.181028,4.830763
 OpenStreetMap,node/9720848330,,,Allego,Allego,Flandre,Herentals,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.179051,4.833919
 OpenStreetMap,node/9724158409,,,Stad Halle,Stad Halle,Flandre,Halle,,,,non,inconnue,AC,Prise domestique,12,Vélo,non,,Sans identification,,yes,24/7,oui,,50.7364,4.238745
@@ -3113,6 +3123,7 @@ OpenStreetMap,node/9794332177,,,Luminus,Luminus,Flandre,Wommelgem,,,,non,inconnu
 OpenStreetMap,node/9794867936,,,Plattelandscentrum Paddenbroek,Plattelandscentrum Paddenbroek,Flandre,Pajottegem,,,,non,inconnue,AC,Prise domestique,10,Vélo,non,,Sans identification,,customers,,non,,50.7861,4.109012
 OpenStreetMap,node/9795404468,,,Allego,Allego,Flandre,Poperinge,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,50.8162,2.76469
 OpenStreetMap,node/9796635427,,,,Non renseigné,Flandre,Huldenberg,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,50.817975,4.623281
+OpenStreetMap,node/9798774390,,,Allego,Allego,Flandre,,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.040378,5.328056
 OpenStreetMap,node/9801002598,,,,Non renseigné,Flandre,Westerlo,,,,non,inconnue,AC,Prise domestique,,Vélo,,,,,yes,,non,,51.105415,4.905505
 OpenStreetMap,node/9801060675,,,Alego,Alego,Flandre,Deinze,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.059095,3.573677
 OpenStreetMap,node/9801606351,,,,Non renseigné,Flandre,Lochristi,,,,non,inconnue,,,,Vélo,,,,,,,non,,51.131545,3.859048
@@ -3205,6 +3216,7 @@ OpenStreetMap,node/9841537967,,,EV-Point,EV-Point,Flandre,Grobbendonk,,,,non,inc
 OpenStreetMap,node/9841537968,,,Allego,Allego,Flandre,Nijlen,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,yes,,non,,51.159928,4.664826
 OpenStreetMap,node/9841537969,,,Allego,Allego,Flandre,Nijlen,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,non,yes,24/7,oui,,51.16038,4.672417
 OpenStreetMap,node/9841658280,,,EVBox,EVBox,Flandre,Nijlen,,,,non,inconnue,,,2,Voiture,,,,,private,,non,,51.167205,4.68123
+OpenStreetMap,node/9841658281,,,Last Mile Solutions,Last Mile Solutions,Flandre,,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,51.134522,4.760761
 OpenStreetMap,node/9841658282,,,E-Flux,E-Flux,Flandre,Herenthout,,,,non,inconnue,,,,Voiture,,,,,private,,non,,51.154548,4.804109
 OpenStreetMap,node/9843590861,,,Allego,Allego,Flandre,Herentals,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.188712,4.829237
 OpenStreetMap,node/9843590862,,,Allego,Allego,Flandre,Herentals,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.176877,4.830298
@@ -3337,6 +3349,7 @@ OpenStreetMap,node/9872165251,,,Allego,Allego,Flandre,Beerse,,,,non,inconnue,,,2
 OpenStreetMap,node/9872165252,,,Allego,Allego,Flandre,Beerse,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.308602,4.841803
 OpenStreetMap,node/9872165253,,,EVBOX,EVBox,Flandre,Beerse,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.307433,4.837152
 OpenStreetMap,node/9872165254,,,EVBOX,EVBox,Flandre,Beerse,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.307423,4.837071
+OpenStreetMap,node/9872165255,,,Allego,Allego,Flandre,,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.295657,4.780653
 OpenStreetMap,node/9872165256,,,Mobility Plus,Mobility Plus,Flandre,Beerse,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.293661,4.779972
 OpenStreetMap,node/9872299549,,,,Non renseigné,Flandre,De Panne,,,,non,inconnue,,,2,Voiture,,,,,customers,,non,,51.097305,2.584195
 OpenStreetMap,node/9872501388,,,EVBox,EVBox,Flandre,Hoogstraten,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.39945,4.75916
@@ -3625,12 +3638,12 @@ OpenStreetMap,node/10289421736,,,Allego,Allego,Flandre,Merelbeke-Melle,,,,non,in
 OpenStreetMap,node/10289421738,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.025295,3.751274
 OpenStreetMap,node/10292698732,,,,Non renseigné,Flandre,Koksijde,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.131628,2.672793
 OpenStreetMap,node/10293650225,,,Allego,Allego,Flandre,Genk,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.964177,5.505672
-OpenStreetMap,node/10296799916,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,,non,,51.068879,3.753416
+OpenStreetMap,node/10296799916,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.068879,3.753416
 OpenStreetMap,node/10301185488,,,,Non renseigné,Flandre,Herent,,,,non,inconnue,,,,Voiture,oui,,,,,24/7,oui,,50.901225,4.629892
-OpenStreetMap,node/10302243798,,,,Non renseigné,Flandre,Nieuwpoort,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.14792,2.714767
+OpenStreetMap,node/10302243798,,Allego,,Non renseigné,Flandre,Nieuwpoort,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.14792,2.714767
 OpenStreetMap,node/10303444513,,,,Non renseigné,Flandre,Heers,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.752206,5.294521
 OpenStreetMap,node/10309717109,,,E-Flux,E-Flux,Flandre,Geel,,,,non,inconnue,,,1,Voiture,,,,non,yes,24/7,oui,,51.156247,4.988585
-OpenStreetMap,node/10311820760,,,,Non renseigné,Flandre,Nieuwpoort,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.149601,2.718657
+OpenStreetMap,node/10311820760,,Allegro,,Non renseigné,Flandre,Nieuwpoort,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.149601,2.718657
 OpenStreetMap,node/10314485627,,,Allegro,Allegro,Flandre,Herstappe,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.726304,5.426408
 OpenStreetMap,node/10315798271,,,Allego,Allego,Flandre,Tongeren-Borgloon,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.782694,5.4635
 OpenStreetMap,node/10522429883,,Allego - Gemeentehuis Anzegem,Allego,Allego,Flandre,Anzegem,De Vierschaar 1,,11.0,non,lente,AC,Type 2,2,Voiture,oui,,,,yes,,non,,50.832148,3.478272
@@ -3675,7 +3688,7 @@ OpenStreetMap,node/10583656506,,,Blue Corner,Blue Corner,Flandre,Antwerpen,,,,no
 OpenStreetMap,node/10587533563,,,Allego,Allego,Flandre,Hasselt,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,50.928104,5.326549
 OpenStreetMap,node/10591333186,,ChargePoint,ChargePoint,ChargePoint,Flandre,Antwerpen,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.210915,4.449421
 OpenStreetMap,node/10594771220,,,,Non renseigné,Flandre,Antwerpen,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.208076,4.432763
-OpenStreetMap,node/10598951476,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.090199,3.704348
+OpenStreetMap,node/10598951476,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.090218,3.70433
 OpenStreetMap,node/10608572331,,,Allego,Allego,Flandre,Mortsel,,,,non,inconnue,,,2,Voiture,,,,non,yes,,non,,51.166389,4.447939
 OpenStreetMap,node/10612983006,,Lidl Kraainem,Lidl,Lidl,Flandre,Kraainem,,,50.0,non,rapide,DC,Type 2|CCS|CHAdeMO,2,Voiture,oui,,,non,customers,Mo-Fr 08:30-20:00; Sa 08:30-19:00; PH off,non,,50.844698,4.46756
 OpenStreetMap,node/10613264866,,,,Non renseigné,Flandre,Bierbeek,,,11.0,non,lente,DC,CHAdeMO,2,Voiture,oui,,,non,yes,,non,,50.850962,4.786926
@@ -3702,9 +3715,9 @@ OpenStreetMap,node/10649093846,,Allego Sporthal Ichtegem,Allego,Allego,Flandre,I
 OpenStreetMap,node/10649131269,,Allego - Ichtegem Markt,Allego,Allego,Flandre,Ichtegem,Markt 5,,11.0,non,lente,AC,Type 2,2,Voiture,oui,,,,yes,,non,,51.092383,3.009903
 OpenStreetMap,node/10652895154,,Allego -Handzameplein,Allego,Allego,Flandre,Kortemark,Handzameplein 26,,11.0,non,lente,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.025888,3.003188
 OpenStreetMap,node/10656211193,,,TotalEnergies,TotalEnergies,Flandre,Kortenaken,,,7.0,non,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.893795,5.014429
-OpenStreetMap,node/10656597673,,,TotalEnergies Waregem,TotalEnergies,Flandre,Waregem,Zuiderlaan 10,,200.0,non,ultra,DC,CCS,1,Voiture,oui,,Application|Badge RFID,non,yes,24/7,oui,2026-07-30,50.88278,3.425735
-OpenStreetMap,node/10656597674,,,TotalEnergies Waregem,TotalEnergies,Flandre,Waregem,Zuiderlaan 10,,200.0,non,ultra,DC,CCS,1,Voiture,oui,,Application|Badge RFID,non,yes,24/7,oui,2026-07-30,50.882765,3.425781
-OpenStreetMap,node/10656597675,,,TotalEnergies Waregem,TotalEnergies,Flandre,Waregem,Zuiderlaan 10,,200.0,non,ultra,DC,CCS,1,Voiture,oui,,Application|Badge RFID,non,yes,24/7,oui,2026-07-30,50.88275,3.425829
+OpenStreetMap,node/10656597673,,,TotalEnergies Waregem,TotalEnergies,Flandre,Waregem,Zuiderlaan 10,,200.0,non,ultra,DC,CCS,1,Voiture,oui,,Application|Badge RFID,non,yes,24/7,oui,2026-02-01,50.88278,3.425735
+OpenStreetMap,node/10656597674,,,TotalEnergies Waregem,TotalEnergies,Flandre,Waregem,Zuiderlaan 10,,200.0,non,ultra,DC,CCS,1,Voiture,oui,,Application|Badge RFID,non,yes,24/7,oui,2026-02-01,50.882765,3.425781
+OpenStreetMap,node/10656597675,,,TotalEnergies Waregem,TotalEnergies,Flandre,Waregem,Zuiderlaan 10,,200.0,non,ultra,DC,CCS,1,Voiture,oui,,Application|Badge RFID,non,yes,24/7,oui,2026-02-01,50.88275,3.425829
 OpenStreetMap,node/10657570655,,,,Non renseigné,Flandre,Antwerpen,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,51.203697,4.434524
 OpenStreetMap,node/10666269227,,,Smappee,Smappee,Flandre,Oostrozebeke,Wielsbekestraat 61,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,,customers,24/7,oui,,50.920263,3.344079
 OpenStreetMap,node/10671290613,,,Lidl,Lidl,Flandre,Damme,,,,non,inconnue,,,,Voiture,oui,,,non,customers,,non,,51.203094,3.315355
@@ -3749,6 +3762,7 @@ OpenStreetMap,node/10748524064,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,AC
 OpenStreetMap,node/10748575586,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,AC,Type 2 (câble),2,Voiture,,,,,private,24/7,oui,,51.030435,3.691222
 OpenStreetMap,node/10750829118,,,Allego,Allego,Flandre,Ieper,,,11.0,non,lente,AC,Type 2 (câble),2,Voiture,oui,,,,yes,,non,,50.853126,2.906257
 OpenStreetMap,node/10767107617,,,Allego,Allego,Flandre,Duffel,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,,non,,51.096307,4.494189
+OpenStreetMap,node/10770959608,,,Allego,Allego,Flandre,,,,,non,inconnue,,,3,Voiture,,,,,,,non,,51.069967,5.146337
 OpenStreetMap,node/10779140774,,,Allego,Allego,Flandre,Beringen,,,50.0,non,rapide,DC,Type 2|Type 2 (câble)|CCS|CHAdeMO,3,Voiture,oui,,,,,,non,,51.068271,5.223875
 OpenStreetMap,node/10783987612,,,De Nieuwe Lekkerbek,De Nieuwe Lekkerbek,Flandre,Wingene,,,,non,inconnue,,,4,Voiture,oui,"0,5 euro/kWh",Application,non,yes,24/7,oui,,51.035182,3.396234
 OpenStreetMap,node/10784013215,,,De Nieuwe Lekkerbek,De Nieuwe Lekkerbek,Flandre,Wingene,,,,non,inconnue,,,1,Voiture,oui,"0,5 euro/kWh",Application,non,yes,24/7,oui,,51.034986,3.395297
@@ -3853,7 +3867,7 @@ OpenStreetMap,node/10929330764,,,Blue Corner,Blue Corner,Flandre,Aartselaar,,,,n
 OpenStreetMap,node/10929330765,,,Blue Corner,Blue Corner,Flandre,Aartselaar,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,customers,,non,,51.126196,4.375312
 OpenStreetMap,node/10929330766,,,Blue Corner,Blue Corner,Flandre,Aartselaar,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,customers,,non,,51.126141,4.375296
 OpenStreetMap,node/10929330767,,,Blue Corner,Blue Corner,Flandre,Aartselaar,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,customers,,non,,51.126074,4.375278
-OpenStreetMap,node/10939461676,,,ENGIE Vianeo,ENGIE Vianeo,Flandre,Rumst,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,2023-09-23,51.100927,4.413512
+OpenStreetMap,node/10939461676,,,Engie,ENGIE Vianeo,Flandre,Rumst,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,2023-09-23,51.100927,4.413512
 OpenStreetMap,node/10941856798,,,Allego,Allego,Flandre,Mechelen,Zwaluwstraat,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,51.040399,4.472876
 OpenStreetMap,node/10944595417,,,,Non renseigné,Flandre,Hoeilaart,,,,non,inconnue,,,1,Voiture,,,,,private,,non,,50.76433,4.472217
 OpenStreetMap,node/10948488205,,,Circle K,Circle K,Flandre,Zonhoven,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.011248,5.332078
@@ -3906,6 +3920,7 @@ OpenStreetMap,node/11012891852,,Ingelmunster - Izegemstraat,TotalEnergies,TotalE
 OpenStreetMap,node/11012950937,,,Smappee,Smappee,Flandre,Izegem,Gentsestraat 76,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,customers,24/7,oui,,50.916247,3.219337
 OpenStreetMap,node/11015732059,,,,Non renseigné,Flandre,Drogenbos,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,customers,,non,,50.811491,4.303649
 OpenStreetMap,node/11015867292,,,,Non renseigné,Flandre,Drogenbos,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,private,,non,,50.809405,4.304137
+OpenStreetMap,node/11018180994,,,TotalEnergies,TotalEnergies,Flandre,,,,400.0,non,ultra,DC,CCS,4,Voiture,,,,,,,non,,50.997719,5.198419
 OpenStreetMap,node/11023371063,,,Allego,Allego,Flandre,Brugge,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.200172,3.220807
 OpenStreetMap,node/11024877949,,,,Non renseigné,Flandre,Halle,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,50.729924,4.227283
 OpenStreetMap,node/11030645386,,,,Non renseigné,Flandre,Halle,,,,non,inconnue,AC,Type 2,1,Voiture,,,,,car_sharing,,non,,50.733533,4.234408
@@ -3924,7 +3939,7 @@ OpenStreetMap,node/11052315579,,,,Non renseigné,Flandre,Tielt,,,,non,inconnue,A
 OpenStreetMap,node/11053497381,,,,Non renseigné,Flandre,Landen,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.74813,5.08087
 OpenStreetMap,node/11059209557,,,,Non renseigné,Flandre,Tongeren-Borgloon,,,,non,inconnue,AC,Prise domestique,4,Vélo,non,,Sans identification,,yes,24/7,oui,,50.776026,5.466573
 OpenStreetMap,node/11060688963,,,TotalEnergies,TotalEnergies,Flandre,Waregem,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,50.883497,3.425594
-OpenStreetMap,node/11064003598,,,TotalEnergies Waregem,TotalEnergies,Flandre,Waregem,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,non,,,non,2026-07-30,50.882605,3.425759
+OpenStreetMap,node/11064003598,,,TotalEnergies Waregem,TotalEnergies,Flandre,Waregem,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,non,,,non,,50.882605,3.425759
 OpenStreetMap,node/11067026560,,Tesla Destination Charger,Biebuyck,Biebuyck,Flandre,Wingene,,,,non,inconnue,AC,Type 2 (câble),,Voiture,,,,,private,,non,,51.045791,3.409139
 OpenStreetMap,node/11067026561,,,Biebuyck,Biebuyck,Flandre,Wingene,,,,non,inconnue,AC,Type 2 (câble),1,Voiture,,,,,private,,non,,51.045805,3.409038
 OpenStreetMap,node/11067739462,,,Eikenlaan 90,Eikenlaan 90,Flandre,Waregem,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,non,yes,,non,,50.893266,3.410061
@@ -3938,6 +3953,7 @@ OpenStreetMap,node/11074742883,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,AC,T
 OpenStreetMap,node/11077482764,,,DATS 24,DATS 24 (Colruyt),Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,51.015429,3.65443
 OpenStreetMap,node/11080262282,,,Allego,Allego,Flandre,Hasselt,,,11.0,non,lente,AC,Type 2,2,Voiture,oui,,,,yes,,non,,50.947443,5.254244
 OpenStreetMap,node/11080262283,,,Ecotap,Ecotap,Flandre,Hasselt,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,,yes,,non,,50.948615,5.25269
+OpenStreetMap,node/11080262284,,,,Non renseigné,Flandre,,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.944222,5.274677
 OpenStreetMap,node/11081383740,,Allego,,Non renseigné,Flandre,Laarne,,,,non,inconnue,,,6,Voiture,oui,,,,,24/7,oui,,51.04317,3.880229
 OpenStreetMap,node/11081383741,,Allego,,Non renseigné,Flandre,Laarne,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.043187,3.880002
 OpenStreetMap,node/11081809204,,,Allego,Allego,Flandre,Assenede,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.227157,3.753916
@@ -3983,7 +3999,7 @@ OpenStreetMap,node/11144531916,,,Grepobel Snellaadstation,Grepobel Snellaadstati
 OpenStreetMap,node/11145703718,,,Luminus,Luminus,Flandre,Tessenderlo-Ham,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.078144,5.145823
 OpenStreetMap,node/11146081715,,Allego,Allego,Allego,Flandre,Gent,,,11.0,non,lente,AC,Type 2,2,Voiture,oui,,Application|Badge RFID,non,yes,24/7,oui,2026-07-08,51.036251,3.714994
 OpenStreetMap,node/11146081718,,Allego,Allego,Allego,Flandre,Gent,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,Application|Badge RFID,non,yes,24/7,oui,2026-07-08,51.036249,3.714956
-OpenStreetMap,node/11146177217,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,non,private,24/7,oui,,51.041207,3.720096
+OpenStreetMap,node/11146177217,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,non,permit,24/7,oui,,51.041207,3.720096
 OpenStreetMap,node/11151358211,,,,Non renseigné,Flandre,Brugge,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.200063,3.20425
 OpenStreetMap,node/11159101160,,,Proxy Delhaize,Delhaize,Flandre,Halle,,,,non,inconnue,AC,Prise domestique,3,Vélo,non,,Sans identification,,customers,Mo 12:00-19:00; Tu-Fr 08:00-19:00; Sa 08:00-18:00; Su 08:00-12:00; PH 08:00-12:30,non,,50.745686,4.266813
 OpenStreetMap,node/11159226075,,,Auto,Auto,Flandre,Peer,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.124984,5.473204
@@ -4053,7 +4069,8 @@ OpenStreetMap,node/11257800913,,,,Non renseigné,Flandre,Hasselt,,,,non,inconnue
 OpenStreetMap,node/11257800914,,,,Non renseigné,Flandre,Hasselt,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.933343,5.364651
 OpenStreetMap,node/11257800915,,,,Non renseigné,Flandre,Hasselt,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.933341,5.364614
 OpenStreetMap,node/11257800916,,,,Non renseigné,Flandre,Hasselt,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.93334,5.364579
-OpenStreetMap,node/11261983733,,,ENGIE Vianeo,ENGIE Vianeo,Flandre,Rumst,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,2023-10-13,51.102091,4.407871
+OpenStreetMap,node/11258487842,,Fastned Erpe Mere,Fastned,Fastned,Flandre,,,,300.0,non,ultra,DC,CCS|CHAdeMO,8,Voiture,oui,,Application,non,yes,24/7,oui,,50.928124,3.958195
+OpenStreetMap,node/11261983733,,,Engie,ENGIE Vianeo,Flandre,Rumst,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,2023-10-13,51.102091,4.407871
 OpenStreetMap,node/11263813877,,,TotalEnergies,TotalEnergies,Flandre,Antwerpen,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.227826,4.405126
 OpenStreetMap,node/11264052630,,,Total Energies,TotalEnergies,Flandre,Antwerpen,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.20225,4.41529
 OpenStreetMap,node/11265490592,,,,Non renseigné,Flandre,Antwerpen,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,yes,24/7,oui,,51.234053,4.424163
@@ -4126,7 +4143,7 @@ OpenStreetMap,node/11386508693,,,DATS 24,DATS 24 (Colruyt),Flandre,Duffel,,,,non
 OpenStreetMap,node/11386509150,,,,Non renseigné,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,,,,oui,,,non,,51.218474,4.419593
 OpenStreetMap,node/11386509151,,,greenflux,greenflux,Flandre,Antwerpen,,,,non,inconnue,AC,Type 2,,Voiture,,,,,,,non,,51.15582,4.376999
 OpenStreetMap,node/11386511921,,,BlueCorner,Blue Corner,Flandre,Boechout,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.168183,4.488754
-OpenStreetMap,node/11386515271,,,BlueCorner,Blue Corner,Flandre,Antwerpen,,,,non,inconnue,AC,Type 2,,Voiture|Vélo,,,,oui,,,non,,51.218079,4.420943
+OpenStreetMap,node/11386515271,,,BlueCorner,Blue Corner,Flandre,Antwerpen,,,,non,inconnue,AC,Type 2,,Voiture,,,,oui,,,non,,51.218079,4.420943
 OpenStreetMap,node/11386517137,,Ibens,,Non renseigné,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,,,,,private,,non,,51.202397,4.420951
 OpenStreetMap,node/11386517520,,,,Non renseigné,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.219543,4.421587
 OpenStreetMap,node/11386524291,,,greenflux,greenflux,Flandre,Edegem,,,,non,inconnue,AC,Type 2,,Voiture,,,Application,,,,non,,51.15515,4.417633
@@ -4177,7 +4194,7 @@ OpenStreetMap,node/11491119964,,,Allego,Allego,Flandre,Haacht,,,,non,inconnue,,,
 OpenStreetMap,node/11495425671,,,,Non renseigné,Flandre,Lierde,,,,non,inconnue,,,4,Vélo,non,,Sans identification,,yes,,non,,50.803583,3.822906
 OpenStreetMap,node/11496703538,,,,Non renseigné,Flandre,Wichelen,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.012361,3.929106
 OpenStreetMap,node/11496804169,,,DATS 24,DATS 24 (Colruyt),Flandre,Brecht,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.35703,4.640319
-OpenStreetMap,node/11497574820,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.032187,3.711517
+OpenStreetMap,node/11497574820,,Tuinwijklaan 20,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.032187,3.711517
 OpenStreetMap,node/11497574821,,Tuinwijklaan 66,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.031488,3.708944
 OpenStreetMap,node/11497574822,,,DATS 24,DATS 24 (Colruyt),Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.031949,3.706649
 OpenStreetMap,node/11499640745,,,Allego,Allego,Flandre,Brecht,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.348943,4.676785
@@ -4199,7 +4216,7 @@ OpenStreetMap,node/11537905624,,,,Non renseigné,Flandre,Nieuwpoort,,,,non,incon
 OpenStreetMap,node/11539376316,,,Alego,Alego,Flandre,Deinze,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.059109,3.573612
 OpenStreetMap,node/11540660902,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.060427,3.698706
 OpenStreetMap,node/11541169513,,,Lidl,Lidl,Flandre,Wemmel,,,,non,inconnue,,,3,Voiture|Vélo,,,,,customers,,non,,50.904012,4.30558
-OpenStreetMap,node/11541177692,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.058868,3.6972
+OpenStreetMap,node/11541177692,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.058868,3.6972
 OpenStreetMap,node/11542701869,,,Last Mile Solutions,Last Mile Solutions,Flandre,Herent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.902026,4.66863
 OpenStreetMap,node/11545581091,,,E-Flux,E-Flux,Flandre,Herent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.901272,4.666335
 OpenStreetMap,node/11545581092,,,E-Flux,E-Flux,Flandre,Herent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.90127,4.666412
@@ -4221,7 +4238,7 @@ OpenStreetMap,node/11613716766,,,Blue Corner,Blue Corner,Flandre,Hasselt,,,,non,
 OpenStreetMap,node/11618118364,,,Allego,Allego,Flandre,Waasmunster,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.10918,4.083071
 OpenStreetMap,node/11619383854,,,,Non renseigné,Flandre,Tongeren-Borgloon,,,,non,inconnue,AC,Prise domestique,4,Vélo,non,,,,yes,24/7,oui,,50.801655,5.344852
 OpenStreetMap,node/11619452120,,,Total Energies,TotalEnergies,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,oui,yes,24/7,oui,,51.062366,3.757674
-OpenStreetMap,node/11621858277,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,oui,yes,24/7,oui,,51.070954,3.756919
+OpenStreetMap,node/11621858277,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,oui,yes,24/7,oui,,51.070954,3.756919
 OpenStreetMap,node/11623154680,,,,Non renseigné,Flandre,Wingene,,,,non,inconnue,AC,Type 2 (câble),6,Voiture,,,,,private,24/7,oui,,51.042006,3.394962
 OpenStreetMap,node/11623589118,,,Allego,Allego,Flandre,Tienen,,,,non,inconnue,,,22,Voiture,oui,0.54,,,yes,,non,,50.812,4.928894
 OpenStreetMap,node/11623589119,,,Allego,Allego,Flandre,Tienen,,,,non,inconnue,,,11,Voiture,oui,0.44,,,yes,,non,,50.812021,4.928954
@@ -4242,8 +4259,8 @@ OpenStreetMap,node/11626470808,,,DATS 24,DATS 24 (Colruyt),Flandre,Zedelgem,,,22
 OpenStreetMap,node/11626476030,,,DATS 24,DATS 24 (Colruyt),Flandre,Zedelgem,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,oui,customers,,non,,51.154599,3.187304
 OpenStreetMap,node/11626480290,,,Allego,Allego,Flandre,Gent,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,oui,yes,24/7,oui,,51.052936,3.693692
 OpenStreetMap,node/11626732535,,,DATS 24,DATS 24 (Colruyt),Flandre,Gent,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,Application,non,permissive,24/7,oui,,51.055444,3.694986
-OpenStreetMap,node/11630015766,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.092073,3.715834
-OpenStreetMap,node/11630015767,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.092068,3.715908
+OpenStreetMap,node/11630015766,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,51.092073,3.715834
+OpenStreetMap,node/11630015767,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,51.092068,3.715908
 OpenStreetMap,node/11633994315,,,,Non renseigné,Flandre,Roeselare,,,,non,inconnue,AC,Type 2 (câble),2,Voiture,,,,,,,non,,50.926104,3.13756
 OpenStreetMap,node/11634694250,,,,Non renseigné,Flandre,Leuven,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,50.9284,4.725088
 OpenStreetMap,node/11638880299,,,engie,ENGIE Vianeo,Flandre,Hemiksem,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.133541,4.335199
@@ -4340,9 +4357,10 @@ OpenStreetMap,node/11935650071,,,,Non renseigné,Flandre,Aalter,,,,non,inconnue,
 OpenStreetMap,node/11939374162,,,,Non renseigné,Flandre,Knokke-Heist,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.347707,3.286106
 OpenStreetMap,node/11939380905,,,,Non renseigné,Flandre,Knokke-Heist,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.346732,3.27527
 OpenStreetMap,node/11939659261,,,,Non renseigné,Flandre,Ieper,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.852167,2.879277
+OpenStreetMap,node/11942707069,,,,Non renseigné,Flandre,,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.226807,2.921845
 OpenStreetMap,node/11945024906,,,,Non renseigné,Flandre,De Panne,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.100704,2.583746
 OpenStreetMap,node/11945419324,,,,Non renseigné,Flandre,De Haan,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.260692,3.007543
-OpenStreetMap,node/11947095892,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,private,24/7,oui,,51.03223,3.71132
+OpenStreetMap,node/11947095892,,Tuinwijklaan 24,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.03223,3.71132
 OpenStreetMap,node/11948558840,,,Allego,Allego,Flandre,Lanaken,,,11.0,non,lente,AC,Type 2,2,Voiture,,,,,,,non,,50.865222,5.630958
 OpenStreetMap,node/11953773296,,,,Non renseigné,Flandre,Pittem,,,,non,inconnue,AC,Type 2 (câble),,Voiture,,,,,,,non,,50.994117,3.265529
 OpenStreetMap,node/11954410783,,,,Non renseigné,Flandre,Brugge,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.205824,3.22893
@@ -4353,7 +4371,7 @@ OpenStreetMap,node/11958793034,,,Engie,ENGIE Vianeo,Flandre,Schoten,,,,non,incon
 OpenStreetMap,node/11961388042,,,,Non renseigné,Flandre,Harelbeke,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.833106,3.307102
 OpenStreetMap,node/11963278663,,,,Non renseigné,Flandre,Merelbeke-Melle,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.017664,3.760967
 OpenStreetMap,node/11964992671,,,Lidl,Lidl,Flandre,Wellen,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,50.84034,5.328227
-OpenStreetMap,node/11975506202,,,ENGIE Vianeo,ENGIE Vianeo,Flandre,Rumst,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,,51.100057,4.406801
+OpenStreetMap,node/11975506202,,,Engie,ENGIE Vianeo,Flandre,Rumst,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,,51.100057,4.406801
 OpenStreetMap,node/11981373551,,,Total,TotalEnergies,Flandre,Wingene,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,non,yes,24/7,oui,,51.035359,3.395129
 OpenStreetMap,node/11982955333,,,,Non renseigné,Flandre,Niel,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.110958,4.342788
 OpenStreetMap,node/11984968306,,,Engie,ENGIE Vianeo,Flandre,Meerhout,,,22.0,non,acceleree,AC,Type 2,1,Voiture,,,,,yes,,non,,51.130968,5.08588
@@ -4370,7 +4388,7 @@ OpenStreetMap,node/11989934212,,,Engie,ENGIE Vianeo,Flandre,Temse,,,,non,inconnu
 OpenStreetMap,node/11989934240,,,Engie,ENGIE Vianeo,Flandre,Temse,,,,non,inconnue,,,22,Voiture,,,,,yes,,non,,51.129473,4.199482
 OpenStreetMap,node/11991953822,,,,Non renseigné,Flandre,Kruisem,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,50.910968,3.598448
 OpenStreetMap,node/11997792662,,,,Non renseigné,Flandre,Putte,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.047095,4.624645
-OpenStreetMap,node/12001579583,,,Engie,ENGIE Vianeo,Flandre,Lier,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.130768,4.578968
+OpenStreetMap,node/12001579583,,,Engie,ENGIE Vianeo,Flandre,Lier,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.130721,4.579016
 OpenStreetMap,node/12001587669,,,,Non renseigné,Flandre,Lier,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.129446,4.578541
 OpenStreetMap,node/12006496319,,,Engie,ENGIE Vianeo,Flandre,Beringen,,,22.0,non,acceleree,AC,Type 2,4,Voiture,,,,,yes,,non,,51.060998,5.199216
 OpenStreetMap,node/12012507270,,,,Non renseigné,Flandre,Kapellen,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.309527,4.433915
@@ -4419,7 +4437,8 @@ OpenStreetMap,node/12076715868,,,Aldi,Aldi,Flandre,Herentals,,,,non,inconnue,,,2
 OpenStreetMap,node/12078797238,,TotalEnergies EV Charging Point,TotalEnergies,TotalEnergies,Flandre,Leuven,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,50.890464,4.729546
 OpenStreetMap,node/12079779296,,,Engie,ENGIE Vianeo,Flandre,Laakdal,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,yes,24/7,oui,,51.091341,5.057757
 OpenStreetMap,node/12082371473,,,,Non renseigné,Flandre,Laakdal,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.101138,5.004366
-OpenStreetMap,node/12083851921,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.073658,3.735035
+OpenStreetMap,node/12083578498,,,Electra,Electra,Flandre,,,,,non,inconnue,,,6,Voiture,oui,,,non,yes,24/7,oui,,51.190544,3.552791
+OpenStreetMap,node/12083851921,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.073658,3.735035
 OpenStreetMap,node/12086778553,,,,Non renseigné,Flandre,Meerhout,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.113193,5.096905
 OpenStreetMap,node/12087780404,,,evbox,EVBox,Flandre,Brugge,,,,non,inconnue,AC,Type 2,4,Voiture,,,,,,,non,,51.204288,3.222184
 OpenStreetMap,node/12090191329,,,TotalEnergies,TotalEnergies,Flandre,Leuven,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.886415,4.739959
@@ -4471,7 +4490,7 @@ OpenStreetMap,node/12106414717,,,,Non renseigné,Flandre,Lille,,,,non,inconnue,,
 OpenStreetMap,node/12106414718,,,,Non renseigné,Flandre,Lille,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.291367,4.870617
 OpenStreetMap,node/12106657117,,,Total Energies,TotalEnergies,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.061687,3.751539
 OpenStreetMap,node/12107791868,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.091791,3.758101
-OpenStreetMap,node/12107791869,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.07978,3.759711
+OpenStreetMap,node/12107791869,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.079778,3.759633
 OpenStreetMap,node/12108332058,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.058596,3.71615
 OpenStreetMap,node/12108349862,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.067463,3.750675
 OpenStreetMap,node/12108377217,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,private,24/7,oui,,51.06706,3.748885
@@ -4490,7 +4509,7 @@ OpenStreetMap,node/12112929774,,,Q8,Q8,Flandre,Destelbergen,,,,non,inconnue,DC,C
 OpenStreetMap,node/12112940209,,,Q8,Q8,Flandre,Destelbergen,,,,non,inconnue,DC,CCS,2,Voiture,oui,,,,yes,,non,,51.051961,3.760812
 OpenStreetMap,node/12112943251,,,Q8,Q8,Flandre,Destelbergen,,,,non,inconnue,DC,CCS,2,Voiture,oui,,,,yes,,non,,51.051941,3.760703
 OpenStreetMap,node/12113075435,,,Carrera motors,Carrera motors,Flandre,Sint-Martens-Latem,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.034933,3.619316
-OpenStreetMap,node/12113089287,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,AC,Type 2,4,Voiture,,,,,,,non,,51.068332,3.754763
+OpenStreetMap,node/12113089287,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,4,Voiture,,,,,,,non,,51.068332,3.754763
 OpenStreetMap,node/12114463045,,,,Non renseigné,Flandre,Geel,,,,non,inconnue,,,2,Voiture,,,,,customers,,non,,51.150221,4.967646
 OpenStreetMap,node/12114473797,,,,Non renseigné,Flandre,Geel,,,,non,inconnue,,,2,Voiture,,,,non,customers,24/7,oui,,51.146588,4.95748
 OpenStreetMap,node/12114477139,,,,Non renseigné,Flandre,Geel,,,,non,inconnue,,,2,Voiture,,,,,customers,,non,,51.150366,4.968033
@@ -4506,7 +4525,7 @@ OpenStreetMap,node/12115665885,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,
 OpenStreetMap,node/12115695502,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.054222,3.739392
 OpenStreetMap,node/12116706168,,,,Non renseigné,Flandre,De Haan,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.300778,3.078267
 OpenStreetMap,node/12116706169,,,,Non renseigné,Flandre,De Haan,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.300744,3.078184
-OpenStreetMap,node/12117264233,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.101942,3.770198
+OpenStreetMap,node/12117264233,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.101942,3.770198
 OpenStreetMap,node/12117273939,,,,Non renseigné,Flandre,Leuven,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,50.9336,4.743227
 OpenStreetMap,node/12117273947,,,E-Flux,E-Flux,Flandre,Rotselaar,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,50.938492,4.734263
 OpenStreetMap,node/12117273952,,,TotalEnergies,TotalEnergies,Flandre,Rotselaar,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,,yes,,non,,50.94765,4.751038
@@ -4554,6 +4573,7 @@ OpenStreetMap,node/12138427645,,,Total Energies,TotalEnergies,Flandre,Laarne,,,,
 OpenStreetMap,node/12142404288,,,Volvo,Volvo,Flandre,Diest,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.993306,5.042739
 OpenStreetMap,node/12143623423,,,engie,ENGIE Vianeo,Flandre,Sint-Niklaas,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.158964,4.138939
 OpenStreetMap,node/12143788026,,,Engie,ENGIE Vianeo,Flandre,Aalter,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,non,yes,24/7,oui,,51.078185,3.448057
+OpenStreetMap,node/12144924605,,,Smappee,Smappee,Flandre,,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,,,,non,,51.073667,2.689526
 OpenStreetMap,node/12145552142,,,,Non renseigné,Flandre,Leuven,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,50.863604,4.698079
 OpenStreetMap,node/12145808847,,,Allego,Allego,Flandre,Bertem,,,,non,inconnue,DC,Type 2|CCS,8,Voiture,oui,,,,,24/7,oui,,50.861733,4.613556
 OpenStreetMap,node/12147499918,,,CenEnergy,CenEnergy,Flandre,Leuven,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,50.861745,4.687998
@@ -4620,19 +4640,19 @@ OpenStreetMap,node/12231392110,,,,Non renseigné,Flandre,Geel,,,,non,inconnue,,,
 OpenStreetMap,node/12231392111,,,,Non renseigné,Flandre,Geel,,,,non,inconnue,,,2,Voiture,,,,,private,,non,,51.130512,4.947837
 OpenStreetMap,node/12231392112,,,,Non renseigné,Flandre,Geel,,,,non,inconnue,,,2,Voiture,,,,,private,,non,,51.130499,4.947906
 OpenStreetMap,node/12231392113,,,,Non renseigné,Flandre,Geel,,,,non,inconnue,,,2,Voiture,,,,,private,,non,,51.130495,4.947904
-OpenStreetMap,node/12231720320,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.029947,3.710061
+OpenStreetMap,node/12231720320,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.029984,3.710074
 OpenStreetMap,node/12231762475,,,,Non renseigné,Flandre,Maasmechelen,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.970976,5.700605
 OpenStreetMap,node/12231787774,,,,Non renseigné,Flandre,Wingene,,,,non,inconnue,AC,Type 2 (câble),2,Voiture,,,,,private,,non,,51.043058,3.410675
 OpenStreetMap,node/12232816365,,,,Non renseigné,Flandre,Merelbeke-Melle,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,51.019169,3.768095
 OpenStreetMap,node/12233089245,,,,Non renseigné,Flandre,Beernem,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,51.120353,3.324107
 OpenStreetMap,node/12234336287,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.073322,3.747302
-OpenStreetMap,node/12238492127,,,DATS 24,DATS 24 (Colruyt),Flandre,Genk,,,,non,inconnue,,,4,Voiture,,,,,,,non,,50.960583,5.452066
+OpenStreetMap,node/12238492127,,,DATS 24,DATS 24 (Colruyt),Flandre,Genk,,,,non,inconnue,,,4,Voiture,,,,,,,non,,50.960755,5.452166
 OpenStreetMap,node/12244863078,,,TotalEnergies,TotalEnergies,Flandre,Aarschot,,,,non,inconnue,,,4,Voiture,oui,,,,yes,,non,,50.985049,4.824855
 OpenStreetMap,node/12246749355,,,,Non renseigné,Flandre,Aalter,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,51.106898,3.384696
 OpenStreetMap,node/12248812980,,,,Non renseigné,Flandre,Geel,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.203136,4.979563
 OpenStreetMap,node/12249919418,,,,Non renseigné,Flandre,Zemst,,,,non,inconnue,,,,Voiture,,,,,,24/7,oui,,50.961916,4.495241
 OpenStreetMap,node/12249919419,,,,Non renseigné,Flandre,Zemst,,,,non,inconnue,,,,Voiture,,,,,,24/7,oui,,50.961868,4.495245
-OpenStreetMap,node/12250459774,,,Allego,Allego,Flandre,Peer,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.154032,5.507024
+OpenStreetMap,node/12250459774,,,,Non renseigné,Flandre,Peer,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.154032,5.507024
 OpenStreetMap,node/12252457943,,,,Non renseigné,Flandre,Tielt,,,,non,inconnue,AC,Type 2,4,Voiture,,,,,,,non,,51.001989,3.322293
 OpenStreetMap,node/12252560906,,,,Non renseigné,Flandre,Tervuren,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.820057,4.502764
 OpenStreetMap,node/12254547333,,,smappee,smappee,Flandre,Koksijde,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.121449,2.66089
@@ -4644,7 +4664,6 @@ OpenStreetMap,node/12258755048,,,,Non renseigné,Flandre,Merchtem,,,,non,inconnu
 OpenStreetMap,node/12260962516,,,,Non renseigné,Flandre,De Panne,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.094499,2.565933
 OpenStreetMap,node/12262989612,,,Allego,Allego,Flandre,Oudsbergen,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.09392,5.535267
 OpenStreetMap,node/12262989613,,,Allego,Allego,Flandre,Oudsbergen,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.093913,5.535231
-OpenStreetMap,node/12263074633,,,,Non renseigné,Flandre,Nieuwpoort,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.149164,2.720025
 OpenStreetMap,node/12264382753,,,,Non renseigné,Flandre,Dendermonde,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.054083,4.107131
 OpenStreetMap,node/12266260475,,Optimile Charging Station,Optimile,Optimile,Flandre,Sint-Truiden,,,,non,inconnue,,,6,Voiture,oui,"0,80",,,yes,,non,,50.812219,5.211437
 OpenStreetMap,node/12266260476,,Hyperfast Officenter Sint-Truiden,Hyperfast,Hyperfast,Flandre,Sint-Truiden,,,300.0,non,ultra,DC,CCS,2,Voiture,oui,"0,87",,,yes,,non,,50.810698,5.211043
@@ -4720,7 +4739,7 @@ OpenStreetMap,node/12369536879,,,,Non renseigné,Flandre,Antwerpen,,,,non,inconn
 OpenStreetMap,node/12369673364,,,,Non renseigné,Flandre,Sint-Niklaas,,,,non,inconnue,,,100,Voiture,,,,,,,non,,51.154517,4.154715
 OpenStreetMap,node/12370406767,,,,Non renseigné,Flandre,Gistel,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.153709,2.947902
 OpenStreetMap,node/12372531596,,,,Non renseigné,Flandre,Lommel,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.231692,5.309631
-OpenStreetMap,node/12373606839,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.073661,3.735117
+OpenStreetMap,node/12373606839,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.073661,3.735117
 OpenStreetMap,node/12373660893,,,,Non renseigné,Flandre,Hemiksem,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.137991,4.335015
 OpenStreetMap,node/12376366645,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.045236,3.73533
 OpenStreetMap,node/12376500200,,,Engie,ENGIE Vianeo,Flandre,Lommel,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,,,,non,,51.208404,5.305259
@@ -4734,8 +4753,8 @@ OpenStreetMap,node/12378393835,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non
 OpenStreetMap,node/12378482583,,,Ecotap,Ecotap,Flandre,Alken,,,,non,inconnue,,,3,Voiture,,,,,,,non,,50.878267,5.302926
 OpenStreetMap,node/12379167188,,,Engie,ENGIE Vianeo,Flandre,Zonhoven,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,50.99047,5.366879
 OpenStreetMap,node/12382146787,,,Blink,Blink Charging,Flandre,Diepenbeek,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.907212,5.426433
-OpenStreetMap,node/12382826273,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,24/7,oui,,51.057868,3.737488
-OpenStreetMap,node/12382826280,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.05581,3.733229
+OpenStreetMap,node/12382826273,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,24/7,oui,,51.057868,3.737488
+OpenStreetMap,node/12382826280,,,Total Energies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.055797,3.733232
 OpenStreetMap,node/12382826283,,,Smoov Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.057414,3.73315
 OpenStreetMap,node/12382964206,,,Q8,Q8,Flandre,Waasmunster,,,,non,inconnue,,,14,Voiture,,,,,,,non,,51.128071,4.079422
 OpenStreetMap,node/12383161267,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,Application,,yes,24/7,oui,,51.043392,3.734537
@@ -4783,8 +4802,9 @@ OpenStreetMap,node/12431783436,,,DATS 24,DATS 24 (Colruyt),Flandre,Zaventem,,,,n
 OpenStreetMap,node/12434421734,,,Sparki,Sparki,Flandre,Deerlijk,,,,non,inconnue,,,4,Voiture,,,,,,,non,,50.859753,3.37791
 OpenStreetMap,node/12434440903,,,,Non renseigné,Flandre,Waregem,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.861263,3.423495
 OpenStreetMap,node/12434441705,,,,Non renseigné,Flandre,Waregem,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.858883,3.414485
+OpenStreetMap,node/12435541557,,,,Non renseigné,Flandre,,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.908346,4.208789
 OpenStreetMap,node/12435637095,,,,Non renseigné,Flandre,Asse,,,,non,inconnue,,,,Vélo,,,,,,,non,,50.908385,4.208591
-OpenStreetMap,node/12435649204,,,nextbike,nextbike,Flandre,Asse,,,,non,inconnue,,,,Vélo,non,,,,,,non,,50.90552,4.209626
+OpenStreetMap,node/12435649204,,,,Non renseigné,Flandre,Asse,,,,non,inconnue,,,,Vélo,,,,,,,non,,50.90552,4.209626
 OpenStreetMap,node/12444336666,,,,Non renseigné,Flandre,Tielt,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,24/7,oui,,50.992339,3.328123
 OpenStreetMap,node/12444661877,,,Q8 electric,Q8,Flandre,Deerlijk,,,,non,inconnue,,,1,Voiture,,,,,yes,,non,,50.850424,3.367513
 OpenStreetMap,node/12445610026,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.048516,3.738313
@@ -4796,6 +4816,7 @@ OpenStreetMap,node/12456366879,,,,Non renseigné,Flandre,Menen,,,,non,inconnue,,
 OpenStreetMap,node/12460670175,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.06182,3.722849
 OpenStreetMap,node/12460670176,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.061813,3.72278
 OpenStreetMap,node/12461115183,,,Engie,ENGIE Vianeo,Flandre,Geel,,,,non,inconnue,AC,Type 2,2,Voiture,,,,non,yes,24/7,oui,,51.162578,5.063284
+OpenStreetMap,node/12461627802,,,,Non renseigné,Flandre,,,,,non,inconnue,DC,CCS,4,Voiture,oui,,,,yes,24/7,oui,2024-12-29,51.079222,3.451192
 OpenStreetMap,node/12461836155,,,,Non renseigné,Flandre,Geel,,,,non,inconnue,,,2,Voiture,,,,,customers,,non,,51.163347,5.063868
 OpenStreetMap,node/12463974170,,,,Non renseigné,Flandre,Geel,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.182094,4.985017
 OpenStreetMap,node/12463974171,,,,Non renseigné,Flandre,Geel,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.182152,4.985001
@@ -4811,7 +4832,7 @@ OpenStreetMap,node/12476032584,,,TotalEnergies,TotalEnergies,Flandre,Antwerpen,,
 OpenStreetMap,node/12478383581,,,,Non renseigné,Flandre,Aalter,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,2025-01-05,51.088731,3.490419
 OpenStreetMap,node/12478465094,,,Engie,ENGIE Vianeo,Flandre,Heusden-Zolder,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,50.987312,5.272946
 OpenStreetMap,node/12480444962,,,,Non renseigné,Flandre,Wichelen,,,,non,inconnue,,,11,Voiture,,,,,,,non,,51.004616,3.932704
-OpenStreetMap,node/12481864884,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.090121,3.704427
+OpenStreetMap,node/12481864884,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.090121,3.704427
 OpenStreetMap,node/12486733795,,,,Non renseigné,Flandre,Nieuwerkerken,,,,non,inconnue,,,,Voiture|Vélo,,,,,,,non,,50.864877,5.193289
 OpenStreetMap,node/12486839993,,,,Non renseigné,Flandre,Nieuwerkerken,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.867939,5.195161
 OpenStreetMap,node/12487480676,,,Gabriëls,Gabriëls,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.235825,4.484546
@@ -4827,7 +4848,7 @@ OpenStreetMap,node/12505579832,,,,Non renseigné,Flandre,Overijse,,,,non,inconnu
 OpenStreetMap,node/12507077307,,,Engie,ENGIE Vianeo,Flandre,Lommel,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,,yes,,non,,51.199884,5.301523
 OpenStreetMap,node/12507454769,,,,Non renseigné,Flandre,Oudsbergen,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.104339,5.537874
 OpenStreetMap,node/12507454770,,,,Non renseigné,Flandre,Oudsbergen,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.104403,5.537882
-OpenStreetMap,node/12515597441,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,24/7,oui,,51.060508,3.730836
+OpenStreetMap,node/12515597441,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.060508,3.730836
 OpenStreetMap,node/12516749728,,,,Non renseigné,Flandre,Oudenaarde,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.842939,3.663306
 OpenStreetMap,node/12522951767,,,TotalEnergies,TotalEnergies,Flandre,De Haan,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,51.298937,3.081854
 OpenStreetMap,node/12527814120,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.059368,3.712029
@@ -4858,14 +4879,14 @@ OpenStreetMap,node/12557625287,,,TotalEnergies,TotalEnergies,Flandre,Waregem,Poe
 OpenStreetMap,node/12557765967,,Total,Total,TotalEnergies,Flandre,Izegem,Blekerijstraat 3,,7.0,non,lente,AC,Type 2,2,Voiture,oui,,Carte bancaire|Application|Badge RFID,,yes,24/7,oui,,50.90812,3.2044
 OpenStreetMap,node/12558648892,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.074307,3.742151
 OpenStreetMap,node/12568394623,,,,Non renseigné,Flandre,Roeselare,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.971543,3.118993
-OpenStreetMap,node/12569433531,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,,non,,51.068918,3.753458
+OpenStreetMap,node/12569433531,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.068918,3.753458
 OpenStreetMap,node/12572100361,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,4,Voiture,,,,,,,non,,51.074278,3.722268
 OpenStreetMap,node/12572100362,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,4,Voiture,,,,,,,non,,51.074277,3.722353
 OpenStreetMap,node/12572100363,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,4,Voiture,,,,,,,non,,51.074277,3.722425
 OpenStreetMap,node/12572100364,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,4,Voiture,,,,,,,non,,51.074277,3.722222
 OpenStreetMap,node/12573780274,,,DATS 24,DATS 24 (Colruyt),Flandre,Lievegem,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,Application,non,permissive,24/7,oui,,51.100986,3.61189
 OpenStreetMap,node/12573942527,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.058568,3.741712
-OpenStreetMap,node/12574360036,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.063902,3.750709
+OpenStreetMap,node/12574360036,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.063902,3.750709
 OpenStreetMap,node/12574360049,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.056351,3.755448
 OpenStreetMap,node/12574569127,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.051036,3.737373
 OpenStreetMap,node/12574569167,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,51.045541,3.743528
@@ -4911,7 +4932,7 @@ OpenStreetMap,node/12616744870,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,
 OpenStreetMap,node/12616860220,,,Engie,ENGIE Vianeo,Flandre,Gavere,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,50.927785,3.658113
 OpenStreetMap,node/12618558315,,,,Non renseigné,Flandre,Zutendaal,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.952594,5.559638
 OpenStreetMap,node/12619504357,,Total,Total,TotalEnergies,Flandre,Ingelmunster,Kloosterhof,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,Carte bancaire|Application|Badge RFID,,yes,24/7,oui,,50.925029,3.246851
-OpenStreetMap,node/12620610970,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,,non,,51.059584,3.746174
+OpenStreetMap,node/12620610970,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.059584,3.746174
 OpenStreetMap,node/12622910928,,,TCB,TCB,Flandre,Gent,,,22.0,non,acceleree,AC,Type 2,4,Voiture,oui,,,non,yes,24/7,oui,,51.051331,3.701639
 OpenStreetMap,node/12623634506,,,,Non renseigné,Flandre,Beringen,,,,non,inconnue,,,,Voiture|Vélo,,,,,,,non,,51.055701,5.15953
 OpenStreetMap,node/12630170584,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.020748,3.674059
@@ -4944,8 +4965,9 @@ OpenStreetMap,node/12649847256,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,
 OpenStreetMap,node/12649847257,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,1,Voiture,,,,,,,non,,51.036219,3.729308
 OpenStreetMap,node/12649847262,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.038287,3.729168
 OpenStreetMap,node/12649857941,,,,Non renseigné,Flandre,Rotselaar,,,,non,inconnue,,,3,Voiture,oui,,,,,,non,,50.973221,4.701929
+OpenStreetMap,node/12649957448,,,,Non renseigné,Flandre,,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,50.788546,3.186139
 OpenStreetMap,node/12650371423,,,,Non renseigné,Flandre,Waasmunster,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.116007,4.042397
-OpenStreetMap,node/12650624963,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture|Vélo,,,,,,,non,,51.033934,3.722309
+OpenStreetMap,node/12650624963,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.033934,3.722309
 OpenStreetMap,node/12650624971,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.036581,3.723814
 OpenStreetMap,node/12650624972,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.036608,3.723868
 OpenStreetMap,node/12652185288,,Laadstation,,Non renseigné,Flandre,Wingene,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.060707,3.275526
@@ -4965,15 +4987,16 @@ OpenStreetMap,node/12673149093,,,,Non renseigné,Flandre,Wingene,,,,non,inconnue
 OpenStreetMap,node/12673154213,,,,Non renseigné,Flandre,Wingene,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.038607,3.215037
 OpenStreetMap,node/12673154289,,,,Non renseigné,Flandre,Wingene,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.05676,3.276223
 OpenStreetMap,node/12673160124,,,,Non renseigné,Flandre,Wingene,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.054139,3.283467
-OpenStreetMap,node/12674327700,,Fastned Hoeselt West,Fastned,Fastned,Flandre,Bilzen-Hoeselt,,,,non,inconnue,,,8,Voiture,,,,,yes,,non,,50.836697,5.507886
+OpenStreetMap,node/12674327700,,Fastned Hoeselt West,Fastned,Fastned,Flandre,Bilzen-Hoeselt,,,,non,inconnue,,,8,Voiture,,,,,yes,,non,,50.837397,5.507901
 OpenStreetMap,node/12682572551,,total,TotalEnergies,TotalEnergies,Flandre,Ingelmunster,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,Carte bancaire,,yes,24/7,oui,,50.910018,3.257852
+OpenStreetMap,node/12684144367,,,Totalenergie,TotalEnergies,Flandre,,,,,non,inconnue,,,2,Voiture,,,,,,24/7,oui,,50.788549,3.186127
 OpenStreetMap,node/12684570275,,,TotalEnergies / Vlaamse Overheid,TotalEnergies,Flandre,Tielt,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.99014,3.326454
 OpenStreetMap,node/12685860379,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,non,yes,24/7,oui,,51.036202,3.716925
 OpenStreetMap,node/12686666264,,,,Non renseigné,Flandre,Hooglede,,,,non,inconnue,,,1,Voiture,,,,non,customers,24/7,oui,,51.014565,3.113363
-OpenStreetMap,node/12686835338,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.033485,3.711713
+OpenStreetMap,node/12686835338,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.033464,3.711706
 OpenStreetMap,node/12691981913,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.036555,3.732861
 OpenStreetMap,node/12691981920,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.038172,3.733099
-OpenStreetMap,node/12691981921,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.038995,3.729699
+OpenStreetMap,node/12691981921,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.038995,3.729699
 OpenStreetMap,node/12691981957,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.038995,3.732429
 OpenStreetMap,node/12693545848,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.038662,3.735358
 OpenStreetMap,node/12693545849,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.039467,3.735331
@@ -4982,13 +5005,14 @@ OpenStreetMap,node/12693545860,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non
 OpenStreetMap,node/12696803673,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.045267,3.730221
 OpenStreetMap,node/12696803676,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.043745,3.732018
 OpenStreetMap,node/12696803681,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.042836,3.729272
-OpenStreetMap,node/12696803694,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,private,,non,,51.045468,3.730986
+OpenStreetMap,node/12696803694,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.045463,3.730972
 OpenStreetMap,node/12697632344,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.068574,3.748902
 OpenStreetMap,node/12698607192,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.040522,3.710599
 OpenStreetMap,node/12698699525,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.035256,3.715044
 OpenStreetMap,node/12698711843,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.031714,3.710692
 OpenStreetMap,node/12698717130,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.034275,3.70814
 OpenStreetMap,node/12698738944,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.038624,3.7088
+OpenStreetMap,node/12699003916,,DATS 24,DATS 24,DATS 24 (Colruyt),Flandre,,,,,non,inconnue,,,2,Voiture,oui,,Application,,customers,,non,,50.812626,5.15165
 OpenStreetMap,node/12700652955,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.093227,3.765112
 OpenStreetMap,node/12700652956,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.093159,3.765158
 OpenStreetMap,node/12700652957,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.093284,3.765087
@@ -5054,7 +5078,7 @@ OpenStreetMap,node/12772704348,,,,Non renseigné,Flandre,Grimbergen,,,,non,incon
 OpenStreetMap,node/12772745444,,,,Non renseigné,Flandre,Vilvoorde,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,,non,,50.913402,4.372261
 OpenStreetMap,node/12772745837,,,,Non renseigné,Flandre,Grimbergen,,,7.4,non,lente,AC,Type 2,2,Voiture,oui,,,,,,non,,50.912589,4.353823
 OpenStreetMap,node/12772745838,,,,Non renseigné,Flandre,Grimbergen,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,,non,,50.912541,4.35389
-OpenStreetMap,node/12772749779,,,TotalEnergies,TotalEnergies,Flandre,Grimbergen,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,,non,,50.909878,4.361474
+OpenStreetMap,node/12772749779,,,,Non renseigné,Flandre,Grimbergen,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,,non,,50.909878,4.361474
 OpenStreetMap,node/12772783642,,,,Non renseigné,Flandre,Vilvoorde,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,,non,,50.914819,4.371037
 OpenStreetMap,node/12774567537,,,TotalEnergies,TotalEnergies,Flandre,Brugge,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.196493,3.23355
 OpenStreetMap,node/12774575757,,,,Non renseigné,Flandre,Mechelen,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.031694,4.49095
@@ -5106,7 +5130,7 @@ OpenStreetMap,node/12809336106,,,,Non renseigné,Flandre,Kraainem,,,,non,inconnu
 OpenStreetMap,node/12809386215,,,,Non renseigné,Flandre,Eeklo,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.2041,3.517412
 OpenStreetMap,node/12811266583,,,Allego,Allego,Flandre,Houthalen-Helchteren,,,11.0,non,lente,AC,Type 2,2,Voiture,oui,,Application,non,,24/7,oui,,51.029559,5.425048
 OpenStreetMap,node/12811503663,,,,Non renseigné,Flandre,Zaventem,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.863779,4.428195
-OpenStreetMap,node/12812175838,,,,Non renseigné,Flandre,Antwerpen,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,2026-10-01,51.277422,4.42171
+OpenStreetMap,node/12812175838,,,,Non renseigné,Flandre,Antwerpen,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.277422,4.42171
 OpenStreetMap,node/12813532262,,,Sparki,Sparki,Flandre,Wommelgem,,,,non,inconnue,DC,CCS,2,Voiture,oui,,,,,,non,,51.196248,4.5124
 OpenStreetMap,node/12813532263,,,Sparki,Sparki,Flandre,Wommelgem,,,,non,inconnue,DC,CCS,2,Voiture,oui,,,,,,non,,51.196356,4.512505
 OpenStreetMap,node/12813639831,,,Sparki,Sparki,Flandre,Zandhoven,,,,non,inconnue,,,4,Voiture,oui,,,,,,non,,51.208719,4.656479
@@ -5148,7 +5172,7 @@ OpenStreetMap,node/12841743000,,,,Non renseigné,Flandre,Wevelgem,,,,non,inconnu
 OpenStreetMap,node/12842057406,,,Gemeente Wevelgem,Gemeente Wevelgem,Flandre,Wevelgem,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,50.8091,3.182069
 OpenStreetMap,node/12842743744,,,,Non renseigné,Flandre,Aalter,,,,non,inconnue,DC,CCS,2,Voiture,oui,,,,yes,24/7,oui,,51.079574,3.450445
 OpenStreetMap,node/12845000169,,,,Non renseigné,Flandre,Lubbeek,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.895717,4.820992
-OpenStreetMap,node/12847472202,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.071023,3.751606
+OpenStreetMap,node/12847472202,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.071043,3.751609
 OpenStreetMap,node/12850984905,,,Smappee,Smappee,Flandre,Ieper,,,22.0,non,acceleree,AC,Type 2,22,Voiture,,,,,customers,,non,,50.846741,2.946943
 OpenStreetMap,node/12850984906,,,Smappee,Smappee,Flandre,Ieper,,,22.0,non,acceleree,AC,Type 2,22,Voiture,,,,,customers,,non,,50.846798,2.946962
 OpenStreetMap,node/12850984907,,,Smappee,Smappee,Flandre,Ieper,,,22.0,non,acceleree,AC,Type 2,22,Voiture,,,,,customers,,non,,50.846865,2.946986
@@ -5182,9 +5206,10 @@ OpenStreetMap,node/12883065247,,,,Non renseigné,Flandre,Aalter,,,,non,inconnue,
 OpenStreetMap,node/12883987301,,,,Non renseigné,Flandre,Zele,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.068643,4.039492
 OpenStreetMap,node/12883987401,,,,Non renseigné,Flandre,Zele,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.068626,4.039423
 OpenStreetMap,node/12888414961,,,,Non renseigné,Flandre,Geel,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.141788,4.946714
+OpenStreetMap,node/12889850104,,,,Non renseigné,Flandre,,,,,non,inconnue,,,8,Voiture,,,,,yes,,non,,50.904989,3.220641
 OpenStreetMap,node/12892362320,,,,Non renseigné,Flandre,Aalter,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.098889,3.374964
 OpenStreetMap,node/12893469160,,,,Non renseigné,Flandre,Aalter,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.091583,3.446384
-OpenStreetMap,node/12897323333,,Total energies,,Non renseigné,Flandre,Leuven,,,,non,inconnue,,,,Voiture|Vélo,oui,,,,,,non,,50.888803,4.728152
+OpenStreetMap,node/12897323333,,Total energies,,Non renseigné,Flandre,Leuven,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.888803,4.728152
 OpenStreetMap,node/12897703081,,,Engie,ENGIE Vianeo,Flandre,Zonhoven,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,,,,non,,51.002903,5.363794
 OpenStreetMap,node/12897899690,,,Engie,ENGIE Vianeo,Flandre,Zonhoven,,,22.0,non,acceleree,AC,Type 2,4,Voiture,oui,,,,,,non,,50.987823,5.384379
 OpenStreetMap,node/12899350401,,,,Non renseigné,Flandre,Erpe-Mere,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.940255,3.954737
@@ -5209,6 +5234,10 @@ OpenStreetMap,node/12945288037,,,Shell Recharge Solutions,Shell Recharge,Flandre
 OpenStreetMap,node/12946477168,,,Decat,Decat,Flandre,Veurne,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.059849,2.665613
 OpenStreetMap,node/12946477169,,,Decat,Decat,Flandre,Veurne,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.059881,2.665685
 OpenStreetMap,node/12946477170,,,Decat,Decat,Flandre,Veurne,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.059914,2.665763
+OpenStreetMap,node/12946509622,,,Smappee,Smappee,Flandre,,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,,,,non,,51.073571,2.68951
+OpenStreetMap,node/12946509623,,,Smappee,Smappee,Flandre,,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,,,,non,,51.073618,2.68952
+OpenStreetMap,node/12946509624,,,Smappee,Smappee,Flandre,,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,,,,non,,51.073732,2.689539
+OpenStreetMap,node/12946509625,,,Smappee,Smappee,Flandre,,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,,,,non,,51.073776,2.689546
 OpenStreetMap,node/12950075234,,,,Non renseigné,Flandre,Wingene,,,,non,inconnue,AC,Type 2,1,Voiture,,,,,private,,non,,51.043458,3.398239
 OpenStreetMap,node/12951265337,,,,Non renseigné,Flandre,Brasschaat,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.300258,4.482063
 OpenStreetMap,node/12952784528,,,TotalEnergies,TotalEnergies,Flandre,Ingelmunster,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,yes,,non,,50.910748,3.26057
@@ -5274,7 +5303,7 @@ OpenStreetMap,node/13058437065,,,Ecotap,Ecotap,Flandre,Zele,Heikant 274,,,non,in
 OpenStreetMap,node/13063554963,,,,Non renseigné,Flandre,Genk,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,51.000133,5.526525
 OpenStreetMap,node/13063566906,,,,Non renseigné,Flandre,Genk,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,50.998516,5.527473
 OpenStreetMap,node/13063599597,,,,Non renseigné,Flandre,Genk,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,51.000754,5.516367
-OpenStreetMap,node/13070323292,,,,Non renseigné,Flandre,Beernem,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,non,,24/7,oui,,51.108533,3.314231
+OpenStreetMap,node/13070323292,,,,Non renseigné,Flandre,Beernem,,,,non,inconnue,,,2,Voiture,oui,,,non,,24/7,oui,,51.108533,3.314231
 OpenStreetMap,node/13070325991,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,51.061935,3.696074
 OpenStreetMap,node/13072232744,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.043988,3.755973
 OpenStreetMap,node/13074800164,,,TotalEnergies,TotalEnergies,Flandre,Haacht,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.977383,4.639759
@@ -5386,10 +5415,11 @@ OpenStreetMap,node/13252675477,,,Engie,ENGIE Vianeo,Flandre,Kalmthout,,,,non,inc
 OpenStreetMap,node/13255843456,,,,Non renseigné,Flandre,Kortenaken,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.908633,5.061808
 OpenStreetMap,node/13255849064,,,Q8,Q8,Flandre,Roeselare,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,non,yes,24/7,oui,,50.967448,3.110922
 OpenStreetMap,node/13256000855,,,,Non renseigné,Flandre,Staden,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,50.976668,3.013693
-OpenStreetMap,node/13259712547,,,Fastned,Fastned,Flandre,Leopoldsburg,,,400.0,non,ultra,DC,CCS|CHAdeMO,4,Voiture,,,,,,,non,,51.134008,5.238638
+OpenStreetMap,node/13259712547,,,Fastned,Fastned,Flandre,Leopoldsburg,,,400.0,non,ultra,DC,CCS|CHAdeMO,4,Voiture,,,,,,,non,,51.134108,5.238718
 OpenStreetMap,node/13260550088,,,,Non renseigné,Flandre,Assenede,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.192823,3.689972
 OpenStreetMap,node/13261109159,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,51.017315,3.704275
 OpenStreetMap,node/13261236109,,,Allego,Allego,Flandre,Staden,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,50.975085,3.014442
+OpenStreetMap,node/13261749091,,,Allego,Allego,Flandre,,,,,non,inconnue,,,150,Voiture,,,,,,,non,,51.088951,3.808584
 OpenStreetMap,node/13261911258,,,,Non renseigné,Flandre,Kortrijk,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.805442,3.243511
 OpenStreetMap,node/13261911259,,,,Non renseigné,Flandre,Kortrijk,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.805452,3.243477
 OpenStreetMap,node/13265524069,,,,Non renseigné,Flandre,Beringen,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.042928,5.188127
@@ -5518,6 +5548,7 @@ OpenStreetMap,node/13483805733,,,Engie,ENGIE Vianeo,Flandre,Heusden-Zolder,,,22.
 OpenStreetMap,node/13505199059,,,TotalEnergies,TotalEnergies,Flandre,Roeselare,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,50.932932,3.136295
 OpenStreetMap,node/13510173881,,,,Non renseigné,Flandre,Sint-Katelijne-Waver,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.062348,4.579133
 OpenStreetMap,node/13510173882,,,,Non renseigné,Flandre,Sint-Katelijne-Waver,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.062236,4.579018
+OpenStreetMap,node/13514446601,,,Electra,Electra,Flandre,,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.073332,3.775831
 OpenStreetMap,node/13517774163,,,,Non renseigné,Flandre,Roeselare,,,,non,inconnue,,,2,Voiture,,,,,private,,non,,50.940394,3.159736
 OpenStreetMap,node/13517774164,,,,Non renseigné,Flandre,Roeselare,,,,non,inconnue,,,2,Voiture,,,,,private,,non,,50.940409,3.159804
 OpenStreetMap,node/13520238492,,,TotalEnergies,TotalEnergies,Flandre,Roeselare,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,50.934619,3.154645
@@ -5599,7 +5630,7 @@ OpenStreetMap,node/13531723808,,,,Non renseigné,Flandre,Berlare,,,,non,inconnue
 OpenStreetMap,node/13532531901,,,Circle K,Circle K,Flandre,Kontich,,,300.0,non,ultra,DC,CCS,,Voiture,,,,,,24/7,oui,,51.097645,4.438283
 OpenStreetMap,node/13534288264,,,Total Energy,TotalEnergies,Flandre,Liedekerke,,,,non,inconnue,AC,Type 2,22,Voiture,,,,,yes,,non,,50.866293,4.089456
 OpenStreetMap,node/13544426501,,,,Non renseigné,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,,,,,,,non,2026-02-11,51.182868,4.4329
-OpenStreetMap,node/13544426502,,,TotalEnergies,TotalEnergies,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,,,,,,,non,2026-08-16,51.184443,4.432317
+OpenStreetMap,node/13544426502,,,,Non renseigné,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,,,,,,,non,2026-02-11,51.184443,4.432317
 OpenStreetMap,node/13544462301,,,TotalEnergies,TotalEnergies,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,,,,,,,non,2026-05-09,51.186908,4.435033
 OpenStreetMap,node/13544626610,,,,Non renseigné,Flandre,Kortenberg,,,,non,inconnue,,,,Vélo,non,,,,yes,,non,,50.886748,4.538642
 OpenStreetMap,node/13551471706,,,TotalEnergies,TotalEnergies,Flandre,Roeselare,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,50.950093,3.12443
@@ -5616,7 +5647,7 @@ OpenStreetMap,node/13621343377,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,
 OpenStreetMap,node/13621343378,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.101788,3.714149
 OpenStreetMap,node/13624086001,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.061264,3.700611
 OpenStreetMap,node/13624949380,,Oud-Heverlee - Gemeentestraat 8,TotalEnergies,TotalEnergies,Flandre,Oud-Heverlee,,,22.0,non,acceleree,AC,Type 2,4,Voiture,,,,,,,non,,50.827241,4.690308
-OpenStreetMap,node/13625145369,,,,Non renseigné,Flandre,Zaventem,,,,non,inconnue,AC,Type 2,,Voiture,,,,,,,non,,50.869729,4.44954
+OpenStreetMap,node/13625145369,,,,Non renseigné,Flandre,Zaventem,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.869729,4.44954
 OpenStreetMap,node/13626810944,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.063959,3.748092
 OpenStreetMap,node/13626810945,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.063924,3.748047
 OpenStreetMap,node/13626810946,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,51.063838,3.747932
@@ -5641,7 +5672,7 @@ OpenStreetMap,node/13662250136,,,,Non renseigné,Flandre,Lede,,,,non,inconnue,,,
 OpenStreetMap,node/13669325468,,,TotalEnergies,TotalEnergies,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.205715,4.398149
 OpenStreetMap,node/13669499601,,,TotalEnergies,TotalEnergies,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.212289,4.400418
 OpenStreetMap,node/13673891679,,,Allego,Allego,Flandre,Roeselare,,,11.0,non,lente,AC,Type 2,2,Voiture,oui,,,,yes,,non,,50.930116,3.142573
-OpenStreetMap,node/13677622746,,,,Non renseigné,Flandre,Aalst,,,11.0,non,lente,AC,,,Voiture,,,,,customers,,non,,50.937806,4.056316
+OpenStreetMap,node/13677622746,,,,Non renseigné,Flandre,Aalst,,,,non,inconnue,,,,Voiture,,,,,customers,,non,,50.937806,4.056316
 OpenStreetMap,node/13678938881,,Electra Beringen - McDonald's,Electra,Electra,Flandre,Beringen,,,400.0,non,ultra,DC,CCS,6,Voiture,,,,,,24/7,oui,,51.042787,5.188664
 OpenStreetMap,node/13678983257,,,TotalEnergies,TotalEnergies,Flandre,Kampenhout,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,50.937801,4.549145
 OpenStreetMap,node/13682468276,,,,Non renseigné,Flandre,Kruisem,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,50.925224,3.571338
@@ -5773,7 +5804,7 @@ OpenStreetMap,node/13763078653,,,Engie,ENGIE Vianeo,Flandre,Balen,,,22.0,non,acc
 OpenStreetMap,node/13763078654,,,Engie,ENGIE Vianeo,Flandre,Balen,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,51.169844,5.170784
 OpenStreetMap,node/13763078666,,,,Non renseigné,Flandre,Balen,,,160.0,non,ultra,DC,CCS,2,Voiture,,,,,,,non,,51.164465,5.180382
 OpenStreetMap,node/13763078667,,,,Non renseigné,Flandre,Balen,,,11.0,non,lente,AC,Type 2,4,Voiture,,,,,,,non,,51.164534,5.180223
-OpenStreetMap,node/13763078668,,,DATS 24,DATS 24 (Colruyt),Flandre,Balen,,,320.0,non,ultra,DC,CCS,6,Voiture,,,,,,,non,,51.16467,5.17848
+OpenStreetMap,node/13763078668,,,DATS 24,DATS 24 (Colruyt),Flandre,Balen,,,320.0,non,ultra,DC,CCS,6,Voiture,,,,,,,non,,51.164765,5.178589
 OpenStreetMap,node/13763681769,,,Engie,ENGIE Vianeo,Flandre,Nieuwerkerken,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.898702,5.223987
 OpenStreetMap,node/13763681770,,,Engie,ENGIE Vianeo,Flandre,Hasselt,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.916939,5.250536
 OpenStreetMap,node/13763681771,,,Aldi,Aldi,Flandre,Geetbets,,,60.0,non,rapide,DC,CCS,2,Voiture,,,,,,,non,,50.900604,5.175855
@@ -5862,8 +5893,8 @@ OpenStreetMap,node/13811395992,,,Smappee,Smappee,Flandre,Kluisbergen,,,240.0,non
 OpenStreetMap,node/13811395997,,,Aldi,Aldi,Flandre,Avelgem,,,60.0,non,rapide,DC,CCS,2,Voiture,,,,,,,non,,50.767927,3.443347
 OpenStreetMap,node/13814360021,,,TotalEnergies,TotalEnergies,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.165771,4.400001
 OpenStreetMap,node/13814526762,,,TotalEnergies,TotalEnergies,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.163125,4.397716
-OpenStreetMap,node/13820145578,,,,Non renseigné,Flandre,Kortrijk,,,,non,inconnue,,,150,Voiture,,,,,yes,,non,,50.810472,3.24303
-OpenStreetMap,node/13820152069,,,,Non renseigné,Flandre,Kortrijk,,,,non,inconnue,,,150,Voiture,,,,,yes,,non,,50.810455,3.242967
+OpenStreetMap,node/13820145578,,,,Non renseigné,Flandre,Kortrijk,,,,non,inconnue,,,150,Voiture,,,,,,,non,,50.810472,3.24303
+OpenStreetMap,node/13820152069,,,,Non renseigné,Flandre,Kortrijk,,,,non,inconnue,,,150,Voiture,,,,,,,non,,50.810455,3.242967
 OpenStreetMap,node/13827868411,,,,Non renseigné,Flandre,Pelt,,,400.0,non,ultra,DC,CCS,2,Voiture,,,,,,,non,,51.217646,5.367965
 OpenStreetMap,node/13827868417,,,,Non renseigné,Flandre,Pelt,,,120.0,non,rapide,DC,CCS,1,Voiture,,,,,,,non,,51.238628,5.469945
 OpenStreetMap,node/13835134413,,,TotalEnergies,TotalEnergies,Flandre,Aarschot,,,400.0,non,ultra,DC,CCS,4,Voiture,,,,,,,non,,50.963882,4.836442
@@ -5894,7 +5925,7 @@ OpenStreetMap,node/13905833913,,,,Non renseigné,Flandre,Herent,,,,non,inconnue,
 OpenStreetMap,node/13905835008,,,,Non renseigné,Flandre,Herent,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.887475,4.664759
 OpenStreetMap,node/13909002143,,,Q8 Electric,Q8,Flandre,Genk,,,300.0,non,ultra,DC,CCS,2,Voiture,,,,,,,non,,51.004366,5.509
 OpenStreetMap,node/13909002150,,,Wara,Wara,Flandre,Genk,,,300.0,non,ultra,DC,Type 2|CCS,2,Voiture,,,,,,,non,,50.992883,5.516757
-OpenStreetMap,node/13909002151,,,Lidl,Lidl,Flandre,As,,,60.0,non,rapide,DC,Type 2|CCS,2,Voiture,oui,,,,yes,,non,,51.000189,5.564308
+OpenStreetMap,node/13909002151,,,Lidl,Lidl,Flandre,As,,,60.0,non,rapide,DC,Type 2|CCS,2,Voiture,,,,,,,non,,51.000189,5.564308
 OpenStreetMap,node/13909257562,,,Lidl,Lidl,Flandre,Tienen,,,60.0,non,rapide,DC,Type 2|CCS,2,Voiture,,,,,,,non,,50.801546,4.938961
 OpenStreetMap,node/13909257574,,,Sparki,Sparki,Flandre,Linter,,,320.0,non,ultra,DC,CCS,4,Voiture,,,,,,,non,,50.798913,5.017829
 OpenStreetMap,node/13910468257,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.044,3.714877
@@ -5910,7 +5941,7 @@ OpenStreetMap,node/13911549390,,,Engie,ENGIE Vianeo,Flandre,Tongeren-Borgloon,,,
 OpenStreetMap,node/13911549400,,,Engie,ENGIE Vianeo,Flandre,Tongeren-Borgloon,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.803293,5.338757
 OpenStreetMap,node/13911610501,,,Engie,ENGIE Vianeo,Flandre,Tongeren-Borgloon,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.803567,5.336944
 OpenStreetMap,node/13914280198,,,Sparki,Sparki,Flandre,Zaventem,,,,non,inconnue,DC,CCS,4,Voiture,oui,,,,yes,,non,,50.870994,4.454482
-OpenStreetMap,node/13914281286,,,EnergyVision,EnergyVision,Flandre,Beringen,,,22.0,non,acceleree,AC,Type 2,6,Voiture,,,,,,,non,,51.050102,5.236135
+OpenStreetMap,node/13914281286,,,EnergyVision,EnergyVision,Flandre,Beringen,,,22.0,non,acceleree,AC,Type 2,6,Voiture,,,,,,,non,,51.050071,5.236199
 OpenStreetMap,node/13914470442,,,Engie,ENGIE Vianeo,Flandre,Riemst,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.826614,5.639388
 OpenStreetMap,node/13914712633,,,Engie,ENGIE Vianeo,Flandre,Lanaken,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.865242,5.631269
 OpenStreetMap,node/13917173025,,,PowerGo,PowerGo,Flandre,Bilzen-Hoeselt,,,120.0,non,rapide,DC,CCS,2,Voiture,,,,,,,non,,50.85798,5.504937
@@ -5958,7 +5989,7 @@ OpenStreetMap,node/14003432078,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non
 OpenStreetMap,node/14006020087,,,,Non renseigné,Flandre,Dendermonde,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,51.028397,4.069434
 OpenStreetMap,node/14006134335,,TotalEnergies,,Non renseigné,Flandre,De Panne,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.09151,2.596813
 OpenStreetMap,node/14006510301,,,Engie,ENGIE Vianeo,Flandre,Sint-Niklaas,,,,non,inconnue,AC,Type 2,,Voiture,,,,,,,non,2026-07-12,51.173656,4.128827
-OpenStreetMap,node/14008063628,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,,non,,51.068956,3.753502
+OpenStreetMap,node/14008063628,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.068956,3.753502
 OpenStreetMap,node/14008470036,,,,Non renseigné,Flandre,Gistel,,,,non,inconnue,,,,Voiture|Vélo,non,,,,,,non,,51.158627,2.974662
 OpenStreetMap,node/14017803972,,,,Non renseigné,Flandre,Beveren-Kruibeke-Zwijndrecht,,,,non,inconnue,,,8,Voiture,,,,,,,non,,51.208979,4.262913
 OpenStreetMap,node/14019688547,,,EnergyVision,EnergyVision,Flandre,Haacht,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.944091,4.664096
@@ -5983,196 +6014,12 @@ OpenStreetMap,node/14051127501,,,,Non renseigné,Flandre,Turnhout,,,,non,inconnu
 OpenStreetMap,node/14051127502,,,,Non renseigné,Flandre,Turnhout,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.313018,4.944718
 OpenStreetMap,node/14052132106,,,TotalEnergies,TotalEnergies,Flandre,De Panne,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.079435,2.602745
 OpenStreetMap,node/14052373002,,,,Non renseigné,Flandre,Leuven,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,50.897299,4.727736
-OpenStreetMap,node/14055936123,,,AH Eneco,Eneco,Flandre,Antwerpen,,,,non,inconnue,,,2,Voiture,oui,,,,customers,,non,,51.164709,4.386209
-OpenStreetMap,node/14063428347,,,,Non renseigné,Flandre,Antwerpen,,,,non,inconnue,,,2,Voiture,oui,,,,customers,,non,,51.169177,4.387472
-OpenStreetMap,node/14067008145,,,,Non renseigné,Flandre,Knokke-Heist,,,,non,inconnue,,,4,Voiture|Vélo,,,,,,,non,,51.338648,3.284661
-OpenStreetMap,node/14067008146,,,,Non renseigné,Flandre,Knokke-Heist,,,,non,inconnue,,,4,Voiture|Vélo,,,,,,,non,,51.33857,3.284722
-OpenStreetMap,node/14067008147,,,,Non renseigné,Flandre,Knokke-Heist,,,,non,inconnue,,,4,Voiture|Vélo,,,,,,,non,,51.338496,3.284784
-OpenStreetMap,node/14070835163,,,Heylen vastgoed,Heylen vastgoed,Flandre,Lier,,,,non,inconnue,,,4,Voiture,oui,,,,customers,,non,,51.141721,4.549656
-OpenStreetMap,node/14072375878,,,,Non renseigné,Flandre,Wevelgem,,,,non,inconnue,,,,Voiture,,,,,private,,non,,50.845004,3.185873
-OpenStreetMap,node/14072375879,,,,Non renseigné,Flandre,Wevelgem,,,,non,inconnue,,,,Voiture,,,,,private,,non,,50.845052,3.185869
-OpenStreetMap,node/14072375880,,,,Non renseigné,Flandre,Wevelgem,,,,non,inconnue,,,,Voiture,,,,,private,,non,,50.845104,3.185865
-OpenStreetMap,node/14072375881,,,,Non renseigné,Flandre,Wevelgem,,,,non,inconnue,,,,Voiture,,,,,private,,non,,50.845153,3.185862
-OpenStreetMap,node/14073537240,,,Allego,Allego,Flandre,Middelkerke,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.186751,2.817495
-OpenStreetMap,node/14074509928,,,,Non renseigné,Flandre,Wevelgem,,,,non,inconnue,,,,Voiture,,,,,private,,non,2026-08-05,50.844542,3.186451
-OpenStreetMap,node/14074509929,,,,Non renseigné,Flandre,Wevelgem,,,,non,inconnue,,,,Voiture,,,,,private,,non,2026-08-05,50.844478,3.186453
-OpenStreetMap,node/14074509930,,,,Non renseigné,Flandre,Wevelgem,,,,non,inconnue,,,,Voiture,,,,,private,,non,2026-08-05,50.844538,3.186247
-OpenStreetMap,node/14074509931,,,,Non renseigné,Flandre,Wevelgem,,,,non,inconnue,,,,Voiture,,,,,private,,non,2026-08-05,50.844474,3.186251
-OpenStreetMap,node/14076640949,,,TotalEnergies,TotalEnergies,Flandre,Middelkerke,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.186966,2.81802
-OpenStreetMap,node/14076640951,,,TotalEnergies,TotalEnergies,Flandre,Middelkerke,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.187613,2.816393
-OpenStreetMap,node/14076640958,,,TotalEnergies,TotalEnergies,Flandre,Middelkerke,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.186919,2.814686
-OpenStreetMap,node/14077152012,,,,Non renseigné,Flandre,Wevelgem,,,,non,inconnue,,,,Voiture,,,,,private,,non,2026-08-06,50.844699,3.186214
-OpenStreetMap,node/14077268202,,,Allego,Allego,Flandre,Nieuwpoort,,,,non,inconnue,,,,Voiture,,,,,,,non,2026-08-06,51.109182,2.762129
-OpenStreetMap,node/14077360948,,,,Non renseigné,Flandre,Bredene,,,,non,inconnue,,,4,Voiture|Vélo,,,,,,,non,,51.223456,2.990083
-OpenStreetMap,node/14080724498,,,TotalEnergies,TotalEnergies,Flandre,Middelkerke,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.186297,2.81414
-OpenStreetMap,node/14080797403,,,TotalEnergies,TotalEnergies,Flandre,Middelkerke,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.186372,2.814065
-OpenStreetMap,node/14080797416,,,TotalEnergies,TotalEnergies,Flandre,Middelkerke,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.186006,2.812189
-OpenStreetMap,node/14080954501,,,TotalEnergies,TotalEnergies,Flandre,Nieuwpoort,,,,non,inconnue,,,,Voiture,,,,,,24/7,oui,2026-08-08,51.109508,2.758163
-OpenStreetMap,node/14090552724,,,,Non renseigné,Flandre,Dendermonde,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.020134,4.10602
-OpenStreetMap,node/14091486001,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.078163,3.769387
-OpenStreetMap,node/14092378237,,,,Non renseigné,Flandre,Antwerpen,,,,non,inconnue,,,4,Voiture,oui,,,,customers,,non,,51.190153,4.422402
-OpenStreetMap,node/14094510201,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.049343,3.746272
-OpenStreetMap,node/14097773977,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.043093,3.729082
-OpenStreetMap,node/14097773978,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.043278,3.729144
-OpenStreetMap,node/14097773982,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,permit,,non,,51.051631,3.72793
-OpenStreetMap,node/14099046758,,,TotalEnergies,TotalEnergies,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.198927,4.395104
-OpenStreetMap,node/14099051114,,,TotalEnergies,TotalEnergies,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.198995,4.395196
-OpenStreetMap,node/14099051201,,,TotalEnergies,TotalEnergies,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.200282,4.398816
-OpenStreetMap,node/14102532049,,,,Non renseigné,Flandre,Nieuwpoort,,,,non,inconnue,AC,Prise domestique,10,Vélo,,,,,,,non,,51.144579,2.712337
-OpenStreetMap,node/14106084403,,,TotalEnergies,TotalEnergies,Flandre,Koksijde,,,,non,inconnue,,,22,Voiture,oui,,,,yes,,non,,51.103735,2.617767
-OpenStreetMap,node/14106330882,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.052028,3.726752
-OpenStreetMap,node/14106330890,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.057026,3.693345
-OpenStreetMap,node/14112080156,,,TotalEnergies,TotalEnergies,Flandre,Koksijde,,,,non,inconnue,,,22,Voiture,non,,,,yes,,non,2026-08-22,51.109206,2.628606
-OpenStreetMap,node/14113174396,,,Engie,ENGIE Vianeo,Flandre,Schoten,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.243871,4.499227
-OpenStreetMap,node/14133823121,,,,Non renseigné,Flandre,Genk,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.955453,5.408096
-OpenStreetMap,node/14133823122,,,,Non renseigné,Flandre,Genk,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.955468,5.408169
-OpenStreetMap,node/14134899199,,,Engie vianeo,ENGIE Vianeo,Flandre,Kapellen,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.338026,4.406526
-OpenStreetMap,node/14136604898,,,Floading,Floading,Flandre,Boortmeerbeek,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.975438,4.585244
-OpenStreetMap,node/14136749080,,,,Non renseigné,Flandre,Beveren-Kruibeke-Zwijndrecht,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.209301,4.260837
-OpenStreetMap,node/14142228540,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.044566,3.748603
-OpenStreetMap,node/14142228544,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.042814,3.746174
-OpenStreetMap,node/14142228545,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.042838,3.746253
-OpenStreetMap,node/14142288657,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.04143,3.741778
-OpenStreetMap,node/14143216546,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.044907,3.746203
-OpenStreetMap,node/14143216547,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.044756,3.746246
-OpenStreetMap,node/14143220245,,,Allego,Allego,Flandre,Lievegem,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,51.154059,3.603821
-OpenStreetMap,node/14143220276,,,,Non renseigné,Flandre,Lievegem,,,,non,inconnue,,,6,Vélo,,,,,yes,,non,,51.152141,3.605808
-OpenStreetMap,node/14148174875,,,TotalEnergies oplaadpunt,TotalEnergies,Flandre,Stekene,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.227006,4.063193
-OpenStreetMap,node/14148202716,,,,Non renseigné,Flandre,Tessenderlo-Ham,,,200.0,non,ultra,DC,CCS,2,Voiture,,,,,,,non,,51.066864,5.088846
-OpenStreetMap,node/14148203748,,,Allego,Allego,Flandre,Stekene,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.20728,4.079403
-OpenStreetMap,node/14155884901,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.07063,3.800651
-OpenStreetMap,node/14156040087,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.06948,3.695781
-OpenStreetMap,node/14157474564,,,Gabriëls,Gabriëls,Flandre,Lanaken,,,400.0,non,ultra,DC,CCS,4,Voiture,,,,,,,non,,50.915243,5.683794
-OpenStreetMap,node/14158141056,,,,Non renseigné,Flandre,Koksijde,,,,non,inconnue,,,2,Vélo,,,,,,,non,,51.100775,2.6993
-OpenStreetMap,node/14159472274,,,EnergyVision,EnergyVision,Flandre,Haacht,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.977817,4.641058
-OpenStreetMap,node/14159472275,,,EnergyVision,EnergyVision,Flandre,Haacht,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.977803,4.641157
-OpenStreetMap,node/14159472276,,,EnergyVision,EnergyVision,Flandre,Haacht,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.977776,4.641273
-OpenStreetMap,node/14159766839,,,ENGIE Vianeo,ENGIE Vianeo,Flandre,Rumst,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,,non,,51.10388,4.392267
-OpenStreetMap,node/14159766840,,,ENGIE Vianeo,ENGIE Vianeo,Flandre,Rumst,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,,non,,51.101837,4.396108
-OpenStreetMap,node/14167782103,,,TotalEnergies,TotalEnergies,Flandre,Asse,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.908519,4.208734
-OpenStreetMap,node/14167782110,,,TotalEnergies,TotalEnergies,Flandre,Asse,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.908473,4.208752
-OpenStreetMap,node/14167782114,,,TotalEnergies,TotalEnergies,Flandre,Asse,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.908429,4.208769
-OpenStreetMap,node/14168614201,,,,Non renseigné,Flandre,Boortmeerbeek,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.974186,4.56547
-OpenStreetMap,node/14169519843,,,,Non renseigné,Flandre,Arendonk,,,,non,inconnue,AC,Prise domestique,10,Voiture|Vélo,non,,,,yes,,non,,51.32782,5.081606
-OpenStreetMap,node/14169519844,,,,Non renseigné,Flandre,Arendonk,,,,non,inconnue,AC,Prise domestique,4,Voiture|Vélo,non,,,,yes,,non,,51.327735,5.08154
-OpenStreetMap,node/14169519845,,,,Non renseigné,Flandre,Arendonk,,,,non,inconnue,AC,Prise domestique,4,Voiture|Vélo,non,,,,yes,,non,,51.327756,5.081606
-OpenStreetMap,node/14170541248,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.05557,3.727718
-OpenStreetMap,node/14170541255,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.055561,3.727542
-OpenStreetMap,node/14174268669,,,TotalEnergies,TotalEnergies,Flandre,De Haan,,,,non,inconnue,,,,Voiture,non,,,,yes,,non,,51.272764,3.03368
-OpenStreetMap,node/14182345734,,,,Non renseigné,Flandre,Merksplas,,,,non,inconnue,AC,Prise domestique,4,Voiture|Vélo,non,,,,yes,,non,,51.363531,4.86144
-OpenStreetMap,node/14182941611,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.045821,3.717841
-OpenStreetMap,node/14182941612,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.045876,3.717624
-OpenStreetMap,node/14182941621,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.045828,3.714597
-OpenStreetMap,node/14182941622,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,private,,non,,51.045855,3.714644
-OpenStreetMap,node/14182941623,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,private,,non,,51.045931,3.714778
-OpenStreetMap,node/14183088750,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.039657,3.712569
-OpenStreetMap,node/14183140371,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.046649,3.716388
-OpenStreetMap,node/14183529898,,,L'Histoire,L'Histoire,Flandre,Boechout,,,,non,inconnue,,,,Voiture,,,,,customers,,non,,51.161239,4.519951
-OpenStreetMap,node/14191482552,,,Mobiflow,Mobiflow,Flandre,Evergem,,,,non,inconnue,,,1,Voiture,oui,,,,permissive,,non,,51.111306,3.698834
-OpenStreetMap,node/14191482553,,,Allego,Allego,Flandre,Evergem,,,,non,inconnue,,,2,Voiture,oui,,Application,,yes,,non,,51.110829,3.698778
-OpenStreetMap,node/14191498453,,,Mobiflow,Mobiflow,Flandre,Evergem,,,,non,inconnue,,,2,Voiture,oui,,,,permissive,,non,,51.111045,3.699027
-OpenStreetMap,node/14196138266,,,,Non renseigné,Flandre,Geel,,,,non,inconnue,,,2,Voiture,oui,,,non,yes,24/7,oui,,51.166586,4.990779
-OpenStreetMap,node/14200911842,,,,Non renseigné,Flandre,Roeselare,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.939605,3.116506
-OpenStreetMap,node/14209508046,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.042081,3.733743
-OpenStreetMap,node/14209508061,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.040906,3.734463
-OpenStreetMap,node/14211549849,,,Eneco,Eneco,Flandre,Merksplas,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.356696,4.863465
-OpenStreetMap,node/14211549850,,,Allego,Allego,Flandre,Merksplas,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.357119,4.862807
-OpenStreetMap,node/14211549851,,,,Non renseigné,Flandre,Merksplas,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.355224,4.862544
-OpenStreetMap,node/14211549852,,,Engie,ENGIE Vianeo,Flandre,Merksplas,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.359025,4.864694
-OpenStreetMap,node/14214256101,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.054418,3.729461
-OpenStreetMap,node/14222247863,,,bluecorner,Blue Corner,Flandre,Sint-Pieters-Leeuw,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.777802,4.248632
-OpenStreetMap,node/14222516363,,,Circle K,Circle K,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.079754,3.732709
-OpenStreetMap,node/14223671378,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.088034,3.723646
-OpenStreetMap,node/14225037815,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.091247,3.713536
-OpenStreetMap,node/14225037830,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.090238,3.704306
-OpenStreetMap,node/14225037831,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.090275,3.704267
-OpenStreetMap,node/14225063466,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.086172,3.666191
-OpenStreetMap,node/14225203377,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,private,,non,,51.072184,3.680356
-OpenStreetMap,node/14225224556,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.066466,3.697111
-OpenStreetMap,node/14225224561,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,private,,non,,51.066409,3.697092
-OpenStreetMap,node/14225224586,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.066061,3.69756
-OpenStreetMap,node/14225261007,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,private,,non,,51.060729,3.703852
-OpenStreetMap,node/14225261012,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.061053,3.704114
-OpenStreetMap,node/14225261017,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.062085,3.704157
-OpenStreetMap,node/14225274150,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.060699,3.715403
-OpenStreetMap,node/14225274155,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,private,,non,,51.060623,3.715331
-OpenStreetMap,node/14225274162,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.060832,3.721142
-OpenStreetMap,node/14229028362,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.021303,3.690022
-OpenStreetMap,node/14229900056,,,,Non renseigné,Flandre,Bilzen-Hoeselt,,,,non,inconnue,,,22,Voiture,,,,,yes,,non,,50.869622,5.482543
-OpenStreetMap,node/14229900057,,,,Non renseigné,Flandre,Bilzen-Hoeselt,,,,non,inconnue,,,22,Voiture,,,,,yes,,non,,50.86961,5.482502
-OpenStreetMap,node/14229900058,,,,Non renseigné,Flandre,Bilzen-Hoeselt,,,,non,inconnue,,,22,Voiture,,,,,yes,,non,,50.869941,5.482095
-OpenStreetMap,node/14229900059,,,,Non renseigné,Flandre,Bilzen-Hoeselt,,,,non,inconnue,,,22,Voiture,,,,,yes,,non,,50.869951,5.482133
-OpenStreetMap,node/14230067116,,,TotalEnergies,TotalEnergies,Flandre,Lanaken,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.884851,5.674726
-OpenStreetMap,node/14230067117,,,TotalEnergies,TotalEnergies,Flandre,Lanaken,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.884831,5.674725
-OpenStreetMap,node/14230554877,,Allego harging station,,Non renseigné,Flandre,Leuven,Sint-Jacobsplein 8,,,non,inconnue,,,,Voiture,,,,,,24/7,oui,,50.879545,4.690038
-OpenStreetMap,node/14230601115,,Allego charging station,,Non renseigné,Flandre,Leuven,Sint-Jacobsplein 8,,,non,inconnue,,,,Voiture,,,,,,24/7,oui,,50.879347,4.691563
-OpenStreetMap,node/14235210661,,,ENGIE Vianeo,ENGIE Vianeo,Flandre,Boortmeerbeek,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.982064,4.566118
-OpenStreetMap,node/14235626691,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.102273,3.764976
-OpenStreetMap,node/14246634747,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.045358,3.731052
-OpenStreetMap,node/14246650395,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.046915,3.730102
-OpenStreetMap,node/14247833493,,,TotalEnergies,TotalEnergies,Flandre,Zaventem,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,,50.870813,4.450606
-OpenStreetMap,node/14248504701,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.090152,3.727684
-OpenStreetMap,node/14252160701,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.10407,3.776191
-OpenStreetMap,node/14252498001,,EVBox,EVBox,EVBox,Flandre,Boortmeerbeek,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.979366,4.560267
-OpenStreetMap,node/14252498002,,,mobiflow,Mobiflow,Flandre,Boortmeerbeek,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.978835,4.560449
-OpenStreetMap,node/14253126991,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.048064,3.72439
-OpenStreetMap,node/14279449488,,,EnergyVision,EnergyVision,Flandre,Beringen,,,22.0,non,acceleree,AC,Type 2,6,Voiture,,,,,,,non,,51.088156,5.234092
-OpenStreetMap,node/14279711235,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,AC,Prise domestique,9,Vélo,non,,Sans identification,,yes,24/7,oui,,51.025827,3.692418
-OpenStreetMap,node/14280841116,,,,Non renseigné,Flandre,Lanaken,,,,non,inconnue,,,,Vélo,,,,,,,non,,50.888951,5.651002
-OpenStreetMap,node/14280841117,,,,Non renseigné,Flandre,Lanaken,,,,non,inconnue,,,,Vélo,,,,,,,non,,50.888221,5.649659
-OpenStreetMap,node/14281821600,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.033835,3.711839
-OpenStreetMap,node/14281842705,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.033383,3.71654
-OpenStreetMap,node/14281854418,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.030254,3.737346
-OpenStreetMap,node/14293767988,,,,Non renseigné,Flandre,Nieuwpoort,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.144345,2.706473
-OpenStreetMap,node/14293767989,,,,Non renseigné,Flandre,Nieuwpoort,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.144262,2.70628
-OpenStreetMap,node/14300057361,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.042149,3.717579
-OpenStreetMap,node/14300057367,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.040745,3.712729
-OpenStreetMap,node/14300057368,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.040814,3.711477
-OpenStreetMap,node/14300057385,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.040148,3.712131
-OpenStreetMap,node/14300057386,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.039854,3.717746
-OpenStreetMap,node/14300057387,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.040301,3.718962
-OpenStreetMap,node/14300668974,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.042238,3.729319
-OpenStreetMap,node/14300953339,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,private,,non,,51.04328,3.731843
-OpenStreetMap,node/14307518153,,Aers Truckplaza,,Non renseigné,Flandre,Brugge,,,,non,inconnue,,,12,Poids lourd,oui,,,,,,non,,51.29834,3.255575
-OpenStreetMap,node/14308676558,,,,Non renseigné,Flandre,Koksijde,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.140383,2.708003
-OpenStreetMap,node/14312581166,,,,Non renseigné,Flandre,Koksijde,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.141447,2.698578
-OpenStreetMap,node/14312581167,,,,Non renseigné,Flandre,Koksijde,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.141305,2.698737
-OpenStreetMap,node/14320727292,,,,Non renseigné,Flandre,Kaprijke,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,,51.246475,3.603372
-OpenStreetMap,node/14320728911,,,,Non renseigné,Flandre,Sint-Laureins,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,yes,,non,,51.246299,3.600539
-OpenStreetMap,node/14321267804,,,,Non renseigné,Flandre,Eeklo,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,,non,,51.18453,3.56539
-OpenStreetMap,node/14321267805,,,,Non renseigné,Flandre,Eeklo,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,,non,,51.185289,3.566241
-OpenStreetMap,node/14321278461,,,,Non renseigné,Flandre,Eeklo,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,,non,,51.181793,3.574551
-OpenStreetMap,node/14321278467,,,,Non renseigné,Flandre,Eeklo,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,,non,,51.179538,3.573753
-OpenStreetMap,node/14321651880,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.04066,3.739289
-OpenStreetMap,node/14321673034,,,TotalEnergies,TotalEnergies,Flandre,Gent,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,51.040548,3.748245
-OpenStreetMap,node/14322705970,,,,Non renseigné,Flandre,Brugge,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.185161,3.240392
-OpenStreetMap,node/14325021345,,,,Non renseigné,Flandre,Tielt,,,,non,inconnue,AC,Prise domestique,2,Vélo,non,,Sans identification,,,24/7,oui,,51.004336,3.341598
-OpenStreetMap,node/14325021702,,,,Non renseigné,Flandre,Wingene,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,non,yes,24/7,oui,,51.041661,3.405596
-OpenStreetMap,node/14325316173,,,,Non renseigné,Flandre,Koksijde,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.142663,2.702581
-OpenStreetMap,node/14331270291,,,Mezzo Geel,Mezzo Geel,Flandre,Geel,,,,non,inconnue,,,26,Voiture,oui,0.40-0.50 EUR/kWh,,,customers,,non,,51.121431,4.94163
-OpenStreetMap,node/14333180262,,,Stad Roeselare,Stad Roeselare,Flandre,Roeselare,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,non,yes,24/7,oui,,50.962114,3.134006
-OpenStreetMap,node/14336963548,,,,Non renseigné,Flandre,Merelbeke-Melle,,,,non,inconnue,,,4,Voiture,,,,,,,non,,51.013884,3.752083
-OpenStreetMap,node/14337045341,,,,Non renseigné,Flandre,Nieuwpoort,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.144133,2.707016
-OpenStreetMap,node/14337045342,,,,Non renseigné,Flandre,Nieuwpoort,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.144117,2.706973
-OpenStreetMap,node/14337045347,,,,Non renseigné,Flandre,Nieuwpoort,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.144293,2.706853
-OpenStreetMap,node/14337045348,,,,Non renseigné,Flandre,Nieuwpoort,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.144272,2.706802
-OpenStreetMap,node/14338931166,,,,Non renseigné,Flandre,Beersel,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,oui,yes,,non,,50.747337,4.274377
-OpenStreetMap,node/14338931167,,,,Non renseigné,Flandre,Beersel,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,oui,yes,,non,,50.747313,4.274401
-OpenStreetMap,node/14338931168,,,,Non renseigné,Flandre,Beersel,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,oui,yes,,non,,50.747285,4.274423
-OpenStreetMap,node/14339452766,,,Bruno,Bruno,Flandre,Pelt,,,,non,inconnue,,,8,Vélo,,,,,customers,24/7,oui,,51.215204,5.377402
-OpenStreetMap,node/14340362092,,,DATS 24,DATS 24 (Colruyt),Flandre,Laakdal,,,,non,inconnue,,,2,Voiture,non,,,,yes,24/7,oui,,51.08067,5.031822
-OpenStreetMap,node/14340374807,,,DATS 24,DATS 24 (Colruyt),Flandre,Laakdal,,,,non,inconnue,,,2,Voiture,non,,,,yes,24/7,oui,,51.08072,5.031775
-OpenStreetMap,node/14352956593,,,Allego,Allego,Flandre,Herentals,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.181068,4.830729
-OpenStreetMap,node/14354243882,,,PowerGo,PowerGo,Flandre,Nieuwpoort,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,51.143864,2.730885
-OpenStreetMap,node/14355287257,,,,Non renseigné,Flandre,Dendermonde,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,51.032292,4.102708
-OpenStreetMap,node/14356161932,,ENGIE Vianeo,ENGIE Vianeo,ENGIE Vianeo,Flandre,Boortmeerbeek,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,50.974176,4.568036
-OpenStreetMap,node/14356161933,,,Huawei,Huawei,Flandre,Bierbeek,,,,non,inconnue,,,,Voiture,,,,,private,,non,,50.869418,4.761342
 OpenStreetMap,way/172153661,,Gentbrugge Noord,Fastned,Fastned,Flandre,Gent,,,,non,inconnue,,,20,Voiture,,,,,,,non,,51.042915,3.78438
 OpenStreetMap,way/316645481,,Boostcharge Mammoetcenter Roeselare,Boostcharge,Boostcharge,Flandre,Roeselare,Brugsesteenweg 413,,300.0,non,ultra,DC,CCS,16,Voiture|Poids lourd,oui,,,non,,24/7,oui,,50.967903,3.119546
 OpenStreetMap,way/385098097,,Q8 electric Veldwezelt,Q8 electric,Q8,Flandre,Lanaken,,,300.0,non,ultra,DC,CCS,,Voiture,,,,,,,non,,50.860364,5.621386
 OpenStreetMap,way/467578502,,,Allego,Allego,Flandre,Hasselt,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.940083,5.306856
 OpenStreetMap,way/489957730,,Aquatreat Parking,,Non renseigné,Flandre,Aarschot,,,,non,inconnue,,,3,Voiture,,,,,,,non,,50.983086,4.814245
-OpenStreetMap,way/554724830,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,AC,Prise domestique,3,Vélo,oui,,,,yes,24/7,oui,,51.036409,3.709323
+OpenStreetMap,way/554724830,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,AC,Prise domestique,3,Vélo,oui,,,,yes,24/7,oui,,51.03641,3.709322
 OpenStreetMap,way/701442220,,Circle K Eindhout,Circle K,Circle K,Flandre,Laakdal,,,175.0,non,ultra,DC,CCS|CHAdeMO,4,Voiture,,,,non,yes,24/7,oui,,51.11096,5.021408
 OpenStreetMap,way/767375449,,,Allego,Allego,Flandre,Hove,,,,non,inconnue,,,1,Voiture,oui,,,,yes,,non,,51.144751,4.467172
 OpenStreetMap,way/767375451,,,Allego,Allego,Flandre,Hove,,,,non,inconnue,,,1,Voiture,oui,,,,yes,,non,,51.144764,4.467247
@@ -6222,7 +6069,7 @@ OpenStreetMap,way/1296606339,,,Porsche,Porsche,Flandre,Beringen,,,320.0,non,ultr
 OpenStreetMap,way/1301960609,,,,Non renseigné,Flandre,Putte,,,,non,inconnue,,,1,Voiture,,,,,,,non,,51.056739,4.629501
 OpenStreetMap,way/1301960610,,,,Non renseigné,Flandre,Putte,,,,non,inconnue,,,1,Voiture,,,,,,,non,,51.056741,4.629539
 OpenStreetMap,way/1301960611,,,,Non renseigné,Flandre,Putte,,,,non,inconnue,,,1,Voiture,,,,,,,non,,51.056743,4.629577
-OpenStreetMap,way/1305275034,,Q8 Electric P&R Paal Beringen,Q8 Electric,Q8,Flandre,Beringen,Zwanenbergstraat 14,,400.0,non,ultra,DC,Type 2|CCS|CHAdeMO,10,Voiture,,,,,,24/7,oui,,51.042865,5.186664
+OpenStreetMap,way/1305275034,,Q8 Electric P&R Paal Beringen,Q8 Electric,Q8,Flandre,Beringen,Zwanenbergstraat 14,,400.0,non,ultra,DC,Type 2|CCS|CHAdeMO,10,Voiture,,,,,,24/7,oui,,51.042887,5.186644
 OpenStreetMap,way/1305278505,,,,Non renseigné,Flandre,Knokke-Heist,,,,non,inconnue,,,,Voiture,oui,,,,,24/7,oui,,51.319904,3.298243
 OpenStreetMap,way/1306685526,,,Fastned,Fastned,Flandre,Landen,,,,non,inconnue,,,8,Voiture,oui,,,,,,non,,50.716143,5.063522
 OpenStreetMap,way/1307820063,,Fastned P+R Zoersel,Fastned,Fastned,Flandre,Zoersel,,,400.0,non,ultra,DC,CCS|CHAdeMO,6,Voiture,oui,,,,yes,24/7,oui,,51.245581,4.703919
@@ -6241,7 +6088,7 @@ OpenStreetMap,way/1331474287,,,Alfen,Alfen,Flandre,Tervuren,,,,non,inconnue,,,2,
 OpenStreetMap,way/1331667946,,,Allego,Allego,Flandre,Kinrooi,,,11.0,non,lente,AC,Type 2,2,Voiture,oui,,,,,,non,,51.137673,5.819757
 OpenStreetMap,way/1332901047,,Allego fastcharger,Allego,Allego,Flandre,Heusden-Zolder,,,300.0,non,ultra,DC,Type 2|CCS,6,Voiture,oui,,Carte bancaire,,yes,24/7,oui,,51.006556,5.271585
 OpenStreetMap,way/1333264057,,,Q75560554,Q75560554,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,24/7,oui,,51.085692,3.70598
-OpenStreetMap,way/1337257685,,,Certipower,Certipower,Flandre,Veurne,,,150.0,non,ultra,DC,CCS,8,Voiture,oui,,,,yes,,non,,51.084865,2.640651
+OpenStreetMap,way/1337257685,,,Certipower,Certipower,Flandre,Veurne,,,,non,inconnue,,,6,Voiture,,,,,,,non,,51.084861,2.640653
 OpenStreetMap,way/1337344976,,,TotalEnergies,TotalEnergies,Flandre,Antwerpen,,,,non,inconnue,DC,CCS|CHAdeMO,10,Voiture,oui,,Application,,yes,24/7,oui,,51.208162,4.439574
 OpenStreetMap,way/1337372437,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,24,Voiture,,,,,,,non,,51.075007,3.77755
 OpenStreetMap,way/1339266409,,,Allego,Allego,Flandre,Tervuren,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,24/7,oui,,50.816737,4.55286
@@ -6343,7 +6190,7 @@ OpenStreetMap,way/1453859409,,,,Non renseigné,Flandre,Hoegaarden,,,,non,inconnu
 OpenStreetMap,way/1455122402,,,,Non renseigné,Flandre,Leuven,,,,non,inconnue,,,4,Voiture,,,,,,,non,,50.856023,4.731943
 OpenStreetMap,way/1456038229,,,Q8 Electric,Q8,Flandre,Diest,,,400.0,non,ultra,DC,CCS,6,Voiture,,,,,,,non,,50.967928,5.076678
 OpenStreetMap,way/1456291105,,IONITY Diest,Ionity,IONITY,Flandre,Diest,,,400.0,non,ultra,DC,CCS,4,Voiture,,,,,,,non,,50.97514,5.041825
-OpenStreetMap,way/1458488606,,,,Non renseigné,Flandre,Beveren-Kruibeke-Zwijndrecht,,,,non,inconnue,,,4,Voiture,,,,,,,non,,51.20868,4.339336
+OpenStreetMap,way/1458488606,,,,Non renseigné,Flandre,Beveren-Kruibeke-Zwijndrecht,,,,non,inconnue,,,,Voiture,,,,,,,non,,51.20868,4.339336
 OpenStreetMap,way/1461913104,,,,Non renseigné,Flandre,Wevelgem,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.816812,3.209669
 OpenStreetMap,way/1461918152,,,,Non renseigné,Flandre,Wevelgem,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.816208,3.207862
 OpenStreetMap,way/1462066678,,,BNP Paribas Fortis,BNP Paribas Fortis,Flandre,Halle,,,,non,inconnue,,,4,Voiture,,,,,customers,,non,,50.734625,4.236496
@@ -6359,7 +6206,7 @@ OpenStreetMap,way/1473985122,,,Boostcharge,Boostcharge,Flandre,Roeselare,,,300.0
 OpenStreetMap,way/1475063110,,,Allego,Allego,Flandre,Rumst,,,150.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,24/7,oui,,51.085281,4.444982
 OpenStreetMap,way/1475063111,,,Allego,Allego,Flandre,Rumst,,,300.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,24/7,oui,,51.085345,4.444954
 OpenStreetMap,way/1475063112,,,Allego,Allego,Flandre,Rumst,,,22.0,non,acceleree,AC,Type 2,4,Voiture,oui,,,,,24/7,oui,,51.085427,4.444843
-OpenStreetMap,way/1475127750,,Oostende - Burger King,Electra,Electra,Flandre,Oostende,,,300.0,non,ultra,DC,CCS,6,Voiture,oui,,,,,24/7,oui,,51.203556,2.9033
+OpenStreetMap,way/1475127750,,Oostende - Burger King,Electra,Electra,Flandre,Oostende,,,300.0,non,ultra,DC,CCS,6,Voiture,oui,,,,,24/7,oui,,51.203553,2.903318
 OpenStreetMap,way/1476510327,,,DATS 24,DATS 24 (Colruyt),Flandre,Aarschot,,,150.0,non,ultra,DC,CCS,2,Voiture,,,,,,,non,,50.988016,4.841215
 OpenStreetMap,way/1478560992,,,EVBox,EVBox,Flandre,Rotselaar,,,,non,inconnue,,,6,Voiture,oui,,,,employees,,non,,50.941237,4.73263
 OpenStreetMap,way/1478560993,,,EVBox,EVBox,Flandre,Rotselaar,,,,non,inconnue,,,4,Voiture,oui,,,,employees,,non,,50.941531,4.731902
@@ -6433,7 +6280,7 @@ OpenStreetMap,way/1513661164,,,Engie,ENGIE Vianeo,Flandre,Haaltert,,,,non,inconn
 OpenStreetMap,way/1513667354,,,Engie,ENGIE Vianeo,Flandre,Haaltert,,,22.0,non,acceleree,AC,,2,Voiture,,0.4356,,,yes,,non,,50.870602,4.01673
 OpenStreetMap,way/1513670863,,,Engie,ENGIE Vianeo,Flandre,Haaltert,,,,non,inconnue,,,2,Voiture,oui,0.4356,,,yes,,non,,50.868567,4.017555
 OpenStreetMap,way/1514604756,,,Sparki,Sparki,Flandre,Aarschot,,,320.0,non,ultra,DC,CCS,,Voiture,,,,,,,non,,50.995588,4.835283
-OpenStreetMap,way/1514604757,,,,Non renseigné,Flandre,Aarschot,,,60.0,non,rapide,DC,Type 2|CCS,2,Voiture,,,,,,,non,,50.991537,4.81712
+OpenStreetMap,way/1514604757,,,,Non renseigné,Flandre,Aarschot,,,60.0,non,rapide,DC,Type 2|CCS,2,Voiture,,,,,,,non,,50.991541,4.81712
 OpenStreetMap,way/1514659215,,,Engie,ENGIE Vianeo,Flandre,Haaltert,,,,non,inconnue,,,2,Voiture,,0.4356,,,yes,,non,,50.871957,4.017144
 OpenStreetMap,way/1515459830,,,Sparki,Sparki,Flandre,Maasmechelen,,,320.0,non,ultra,DC,CCS,4,Voiture,,,,,,,non,,50.939074,5.693026
 OpenStreetMap,way/1515459831,,,DATS 24,DATS 24 (Colruyt),Flandre,Maasmechelen,,,150.0,non,ultra,DC,CCS,6,Voiture,,,,,,,non,,50.941011,5.692814
@@ -6483,85 +6330,6 @@ OpenStreetMap,way/1535790475,,,,Non renseigné,Flandre,Schelle,,,,non,inconnue,,
 OpenStreetMap,way/1535790476,,,,Non renseigné,Flandre,Schelle,,,,non,inconnue,,,,Voiture,,,,,yes,,non,,51.126576,4.33541
 OpenStreetMap,way/1540226681,,,Sparki,Sparki,Flandre,Heist-op-den-Berg,,,,non,inconnue,,,4,Voiture,,,,,,,non,,51.051748,4.731775
 OpenStreetMap,way/1544731072,,,Engie,ENGIE Vianeo,Flandre,Hechtel-Eksel,,,22.0,non,acceleree,AC,Type 2,6,Voiture,,,,,,,non,,51.124107,5.362283
-OpenStreetMap,way/1546531350,,Sparki Londerzeel,Sparki,Sparki,Flandre,Londerzeel,,,320.0,non,ultra,DC,CCS,4,Voiture,,,,,,,non,,51.018192,4.315168
-OpenStreetMap,way/1546756905,,,,Non renseigné,Flandre,Londerzeel,,,180.0,non,ultra,DC,Type 2|CCS,7,Voiture,,,,,,,non,,50.998456,4.314358
-OpenStreetMap,way/1548282687,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,24/7,oui,,51.052111,3.707575
-OpenStreetMap,way/1548282688,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,24/7,oui,,51.052197,3.707376
-OpenStreetMap,way/1548282689,,,Allego,Allego,Flandre,Gent,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,,,24/7,oui,,51.052221,3.70732
-OpenStreetMap,way/1548353391,,Electra snellaadstation Turnhout - Winkelpark XXL,Electra,Electra,Flandre,Turnhout,,,600.0,non,ultra,DC,CCS,8,Voiture,,,,,,24/7,oui,,51.308043,4.921685
-OpenStreetMap,way/1549275351,,,,Non renseigné,Flandre,Leuven,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,50.894282,4.69941
-OpenStreetMap,way/1552269965,,,,Non renseigné,Flandre,Asse,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.914791,4.192112
-OpenStreetMap,way/1552568505,,,,Non renseigné,Flandre,Antwerpen,,,,non,inconnue,AC,Type 2,9,Voiture,,,,,,,non,,51.217786,4.484144
-OpenStreetMap,way/1553400569,,,Engie,ENGIE Vianeo,Flandre,Sint-Truiden,,,22.0,non,acceleree,AC,Type 2,4,Voiture,,,,,,,non,,50.818857,5.19732
-OpenStreetMap,way/1553400571,,,Hyperfast,Hyperfast,Flandre,Sint-Truiden,,,300.0,non,ultra,DC,CCS,4,Voiture,,,,,,,non,,50.818541,5.197318
-OpenStreetMap,way/1555992248,,Circle K Tessenderlo-Hasselt,Circle K,Circle K,Flandre,Tessenderlo-Ham,,,400.0,non,ultra,DC,CCS|CHAdeMO,4,Voiture,oui,,,,,,non,,51.069962,5.146342
-OpenStreetMap,way/1555992249,,Circle K Tessenderlo-Antwerpen,Circle K,Circle K,Flandre,Tessenderlo-Ham,,,400.0,non,ultra,DC,CCS|CHAdeMO,4,Voiture,oui,,,,,,non,,51.072064,5.146541
-OpenStreetMap,way/1556380663,,,TotalEnergies,TotalEnergies,Flandre,Lummen,,,400.0,non,ultra,DC,CCS,4,Voiture,,,,,,,non,,50.997702,5.198403
-OpenStreetMap,way/1558186271,,,totalenergies,TotalEnergies,Flandre,Tielt,,,,non,inconnue,DC,CCS,10,Voiture,oui,,,,yes,24/7,oui,,51.004332,3.341396
-OpenStreetMap,way/1559037104,,,,Non renseigné,Flandre,Beveren-Kruibeke-Zwijndrecht,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,51.204906,4.343058
-OpenStreetMap,way/1559311987,,,,Non renseigné,Flandre,Mortsel,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.169101,4.468468
-OpenStreetMap,way/1559312729,,,,Non renseigné,Flandre,Mortsel,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.169163,4.468329
-OpenStreetMap,way/1559312731,,,,Non renseigné,Flandre,Mortsel,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.169113,4.468304
-OpenStreetMap,way/1559339560,,,,Non renseigné,Flandre,Antwerpen,,,,non,inconnue,,,2,Voiture,oui,,,,,24/7,oui,,51.207439,4.396909
-OpenStreetMap,way/1560837685,,,Totalenergie,TotalEnergies,Flandre,Menen,,,,non,inconnue,,,2,Voiture,,,,,,24/7,oui,,50.788546,3.1861
-OpenStreetMap,way/1561722962,,,Allego,Allego,Flandre,Tongeren-Borgloon,,,50.0,non,rapide,DC,Type 2|CCS,4,Voiture,,,,,,,non,,50.768613,5.465346
-OpenStreetMap,way/1563251160,,,Q8,Q8,Flandre,Edegem,,,360.0,non,ultra,DC,CCS,6,Voiture,,,,,,,non,,51.148097,4.434897
-OpenStreetMap,way/1564479078,,Hyperfast Pertinea Genk,Hyperfast,Hyperfast,Flandre,Genk,,,300.0,non,ultra,DC,Type 2|CCS,,Voiture,,,,,,,non,,50.960827,5.45276
-OpenStreetMap,way/1565186740,,Allego,Allego,Allego,Flandre,Wommelgem,,,,non,inconnue,,,12,Voiture,oui,,,,yes,24/7,oui,,51.212306,4.492485
-OpenStreetMap,way/1565198520,,Allego,Allego,Allego,Flandre,Wommelgem,,,,non,inconnue,,,2,Voiture,oui,,,,yes,24/7,oui,,51.212082,4.492258
-OpenStreetMap,way/1565198523,,Allego,Allego,Allego,Flandre,Wommelgem,,,,non,inconnue,,,4,Voiture,oui,,,,yes,24/7,oui,,51.212152,4.492128
-OpenStreetMap,way/1565469628,,Allego,Allego,Allego,Flandre,Wommelgem,,,,non,inconnue,,,4,Voiture,oui,,,,yes,24/7,oui,,51.212275,4.492288
-OpenStreetMap,way/1566866157,,,Shell Recharge,Shell Recharge,Flandre,Tongeren-Borgloon,,,150.0,non,ultra,DC,CCS,4,Voiture,,,,,,,non,,50.77627,5.460946
-OpenStreetMap,way/1566866158,,,DATS 24,DATS 24 (Colruyt),Flandre,Tongeren-Borgloon,,,200.0,non,ultra,DC,Type 2|CCS,10,Voiture,,,,,,,non,,50.77587,5.45891
-OpenStreetMap,way/1567535969,,,,Non renseigné,Flandre,Merchtem,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.960479,4.228438
-OpenStreetMap,way/1568361803,,,,Non renseigné,Flandre,Menen,,,,non,inconnue,,,4,Voiture,,,,,,,non,,50.799133,3.109665
-OpenStreetMap,way/1569108582,,,DATS 24,DATS 24 (Colruyt),Flandre,Sint-Truiden,,,150.0,non,ultra,DC,Type 2|CCS,10,Voiture,oui,,,,,,non,,50.812604,5.151628
-OpenStreetMap,way/1569168264,,Oostende - Delhaize Hazegras,Electra,Electra,Flandre,Oostende,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,51.226824,2.921898
-OpenStreetMap,way/1569168265,,Oostende - Delhaize Hazegras,Electra,Electra,Flandre,Oostende,,,150.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,51.226765,2.921775
-OpenStreetMap,way/1569168273,,Ieper - Delhaize,Electra,Electra,Flandre,Ieper,,,200.0,non,ultra,DC,CCS,6,Voiture,oui,,Sans identification,,,,non,,50.852797,2.874555
-OpenStreetMap,way/1569168274,,Ieper - Delhaize,Electra,Electra,Flandre,Ieper,,,400.0,non,ultra,DC,CCS|CHAdeMO,2,Voiture,oui,,Sans identification,,,,non,,50.85272,2.874574
-OpenStreetMap,way/1569169637,,Kortrijk - Delhaize Kortrijk-Noord,Electra,Electra,Flandre,Kortrijk,,,200.0,non,ultra,DC,CCS,6,Voiture,oui,,Sans identification,,,,non,,50.83239,3.276791
-OpenStreetMap,way/1569169638,,Kortrijk - Delhaize Kortrijk-Noord,Electra,Electra,Flandre,Kortrijk,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,Sans identification,,,,non,,50.832332,3.276619
-OpenStreetMap,way/1569173110,,Oudenaarde - Delhaize,Electra,Electra,Flandre,Oudenaarde,,,150.0,non,ultra,DC,CCS,4,Voiture,oui,,Sans identification,,,,non,,50.842811,3.598135
-OpenStreetMap,way/1569173111,,Oudenaarde - Delhaize,Electra,Electra,Flandre,Oudenaarde,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,Sans identification,,,,non,,50.842728,3.598136
-OpenStreetMap,way/1569173113,,Ronse - Delhaize,Electra,Electra,Flandre,Ronse,,,150.0,non,ultra,DC,CCS,4,Voiture,oui,,Sans identification,,,,non,,50.749423,3.594958
-OpenStreetMap,way/1569173114,,Ronse - Delhaize,Electra,Electra,Flandre,Ronse,,,400.0,non,ultra,DC,CCS|CHAdeMO,6,Voiture,oui,,Sans identification,,,,non,,50.74945,3.595114
-OpenStreetMap,way/1569179752,,Q8 Ronse,Q8,Q8,Flandre,Ronse,,,400.0,non,ultra,DC,CCS,4,Voiture,oui,,,,yes,,non,,50.749282,3.594053
-OpenStreetMap,way/1569263096,,Roeselare - Delhaize,Electra,Electra,Flandre,Roeselare,,,200.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.941788,3.113233
-OpenStreetMap,way/1569263097,,Roeselare - Delhaize,Electra,Electra,Flandre,Roeselare,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.941693,3.113239
-OpenStreetMap,way/1569351034,,,Westpark Veurne,Westpark Veurne,Flandre,Veurne,,,,non,inconnue,DC,CCS,4,Voiture,oui,,Carte bancaire,,yes,,non,,51.07376,2.68951
-OpenStreetMap,way/1569351035,,,Smappee,Smappee,Flandre,Veurne,,,22.0,non,acceleree,AC,Type 2,6,Voiture,oui,,,,yes,,non,,51.073622,2.689483
-OpenStreetMap,way/1569354728,,Blankenberge - Delhaize,Electra,Electra,Flandre,Blankenberge,,,150.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,51.315604,3.147144
-OpenStreetMap,way/1569354729,,Blankenberge - Delhaize,Electra,Electra,Flandre,Blankenberge,,,300.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,51.315591,3.147267
-OpenStreetMap,way/1569359393,,Brugge - Delhaize Sint-Pieters,Electra,Electra,Flandre,Brugge,,,300.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,51.226431,3.206722
-OpenStreetMap,way/1569359394,,Brugge - Delhaize Sint-Pieters,Electra,Electra,Flandre,Brugge,,,150.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,51.226538,3.206758
-OpenStreetMap,way/1569361107,,Eeklo - Delhaize,Electra,Electra,Flandre,Eeklo,,,200.0,non,ultra,DC,CCS,4,Voiture,oui,,,non,yes,24/7,oui,,51.190451,3.552802
-OpenStreetMap,way/1569361108,,Eeklo - Delhaize,Electra,Electra,Flandre,Eeklo,,,300.0,non,ultra,DC,CCS,2,Voiture,oui,,,non,yes,24/7,oui,,51.190527,3.55283
-OpenStreetMap,way/1569362455,,Gent - Delhaize Wondelgem,Electra,Electra,Flandre,Gent,,,300.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,51.088356,3.708528
-OpenStreetMap,way/1569362456,,Gent - Delhaize Wondelgem,Electra,Electra,Flandre,Gent,,,200.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,51.088296,3.708602
-OpenStreetMap,way/1569366288,,Aalter - Shopping Ter Lo,Electra,Electra,Flandre,Aalter,,,300.0,non,ultra,DC,CCS,4,Voiture,oui,,,,yes,24/7,oui,2024-12-29,51.079227,3.451178
-OpenStreetMap,way/1569371320,,Lochristi - Pizza Hut,Electra,Electra,Flandre,Lochristi,,,400.0,non,ultra,DC,CCS,6,Voiture,oui,,,,,,non,,51.088962,3.808581
-OpenStreetMap,way/1569372977,,Oostakker - Colmar,Electra,Electra,Flandre,Gent,,,300.0,non,ultra,DC,CCS,6,Voiture,oui,,,,,,non,,51.081026,3.78927
-OpenStreetMap,way/1569375023,,Oostakker - Quick,Electra,Electra,Flandre,Gent,,,400.0,non,ultra,DC,CCS,6,Voiture,oui,,,,,,non,,51.073333,3.775827
-OpenStreetMap,way/1569434854,,Gent - Delhaize Watersport,Electra,Electra,Flandre,Gent,,,150.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,51.047468,3.706755
-OpenStreetMap,way/1569434855,,Gent - Delhaize Watersport,Electra,Electra,Flandre,Gent,,,300.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,51.047511,3.706675
-OpenStreetMap,way/1569434856,,Gent - Delhaize Watersport,Electra,Electra,Flandre,Gent,,,300.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,51.047632,3.706706
-OpenStreetMap,way/1569434857,,Gent - Delhaize Watersport,Electra,Electra,Flandre,Gent,,,150.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,51.047682,3.706769
-OpenStreetMap,way/1569436379,,Brugge - Delhaize Sint-Kruis,Electra,Electra,Flandre,Brugge,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,51.209625,3.255066
-OpenStreetMap,way/1569436380,,Brugge - Delhaize Sint-Kruis,Electra,Electra,Flandre,Brugge,,,150.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,51.209587,3.254998
-OpenStreetMap,way/1569438426,,Lokeren - Delhaize,Electra,Electra,Flandre,Lokeren,,,300.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,51.091364,4.019604
-OpenStreetMap,way/1569442215,,Wetteren - Station Electra,Electra,Electra,Flandre,Wetteren,,,300.0,non,ultra,DC,CCS,8,Voiture,oui,,,,,,non,,50.98035,3.840549
-OpenStreetMap,way/1569455205,,Oosterzele - Supermarket,Electra,Electra,Flandre,Oosterzele,,,300.0,non,ultra,DC,CCS,6,Voiture,oui,,,,,,non,,50.943694,3.819874
-OpenStreetMap,way/1569456298,,Harelbeke - AS Adventure,Electra,Electra,Flandre,Harelbeke,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,yes,,non,,50.838638,3.287075
-OpenStreetMap,way/1569456299,,Harelbeke - AS Adventure,Electra,Electra,Flandre,Harelbeke,,,400.0,non,ultra,DC,CCS,4,Voiture,oui,,,,yes,,non,,50.838618,3.287192
-OpenStreetMap,way/1569461739,,Izegem - Delhaize,Electra,Electra,Flandre,Izegem,,,300.0,non,ultra,DC,CCS,6,Voiture,oui,,,,,,non,,50.905063,3.220655
-OpenStreetMap,way/1569478390,,Ninove - Burger King,Electra,Electra,Flandre,Ninove,,,300.0,non,ultra,DC,CCS,6,Voiture,oui,,,,,,non,,50.835503,4.007577
-OpenStreetMap,way/1571038646,,,Q8 electric,Q8,Flandre,Herenthout,,,200.0,non,ultra,DC,CCS,4,Voiture,,,,,,,non,,51.134616,4.760731
-OpenStreetMap,way/1571124538,,Hyperfast Carrefour Laakdal,Hyperfast,Hyperfast,Flandre,Laakdal,,,300.0,non,ultra,DC,Type 2|CCS,6,Voiture,,,,,,,non,,51.087452,5.069095
-OpenStreetMap,way/1571371471,,,DATS 24,DATS 24 (Colruyt),Flandre,Vosselaar,,,400.0,non,ultra,DC,Type 2|CCS,10,Voiture,oui,,,,,,non,,51.315735,4.900646
-OpenStreetMap,way/1573208377,,,Certipower,Certipower,Flandre,Veurne,,,300.0,non,ultra,DC,CCS,4,Voiture,oui,,,,yes,,non,,51.084971,2.640469
-OpenStreetMap,way/1574244806,,,,Non renseigné,Flandre,Aalst,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,50.921481,4.06573
-OpenStreetMap,way/1576153306,,,Allego,Allego,Flandre,Menen,,,400.0,non,ultra,DC,,4,Voiture,,,,,,24/7,oui,,50.802469,3.102238
 OpenStreetMap,node/3002112311,,Nivelles-Sud Supercharger,Tesla,Tesla,Wallonie,Nivelles,Chaussée de Mons 22,,150.0,non,ultra,DC,CCS|Tesla,12,Voiture,oui,,,non,customers,24/7,oui,,50.588808,4.308028
 OpenStreetMap,node/3470476488,,,ZE-MO,ZE-MO,Wallonie,Viroinval,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.074039,4.548029
 OpenStreetMap,node/3478789457,,e-mobile,esa,esa,Wallonie,Ellezelles,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.694617,3.721798
@@ -7208,6 +6976,7 @@ OpenStreetMap,node/14333647656,,,EZ Charge,EZ Charge,Wallonie,Gembloux,,,,non,in
 OpenStreetMap,node/14350349010,,,,Non renseigné,Wallonie,Andenne,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491525,5.093261
 OpenStreetMap,node/14350349011,,,,Non renseigné,Wallonie,Andenne,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.49157,5.093257
 OpenStreetMap,node/14354665809,,,DATS 24,DATS 24 (Colruyt),Wallonie,Nandrin,,,,non,inconnue,,,,Voiture,oui,,,,yes,,non,,50.523337,5.420665
+OpenStreetMap,node/14358138964,,,B&B De Patuljak,B&B De Patuljak,Wallonie,Houffalize,,,,non,inconnue,,,1,Voiture,oui,,,,customers,,non,,50.152607,5.768614
 OpenStreetMap,way/467642349,,,Alfen,Alfen,Wallonie,Villers-la-Ville,,,,non,inconnue,,,2,Voiture,oui,,Carte bancaire,,yes,,non,,50.576294,4.530271
 OpenStreetMap,way/519886100,,,Ville de Mons,Ville de Mons,Wallonie,Mons,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,50.439767,3.963572
 OpenStreetMap,way/537391924,,,,Non renseigné,Wallonie,Saint-Nicolas,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.645969,5.524703
