@@ -1,25 +1,25 @@
 {
-  "genere_le": "2026-11-10T09:55:19Z",
-  "total": 7298,
-  "points": 26563,
+  "genere_le": "2026-11-11T09:25:34Z",
+  "total": 7299,
+  "points": 26564,
   "par_source": {
     "Bruxelles Mobilité": 1752,
-    "OpenStreetMap": 5546
+    "OpenStreetMap": 5547
   },
   "par_region": {
     "Bruxelles-Capitale": 1969,
     "Flandre": 4599,
-    "Wallonie": 730
+    "Wallonie": 731
   },
   "par_classe": {
     "lente": 1386,
     "acceleree": 1241,
     "rapide": 222,
-    "inconnue": 4087,
+    "inconnue": 4088,
     "ultra": 362
   },
   "par_reseau": {
-    "Non renseigné": 2056,
+    "Non renseigné": 2057,
     "Allego": 1059,
     "TotalEnergies": 1028,
     "EnergyVision": 848,

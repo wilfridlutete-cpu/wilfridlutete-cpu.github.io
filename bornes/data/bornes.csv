@@ -5601,7 +5601,7 @@ OpenStreetMap,node/13531723808,,,,Non renseigné,Flandre,Berlare,,,,non,inconnue
 OpenStreetMap,node/13532531901,,,Circle K,Circle K,Flandre,Kontich,,,300.0,non,ultra,DC,CCS,,Voiture,,,,,,24/7,oui,,51.097645,4.438283
 OpenStreetMap,node/13534288264,,,Total Energy,TotalEnergies,Flandre,Liedekerke,,,,non,inconnue,AC,Type 2,22,Voiture,,,,,yes,,non,,50.866293,4.089456
 OpenStreetMap,node/13544426501,,,,Non renseigné,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,,,,,,,non,2026-02-11,51.182868,4.4329
-OpenStreetMap,node/13544426502,,,TotalEnergies,TotalEnergies,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,,,,,,,non,2026-08-16,51.184443,4.432317
+OpenStreetMap,node/13544426502,,,TotalEnergies,TotalEnergies,Flandre,Antwerpen,,,,non,inconnue,AC,Type 2,,Voiture,,,,,,,non,2026-11-10,51.184443,4.432317
 OpenStreetMap,node/13544462301,,,TotalEnergies,TotalEnergies,Flandre,Antwerpen,,,,non,inconnue,,,,Voiture,,,,,,,non,2026-05-09,51.186908,4.435033
 OpenStreetMap,node/13544626610,,,,Non renseigné,Flandre,Kortenberg,,,,non,inconnue,,,,Vélo,non,,,,yes,,non,,50.886748,4.538642
 OpenStreetMap,node/13551471706,,,TotalEnergies,TotalEnergies,Flandre,Roeselare,,,22.0,non,acceleree,AC,Type 2,2,Voiture,oui,,,,yes,24/7,oui,,50.950093,3.12443
@@ -5834,7 +5834,6 @@ OpenStreetMap,node/13787372875,,,Engie,ENGIE Vianeo,Flandre,Diepenbeek,,,22.0,no
 OpenStreetMap,node/13787372876,,,Engie,ENGIE Vianeo,Flandre,Diepenbeek,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.91457,5.412648
 OpenStreetMap,node/13787372890,,,Lidl,Lidl,Flandre,Diepenbeek,,,50.0,non,rapide,DC,Type 2|CCS|CHAdeMO,2,Voiture,,,,,,,non,,50.908265,5.427267
 OpenStreetMap,node/13787372895,,,Engie,ENGIE Vianeo,Flandre,Diepenbeek,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.924959,5.394406
-OpenStreetMap,node/13787372896,,,TotalEnergies,TotalEnergies,Flandre,Diepenbeek,,,400.0,non,ultra,DC,CCS,4,Voiture,,,,,,,non,,50.894157,5.418297
 OpenStreetMap,node/13789537459,,,TotalEnergies,TotalEnergies,Flandre,Diest,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.97282,5.071466
 OpenStreetMap,node/13789537463,,,TotalEnergies,TotalEnergies,Flandre,Diest,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.977689,5.060572
 OpenStreetMap,node/13789537464,,,TotalEnergies,TotalEnergies,Flandre,Diest,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.980975,5.056165
@@ -6567,6 +6566,7 @@ OpenStreetMap,way/1573208377,,,Certipower,Certipower,Flandre,Veurne,,,300.0,non,
 OpenStreetMap,way/1574244806,,,,Non renseigné,Flandre,Aalst,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,50.921481,4.06573
 OpenStreetMap,way/1576153306,,,Allego,Allego,Flandre,Menen,,,400.0,non,ultra,DC,,4,Voiture,,,,,,24/7,oui,,50.802469,3.102238
 OpenStreetMap,way/1577415339,,,Electra,Electra,Flandre,Antwerpen,,,400.0,non,ultra,DC,CCS,6,Voiture,,,,,,,non,,51.170623,4.38638
+OpenStreetMap,way/1577640126,,,TotalEnergies,TotalEnergies,Flandre,Diepenbeek,,,400.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.894119,5.418347
 OpenStreetMap,node/3002112311,,Nivelles-Sud Supercharger,Tesla,Tesla,Wallonie,Nivelles,Chaussée de Mons 22,,150.0,non,ultra,DC,CCS|Tesla,12,Voiture,oui,,,non,customers,24/7,oui,,50.588808,4.308028
 OpenStreetMap,node/3470476488,,,ZE-MO,ZE-MO,Wallonie,Viroinval,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.074039,4.548029
 OpenStreetMap,node/3478789457,,e-mobile,esa,esa,Wallonie,Ellezelles,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.694617,3.721798
@@ -6717,7 +6717,7 @@ OpenStreetMap,node/9835804704,,,,Non renseigné,Wallonie,Namur,,,,non,inconnue,,
 OpenStreetMap,node/9835804705,,,,Non renseigné,Wallonie,Namur,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.49351,4.796773
 OpenStreetMap,node/9869875997,,,Ores,Ores,Wallonie,Binche,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,Badge RFID,,,,non,,50.409182,4.167399
 OpenStreetMap,node/9887741858,,,,Non renseigné,Wallonie,Mons,,,,non,inconnue,AC,Type 2,8,Voiture,oui,,,,yes,,non,,50.447978,3.946821
-OpenStreetMap,node/9889274522,,,Electra,Electra,Wallonie,,,,150.0,non,ultra,DC,CCS,2,Voiture,oui,,Carte bancaire,,,24/7,oui,,50.410531,4.185961
+OpenStreetMap,node/9889274522,,,Electra,Electra,Wallonie,Binche,,,150.0,non,ultra,DC,CCS,2,Voiture,oui,,Carte bancaire,,,24/7,oui,,50.410531,4.185961
 OpenStreetMap,node/9947107625,,,,Non renseigné,Wallonie,Aubange,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,49.561078,5.83066
 OpenStreetMap,node/9951040750,,,,Non renseigné,Wallonie,Mons,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.463524,3.937517
 OpenStreetMap,node/9958726939,,,,Non renseigné,Wallonie,Sambreville,,,,non,inconnue,,,,Voiture|Vélo,,,,,,,non,,50.451062,4.636868
@@ -7014,7 +7014,7 @@ OpenStreetMap,node/12761846366,,Couvin Supercharger,Tesla,Tesla,Wallonie,Couvin,
 OpenStreetMap,node/12805695101,,,,Non renseigné,Wallonie,Libramont-Chevigny,,,,non,inconnue,,,,Voiture,,,,,,,non,,49.91245,5.355626
 OpenStreetMap,node/12806757767,,,,Non renseigné,Wallonie,Berloz,,,,non,inconnue,,,,Voiture|Vélo,,,,,,,non,,50.710769,5.214386
 OpenStreetMap,node/12813910824,,,,Non renseigné,Wallonie,Saint-Vith,,,,non,inconnue,AC,Prise domestique,,Vélo,non,,Sans identification,,yes,24/7,oui,,50.280686,6.130458
-OpenStreetMap,node/12822773449,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.54622,5.314947
+OpenStreetMap,node/12822773449,,,,Non renseigné,Wallonie,Amay,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.54622,5.314947
 OpenStreetMap,node/12843549261,,,,Non renseigné,Wallonie,Eupen,,,,non,inconnue,,,6,Voiture,,,,,customers,,non,,50.634444,6.040899
 OpenStreetMap,node/12873422908,,,DATS 24,DATS 24 (Colruyt),Wallonie,Amay,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.556681,5.30575
 OpenStreetMap,node/12875647170,,,,Non renseigné,Wallonie,Saint-Vith,,,,non,inconnue,AC,Prise domestique,3,Vélo,non,,,,yes,,non,,50.297169,6.062327
@@ -7041,7 +7041,7 @@ OpenStreetMap,node/13015945030,,,,Non renseigné,Wallonie,Oupeye,,,,non,inconnue
 OpenStreetMap,node/13017848787,,,,Non renseigné,Wallonie,Visé,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.737255,5.707267
 OpenStreetMap,node/13030323466,,,,Non renseigné,Wallonie,Thimister-Clermont,,,,non,inconnue,,,,Voiture|Vélo,,,,,,,non,,50.650853,5.864078
 OpenStreetMap,node/13030323478,,,,Non renseigné,Wallonie,Thimister-Clermont,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.650621,5.864753
-OpenStreetMap,node/13041434540,,,Electra,Electra,Wallonie,,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.550968,5.323867
+OpenStreetMap,node/13041434540,,,Electra,Electra,Wallonie,Amay,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.550968,5.323867
 OpenStreetMap,node/13043162021,,,,Non renseigné,Wallonie,Gouvy,,,,non,inconnue,,,,Voiture|Vélo,,,,,,,non,,50.180874,5.86498
 OpenStreetMap,node/13059026958,,,,Non renseigné,Wallonie,Soumagne,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.609607,5.734312
 OpenStreetMap,node/13065089252,,,,Non renseigné,Wallonie,Chaudfontaine,,,,non,inconnue,,,1,Vélo,non,,Sans identification,,yes,24/7,oui,,50.601734,5.633156
@@ -7143,77 +7143,78 @@ OpenStreetMap,node/13876165843,,IONITY,Ionity,IONITY,Wallonie,Verviers,,,,non,in
 OpenStreetMap,node/13876165844,,IONITY,Ionity,IONITY,Wallonie,Verviers,,,,non,inconnue,,,3,Voiture,oui,,,,,,non,2026-07-17,50.584716,5.848202
 OpenStreetMap,node/13876165845,,IONITY,Ionity,IONITY,Wallonie,Verviers,,,,non,inconnue,,,3,Voiture,oui,,,,,,non,,50.584856,5.848114
 OpenStreetMap,node/13876451924,,,,Non renseigné,Wallonie,Aywaille,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.490408,5.714868
-OpenStreetMap,node/13911397698,,,EnergyVision,EnergyVision,Wallonie,,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,50.521481,4.768033
-OpenStreetMap,node/13931916841,,E-Flux,,Non renseigné,Wallonie,,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,50.217205,5.528669
-OpenStreetMap,node/13935686517,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.314405,4.131891
-OpenStreetMap,node/13950189506,,,Driveco,Driveco,Wallonie,,,,,non,inconnue,,,4,Voiture,oui,,,,yes,,non,,50.62572,6.029101
-OpenStreetMap,node/13957809922,,,Emyon,Emyon,Wallonie,,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,50.628721,6.032702
-OpenStreetMap,node/13959771301,,,,Non renseigné,Wallonie,,,,11.0,non,lente,AC,Type 2,,Voiture,,,,,,24/7,oui,2026-06-23,50.011113,5.723965
-OpenStreetMap,node/13959772501,,,,Non renseigné,Wallonie,,,,400.0,non,ultra,DC,CCS,,Voiture,,,,,,24/7,oui,2026-06-23,50.002229,5.69561
-OpenStreetMap,node/13980603016,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,2,Voiture|Vélo,non,,,,,,non,,49.840584,5.435604
-OpenStreetMap,node/13980603017,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,2,Voiture|Vélo,non,,,,,,non,,49.841759,5.435586
-OpenStreetMap,node/13980603018,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,2,Vélo,non,,,,,,non,,49.839918,5.430073
-OpenStreetMap,node/13980603019,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,2,Vélo,non,,,,,,non,,49.836245,5.426225
-OpenStreetMap,node/13980603020,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,2,Vélo,non,,,,,,non,,49.854425,5.452118
-OpenStreetMap,node/13985404045,,,Lidl,Lidl,Wallonie,,,,50.0,non,rapide,DC,Type 2 (câble)|CCS|CHAdeMO,2,Voiture,oui,,,,yes,24/7,oui,,50.257834,4.610049
-OpenStreetMap,node/13989756302,,Tesla Supercharger,Tesla,Tesla,Wallonie,,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.223252,5.329817
-OpenStreetMap,node/14020415624,,,Pharmacie Denis,Pharmacie Denis,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,49.68628,5.799365
-OpenStreetMap,node/14020415625,,,Pharmacie Denis,Pharmacie Denis,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,private,,non,,49.686267,5.799441
-OpenStreetMap,node/14070453901,,Fastned,Fastned,Fastned,Wallonie,,,,,non,inconnue,,,,Voiture,,,,,,,non,,49.804656,5.529746
-OpenStreetMap,node/14073610863,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,49.703432,5.327501
-OpenStreetMap,node/14074589554,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,2,Voiture,,,,,no,,non,,50.682542,4.268909
-OpenStreetMap,node/14081745071,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.376183,5.521066
-OpenStreetMap,node/14081752601,,Fastned,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.004735,5.221756
-OpenStreetMap,node/14097694845,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,8,Voiture,,,,,,,non,,50.453786,3.98297
-OpenStreetMap,node/14113741108,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,8,Voiture|Vélo,,,,,,,non,,50.453618,3.983559
-OpenStreetMap,node/14141953541,,Andenne ARENA,ZE-MO,ZE-MO,Wallonie,,,,22.0,non,acceleree,AC,Type 2,,Voiture,oui,,,,,,non,,50.488975,5.090969
-OpenStreetMap,node/14160052340,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,2,Vélo,,,,,,,non,,50.081047,5.217189
-OpenStreetMap,node/14162120992,,,,Non renseigné,Wallonie,,,,,non,inconnue,AC,Prise domestique,4,Vélo,non,,,,,24/7,oui,,50.225118,5.918045
-OpenStreetMap,node/14165154457,,DC EV charging Station,,Non renseigné,Wallonie,,,,90.0,non,rapide,DC,,2,Voiture,,,,,yes,,non,,50.395455,5.624243
-OpenStreetMap,node/14175069403,,Shell Recharge,Shell,Shell Recharge,Wallonie,,Chaussée de Tongres 338,,,non,inconnue,,,,Voiture,,,,,,24/7,oui,,50.671508,5.549559
-OpenStreetMap,node/14201296590,,,,Non renseigné,Wallonie,,,,,non,inconnue,AC,Type 2,,Voiture,,,,,,,non,,50.478701,4.181186
-OpenStreetMap,node/14226632137,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.699785,3.820508
-OpenStreetMap,node/14226636378,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.70002,3.820335
-OpenStreetMap,node/14238096799,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.700198,3.820726
-OpenStreetMap,node/14238134861,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.700302,3.820702
-OpenStreetMap,node/14241954499,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491921,5.097575
-OpenStreetMap,node/14241954500,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491898,5.097586
-OpenStreetMap,node/14241997601,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491872,5.097595
-OpenStreetMap,node/14241997602,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491845,5.097609
-OpenStreetMap,node/14241997603,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491821,5.097615
-OpenStreetMap,node/14241997604,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491799,5.097625
-OpenStreetMap,node/14241997605,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491769,5.097636
-OpenStreetMap,node/14241997606,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491746,5.097644
-OpenStreetMap,node/14241997607,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491724,5.09765
-OpenStreetMap,node/14241997608,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491692,5.097661
-OpenStreetMap,node/14246478800,,,EnergyVision,EnergyVision,Wallonie,,,,,non,inconnue,AC,Type 2,,Voiture,oui,,,,,,non,,50.496575,5.094339
-OpenStreetMap,node/14246514501,,,EnergyVision,EnergyVision,Wallonie,,,,,non,inconnue,AC,Type 2,,Voiture,oui,,,,,,non,,50.496573,5.0943
-OpenStreetMap,node/14259254417,,,Electra,Electra,Wallonie,,,,150.0,non,ultra,DC,CCS,2,Voiture,oui,,Carte bancaire,,,24/7,oui,,50.410546,4.185943
-OpenStreetMap,node/14259254418,,,Powerdot,Powerdot,Wallonie,,,,120.0,non,rapide,DC,CCS,2,Voiture,oui,,,,yes,,non,,50.471193,4.469208
-OpenStreetMap,node/14259254419,,,Powerdot,Powerdot,Wallonie,,,,80.0,non,rapide,DC,CCS,2,Voiture,oui,,,,yes,,non,,50.471157,4.469265
-OpenStreetMap,node/14259254420,,,Powerdot,Powerdot,Wallonie,,,,80.0,non,rapide,DC,CCS,2,Voiture,oui,,,,yes,,non,,50.471124,4.469318
-OpenStreetMap,node/14259254421,,,Powerdot,Powerdot,Wallonie,,,,80.0,non,rapide,DC,CCS,2,Voiture,oui,,,,yes,,non,,50.471092,4.469365
-OpenStreetMap,node/14259254422,,,Q8,Q8,Wallonie,,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,yes,,non,,50.450941,4.43313
-OpenStreetMap,node/14259254423,,,Q8,Q8,Wallonie,,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,yes,,non,,50.450952,4.4332
-OpenStreetMap,node/14276398838,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,customers,,non,,50.482875,4.447583
-OpenStreetMap,node/14276398839,,,Powerdot,Powerdot,Wallonie,,,,200.0,non,ultra,DC,CCS,2,Voiture,oui,,,,customers,,non,,50.530413,4.454744
-OpenStreetMap,node/14276398840,,,Powerdot,Powerdot,Wallonie,,,,200.0,non,ultra,DC,CCS,2,Voiture,oui,,,,customers,,non,,50.530364,4.454758
-OpenStreetMap,node/14276398841,,,Powerdot,Powerdot,Wallonie,,,,200.0,non,ultra,DC,CCS,2,Voiture,oui,,,,customers,,non,,50.530314,4.454773
-OpenStreetMap,node/14276398842,,,Powerdot,Powerdot,Wallonie,,,,100.0,non,rapide,DC,CCS,2,Voiture,oui,,,,customers,,non,,50.530263,4.454788
-OpenStreetMap,node/14276398843,,,Powerdot,Powerdot,Wallonie,,,,22.0,non,acceleree,AC,Type 2,1,Voiture,oui,,,,customers,,non,,50.530232,4.454797
-OpenStreetMap,node/14276398844,,,Optiload,Optiload,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,customers,,non,,50.467718,4.438406
-OpenStreetMap,node/14291623817,,,Electra,Electra,Wallonie,,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.434573,4.334527
-OpenStreetMap,node/14291623818,,,Electra,Electra,Wallonie,,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.434557,4.334631
-OpenStreetMap,node/14291623819,,,Electra,Electra,Wallonie,,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.434595,4.33464
-OpenStreetMap,node/14316660100,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,,,,,,,non,,49.675505,5.794796
-OpenStreetMap,node/14321443270,,,EnergyVision,EnergyVision,Wallonie,,,,,non,inconnue,AC,Type 2,,Voiture,oui,,,,,,non,,50.496572,5.094228
-OpenStreetMap,node/14321443271,,,EnergyVision,EnergyVision,Wallonie,,,,,non,inconnue,AC,Type 2,,Voiture,oui,,,,,,non,,50.496572,5.094267
-OpenStreetMap,node/14331141813,,,Electra,Electra,Wallonie,,,,,non,inconnue,,,4,Voiture,,,,,,,non,,50.648236,6.001364
-OpenStreetMap,node/14333647656,,,EZ Charge,EZ Charge,Wallonie,,,,,non,inconnue,,,1,Voiture,oui,,,,yes,,non,,50.581215,4.721433
-OpenStreetMap,node/14350349010,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491525,5.093261
-OpenStreetMap,node/14350349011,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.49157,5.093257
-OpenStreetMap,node/14354665809,,,DATS 24,DATS 24 (Colruyt),Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,yes,,non,,50.523337,5.420665
-OpenStreetMap,node/14358138964,,,B&B De Patuljak,B&B De Patuljak,Wallonie,,,,,non,inconnue,,,1,Voiture,oui,,,,customers,,non,,50.152607,5.768614
+OpenStreetMap,node/13911397698,,,EnergyVision,EnergyVision,Wallonie,La Bruyère,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,50.521481,4.768033
+OpenStreetMap,node/13931916841,,E-Flux,,Non renseigné,Wallonie,Rendeux,,,,non,inconnue,,,2,Voiture,oui,,,,,,non,,50.217205,5.528669
+OpenStreetMap,node/13935686517,,,,Non renseigné,Wallonie,Erquelinnes,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.314405,4.131891
+OpenStreetMap,node/13950189506,,,Driveco,Driveco,Wallonie,Eupen,,,,non,inconnue,,,4,Voiture,oui,,,,yes,,non,,50.62572,6.029101
+OpenStreetMap,node/13957809922,,,Emyon,Emyon,Wallonie,Eupen,,,,non,inconnue,,,2,Voiture,oui,,,,yes,,non,,50.628721,6.032702
+OpenStreetMap,node/13959771301,,,,Non renseigné,Wallonie,Bastogne,,,11.0,non,lente,AC,Type 2,,Voiture,,,,,,24/7,oui,2026-06-23,50.011113,5.723965
+OpenStreetMap,node/13959772501,,,,Non renseigné,Wallonie,Bastogne,,,400.0,non,ultra,DC,CCS,,Voiture,,,,,,24/7,oui,2026-06-23,50.002229,5.69561
+OpenStreetMap,node/13980603016,,,,Non renseigné,Wallonie,Neufchâteau,,,,non,inconnue,,,2,Voiture|Vélo,non,,,,,,non,,49.840584,5.435604
+OpenStreetMap,node/13980603017,,,,Non renseigné,Wallonie,Neufchâteau,,,,non,inconnue,,,2,Voiture|Vélo,non,,,,,,non,,49.841759,5.435586
+OpenStreetMap,node/13980603018,,,,Non renseigné,Wallonie,Neufchâteau,,,,non,inconnue,,,2,Vélo,non,,,,,,non,,49.839918,5.430073
+OpenStreetMap,node/13980603019,,,,Non renseigné,Wallonie,Neufchâteau,,,,non,inconnue,,,2,Vélo,non,,,,,,non,,49.836245,5.426225
+OpenStreetMap,node/13980603020,,,,Non renseigné,Wallonie,Neufchâteau,,,,non,inconnue,,,2,Vélo,non,,,,,,non,,49.854425,5.452118
+OpenStreetMap,node/13985404045,,,Lidl,Lidl,Wallonie,Florennes,,,50.0,non,rapide,DC,Type 2 (câble)|CCS|CHAdeMO,2,Voiture,oui,,,,yes,24/7,oui,,50.257834,4.610049
+OpenStreetMap,node/13989756302,,Tesla Supercharger,Tesla,Tesla,Wallonie,Marche-en-Famenne,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.223252,5.329817
+OpenStreetMap,node/14020415624,,,Pharmacie Denis,Pharmacie Denis,Wallonie,Arlon,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,49.68628,5.799365
+OpenStreetMap,node/14020415625,,,Pharmacie Denis,Pharmacie Denis,Wallonie,Arlon,,,,non,inconnue,,,,Voiture,oui,,,,private,,non,,49.686267,5.799441
+OpenStreetMap,node/14070453901,,Fastned,Fastned,Fastned,Wallonie,Léglise,,,,non,inconnue,,,,Voiture,,,,,,,non,,49.804656,5.529746
+OpenStreetMap,node/14073610863,,,,Non renseigné,Wallonie,Florenville,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,49.703432,5.327501
+OpenStreetMap,node/14074589554,,,,Non renseigné,Wallonie,Braine-le-Château,,,,non,inconnue,,,2,Voiture,,,,,no,,non,,50.682542,4.268909
+OpenStreetMap,node/14081745071,,,,Non renseigné,Wallonie,Durbuy,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.376183,5.521066
+OpenStreetMap,node/14081752601,,Fastned,,Non renseigné,Wallonie,Libin,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.004735,5.221756
+OpenStreetMap,node/14097694845,,,,Non renseigné,Wallonie,Mons,,,,non,inconnue,,,8,Voiture,,,,,,,non,,50.453786,3.98297
+OpenStreetMap,node/14113741108,,,,Non renseigné,Wallonie,Mons,,,,non,inconnue,,,8,Voiture|Vélo,,,,,,,non,,50.453618,3.983559
+OpenStreetMap,node/14141953541,,Andenne ARENA,ZE-MO,ZE-MO,Wallonie,Andenne,,,22.0,non,acceleree,AC,Type 2,,Voiture,oui,,,,,,non,,50.488975,5.090969
+OpenStreetMap,node/14160052340,,,,Non renseigné,Wallonie,Tellin,,,,non,inconnue,,,2,Vélo,,,,,,,non,,50.081047,5.217189
+OpenStreetMap,node/14162120992,,,,Non renseigné,Wallonie,Gouvy,,,,non,inconnue,AC,Prise domestique,4,Vélo,non,,,,,24/7,oui,,50.225118,5.918045
+OpenStreetMap,node/14165154457,,DC EV charging Station,,Non renseigné,Wallonie,Ferrières,,,90.0,non,rapide,DC,,2,Voiture,,,,,yes,,non,,50.395455,5.624243
+OpenStreetMap,node/14175069403,,Shell Recharge,Shell,Shell Recharge,Wallonie,Liège,Chaussée de Tongres 338,,,non,inconnue,,,,Voiture,,,,,,24/7,oui,,50.671508,5.549559
+OpenStreetMap,node/14201296590,,,,Non renseigné,Wallonie,La Louvière,,,,non,inconnue,AC,Type 2,,Voiture,,,,,,,non,,50.478701,4.181186
+OpenStreetMap,node/14226632137,,,,Non renseigné,Wallonie,Lessines,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.699785,3.820508
+OpenStreetMap,node/14226636378,,,,Non renseigné,Wallonie,Lessines,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.70002,3.820335
+OpenStreetMap,node/14238096799,,,,Non renseigné,Wallonie,Lessines,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.700198,3.820726
+OpenStreetMap,node/14238134861,,,,Non renseigné,Wallonie,Lessines,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.700302,3.820702
+OpenStreetMap,node/14241954499,,,,Non renseigné,Wallonie,Andenne,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491921,5.097575
+OpenStreetMap,node/14241954500,,,,Non renseigné,Wallonie,Andenne,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491898,5.097586
+OpenStreetMap,node/14241997601,,,,Non renseigné,Wallonie,Andenne,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491872,5.097595
+OpenStreetMap,node/14241997602,,,,Non renseigné,Wallonie,Andenne,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491845,5.097609
+OpenStreetMap,node/14241997603,,,,Non renseigné,Wallonie,Andenne,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491821,5.097615
+OpenStreetMap,node/14241997604,,,,Non renseigné,Wallonie,Andenne,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491799,5.097625
+OpenStreetMap,node/14241997605,,,,Non renseigné,Wallonie,Andenne,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491769,5.097636
+OpenStreetMap,node/14241997606,,,,Non renseigné,Wallonie,Andenne,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491746,5.097644
+OpenStreetMap,node/14241997607,,,,Non renseigné,Wallonie,Andenne,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491724,5.09765
+OpenStreetMap,node/14241997608,,,,Non renseigné,Wallonie,Andenne,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491692,5.097661
+OpenStreetMap,node/14246478800,,,EnergyVision,EnergyVision,Wallonie,Andenne,,,,non,inconnue,AC,Type 2,,Voiture,oui,,,,,,non,,50.496575,5.094339
+OpenStreetMap,node/14246514501,,,EnergyVision,EnergyVision,Wallonie,Andenne,,,,non,inconnue,AC,Type 2,,Voiture,oui,,,,,,non,,50.496573,5.0943
+OpenStreetMap,node/14259254417,,,Electra,Electra,Wallonie,Binche,,,150.0,non,ultra,DC,CCS,2,Voiture,oui,,Carte bancaire,,,24/7,oui,,50.410546,4.185943
+OpenStreetMap,node/14259254418,,,Powerdot,Powerdot,Wallonie,Charleroi,,,120.0,non,rapide,DC,CCS,2,Voiture,oui,,,,yes,,non,,50.471193,4.469208
+OpenStreetMap,node/14259254419,,,Powerdot,Powerdot,Wallonie,Charleroi,,,80.0,non,rapide,DC,CCS,2,Voiture,oui,,,,yes,,non,,50.471157,4.469265
+OpenStreetMap,node/14259254420,,,Powerdot,Powerdot,Wallonie,Charleroi,,,80.0,non,rapide,DC,CCS,2,Voiture,oui,,,,yes,,non,,50.471124,4.469318
+OpenStreetMap,node/14259254421,,,Powerdot,Powerdot,Wallonie,Charleroi,,,80.0,non,rapide,DC,CCS,2,Voiture,oui,,,,yes,,non,,50.471092,4.469365
+OpenStreetMap,node/14259254422,,,Q8,Q8,Wallonie,Charleroi,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,yes,,non,,50.450941,4.43313
+OpenStreetMap,node/14259254423,,,Q8,Q8,Wallonie,Charleroi,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,yes,,non,,50.450952,4.4332
+OpenStreetMap,node/14276398838,,,,Non renseigné,Wallonie,Charleroi,,,,non,inconnue,,,,Voiture,oui,,,,customers,,non,,50.482875,4.447583
+OpenStreetMap,node/14276398839,,,Powerdot,Powerdot,Wallonie,Les Bons Villers,,,200.0,non,ultra,DC,CCS,2,Voiture,oui,,,,customers,,non,,50.530413,4.454744
+OpenStreetMap,node/14276398840,,,Powerdot,Powerdot,Wallonie,Les Bons Villers,,,200.0,non,ultra,DC,CCS,2,Voiture,oui,,,,customers,,non,,50.530364,4.454758
+OpenStreetMap,node/14276398841,,,Powerdot,Powerdot,Wallonie,Les Bons Villers,,,200.0,non,ultra,DC,CCS,2,Voiture,oui,,,,customers,,non,,50.530314,4.454773
+OpenStreetMap,node/14276398842,,,Powerdot,Powerdot,Wallonie,Les Bons Villers,,,100.0,non,rapide,DC,CCS,2,Voiture,oui,,,,customers,,non,,50.530263,4.454788
+OpenStreetMap,node/14276398843,,,Powerdot,Powerdot,Wallonie,Les Bons Villers,,,22.0,non,acceleree,AC,Type 2,1,Voiture,oui,,,,customers,,non,,50.530232,4.454797
+OpenStreetMap,node/14276398844,,,Optiload,Optiload,Wallonie,Charleroi,,,,non,inconnue,,,,Voiture,oui,,,,customers,,non,,50.467718,4.438406
+OpenStreetMap,node/14291623817,,,Electra,Electra,Wallonie,Fontaine-l'Évêque,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.434573,4.334527
+OpenStreetMap,node/14291623818,,,Electra,Electra,Wallonie,Fontaine-l'Évêque,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.434557,4.334631
+OpenStreetMap,node/14291623819,,,Electra,Electra,Wallonie,Fontaine-l'Évêque,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.434595,4.33464
+OpenStreetMap,node/14316660100,,,,Non renseigné,Wallonie,Arlon,,,,non,inconnue,,,,Voiture,,,,,,,non,,49.675505,5.794796
+OpenStreetMap,node/14321443270,,,EnergyVision,EnergyVision,Wallonie,Andenne,,,,non,inconnue,AC,Type 2,,Voiture,oui,,,,,,non,,50.496572,5.094228
+OpenStreetMap,node/14321443271,,,EnergyVision,EnergyVision,Wallonie,Andenne,,,,non,inconnue,AC,Type 2,,Voiture,oui,,,,,,non,,50.496572,5.094267
+OpenStreetMap,node/14331141813,,,Electra,Electra,Wallonie,Baelen,,,,non,inconnue,,,4,Voiture,,,,,,,non,,50.648236,6.001364
+OpenStreetMap,node/14333647656,,,EZ Charge,EZ Charge,Wallonie,Gembloux,,,,non,inconnue,,,1,Voiture,oui,,,,yes,,non,,50.581215,4.721433
+OpenStreetMap,node/14350349010,,,,Non renseigné,Wallonie,Andenne,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.491525,5.093261
+OpenStreetMap,node/14350349011,,,,Non renseigné,Wallonie,Andenne,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,50.49157,5.093257
+OpenStreetMap,node/14354665809,,,DATS 24,DATS 24 (Colruyt),Wallonie,Nandrin,,,,non,inconnue,,,,Voiture,oui,,,,yes,,non,,50.523337,5.420665
+OpenStreetMap,node/14358138964,,,B&B De Patuljak,B&B De Patuljak,Wallonie,Houffalize,,,,non,inconnue,,,1,Voiture,oui,,,,customers,,non,,50.152607,5.768614
+OpenStreetMap,node/14365330647,,,,Non renseigné,Wallonie,Lessines,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.705264,3.824404
 OpenStreetMap,way/467642349,,,Alfen,Alfen,Wallonie,Villers-la-Ville,,,,non,inconnue,,,2,Voiture,oui,,Carte bancaire,,yes,,non,,50.576294,4.530271
 OpenStreetMap,way/519886100,,,Ville de Mons,Ville de Mons,Wallonie,Mons,,,,non,inconnue,,,2,Voiture,,,,,yes,,non,,50.439767,3.963572
 OpenStreetMap,way/537391924,,,,Non renseigné,Wallonie,Saint-Nicolas,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.645969,5.524703
@@ -7260,40 +7261,40 @@ OpenStreetMap,way/1507863174,,,DAT,DAT,Wallonie,Hannut,,,,non,inconnue,,,22,Voit
 OpenStreetMap,way/1507864315,,,,Non renseigné,Wallonie,Burdinne,,,,non,inconnue,,,22,Voiture,,,,,,,non,,50.57365,5.054528
 OpenStreetMap,way/1507865051,,,DAT,DAT,Wallonie,Hannut,,,,non,inconnue,DC,CCS,2,Voiture,,,,,,,non,,50.683916,5.080311
 OpenStreetMap,way/1510695262,,Ionity Baraque de Fraiture,Ionity,IONITY,Wallonie,Vielsalm,,,,non,inconnue,,,12,Voiture,oui,,,,,24/7,oui,,50.248222,5.739367
-OpenStreetMap,way/1534950222,,Philippeville - Burger King,Electra,Electra,Wallonie,,Rue de France 57,,400.0,non,ultra,DC,CCS,10,Voiture,oui,,Application,,yes,24/7,oui,,50.196532,4.53397
-OpenStreetMap,way/1535494891,,Tesla Supercharger,Tesla,Tesla,Wallonie,,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.22325,5.32981
-OpenStreetMap,way/1545353311,,,Fastned,Fastned,Wallonie,,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,49.80469,5.529616
-OpenStreetMap,way/1546769974,,"Supercharger Braine-l'Alleud, Belgium",Tesla,Tesla,Wallonie,,Chau. de Nivelles 300,,,non,inconnue,,,16,Voiture,,,,,,,non,,50.66156,4.380547
-OpenStreetMap,way/1569136267,,Jambes - Delhaize,Electra,Electra,Wallonie,,,,150.0,non,ultra,DC,CCS,4,Voiture,oui,,Carte bancaire,,,,non,,50.462478,4.879807
-OpenStreetMap,way/1569136268,,Jambes - Delhaize,Electra,Electra,Wallonie,,,,300.0,non,ultra,DC,CCS,4,Voiture,oui,,Carte bancaire,,,,non,,50.462538,4.879928
-OpenStreetMap,way/1569168260,,,Shell,Shell Recharge,Wallonie,,,,150.0,non,ultra,DC,CCS,2,Voiture,,,Carte bancaire,,yes,,non,,50.460412,4.438385
-OpenStreetMap,way/1569168262,,,ThePluginCompany,ThePluginCompany,Wallonie,,,,240.0,non,ultra,DC,CCS,4,Voiture,oui,,Carte bancaire,,yes,,non,,50.464011,4.440764
-OpenStreetMap,way/1569168276,,Comines - Proxy Delhaize,Electra,Electra,Wallonie,,,,50.0,non,rapide,DC,CCS,4,Voiture,oui,,Sans identification,,yes,,non,,50.778093,3.009795
-OpenStreetMap,way/1569477186,,Estaimpuis - Burger King,Electra,Electra,Wallonie,,,,400.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.718158,3.281878
-OpenStreetMap,way/1569480124,,Enghien - Delhaize,Electra,Electra,Wallonie,,,,150.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.693588,4.032183
-OpenStreetMap,way/1569480125,,Enghien - Delhaize,Electra,Electra,Wallonie,,,,150.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.693506,4.031962
-OpenStreetMap,way/1569480126,,Enghien - Delhaize,Electra,Electra,Wallonie,,,,300.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.693498,4.032058
-OpenStreetMap,way/1569480127,,Enghien - Delhaize,Electra,Electra,Wallonie,,,,300.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.693516,4.03182
-OpenStreetMap,way/1569483176,,Beloeil - Proxy Delhaize,Electra,Electra,Wallonie,,,,50.0,non,rapide,DC,CCS,4,Voiture,oui,,,,,,non,,50.541108,3.732315
-OpenStreetMap,way/1569513915,,Sivry-Rance - Proxy Delhaize,Electra,Electra,Wallonie,,,,300.0,non,ultra,DC,CCS,6,Voiture,oui,,,,,,non,,50.144649,4.267396
-OpenStreetMap,way/1569553227,,Marcinelle - Delhaize,Electra,Electra,Wallonie,,,,150.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.397728,4.45384
-OpenStreetMap,way/1569553228,,Marcinelle - Delhaize,Electra,Electra,Wallonie,,,,300.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.397773,4.453974
-OpenStreetMap,way/1569553229,,Marcinelle - Delhaize,Electra,Electra,Wallonie,,,,300.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.397892,4.453838
-OpenStreetMap,way/1569560326,,Amay - Delhaize,Electra,Electra,Wallonie,,,,200.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.545225,5.312442
-OpenStreetMap,way/1569560327,,Amay - Delhaize,Electra,Electra,Wallonie,,,,400.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.545209,5.312602
-OpenStreetMap,way/1569646863,,Montigny-le-Tilleul - Delhaize,Electra,Electra,Wallonie,,,,400.0,non,ultra,DC,CCS,6,Voiture,oui,,,,,,non,,50.378471,4.372205
-OpenStreetMap,way/1569646864,,Montigny-le-Tilleul - Delhaize,Electra,Electra,Wallonie,,,,300.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.378524,4.37219
-OpenStreetMap,way/1569658265,,Morlanwelz - Delhaize,Electra,Electra,Wallonie,,,,300.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.45887,4.267786
-OpenStreetMap,way/1569658266,,Morlanwelz - Delhaize,Electra,Electra,Wallonie,,,,200.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.458936,4.267728
-OpenStreetMap,way/1569658267,,Morlanwelz - Delhaize,Electra,Electra,Wallonie,,,,300.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.459023,4.267651
-OpenStreetMap,way/1569662078,,Sambreville - Delhaize Falisolle,Electra,Electra,Wallonie,,,,200.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.425326,4.622205
-OpenStreetMap,way/1569662079,,Sambreville - Delhaize Falisolle,Electra,Electra,Wallonie,,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.425417,4.622276
-OpenStreetMap,way/1569872910,,Gembloux - Hotel Les 3 Clés,Electra,Electra,Wallonie,,,,300.0,non,ultra,DC,CCS,6,Voiture,oui,,,,,,non,,50.572024,4.700132
-OpenStreetMap,way/1569998787,,Assesse - Patisserie Pierson,Electra,Electra,Wallonie,,,,400.0,non,ultra,DC,CCS,8,Voiture,oui,,,,,,non,,50.386136,4.994756
-OpenStreetMap,way/1569998788,,Assesse - Patisserie Pierson,Electra,Electra,Wallonie,,,,300.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.386195,4.994575
-OpenStreetMap,way/1569998790,,EV Courriere,Shell Recharge,Shell Recharge,Wallonie,,,,300.0,non,ultra,DC,CCS,8,Voiture,oui,,,,yes,,non,,50.385589,4.99508
-OpenStreetMap,way/1573203297,,,Q8,Q8,Wallonie,,,,300.0,non,ultra,DC,CCS,6,Voiture,oui,,,,yes,,non,,50.663555,5.094535
-OpenStreetMap,way/1573203298,,Hannut - Quick,Electra,Electra,Wallonie,,,,300.0,non,ultra,DC,CCS,6,Voiture,oui,,,,yes,,non,,50.663963,5.092483
-OpenStreetMap,way/1573210631,,,Lidl,Lidl,Wallonie,,,,50.0,non,rapide,DC,Type 2|CCS,2,Voiture,oui,"AC : 0,50€/kWh & DC : 0,70€/kWh",,,customers,,non,,50.513707,4.406723
-OpenStreetMap,way/1577202653,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,4,Voiture,,,,,,,non,,50.715088,4.601296
-OpenStreetMap,way/1577202654,,,,Non renseigné,Wallonie,,,,,non,inconnue,,,4,Voiture,,,,,,,non,,50.714554,4.601478
+OpenStreetMap,way/1534950222,,Philippeville - Burger King,Electra,Electra,Wallonie,Philippeville,Rue de France 57,,400.0,non,ultra,DC,CCS,10,Voiture,oui,,Application,,yes,24/7,oui,,50.196532,4.53397
+OpenStreetMap,way/1535494891,,Tesla Supercharger,Tesla,Tesla,Wallonie,Marche-en-Famenne,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.22325,5.32981
+OpenStreetMap,way/1545353311,,,Fastned,Fastned,Wallonie,Léglise,,,,non,inconnue,,,,Voiture,oui,,,,,,non,,49.80469,5.529616
+OpenStreetMap,way/1546769974,,"Supercharger Braine-l'Alleud, Belgium",Tesla,Tesla,Wallonie,Braine-l'Alleud,Chau. de Nivelles 300,,,non,inconnue,,,16,Voiture,,,,,,,non,,50.66156,4.380547
+OpenStreetMap,way/1569136267,,Jambes - Delhaize,Electra,Electra,Wallonie,Namur,,,150.0,non,ultra,DC,CCS,4,Voiture,oui,,Carte bancaire,,,,non,,50.462478,4.879807
+OpenStreetMap,way/1569136268,,Jambes - Delhaize,Electra,Electra,Wallonie,Namur,,,300.0,non,ultra,DC,CCS,4,Voiture,oui,,Carte bancaire,,,,non,,50.462538,4.879928
+OpenStreetMap,way/1569168260,,,Shell,Shell Recharge,Wallonie,Charleroi,,,150.0,non,ultra,DC,CCS,2,Voiture,,,Carte bancaire,,yes,,non,,50.460412,4.438385
+OpenStreetMap,way/1569168262,,,ThePluginCompany,ThePluginCompany,Wallonie,Charleroi,,,240.0,non,ultra,DC,CCS,4,Voiture,oui,,Carte bancaire,,yes,,non,,50.464011,4.440764
+OpenStreetMap,way/1569168276,,Comines - Proxy Delhaize,Electra,Electra,Wallonie,Comines-Warneton,,,50.0,non,rapide,DC,CCS,4,Voiture,oui,,Sans identification,,yes,,non,,50.778093,3.009795
+OpenStreetMap,way/1569477186,,Estaimpuis - Burger King,Electra,Electra,Wallonie,Mouscron,,,400.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.718158,3.281878
+OpenStreetMap,way/1569480124,,Enghien - Delhaize,Electra,Electra,Wallonie,Enghien,,,150.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.693588,4.032183
+OpenStreetMap,way/1569480125,,Enghien - Delhaize,Electra,Electra,Wallonie,Enghien,,,150.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.693506,4.031962
+OpenStreetMap,way/1569480126,,Enghien - Delhaize,Electra,Electra,Wallonie,Enghien,,,300.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.693498,4.032058
+OpenStreetMap,way/1569480127,,Enghien - Delhaize,Electra,Electra,Wallonie,Enghien,,,300.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.693516,4.03182
+OpenStreetMap,way/1569483176,,Beloeil - Proxy Delhaize,Electra,Electra,Wallonie,Belœil,,,50.0,non,rapide,DC,CCS,4,Voiture,oui,,,,,,non,,50.541108,3.732315
+OpenStreetMap,way/1569513915,,Sivry-Rance - Proxy Delhaize,Electra,Electra,Wallonie,Sivry-Rance,,,300.0,non,ultra,DC,CCS,6,Voiture,oui,,,,,,non,,50.144649,4.267396
+OpenStreetMap,way/1569553227,,Marcinelle - Delhaize,Electra,Electra,Wallonie,Charleroi,,,150.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.397728,4.45384
+OpenStreetMap,way/1569553228,,Marcinelle - Delhaize,Electra,Electra,Wallonie,Charleroi,,,300.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.397773,4.453974
+OpenStreetMap,way/1569553229,,Marcinelle - Delhaize,Electra,Electra,Wallonie,Charleroi,,,300.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.397892,4.453838
+OpenStreetMap,way/1569560326,,Amay - Delhaize,Electra,Electra,Wallonie,Amay,,,200.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.545225,5.312442
+OpenStreetMap,way/1569560327,,Amay - Delhaize,Electra,Electra,Wallonie,Amay,,,400.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.545209,5.312602
+OpenStreetMap,way/1569646863,,Montigny-le-Tilleul - Delhaize,Electra,Electra,Wallonie,Montigny-le-Tilleul,,,400.0,non,ultra,DC,CCS,6,Voiture,oui,,,,,,non,,50.378471,4.372205
+OpenStreetMap,way/1569646864,,Montigny-le-Tilleul - Delhaize,Electra,Electra,Wallonie,Montigny-le-Tilleul,,,300.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.378524,4.37219
+OpenStreetMap,way/1569658265,,Morlanwelz - Delhaize,Electra,Electra,Wallonie,Morlanwelz,,,300.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.45887,4.267786
+OpenStreetMap,way/1569658266,,Morlanwelz - Delhaize,Electra,Electra,Wallonie,Morlanwelz,,,200.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.458936,4.267728
+OpenStreetMap,way/1569658267,,Morlanwelz - Delhaize,Electra,Electra,Wallonie,Morlanwelz,,,300.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.459023,4.267651
+OpenStreetMap,way/1569662078,,Sambreville - Delhaize Falisolle,Electra,Electra,Wallonie,Sambreville,,,200.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.425326,4.622205
+OpenStreetMap,way/1569662079,,Sambreville - Delhaize Falisolle,Electra,Electra,Wallonie,Sambreville,,,400.0,non,ultra,DC,CCS,2,Voiture,oui,,,,,,non,,50.425417,4.622276
+OpenStreetMap,way/1569872910,,Gembloux - Hotel Les 3 Clés,Electra,Electra,Wallonie,Gembloux,,,300.0,non,ultra,DC,CCS,6,Voiture,oui,,,,,,non,,50.572024,4.700132
+OpenStreetMap,way/1569998787,,Assesse - Patisserie Pierson,Electra,Electra,Wallonie,Assesse,,,400.0,non,ultra,DC,CCS,8,Voiture,oui,,,,,,non,,50.386136,4.994756
+OpenStreetMap,way/1569998788,,Assesse - Patisserie Pierson,Electra,Electra,Wallonie,Assesse,,,300.0,non,ultra,DC,CCS,4,Voiture,oui,,,,,,non,,50.386195,4.994575
+OpenStreetMap,way/1569998790,,EV Courriere,Shell Recharge,Shell Recharge,Wallonie,Assesse,,,300.0,non,ultra,DC,CCS,8,Voiture,oui,,,,yes,,non,,50.385589,4.99508
+OpenStreetMap,way/1573203297,,,Q8,Q8,Wallonie,Hannut,,,300.0,non,ultra,DC,CCS,6,Voiture,oui,,,,yes,,non,,50.663555,5.094535
+OpenStreetMap,way/1573203298,,Hannut - Quick,Electra,Electra,Wallonie,Hannut,,,300.0,non,ultra,DC,CCS,6,Voiture,oui,,,,yes,,non,,50.663963,5.092483
+OpenStreetMap,way/1573210631,,,Lidl,Lidl,Wallonie,Pont-à-Celles,,,50.0,non,rapide,DC,Type 2|CCS,2,Voiture,oui,"AC : 0,50€/kWh & DC : 0,70€/kWh",,,customers,,non,,50.513707,4.406723
+OpenStreetMap,way/1577202653,,,,Non renseigné,Wallonie,Wavre,,,,non,inconnue,,,4,Voiture,,,,,,,non,,50.715088,4.601296
+OpenStreetMap,way/1577202654,,,,Non renseigné,Wallonie,Wavre,,,,non,inconnue,,,4,Voiture,,,,,,,non,,50.714554,4.601478
