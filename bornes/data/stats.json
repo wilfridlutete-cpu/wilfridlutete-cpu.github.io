@@ -1,32 +1,32 @@
 {
-  "genere_le": "2026-11-14T09:01:03Z",
-  "total": 7299,
-  "points": 26567,
+  "genere_le": "2026-11-15T09:41:49Z",
+  "total": 7310,
+  "points": 26627,
   "par_source": {
     "Bruxelles Mobilité": 1752,
-    "OpenStreetMap": 5547
+    "OpenStreetMap": 5558
   },
   "par_region": {
-    "Bruxelles-Capitale": 1969,
-    "Flandre": 4599,
-    "Wallonie": 731
+    "Bruxelles-Capitale": 1970,
+    "Flandre": 4611,
+    "Wallonie": 729
   },
   "par_classe": {
     "lente": 1386,
-    "acceleree": 1241,
+    "acceleree": 1242,
     "rapide": 222,
-    "inconnue": 4088,
-    "ultra": 362
+    "inconnue": 4100,
+    "ultra": 360
   },
   "par_reseau": {
-    "Non renseigné": 2058,
-    "Allego": 1058,
+    "Non renseigné": 2068,
+    "Allego": 1059,
     "TotalEnergies": 1028,
     "EnergyVision": 848,
-    "ENGIE Vianeo": 287,
+    "ENGIE Vianeo": 288,
     "Blue Corner": 197,
     "DATS 24 (Colruyt)": 146,
-    "Electra": 122,
+    "Electra": 120,
     "Lidl": 107,
     "EVBox": 73,
     "Mobility Plus": 52,
@@ -296,6 +296,7 @@
     "Stad Roeselare": 1,
     "Bruno": 1,
     "Huawei": 1,
+    "open  to": 1,
     "ETAP": 1,
     "GET": 1,
     "ECOOP 2x DC": 1,
