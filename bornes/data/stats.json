@@ -1,27 +1,27 @@
 {
-  "genere_le": "2026-11-15T09:41:49Z",
-  "total": 7310,
-  "points": 26627,
+  "genere_le": "2026-11-16T11:23:36Z",
+  "total": 7312,
+  "points": 26632,
   "par_source": {
     "Bruxelles Mobilité": 1752,
-    "OpenStreetMap": 5558
+    "OpenStreetMap": 5560
   },
   "par_region": {
     "Bruxelles-Capitale": 1970,
-    "Flandre": 4611,
+    "Flandre": 4613,
     "Wallonie": 729
   },
   "par_classe": {
-    "lente": 1386,
-    "acceleree": 1242,
+    "lente": 1389,
+    "acceleree": 1243,
     "rapide": 222,
-    "inconnue": 4100,
-    "ultra": 360
+    "inconnue": 4096,
+    "ultra": 362
   },
   "par_reseau": {
-    "Non renseigné": 2068,
+    "Non renseigné": 2067,
     "Allego": 1059,
-    "TotalEnergies": 1028,
+    "TotalEnergies": 1029,
     "EnergyVision": 848,
     "ENGIE Vianeo": 288,
     "Blue Corner": 197,
@@ -141,6 +141,7 @@
     "De Pollepel": 2,
     "Opzoekingscentrum voor de Wegenbouw": 2,
     "BoostCharge": 2,
+    "Sparki - Charge & Go": 2,
     "Porsche": 2,
     "Galloo": 2,
     "bp pulse": 2,
