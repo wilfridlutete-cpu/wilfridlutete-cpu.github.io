@@ -5969,6 +5969,7 @@ OpenStreetMap,node/14383081335,,,Sparki - Charge & Go,Sparki - Charge & Go,Fland
 OpenStreetMap,node/14383081336,,,Sparki - Charge & Go,Sparki - Charge & Go,Flandre,Aalst,,,300.0,non,ultra,DC,,2,Voiture,,,Carte bancaire,,yes,,non,,50.940503,4.014936
 OpenStreetMap,way/172153661,,Gentbrugge Noord,Fastned,Fastned,Flandre,Gent,,,,non,inconnue,,,20,Voiture,,,,,,,non,,51.042915,3.78438
 OpenStreetMap,way/316645481,,Boostcharge Mammoetcenter Roeselare,Boostcharge,Boostcharge,Flandre,Roeselare,Brugsesteenweg 413,,300.0,non,ultra,DC,CCS,16,Voiture|Poids lourd,oui,,,non,,24/7,oui,,50.967903,3.119546
+OpenStreetMap,way/336095942,,,,Non renseigné,Flandre,Herenthout,,,,non,inconnue,,,,Voiture,non,,,,customers,,non,,51.14127,4.767078
 OpenStreetMap,way/385098097,,Q8 electric Veldwezelt,Q8 electric,Q8,Flandre,Lanaken,,,300.0,non,ultra,DC,CCS,,Voiture,,,,,,,non,,50.860364,5.621386
 OpenStreetMap,way/467578502,,,Allego,Allego,Flandre,Hasselt,,,22.0,non,acceleree,AC,Type 2,2,Voiture,,,,,,,non,,50.940083,5.306856
 OpenStreetMap,way/489957730,,Aquatreat Parking,,Non renseigné,Flandre,Aarschot,,,,non,inconnue,,,3,Voiture,,,,,,,non,,50.983086,4.814245
@@ -6010,7 +6011,7 @@ OpenStreetMap,way/1205284664,,,Allego,Allego,Flandre,Beerse,,,,non,inconnue,,,2,
 OpenStreetMap,way/1236958750,,,Allego,Allego,Flandre,Antwerpen,,,300.0,non,ultra,DC,CCS,4,Voiture,,,,non,,24/7,oui,,51.189418,4.403903
 OpenStreetMap,way/1236958751,,,Allego,Allego,Flandre,Antwerpen,,,,non,inconnue,DC,CCS,4,Voiture,,,,non,,24/7,oui,,51.189295,4.403201
 OpenStreetMap,way/1243572755,,,,Non renseigné,Flandre,Gent,,,,non,inconnue,,,2,Voiture,,,,,,,non,,51.075237,3.77618
-OpenStreetMap,way/1250426557,,,DATS 24,DATS 24 (Colruyt),Flandre,Herenthout,,,,non,inconnue,,,2,Voiture,oui,,,non,yes,24/7,oui,,51.141377,4.767087
+OpenStreetMap,way/1250426557,,,DATS 24,DATS 24 (Colruyt),Flandre,Herenthout,,,,non,inconnue,AC,Type 2,2,Voiture,oui,,,non,yes,24/7,oui,,51.141377,4.767087
 OpenStreetMap,way/1251978842,,,ECOOP 2x DC,ECOOP 2x DC,Flandre,Leuven,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.889131,4.687088
 OpenStreetMap,way/1267578124,,,,Non renseigné,Flandre,Geel,,,,non,inconnue,,,25,Voiture,oui,,,,customers,,non,,51.161605,4.964733
 OpenStreetMap,way/1271724701,,,ECOOP 6x   AC,ECOOP 6x   AC,Flandre,Leuven,,,,non,inconnue,,,,Voiture,,,,,,,non,,50.889234,4.687166
