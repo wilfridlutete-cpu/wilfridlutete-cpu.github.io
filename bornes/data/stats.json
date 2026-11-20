@@ -1,25 +1,25 @@
 {
-  "genere_le": "2026-11-19T10:39:42Z",
-  "total": 7314,
-  "points": 26642,
+  "genere_le": "2026-11-20T10:24:03Z",
+  "total": 7317,
+  "points": 26648,
   "par_source": {
     "Bruxelles Mobilité": 1752,
-    "OpenStreetMap": 5562
+    "OpenStreetMap": 5565
   },
   "par_region": {
     "Bruxelles-Capitale": 1970,
-    "Flandre": 4615,
+    "Flandre": 4618,
     "Wallonie": 729
   },
   "par_classe": {
     "lente": 1389,
     "acceleree": 1243,
     "rapide": 222,
-    "inconnue": 4097,
-    "ultra": 363
+    "inconnue": 4099,
+    "ultra": 364
   },
   "par_reseau": {
-    "Non renseigné": 2069,
+    "Non renseigné": 2071,
     "Allego": 1059,
     "TotalEnergies": 1029,
     "EnergyVision": 848,
@@ -38,7 +38,7 @@
     "Tesla": 41,
     "Sparki": 39,
     "Smappee": 37,
-    "Q8": 36,
+    "Q8": 37,
     "Blink Charging": 35,
     "Last Mile Solutions": 35,
     "EZ Charge": 32,
