@@ -36,6 +36,8 @@ fieldset{margin:0;padding:.45rem .55rem .6rem;border:1px solid var(--line);borde
 .leaflet-tooltip.water-label{color:#07527e;font-style:italic}
 .layer-menu>summary{display:grid;place-items:center;width:2rem;height:2rem;margin-left:auto;color:var(--green);list-style:none}
 .layer-menu>summary::-webkit-details-marker{display:none}
+.layer-sources{margin-top:.45rem;font-size:.75rem}
+.satellite-credit{background:#fffffff0;color:#233d39;padding:.2rem .4rem;border-radius:.25rem;font-size:.68rem;max-width:min(24rem,65vw)}
 .leaflet-tooltip.permit-hover{white-space:normal;max-width:min(21rem,65vw);line-height:1.35}
 .permit-hover dl{margin:.35rem 0 0}.permit-hover dt{font-weight:700}.permit-hover dd{margin:0 0 .25rem}
 #print-permit{font-size:.82rem;margin-top:.3rem}

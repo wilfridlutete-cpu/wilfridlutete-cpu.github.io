@@ -261,22 +261,35 @@
     const tileUrl = document.querySelector('meta[name="osm-tiles"]')?.content || 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
     const streets = remote ? L.tileLayer(tileUrl, {
       maxZoom: 19, crossOrigin: 'anonymous',
-      attribution: '© <a href="https://www.openstreetmap.org/copyright">contributeurs OpenStreetMap</a>',
     }) : null;
     const satellite = L.tileLayer(
       'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/Landsat_WELD_CorrectedReflectance_Bands157_Global_Annual/default/2000-12-01/GoogleMapsCompatible_Level12/{z}/{y}/{x}.jpeg',
-      { maxNativeZoom: 12, maxZoom: 19, crossOrigin: 'anonymous',
-        attribution: '<a href="https://www.earthdata.nasa.gov/data/tools/gibs">NASA GIBS</a> · Landsat WELD (2000, fausses couleurs)' },
+      { maxNativeZoom: 12, maxZoom: 19, crossOrigin: 'anonymous' },
     );
     const imagery = L.tileLayer(
       'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-      { maxZoom: 19, crossOrigin: 'anonymous',
-        attribution: '<a href="https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9">Esri World Imagery</a> · ' + esriCredit },
+      { maxZoom: 19, crossOrigin: 'anonymous' },
     );
     const backgrounds = [
       [osm, streets, osmCredit], [nasa, satellite, nasaCredit], [esri, imagery, esriCredit],
     ];
     let base = remote ? imagery : null;
+    const satelliteCredits = new Map([
+      [satellite, '<a href="https://www.earthdata.nasa.gov/data/tools/gibs">NASA GIBS</a> · Landsat WELD (2000)'],
+      [imagery, '<a href="https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9">Esri World Imagery</a> · ' + esriCredit],
+    ]);
+    const creditControl = L.control({ position: 'bottomleft' });
+    creditControl.onAdd = () => {
+      const element = L.DomUtil.create('div', 'satellite-credit');
+      L.DomEvent.disableClickPropagation(element);
+      return element;
+    };
+    creditControl.addTo(map);
+    function updateCredit() {
+      const element = creditControl.getContainer();
+      element.innerHTML = satelliteCredits.get(base) || '';
+      element.hidden = !element.innerHTML;
+    }
     for (const [input, layer] of backgrounds) {
       if (!layer) continue;
       layer.on('loading', () => { if (layer === base) osmStatus.hidden = true; });
@@ -291,9 +304,11 @@
         backgrounds.forEach(([other]) => { if (other !== input) other.checked = false; });
         osmStatus.hidden = true;
         base?.addTo(map);
+        updateCredit();
       });
     }
     base?.addTo(map);
+    updateCredit();
 
     const north = L.control({ position: 'topleft' });
     north.onAdd = () => {

@@ -3,8 +3,7 @@ const form = document.querySelector('#filters');
 const get = (id) => document.getElementById(id);
 const map = L.map('map', { preferCanvas: true, maxZoom: 19 }).setView([-5.5, 21.9], 7);
 L.control.scale({ imperial: false }).addTo(map);
-map.attributionControl.addAttribution('OCHA / RGC · HydroRIVERS · <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>');
-map.attributionControl.addAttribution('Réalisé par <a href="https://wilfridlutete-cpu.github.io/">Wilfrid Lutete</a>');
+map.attributionControl.setPrefix('<a href="https://leafletjs.com/" title="A JavaScript library for interactive maps">Leaflet</a> · <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="https://wilfridlutete-cpu.github.io/">Wilfrid Lutete</a>');
 
 const styles = {
   unites: { color: '#56766f', weight: 1, dashArray: '4 4', fillColor: '#b6d8c2', fillOpacity: 0.33 },
@@ -345,7 +344,6 @@ try {
     });
     showLayer('localites');
     render();
-    map.attributionControl.addAttribution('<a href="https://www.geonames.org/">GeoNames</a>');
   }
 } catch (error) {
   get('count').textContent = 'Chargement impossible';
