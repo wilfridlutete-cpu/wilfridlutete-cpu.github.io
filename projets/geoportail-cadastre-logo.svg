@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Cadastre minier du Kasai : diamant et riviere</title>
+  <defs>
+    <linearGradient id="facets" x1="0%" y1="0%" x2="80%" y2="100%">
+      <stop offset="35%" stop-color="#e2fff0"/>
+      <stop offset="35%" stop-color="#b3e2ca"/>
+      <stop offset="65%" stop-color="#b3e2ca"/>
+      <stop offset="65%" stop-color="#77bb9d"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12.6" fill="#246451"/>
+  <path d="M21 17h22l8 10-19 22-19-22z" fill="url(#facets)"/>
+  <path d="m9 33 10.5 1.8 10.1-5.1 10.1.9L55 25v4.8l-14.7 6.4-10.2-1.1-10.1 5.2L9 38z" fill="#1687c4"/>
+</svg>
