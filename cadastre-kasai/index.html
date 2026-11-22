@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Carte des périmètres miniers de la province du Kasaï">
+  <title>Géoportail du cadastre minier du Kasaï</title>
+  <link rel="stylesheet" href="vendor/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="vendor/leaflet.js"></script>
+  <script defer src="cartographie.js"></script>
+  <script type="module" src="app.js"></script>
+  <script>
+    if (location.protocol === 'file:') location.replace('../Geoportail-Kasai.html');
+  </script>
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="mark" aria-hidden="true"></span><div><h1>Cadastre minier du Kasaï</h1><p>Province du Kasaï · RDC</p></div></div>
+  </header>
+  <main>
+    <aside aria-label="Filtres et résultats">
+      <form id="filters">
+        <div class="section-title"><h2>Filtres</h2><button type="reset" class="quiet">Réinitialiser</button></div>
+        <label>Rechercher<input name="search" type="search" placeholder="Code, titulaire ou substance"></label>
+        <div class="pair">
+          <label>Unité administrative<select name="unit"><option value="">Toutes</option></select></label>
+        </div>
+        <div class="pair">
+          <label>Statut cadastral<select name="status"><option value="">Tous</option></select></label>
+          <label>Échéance<select name="term"><option value="">Toutes</option><option>Échéance non atteinte</option><option>Échéance passée</option><option>Échéance non renseignée</option></select></label>
+        </div>
+        <label>Type de titre<select name="type"><option value="">Tous</option></select></label>
+        <fieldset><legend>Date de délivrance</legend><div class="pair"><label>Du<input name="from" type="date"></label><label>Au<input name="to" type="date"></label></div></fieldset>
+        <p id="date-error" class="error" role="status" hidden>La date de fin doit être postérieure ou égale à la date de début.</p>
+      </form>
+      <p id="count" class="visually-hidden" role="status">Chargement des permis…</p>
+    </aside>
+    <section class="map-pane" aria-label="Carte et couches">
+      <div id="map" aria-label="Carte interactive des périmètres miniers"></div>
+      <div class="map-tools">
+        <button id="fit" type="button">Recentrer</button>
+        <details id="print-tools">
+          <summary>Créer une carte</summary>
+          <button id="select-area" type="button">Sélectionner une zone</button>
+          <button id="clear-area" type="button" hidden>Effacer la zone</button>
+          <p id="print-status" role="status">La vue affichée sera exportée.</p>
+          <p id="print-permit" role="status"></p>
+          <button id="clear-permit" type="button" hidden>Retirer la fiche</button>
+          <div class="print-actions"><button id="png" type="button" disabled>PNG HD</button><button id="pdf" type="button" disabled>PDF</button></div>
+        </details>
+        <details class="layer-menu">
+          <summary aria-label="Calques et légende" title="Calques et légende"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5zM3 12l9 5 9-5M3 16l9 5 9-5"/></svg></summary>
+          <label><input id="osm" type="checkbox"><i class="basemap"></i> Fond OpenStreetMap</label>
+          <label><input id="esri" type="checkbox"><i class="satellite"></i> Satellite Esri HD</label>
+          <label><input id="nasa" type="checkbox"><i class="satellite"></i> Satellite NASA</label>
+          <p id="osm-status" role="status" hidden></p>
+          <label><input type="checkbox" data-layer="provinces" checked><i class="province"></i> Provinces</label>
+          <label><input type="checkbox" data-layer="unites" checked><i class="unit"></i> Limites des unités</label>
+          <label><input type="checkbox" data-layer="cours-eau" checked><i class="water"></i> Cours d’eau</label>
+          <label><input type="checkbox" data-layer="localites" checked><i class="place"></i> Localités</label>
+          <label><input type="checkbox" data-layer="permis" checked><i class="title"></i> Périmètres miniers</label>
+          <div class="legend"><span><i class="current"></i> Échéance non atteinte</span><span><i class="expired"></i> Échéance passée</span><span><i class="unknown"></i> Échéance non renseignée</span></div>
+        </details>
+      </div>
+      <p id="load-error" class="map-error" role="alert" hidden></p>
+    </section>
+  </main>
+  <footer><span id="as-of"></span></footer>
+</body>
+</html>

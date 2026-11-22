@@ -1,0 +1,354 @@
+const L = window.L;
+const form = document.querySelector('#filters');
+const get = (id) => document.getElementById(id);
+const map = L.map('map', { preferCanvas: true, maxZoom: 19 }).setView([-5.5, 21.9], 7);
+L.control.scale({ imperial: false }).addTo(map);
+map.attributionControl.addAttribution('OCHA / RGC · HydroRIVERS · <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>');
+map.attributionControl.addAttribution('Réalisé par <a href="https://wilfridlutete-cpu.github.io/">Wilfrid Lutete</a>');
+
+const styles = {
+  unites: { color: '#56766f', weight: 1, dashArray: '4 4', fillColor: '#b6d8c2', fillOpacity: 0.33 },
+  provinces: { color: '#21584e', weight: 2, fill: false, interactive: false },
+  'cours-eau': (feature) => ({
+    color: '#1884b6', opacity: 0.75, weight: Math.max(0.8, (feature.properties.ordre - 1) * 0.42),
+  }),
+};
+const labels = ['Échéance non atteinte', 'Échéance passée', 'Échéance non renseignée'];
+const colors = ['#0d8764', '#ba512e', '#68678e'];
+const parts = Object.fromEntries(new Intl.DateTimeFormat('fr', {
+  timeZone: 'Africa/Lubumbashi', year: 'numeric', month: '2-digit', day: '2-digit',
+}).formatToParts(new Date()).map(({ type, value }) => [type, value]));
+const today = [parts.year, parts.month, parts.day].join('-');
+const displayDate = (value) => value ? value.split('-').reverse().join('/') : 'Non renseignée';
+const term = (p) => labels[p.expiration ? Number(p.expiration < today) : 2];
+const normalize = (value) => String(value ?? '').normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
+get('as-of').textContent = displayDate(today);
+
+const layers = {};
+const collections = {};
+const toggles = [...document.querySelectorAll('[data-layer]')];
+const toggleFor = (name) => toggles.find((input) => input.dataset.layer === name);
+
+function details(title, fields) {
+  const section = document.createElement('section');
+  const heading = document.createElement('strong');
+  heading.textContent = title;
+  section.append(heading);
+  const list = document.createElement('dl');
+  for (const [name, value] of fields) {
+    const label = document.createElement('dt');
+    const datum = document.createElement('dd');
+    label.textContent = name;
+    datum.textContent = value || 'Non renseigné';
+    list.append(label, datum);
+  }
+  section.append(list);
+  return section;
+}
+
+function permitFields(p) {
+  return [
+    ['Code', p.code],
+    ['Titulaire', p.titulaire], ['Type', p.type], ['Substances', p.substances],
+    ['Statut cadastral fourni', p.statut], ['Échéance calculée', term(p)],
+    ['Demande', displayDate(p.demande)], ['Délivrance', displayDate(p.delivrance)],
+    ['Expiration', displayDate(p.expiration)], ['Province · unité', p.province + ' · ' + p.nom],
+    ['Surface du dossier source', p.surface_source], ['Référence cartographique source', p.reference_source],
+    ['Référence de la demande', p.reference_demande], ['Partie', p.partie],
+    ['Identifiant de forme', p.guid_forme], ['Identifiant de type', p.guid_type],
+  ];
+}
+
+function permitDetails(p) {
+  const section = details('Titre ' + (p.code || 'sans code'), permitFields(p));
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.textContent = 'Inclure la fiche dans la carte';
+  button.addEventListener('click', () => {
+    map.fire('permitprint', { permit: p, fields: permitFields(p) });
+    map.closePopup();
+  });
+  section.append(button);
+  return section;
+}
+
+function polygons(geometry) {
+  return geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates;
+}
+
+function pointInRing([x, y], ring) {
+  let inside = false;
+  for (let i = 1; i < ring.length; i++) {
+    const [ax, ay] = ring[i - 1];
+    const [bx, by] = ring[i];
+    if ((ay > y) !== (by > y) && x < ax + (y - ay) * (bx - ax) / (by - ay)) inside = !inside;
+  }
+  return inside;
+}
+
+function pointInPolygon(point, [outer, ...holes]) {
+  return pointInRing(point, outer) && !holes.some((hole) => pointInRing(point, hole));
+}
+
+function segmentsCross(a, b, c, d) {
+  const side = (p, q, r) => (q[0] - p[0]) * (r[1] - p[1]) - (q[1] - p[1]) * (r[0] - p[0]);
+  const boxesMeet = [0, 1].every((i) => Math.max(a[i], b[i]) >= Math.min(c[i], d[i])
+    && Math.max(c[i], d[i]) >= Math.min(a[i], b[i]));
+  return boxesMeet && side(a, b, c) * side(a, b, d) <= 0 && side(c, d, a) * side(c, d, b) <= 0;
+}
+
+function lineHitsPolygon(line, polygon) {
+  if (line.some((point) => pointInPolygon(point, polygon))) return true;
+  return polygon.some((ring) => ring.some((point, i) => i > 0
+    && line.some((other, j) => j > 0 && segmentsCross(ring[i - 1], point, line[j - 1], other))));
+}
+
+function permitHover(path) {
+  const { geometry, properties: p } = path.feature;
+  const shape = polygons(geometry);
+  const bounds = path.getBounds();
+  const active = (name) => layers[name] && map.hasLayer(layers[name]);
+  function matching(name, match) {
+    if (!active(name)) return [];
+    const matches = [];
+    layers[name].eachLayer((candidate) => {
+      const other = candidate.feature;
+      const withinBounds = other.geometry.type === 'Point'
+        ? bounds.contains(candidate.getLatLng()) : bounds.intersects(candidate.getBounds());
+      if (withinBounds && match(other.geometry, other.properties)) matches.push(other.properties);
+    });
+    return matches;
+  }
+  function list(values, empty) {
+    const unique = [...new Set(values)].sort((a, b) => a.localeCompare(b, 'fr', { numeric: true }));
+    if (!unique.length) return empty;
+    return unique.slice(0, 8).join(', ') + (unique.length > 8 ? ' et ' + (unique.length - 8) + ' autres' : '');
+  }
+  const fields = [
+    ['Type et statut', [p.type, p.statut].filter(Boolean).join(' · ')],
+    ['Titulaire', p.titulaire], ['Substances', p.substances],
+    ['Délivrance', displayDate(p.delivrance)], ['Expiration', displayDate(p.expiration)],
+    ['Surface du dossier', p.surface_source],
+  ];
+  if (active('provinces')) fields.push(['Province', p.province]);
+  if (active('unites')) fields.push(['Unité administrative', p.nom]);
+  if (active('cours-eau')) {
+    const water = matching('cours-eau', ({ type, coordinates }) => {
+      const lines = type === 'LineString' ? [coordinates] : coordinates;
+      return shape.some((polygon) => lines.some((line) => lineHitsPolygon(line, polygon)));
+    });
+    const named = list(water.map((river) => river.nom_eau).filter(Boolean), '');
+    const unnamed = water.filter((river) => !river.nom_eau).length;
+    fields.push(['Cours d’eau', [named, unnamed ? unnamed + ' tronçon(s) sans nom renseigné' : '']
+      .filter(Boolean).join(' · ') || 'Aucun dans ce périmètre']);
+  }
+  if (active('localites')) {
+    const places = matching('localites', ({ coordinates }) => shape.some((polygon) => pointInPolygon(coordinates, polygon)));
+    fields.push(['Localités', list(places.map((place) => place.nom), 'Aucune dans ce périmètre')]);
+  }
+  const overlaps = matching('permis', (other, permit) => permit.id !== p.id
+    && polygons(other).some((polygon) => shape.some((part) =>
+      polygon.some((ring) => lineHitsPolygon(ring, part)) || pointInPolygon(part[0][0], polygon))));
+  if (overlaps.length) fields.push(['Autres périmètres au contact', list(overlaps.map((permit) => String(permit.code)), '')]);
+  for (const [id, name] of [['osm', 'OpenStreetMap'], ['esri', 'Satellite Esri HD'], ['nasa', 'Satellite NASA']]) {
+    if (get(id).checked) fields.push(['Fond de carte', name]);
+  }
+  return details('Titre ' + (p.code || 'sans code'), fields);
+}
+
+function showLayer(name) {
+  const layer = layers[name];
+  if (layer) {
+    if (toggleFor(name).checked) layer.addTo(map);
+    else map.removeLayer(layer);
+  }
+}
+toggles.forEach((input) => input.addEventListener('change', () => showLayer(input.dataset.layer)));
+
+function options(name, items) {
+  const select = form.elements.namedItem(name);
+  const old = select.value;
+  select.length = 1;
+  for (const [value, label] of items.sort((a, b) => a[1].localeCompare(b[1], 'fr'))) {
+    select.add(new Option(label, value));
+  }
+  if ([...select.options].some((option) => option.value === old)) select.value = old;
+}
+
+function updateUnits() {
+  options('unit', collections.unites.features
+    .map((item) => item.properties)
+    .map((p) => [p.id, p.nom]));
+}
+
+function scope(p, unit) {
+  return p.province === 'Kasaï' && (!unit || (p.unite_id || p.id) === unit);
+}
+
+function fit() {
+  const b = layers.unites?.getBounds();
+  if (b?.isValid()) map.fitBounds(b.pad(0.08), { maxZoom: 13 });
+}
+get('fit').addEventListener('click', fit);
+
+function render(refit = false) {
+  const { search, unit, status, term: selectedTerm, type, from, to } = Object.fromEntries(new FormData(form));
+  const invalid = Boolean(from && to && from > to);
+  get('date-error').hidden = !invalid;
+  const tokens = normalize(search).trim().split(/\s+/);
+  const visible = invalid ? [] : collections.permis.features.filter(({ properties: p }) => {
+    const haystack = normalize([p.code, p.titulaire, p.substances].join(' '));
+    return scope(p, unit) && (!status || status === p.statut)
+      && (!selectedTerm || selectedTerm === term(p)) && (!type || type === p.type)
+      && (!from || (p.delivrance && p.delivrance >= from))
+      && (!to || (p.delivrance && p.delivrance <= to))
+      && tokens.every((token) => haystack.includes(token));
+  });
+  const inScope = ({ properties: p }) => scope(p, unit);
+  layers.provinces.clearLayers().addData(collections.provinces.features.filter(({ properties: p }) => p.nom === 'Kasaï'));
+  layers.unites.clearLayers().addData(collections.unites.features.filter(inScope));
+  layers['cours-eau']?.clearLayers().addData(collections['cours-eau'].features.filter(inScope));
+  layers.localites?.clearLayers().addData(collections.localites.features.filter(inScope));
+  layers.permis.clearLayers().addData(visible);
+  get('count').textContent = new Set(visible.map(({ properties }) => properties.id)).size + ' dossiers miniers';
+  map.fire('permitsfiltered', { features: visible });
+  if (refit) fit();
+}
+
+async function fetchCollection(url, name) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(name + ' · HTTP ' + response.status);
+  const data = await response.json();
+  if (data.type !== 'FeatureCollection' || !Array.isArray(data.features)) throw new Error(name + ' · GeoJSON invalide');
+  return data;
+}
+
+async function load(name) {
+  const endpoint = new URLSearchParams(location.search).get('wfs');
+  if (!endpoint || name === 'localites') {
+    const embedded = get('data-' + name);
+    if (embedded) {
+      collections[name] = JSON.parse(embedded.textContent);
+      return;
+    }
+    collections[name] = await fetchCollection('data/' + name + '.geojson', name);
+    return;
+  }
+  const url = new URL(endpoint, location.href);
+  if (!['https:', 'http:'].includes(url.protocol) || url.username || url.password) {
+    throw new Error('URL WFS HTTP(S) attendue');
+  }
+  const pageSize = 1000;
+  const query = {
+    service: 'WFS', version: '2.0.0', request: 'GetFeature',
+    typeNames: 'kasai:' + name.replace('-', '_'), outputFormat: 'application/json',
+    srsName: 'http://www.opengis.net/def/crs/OGC/1.3/CRS84', sortBy: 'cle A', count: pageSize,
+  };
+  for (const [key, value] of Object.entries(query)) url.searchParams.set(key, value);
+  const features = [];
+  const seen = new Set();
+  do {
+    url.searchParams.set('startIndex', features.length);
+    const page = await fetchCollection(url, name);
+    for (const item of page.features) {
+      const key = item.properties?.cle;
+      if (key == null || seen.has(key)) throw new Error(name + ' · clé WFS manquante ou répétée');
+      seen.add(key);
+      features.push(item);
+    }
+    const total = Number(page.numberMatched ?? page.totalFeatures ?? NaN);
+    if (Number.isFinite(total) && features.length >= total) break;
+    if (!page.features.length) {
+      if (Number.isFinite(total)) throw new Error(name + ' · pagination WFS incomplète');
+      break;
+    }
+    if (!Number.isFinite(total) && page.features.length < pageSize) break;
+  } while (true);
+  collections[name] = { type: 'FeatureCollection', features };
+}
+
+try {
+  const water = load('cours-eau').catch((error) => error);
+  const places = load('localites').catch((error) => error);
+  await Promise.all(['provinces', 'unites', 'permis'].map(load));
+  layers.unites = L.geoJSON(null, {
+    style: styles.unites,
+    onEachFeature: ({ properties: p }, layer) => {
+      const label = document.createElement('span');
+      label.textContent = p.nom;
+      layer.bindTooltip(label);
+    },
+  });
+  layers.provinces = L.geoJSON(null, { style: styles.provinces });
+  layers.permis = L.geoJSON(null, {
+    style: ({ properties: p }) => ({
+      color: colors[labels.indexOf(term(p))], weight: 1.4,
+      fill: p.code !== 'ZIN29', fillOpacity: 0.47,
+    }),
+    onEachFeature: ({ properties: p }, layer) => {
+      layer.bindTooltip(() => permitHover(layer), { sticky: true, className: 'permit-hover', opacity: 1 });
+      layer.bindPopup(() => permitDetails(p));
+      layer.on('popupopen', () => layer.closeTooltip());
+    },
+  });
+  map.createPane('hydro').style.zIndex = '410';
+  map.createPane('titles').style.zIndex = '420';
+  map.createPane('places').style.zIndex = '430';
+  layers.permis.options.pane = 'titles';
+  const properties = collections.permis.features.map((item) => item.properties);
+  for (const [select, values] of [
+    ['status', properties.map((p) => p.statut)],
+    ['type', properties.map((p) => p.type)],
+  ]) {
+    options(select, [...new Set(values.filter(Boolean))].map((value) => [value, value]));
+  }
+  updateUnits();
+  Object.keys(layers).forEach(showLayer);
+  render(true);
+  window.cartographie(map, layers, labels, colors);
+  form.addEventListener('input', (event) => {
+    render(event.target.name === 'unit');
+  });
+  form.addEventListener('reset', () => requestAnimationFrame(() => { updateUnits(); render(true); }));
+  const failure = await water;
+  if (failure) {
+    toggleFor('cours-eau').checked = false;
+    toggleFor('cours-eau').disabled = true;
+    get('load-error').textContent = 'Couche des cours d’eau indisponible. ' + failure.message;
+    get('load-error').hidden = false;
+  } else {
+    layers['cours-eau'] = L.geoJSON(null, { style: styles['cours-eau'], pane: 'hydro', onEachFeature: ({ properties: p }, layer) => {
+      const label = document.createElement('span');
+      label.textContent = p.nom_eau || 'Nom non renseigné';
+      layer.bindTooltip(label, { permanent: Boolean(p.etiquette), sticky: !p.etiquette, className: 'water-label' });
+    } });
+    showLayer('cours-eau');
+    render();
+  }
+  if (await places) {
+    toggleFor('localites').checked = false;
+    toggleFor('localites').disabled = true;
+    get('load-error').textContent += ' La couche des localités est indisponible.';
+    get('load-error').hidden = false;
+  } else {
+    layers.localites = L.geoJSON(null, {
+      pointToLayer: ({ properties: p }, latlng) => L.circleMarker(latlng, {
+        pane: 'places', radius: p.chef_lieu ? 5 : 2.4, weight: 1, color: '#fff',
+        fillColor: '#632d57', fillOpacity: 0.9,
+      }),
+      onEachFeature: ({ properties: p }, layer) => {
+        const name = document.createElement('span');
+        name.textContent = p.nom;
+        layer.bindTooltip(name, { permanent: p.chef_lieu, direction: 'right', className: 'place-label' });
+        layer.bindPopup(() => details(p.nom, [['Province', p.province], ['Unité administrative', p.unite], ['Source', 'GeoNames']]));
+      },
+    });
+    showLayer('localites');
+    render();
+    map.attributionControl.addAttribution('<a href="https://www.geonames.org/">GeoNames</a>');
+  }
+} catch (error) {
+  get('count').textContent = 'Chargement impossible';
+  get('load-error').textContent = 'Les données cartographiques n’ont pas pu être chargées. ' + error.message;
+  get('load-error').hidden = false;
+}
