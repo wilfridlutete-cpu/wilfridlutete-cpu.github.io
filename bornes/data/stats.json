@@ -1,27 +1,27 @@
 {
-  "genere_le": "2026-11-22T09:54:31Z",
-  "total": 7320,
-  "points": 26047,
+  "genere_le": "2026-11-23T10:48:57Z",
+  "total": 7319,
+  "points": 26048,
   "par_source": {
     "Bruxelles Mobilité": 1752,
-    "OpenStreetMap": 5568
+    "OpenStreetMap": 5567
   },
   "par_region": {
     "Bruxelles-Capitale": 1970,
     "Flandre": 4621,
-    "Wallonie": 729
+    "Wallonie": 728
   },
   "par_classe": {
     "lente": 1389,
     "acceleree": 1245,
     "rapide": 223,
-    "inconnue": 4098,
-    "ultra": 365
+    "inconnue": 4096,
+    "ultra": 366
   },
   "par_reseau": {
     "Non renseigné": 2070,
-    "Allego": 1058,
-    "TotalEnergies": 1029,
+    "Allego": 1057,
+    "TotalEnergies": 1030,
     "EnergyVision": 848,
     "ENGIE Vianeo": 290,
     "Blue Corner": 197,
@@ -32,7 +32,7 @@
     "Mobility Plus": 52,
     "Shell Recharge": 48,
     "Mobiflow": 47,
-    "Fastned": 45,
+    "Fastned": 44,
     "IONITY": 42,
     "D’Ieteren Energy": 41,
     "Tesla": 41,
