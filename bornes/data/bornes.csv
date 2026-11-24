@@ -6908,7 +6908,7 @@ OpenStreetMap,node/11816227420,,,Ecotap,Ecotap,Wallonie,Neufchâteau,,,11.0,non,
 OpenStreetMap,node/11816238918,,,,Non renseigné,Wallonie,Hamoir,,,,non,inconnue,AC,Prise domestique,2,Vélo,non,,,,yes,24/7,oui,2025-10-22,50.426978,5.532792
 OpenStreetMap,node/11820133309,,,,Non renseigné,Wallonie,Rendeux,,,,non,inconnue,,,,Voiture,,,,,customers,,non,,50.209375,5.537365
 OpenStreetMap,node/11822851319,,,,Non renseigné,Wallonie,Mons,,,,non,inconnue,,,2,Voiture,,,,,customers,,non,,50.445335,3.957855
-OpenStreetMap,node/11873711531,,,ecotap,ecotap,Wallonie,Soignies,,,,non,inconnue,,,2,Voiture,,,,,,,non,,50.579684,4.06808
+OpenStreetMap,node/11873711531,,,ecotap,ecotap,Wallonie,Soignies,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,,50.579684,4.06808
 OpenStreetMap,node/11873711562,,,Plugin Company,Plugin Company,Wallonie,Soignies,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,,50.582545,4.070905
 OpenStreetMap,node/11873711563,,,Alfen,Alfen,Wallonie,Soignies,,,,non,inconnue,AC,Type 2,2,Voiture,,,,,,,non,,50.5827,4.070888
 OpenStreetMap,node/11873800508,,TotalEnergies,,Non renseigné,Wallonie,Waremme,,,300.0,non,ultra,DC,Type 2|CCS|CHAdeMO,8,Voiture,,,,,,,non,,50.708112,5.252719
