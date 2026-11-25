@@ -3,7 +3,7 @@
 *{box-sizing:border-box}
 body{margin:0;min-height:100dvh;display:grid;grid-template-rows:auto minmax(26rem,1fr) auto}
 .top,.brand,.section-title{display:flex;align-items:center;justify-content:space-between;gap:.8rem}
-.top{padding:1rem 1.35rem;background:#103c35;color:#fff}
+.top{padding:1rem 1.35rem;background:#103c35;color:#fff;justify-content:flex-start;flex-wrap:wrap}
 .mark{position:relative;flex:0 0 2.8rem;height:2.8rem;background:#246451;border-radius:.55rem}
 .mark::before{content:"";position:absolute;inset:.56rem;background:linear-gradient(150deg,#e2fff0 35%,#b3e2ca 36% 65%,#77bb9d 66%);clip-path:polygon(22% 12%,78% 12%,97% 38%,50% 93%,3% 38%)}
 .mark::after{content:"";position:absolute;inset:.56rem .38rem;background:#1687c4;clip-path:polygon(0 52%,23% 56%,45% 43%,67% 45%,100% 30%,100% 42%,68% 58%,46% 55%,24% 68%,0 64%)}
