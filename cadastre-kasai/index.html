@@ -6,10 +6,10 @@
   <meta name="description" content="Carte des périmètres miniers de la province du Kasaï">
   <title>Géoportail du cadastre minier du Kasaï</title>
   <link rel="stylesheet" href="vendor/leaflet.css">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
   <script defer src="vendor/leaflet.js"></script>
   <script defer src="cartographie.js"></script>
-  <script type="module" src="app.js?v=2"></script>
+  <script type="module" src="app.js?v=3"></script>
   <script>
     if (location.protocol === 'file:') location.replace('../Geoportail-Kasai.html');
   </script>
@@ -28,15 +28,13 @@
         <div class="pair">
           <label>Unité administrative<select name="unit"><option value="">Toutes</option></select></label>
         </div>
-        <div class="pair">
-          <label>Statut cadastral<select name="status"><option value="">Tous</option></select></label>
-          <label>Échéance<select name="term"><option value="">Toutes</option><option>Échéance non atteinte</option><option>Échéance passée</option><option>Échéance non renseignée</option></select></label>
-        </div>
+        <label>Statut cadastral<select name="status"><option value="">Tous</option></select></label>
+        <label>Échéance<select name="term"><option value="">Toutes</option><option value="Échéance non atteinte">Échéance non atteinte</option><option value="Échéance passée">Échéance passée</option><option value="Échéance non renseignée">Échéance non renseignée</option></select></label>
         <label>Type de titre<select name="type"><option value="">Tous</option></select></label>
         <fieldset><legend>Date de délivrance</legend><div class="pair"><label>Du<input name="from" type="date"></label><label>Au<input name="to" type="date"></label></div></fieldset>
         <p id="date-error" class="error" role="status" hidden>La date de fin doit être postérieure ou égale à la date de début.</p>
       </form>
-      <p id="count" class="visually-hidden" role="status">Chargement des permis…</p>
+      <p id="count" class="filter-count" role="status">Chargement des permis…</p>
     </aside>
     <section class="map-pane" aria-label="Carte et couches">
       <div id="map" aria-label="Carte interactive des périmètres miniers"></div>

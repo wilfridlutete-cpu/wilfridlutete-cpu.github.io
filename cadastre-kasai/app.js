@@ -221,21 +221,29 @@ function render(refit = false) {
   const invalid = Boolean(from && to && from > to);
   get('date-error').hidden = !invalid;
   const tokens = normalize(search).trim().split(/\s+/);
-  const visible = invalid ? [] : collections.permis.features.filter(({ properties: p }) => {
+  const candidates = invalid ? [] : collections.permis.features.filter(({ properties: p }) => {
     const haystack = normalize([p.code, p.titulaire, p.substances].join(' '));
     return scope(p, unit) && (!status || status === p.statut)
-      && (!selectedTerm || selectedTerm === term(p)) && (!type || type === p.type)
+      && (!type || type === p.type)
       && (!from || (p.delivrance && p.delivrance >= from))
       && (!to || (p.delivrance && p.delivrance <= to))
       && tokens.every((token) => haystack.includes(token));
   });
+  const dossiers = new Map(candidates.map(({ properties: p }) => [p.id, term(p)]));
+  const totals = new Map(labels.map((label) => [label, 0]));
+  for (const category of dossiers.values()) totals.set(category, totals.get(category) + 1);
+  for (const option of form.elements.namedItem('term').options) {
+    option.textContent = option.value ? option.value + ' (' + totals.get(option.value) + ')' : 'Toutes (' + dossiers.size + ')';
+  }
+  const visible = selectedTerm ? candidates.filter(({ properties: p }) => term(p) === selectedTerm) : candidates;
   const inScope = ({ properties: p }) => scope(p, unit);
   layers.provinces.clearLayers().addData(collections.provinces.features.filter(({ properties: p }) => p.nom === 'Kasaï'));
   layers.unites.clearLayers().addData(collections.unites.features.filter(inScope));
   layers['cours-eau']?.clearLayers().addData(collections['cours-eau'].features.filter(inScope));
   layers.localites?.clearLayers().addData(collections.localites.features.filter(inScope));
   layers.permis.clearLayers().addData(visible);
-  get('count').textContent = new Set(visible.map(({ properties }) => properties.id)).size + ' dossiers miniers';
+  const total = selectedTerm ? totals.get(selectedTerm) : dossiers.size;
+  get('count').textContent = total + (total === 1 ? ' dossier minier' : ' dossiers miniers');
   map.fire('permitsfiltered', { features: visible });
   if (refit) fit();
 }
