@@ -32,7 +32,7 @@ map.attributionControl.setPrefix('<a href="https://leafletjs.com/" title="A Java
 
 const styles = {
   unites: { color: '#56766f', weight: 1, dashArray: '4 4', fillColor: '#b6d8c2', fillOpacity: 0.33 },
-  provinces: { color: '#21584e', weight: 2, fill: false, interactive: false },
+  provinces: { color: '#21584e', weight: 2, fill: false },
   'cours-eau': (feature) => ({
     color: '#1884b6', opacity: 0.75, weight: Math.max(0.8, (feature.properties.ordre - 1) * 0.42),
     dashArray: feature.properties.geometrie_approx ? '3 3' : undefined,
@@ -69,6 +69,47 @@ function details(title, fields) {
   }
   section.append(list);
   return section;
+}
+
+const mapContainer = map.getContainer();
+const hoverCard = document.createElement('div');
+hoverCard.className = 'map-hover-card';
+hoverCard.hidden = true;
+hoverCard.setAttribute('aria-hidden', 'true');
+mapContainer.append(hoverCard);
+let hoveredLayer;
+
+function hideHoverCard() {
+  hoveredLayer = undefined;
+  hoverCard.hidden = true;
+}
+
+map.on('movestart zoomstart popupopen', hideHoverCard);
+mapContainer.addEventListener('pointerleave', hideHoverCard);
+
+function bindHoverCard(layer, content) {
+  layer.on('mouseover mousemove', ({ containerPoint, originalEvent }) => {
+    if (!containerPoint || originalEvent?.pointerType === 'touch' || originalEvent?.sourceCapabilities?.firesTouchEvents ||
+        mapContainer.classList.contains('map-selection') || layer.isPopupOpen()) {
+      hideHoverCard();
+      return;
+    }
+    if (hoveredLayer !== layer) {
+      hoverCard.replaceChildren(content());
+      hoverCard.hidden = false;
+      hoveredLayer = layer;
+    }
+    const { x, y } = containerPoint;
+    const { offsetWidth: width, offsetHeight: height } = hoverCard;
+    const right = mapContainer.clientWidth - width - 8;
+    const bottom = mapContainer.clientHeight - height - 8;
+    const left = x + 14 <= right ? x + 14 : x - width - 14;
+    const top = y + 14 <= bottom ? y + 14 : y - height - 14;
+    hoverCard.style.transform = `translate(${Math.max(8, Math.min(left, right))}px, ${Math.max(8, Math.min(top, bottom))}px)`;
+  });
+  layer.on('mouseout remove', () => {
+    if (hoveredLayer === layer) hideHoverCard();
+  });
 }
 
 function permitFields(p) {
@@ -152,7 +193,7 @@ function permitHover(path) {
   const fields = [
     ['Type et statut', [p.type, p.statut].filter(Boolean).join(' · ')],
     ['Titulaire', p.titulaire], ['Substances', p.substances],
-    ['Délivrance', displayDate(p.delivrance)], ['Expiration', displayDate(p.expiration)],
+    ['Délivrance', displayDate(p.delivrance)], ['Expiration', displayDate(p.expiration)], ['Échéance calculée', term(p)],
     ['Surface du dossier', p.surface_source],
   ];
   if (active('provinces')) fields.push(['Province', p.province]);
@@ -307,21 +348,27 @@ try {
   layers.unites = L.geoJSON(null, {
     style: styles.unites,
     onEachFeature: ({ properties: p }, layer) => {
-      const label = document.createElement('span');
-      label.textContent = p.nom;
-      layer.bindTooltip(label);
+      const content = () => details(p.nom, [['Couche', 'Unité administrative'], ['Province', p.province]]);
+      bindHoverCard(layer, content);
+      layer.bindPopup(content);
     },
   });
-  layers.provinces = L.geoJSON(null, { style: styles.provinces });
+  layers.provinces = L.geoJSON(null, {
+    style: styles.provinces,
+    onEachFeature: ({ properties: p }, layer) => {
+      const content = () => details(p.nom, [['Couche', 'Province']]);
+      bindHoverCard(layer, content);
+      layer.bindPopup(content);
+    },
+  });
   layers.permis = L.geoJSON(null, {
     style: ({ properties: p }) => ({
       color: colors[labels.indexOf(term(p))], weight: 1.4,
       fill: p.code !== 'ZIN29', fillOpacity: 0.47,
     }),
     onEachFeature: ({ properties: p }, layer) => {
-      layer.bindTooltip(() => permitHover(layer), { sticky: true, className: 'permit-hover', opacity: 1 });
+      bindHoverCard(layer, () => permitHover(layer));
       layer.bindPopup(() => permitDetails(p));
-      layer.on('popupopen', () => layer.closeTooltip());
     },
   });
   map.createPane('hydro').style.zIndex = '410';
@@ -351,9 +398,18 @@ try {
     get('load-error').hidden = false;
   } else {
     layers['cours-eau'] = L.geoJSON(null, { style: styles['cours-eau'], pane: 'hydro', onEachFeature: ({ properties: p }, layer) => {
-      const label = document.createElement('span');
-      label.textContent = (p.nom_eau || 'Nom non renseigné') + (p.geometrie_approx ? ' (tracé reporté, approximatif)' : '');
-      layer.bindTooltip(label, { permanent: Boolean(p.etiquette), sticky: !p.etiquette, className: 'water-label' });
+      if (p.etiquette) {
+        const label = document.createElement('span');
+        label.textContent = (p.nom_eau || 'Nom non renseigné') + (p.geometrie_approx ? ' (tracé reporté, approximatif)' : '');
+        layer.bindTooltip(label, { permanent: true, className: 'water-label' });
+      }
+      const content = () => details(p.nom_eau || 'Cours d’eau sans nom renseigné', [
+        ['Province', p.province], ['Unité administrative', p.nom],
+        ['Ordre du cours d’eau', p.ordre],
+        ['Tracé', p.geometrie_approx ? 'Reporté, approximatif' : undefined],
+      ].filter(([, value]) => value != null));
+      bindHoverCard(layer, content);
+      layer.bindPopup(content);
     } });
     showLayer('cours-eau');
     render();
@@ -370,10 +426,14 @@ try {
         fillColor: '#632d57', fillOpacity: 0.9,
       }),
       onEachFeature: ({ properties: p }, layer) => {
-        const name = document.createElement('span');
-        name.textContent = p.nom;
-        layer.bindTooltip(name, { permanent: p.chef_lieu, direction: 'right', className: 'place-label' });
-        layer.bindPopup(() => details(p.nom, [['Province', p.province], ['Unité administrative', p.unite], ['Source', 'GeoNames']]));
+        if (p.chef_lieu) {
+          const name = document.createElement('span');
+          name.textContent = p.nom;
+          layer.bindTooltip(name, { permanent: true, direction: 'right', className: 'place-label' });
+        }
+        const content = () => details(p.nom, [['Province', p.province], ['Unité administrative', p.unite], ['Source', 'GeoNames']]);
+        bindHoverCard(layer, content);
+        layer.bindPopup(content);
       },
     });
     showLayer('localites');
