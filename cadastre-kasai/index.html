@@ -17,9 +17,10 @@
 <body>
   <header class="top">
     <div class="brand"><span class="mark" aria-hidden="true"></span><div><h1>Cadastre minier du Kasaï</h1><p>Province du Kasaï · RDC</p></div></div>
+    <button id="sidebar-toggle" type="button" aria-controls="sidebar" aria-expanded="true" hidden>Masquer les filtres</button>
   </header>
   <main>
-    <aside aria-label="Filtres et résultats">
+    <aside id="sidebar" aria-label="Filtres et résultats">
       <form id="filters">
         <div class="section-title"><h2>Filtres</h2><button type="reset" class="quiet">Réinitialiser</button></div>
         <label>Rechercher<input name="search" type="search" placeholder="Code, titulaire ou substance"></label>

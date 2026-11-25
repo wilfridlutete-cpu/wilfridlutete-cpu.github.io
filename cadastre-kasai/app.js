@@ -2,6 +2,31 @@ const L = window.L;
 const form = document.querySelector('#filters');
 const get = (id) => document.getElementById(id);
 const map = L.map('map', { preferCanvas: true, maxZoom: 19 }).setView([-5.5, 21.9], 7);
+const sidebar = get('sidebar');
+const sidebarToggle = get('sidebar-toggle');
+const compactLayout = matchMedia('(max-width: 740px)');
+
+function setSidebar(open) {
+  if (!open && sidebar.contains(document.activeElement)) sidebarToggle.focus();
+  sidebar.hidden = !open;
+  sidebarToggle.setAttribute('aria-expanded', String(open));
+  sidebarToggle.textContent = open ? 'Masquer les filtres' : 'Afficher les filtres';
+}
+
+sidebarToggle.hidden = false;
+setSidebar(!compactLayout.matches);
+compactLayout.addEventListener('change', (event) => setSidebar(!event.matches));
+sidebarToggle.addEventListener('click', () => setSidebar(sidebar.hidden));
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && !sidebar.hidden &&
+      (sidebar.contains(document.activeElement) || document.activeElement === sidebarToggle || compactLayout.matches)) {
+    setSidebar(false);
+    sidebarToggle.focus();
+  }
+});
+const mapResize = new ResizeObserver(() => map.invalidateSize({ animate: false }));
+mapResize.observe(get('map'));
+
 L.control.scale({ imperial: false }).addTo(map);
 map.attributionControl.setPrefix('<a href="https://leafletjs.com/" title="A JavaScript library for interactive maps">Leaflet</a> · <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="https://wilfridlutete-cpu.github.io/">Wilfrid Lutete</a>');
 
