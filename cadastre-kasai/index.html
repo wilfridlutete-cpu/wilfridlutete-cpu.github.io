@@ -6,10 +6,11 @@
   <meta name="description" content="Carte des périmètres miniers de la province du Kasaï">
   <title>Géoportail du cadastre minier du Kasaï</title>
   <link rel="stylesheet" href="vendor/leaflet.css">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
   <script defer src="vendor/leaflet.js"></script>
-  <script defer src="cartographie.js"></script>
-  <script type="module" src="app.js?v=4"></script>
+  <script defer src="cartographie.js?v=2"></script>
+  <script defer src="outils.js?v=1"></script>
+  <script type="module" src="app.js?v=5"></script>
   <script>
     if (location.protocol === 'file:') location.replace('../Geoportail-Kasai.html');
   </script>
@@ -17,14 +18,31 @@
 <body>
   <header class="top">
     <div class="brand"><span class="mark" aria-hidden="true"><span class="gem"></span></span><div><h1>Cadastre minier du Kasaï</h1><p>Province du Kasaï · RDC</p></div></div>
-    <button id="sidebar-toggle" type="button" aria-controls="sidebar" aria-expanded="true" hidden>Masquer les filtres</button>
     <img class="flag" src="drapeau-rdc.png" width="40" height="30" alt="Drapeau de la République démocratique du Congo">
   </header>
-  <main>
-    <aside id="sidebar" aria-label="Filtres et résultats">
+  <main id="workspace">
+    <div id="map" aria-label="Carte interactive des périmètres miniers"></div>
+    <button id="sidebar-toggle" type="button" aria-controls="sidebar" aria-expanded="false" hidden>Données <span aria-hidden="true">›</span></button>
+    <label class="map-search"><span class="visually-hidden">Rechercher par code, titulaire ou substance</span><input id="map-search" form="filters" name="search" type="search" placeholder="Rechercher un permis"></label>
+    <aside id="sidebar" aria-label="Données et filtres" hidden>
+      <div class="section-title"><h2>Données et filtres</h2><button id="close-sidebar" type="button" aria-label="Fermer les données">×</button></div>
+      <button id="open-catalogue" type="button">Catalogue des couches</button>
+      <details class="data-group">
+        <summary>Couches et fonds de carte</summary>
+        <div class="layer-menu">
+          <label><input id="osm" type="checkbox"><i class="basemap"></i> Fond OpenStreetMap</label>
+          <label><input id="esri" type="checkbox"><i class="satellite"></i> Satellite Esri HD</label>
+          <label><input id="nasa" type="checkbox"><i class="satellite"></i> Satellite NASA</label>
+          <p id="osm-status" role="status" hidden></p>
+          <label><input type="checkbox" data-layer="provinces" checked><i class="province"></i> Provinces</label>
+          <label><input type="checkbox" data-layer="unites" checked><i class="unit"></i> Limites des unités</label>
+          <label><input type="checkbox" data-layer="cours-eau" checked><i class="water"></i> Cours d’eau</label>
+          <label><input type="checkbox" data-layer="localites" checked><i class="place"></i> Localités</label>
+          <label><input type="checkbox" data-layer="permis" checked><i class="title"></i> Périmètres miniers</label>
+        </div>
+      </details>
       <form id="filters">
         <div class="section-title"><h2>Filtres</h2><button type="reset" class="quiet">Réinitialiser</button></div>
-        <label>Rechercher<input name="search" type="search" placeholder="Code, titulaire ou substance"></label>
         <div class="pair">
           <label>Unité administrative<select name="unit"><option value="">Toutes</option></select></label>
         </div>
@@ -35,38 +53,108 @@
         <p id="date-error" class="error" role="status" hidden>La date de fin doit être postérieure ou égale à la date de début.</p>
       </form>
       <p id="count" class="filter-count" role="status">Chargement des permis…</p>
+      <details class="data-group">
+        <summary>Légende et sources</summary>
+        <div class="legend"><span><i class="current"></i> Échéance non atteinte</span><span><i class="expired"></i> Échéance passée</span><span><i class="unknown"></i> Échéance non renseignée</span></div>
+        <p class="layer-sources"><a href="https://data.humdata.org/dataset/drc-administrative-boundaries-levels-0-2">OCHA / RGC</a> · <a href="https://www.hydrosheds.org/products/hydrorivers">HydroRIVERS</a> · <a href="https://www.geonames.org/">GeoNames</a></p>
+      </details>
     </aside>
-    <section class="map-pane" aria-label="Carte et couches">
-      <div id="map" aria-label="Carte interactive des périmètres miniers"></div>
-      <div class="map-tools">
-        <button id="fit" type="button">Recentrer</button>
-        <details id="print-tools">
-          <summary>Créer une carte</summary>
+    <nav class="tool-rail" aria-label="Outils cartographiques">
+      <div class="tool-group">
+        <button type="button" data-panel="print-tools"><b aria-hidden="true">↗</b>Exporter</button>
+        <button type="button" data-panel="measure-tools"><b aria-hidden="true">↔</b>Mesurer</button>
+        <button type="button" data-panel="draw-tools"><b aria-hidden="true">◇</b>Dessiner</button>
+        <button type="button" data-panel="saved-tools"><b aria-hidden="true">▤</b>Mes cartes</button>
+      </div>
+      <div class="tool-group"><button type="button" data-panel="help-tools"><b aria-hidden="true">?</b>Guide</button></div>
+    </nav>
+    <nav class="map-navigation" aria-label="Navigation de la carte">
+      <button id="fit" type="button" title="Recentrer sur le Kasaï" aria-label="Recentrer sur le Kasaï">⌖</button>
+      <button id="locate" type="button" title="Ma position" aria-label="Ma position">➤</button>
+      <button id="fullscreen" type="button" title="Plein écran" aria-label="Plein écran">⛶</button>
+      <div id="map-zoom"></div>
+    </nav>
+    <details id="print-tools" class="tool-panel">
+      <summary>Exporter</summary>
+      <div class="section-title"><h2>Exporter</h2><button type="button" data-close aria-label="Fermer l’export">×</button></div>
+      <div class="panel-tabs" aria-label="Modes d’export">
+        <button type="button" data-export-tab="share">Partager</button>
+        <button type="button" data-export-tab="export">Carte</button>
+        <button type="button" data-export-tab="report">Rapport</button>
+      </div>
+      <div data-export-view="share" hidden>
+        <label class="tool-field">Lien vers cette vue<input id="share-url" type="url" readonly></label>
+        <button id="copy-view" type="button">Copier le lien</button>
+        <p id="share-status" class="tool-note" role="status"></p>
+      </div>
+      <div data-export-view="export">
+          <label class="tool-field">Titre<input id="export-title" maxlength="120" placeholder="Carte des titres miniers"></label>
+          <label class="tool-field">Description<textarea id="export-description" rows="2" maxlength="250"></textarea></label>
+          <div class="tool-fields">
+            <label class="tool-field">Orientation PDF<select id="export-orientation"><option value="auto">Automatique</option><option value="landscape">Paysage</option><option value="portrait">Portrait</option></select></label>
+            <label class="tool-field">Papier PDF<select id="export-paper"><option>A4</option><option>A3</option></select></label>
+          </div>
+          <label class="tool-check"><input id="export-legend" type="checkbox" checked> Afficher la légende</label>
           <button id="select-area" type="button">Sélectionner une zone</button>
           <button id="clear-area" type="button" hidden>Effacer la zone</button>
           <p id="print-status" role="status">La vue affichée sera exportée.</p>
           <p id="print-permit" role="status"></p>
           <button id="clear-permit" type="button" hidden>Retirer la fiche</button>
-          <div class="print-actions"><button id="png" type="button" disabled>PNG HD</button><button id="pdf" type="button" disabled>PDF</button></div>
-        </details>
-        <details class="layer-menu">
-          <summary aria-label="Calques et légende" title="Calques et légende"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5zM3 12l9 5 9-5M3 16l9 5 9-5"/></svg></summary>
-          <label><input id="osm" type="checkbox"><i class="basemap"></i> Fond OpenStreetMap</label>
-          <label><input id="esri" type="checkbox"><i class="satellite"></i> Satellite Esri HD</label>
-          <label><input id="nasa" type="checkbox"><i class="satellite"></i> Satellite NASA</label>
-          <p id="osm-status" role="status" hidden></p>
-          <label><input type="checkbox" data-layer="provinces" checked><i class="province"></i> Provinces</label>
-          <label><input type="checkbox" data-layer="unites" checked><i class="unit"></i> Limites des unités</label>
-          <label><input type="checkbox" data-layer="cours-eau" checked><i class="water"></i> Cours d’eau</label>
-          <label><input type="checkbox" data-layer="localites" checked><i class="place"></i> Localités</label>
-          <p class="layer-sources"><a href="https://data.humdata.org/dataset/drc-administrative-boundaries-levels-0-2">OCHA / RGC</a> · <a href="https://www.hydrosheds.org/products/hydrorivers">HydroRIVERS</a> · <a href="https://www.geonames.org/">GeoNames</a></p>
-          <label><input type="checkbox" data-layer="permis" checked><i class="title"></i> Périmètres miniers</label>
-          <div class="legend"><span><i class="current"></i> Échéance non atteinte</span><span><i class="expired"></i> Échéance passée</span><span><i class="unknown"></i> Échéance non renseignée</span></div>
-        </details>
+          <div class="print-actions"><button id="png" type="button" disabled>PNG HD</button><button id="pdf" type="button" disabled>PDF</button><button id="download-permits" type="button">Permis GeoJSON</button></div>
       </div>
-      <p id="load-error" class="map-error" role="alert" hidden></p>
+      <div data-export-view="report" hidden>
+        <label class="tool-field">Titre du rapport<input id="report-title" maxlength="120" placeholder="Rapport cadastral du Kasaï"></label>
+        <label class="tool-field">Description<textarea id="report-description" rows="3" maxlength="600"></textarea></label>
+        <p class="tool-note">Le rapport reprend les dossiers correspondant aux filtres, ou la fiche du permis jointe à l’export.</p>
+        <button id="download-report" type="button">Télécharger le rapport CSV</button>
+      </div>
+    </details>
+    <section id="measure-tools" class="tool-panel" aria-label="Mesurer" hidden>
+      <div class="section-title"><h2>Mesurer</h2><button type="button" data-close aria-label="Fermer la mesure">×</button></div>
+      <div class="panel-tabs"><button type="button" data-sketch="distance">Distance</button><button type="button" data-sketch="area">Surface</button><button type="button" data-sketch="profile">Altimétrie</button></div>
+      <p class="tool-note">Choisissez une mesure, puis placez les sommets sur la carte. Les résultats sont indicatifs.</p>
+      <output id="measurement" class="measurement">Aucune mesure.</output>
+      <canvas id="elevation-chart" width="560" height="215" role="img" aria-label="Profil d’altitude" hidden></canvas>
+      <p id="elevation-source" class="tool-note" hidden>Le profil envoie les coordonnées du tracé à <a href="https://open-meteo.com/en/docs/elevation-api">Open-Meteo</a>. Altitudes estimées à partir du <a href="https://doi.org/10.5270/ESA-c5d3d65">Copernicus DEM GLO-90</a>.</p>
+      <div class="tool-actions"><button type="button" data-finish>Terminer</button><button type="button" data-clear>Effacer</button></div>
     </section>
+    <section id="draw-tools" class="tool-panel" aria-label="Dessiner" hidden>
+      <div class="section-title"><h2>Dessiner</h2><button type="button" data-close aria-label="Fermer le dessin">×</button></div>
+      <div class="panel-tabs"><button type="button" data-sketch="point">Point</button><button type="button" data-sketch="line">Ligne</button><button type="button" data-sketch="polygon">Polygone</button></div>
+      <p class="tool-note">Choisissez une géométrie, puis placez ses sommets sur la carte.</p>
+      <div class="tool-actions"><button type="button" data-finish>Terminer</button><button type="button" data-clear>Effacer</button><button type="button" id="download-drawing">GeoJSON</button></div>
+      <p id="drawing-status" class="tool-note" role="status"></p>
+    </section>
+    <section id="saved-tools" class="tool-panel" aria-label="Mes cartes" hidden>
+      <div class="section-title"><h2>Mes cartes</h2><button type="button" data-close aria-label="Fermer les cartes">×</button></div>
+      <p class="tool-note">Les vues, fonds et filtres sont conservés dans ce navigateur.</p>
+      <label class="tool-field">Nom de la vue<input id="saved-name" maxlength="60"></label>
+      <button id="save-view" type="button">Enregistrer cette vue</button>
+      <ul id="saved-views"></ul>
+      <p id="saved-status" class="tool-note" role="status"></p>
+    </section>
+    <section id="help-tools" class="tool-panel" aria-label="Guide de la carte" hidden>
+      <div class="section-title"><h2>Guide de la carte</h2><button type="button" data-close aria-label="Fermer le guide">×</button></div>
+      <ol>
+        <li>Ouvrez <strong>Données</strong> pour choisir les couches et filtrer les titres.</li>
+        <li>Saisissez un code, un titulaire ou une substance. Appuyez sur Entrée pour cadrer les résultats.</li>
+        <li>Survolez un objet pour l’identifier ou cliquez pour ouvrir sa fiche.</li>
+        <li>Utilisez les outils à droite pour mesurer, dessiner, partager ou exporter la carte.</li>
+      </ol>
+      <details class="data-group"><summary>Coordonnées et interopérabilité</summary>
+        <p class="tool-note">Fond affiché en EPSG:3857. Coordonnées et exports GeoJSON en WGS 84, longitude puis latitude (OGC CRS84). Le portail peut lire un service WFS 2.0 compatible.</p>
+        <p class="tool-note"><a href="https://www.ogc.org/standards/wfs/">Standard WFS de l’OGC</a></p>
+      </details>
+    </section>
+    <div class="map-readout"><span id="coordinates">CRS84 · longitude, latitude</span><span>Échéances au <span id="as-of"></span></span></div>
+    <dialog id="catalogue" aria-labelledby="catalogue-title">
+      <div class="section-title"><h2 id="catalogue-title">Catalogue des couches</h2><form method="dialog"><button type="submit" aria-label="Fermer le catalogue">×</button></form></div>
+      <label class="tool-field">Rechercher une couche<input id="catalogue-search" type="search"></label>
+      <div id="catalogue-layers"></div>
+      <p id="catalogue-empty" class="tool-note" hidden>Aucune couche ne correspond à la recherche.</p>
+    </dialog>
+    <p id="map-action-status" class="map-error" role="status" hidden></p>
+    <p id="load-error" class="map-error" role="alert" hidden></p>
   </main>
-  <footer><span id="as-of"></span></footer>
 </body>
 </html>

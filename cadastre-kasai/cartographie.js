@@ -207,12 +207,16 @@
     }
   }
 
-  function decorate(ctx, map, area, scale, width, height, items, scope, date, tileStatus, mapLeft, mapWidth, credit, province) {
+  function decorate(ctx, map, area, scale, width, height, items, scope, date, tileStatus, mapLeft, mapWidth, credit, province, layout) {
     ctx.fillStyle = ink;
     ctx.font = 'bold 46px system-ui, sans-serif';
-    ctx.fillText('Carte des titres miniers', 54, 68);
+    ctx.fillText(layout.title, 54, 58, width - 108);
     ctx.font = '28px system-ui, sans-serif';
-    ctx.fillText(scope, 54, 110, width - 108);
+    ctx.fillText(scope, 54, 96, width - 108);
+    if (layout.description) {
+      ctx.font = '22px system-ui, sans-serif';
+      ctx.fillText(layout.description, 54, 127, width - 108);
+    }
     ctx.fillStyle = ink;
     drawFrame(ctx, map, area, mapLeft, 151, mapWidth, height);
     drawInset(ctx, province, L.latLngBounds(map.containerPointToLatLng(area.min),
@@ -250,7 +254,7 @@
 
     const footer = 145 + height;
     ctx.font = 'bold 30px system-ui, sans-serif';
-    ctx.fillText('Légende', 54, footer + 53);
+    if (items.length) ctx.fillText('Légende', 54, footer + 53);
     ctx.font = '25px system-ui, sans-serif';
     items.forEach(([text, color, symbol], index) => {
       const x = 54 + (index % 3) * ((width - 108) / 3);
@@ -273,7 +277,7 @@
       ctx.fillStyle = ink;
       ctx.fillText(text, x + 44, y, (width - 108) / 3 - 56);
     });
-    const sourceY = footer + 106 + 43 * Math.max(1, Math.ceil(items.length / 3));
+    const sourceY = footer + (items.length ? 106 + 43 * Math.ceil(items.length / 3) : 52);
     ctx.font = '22px system-ui, sans-serif';
     ctx.fillText('Sources : périmètres fournis · cartes CAMI fournies · OCHA / RGC · HydroRIVERS · © OpenStreetMap · GeoNames', 54, sourceY, width - 108);
     const tileNote = {
@@ -284,10 +288,10 @@
     };
     ctx.fillText(tileNote[tileStatus], 54, sourceY + 32, width - 108);
     ctx.fillText('Édité par Wilfrid Lutete · wilfridlutete-cpu.github.io', 54, sourceY + 63, width - 108);
-    const [pageW, pageH] = width >= ctx.canvas.height ? [842, 595] : [595, 842];
+    const [pageW, pageH] = pageSize(width, ctx.canvas.height, layout);
     const printFactor = Math.min((pageW - 36) / width, (pageH - 36) / ctx.canvas.height);
     const denominator = Math.round(meters / scale / (printFactor * 0.0254 / 72));
-    ctx.fillText('WGS 84 / Web Mercator (EPSG:3857) · Échelle A4 à 100 % ≈ 1:' + denominator.toLocaleString('fr-FR'), 54, sourceY + 94, width - 108);
+    ctx.fillText('WGS 84 / Web Mercator (EPSG:3857) · Échelle ' + layout.paper + ' à 100 % ≈ 1:' + denominator.toLocaleString('fr-FR'), 54, sourceY + 94, width - 108);
     ctx.textAlign = 'right';
     ctx.fillText('Imprimé le ' + date, width - 54, ctx.canvas.height - 20);
     ctx.textAlign = 'left';
@@ -327,9 +331,14 @@
     }, type, 0.95));
   }
 
-  function pdfFromImage(image, width, height) {
-    const pageWidth = width >= height ? 842 : 595;
-    const pageHeight = width >= height ? 595 : 842;
+  function pageSize(width, height, { paper, orientation }) {
+    const millimeters = paper === 'A3' ? [297, 420] : [210, 297];
+    const points = millimeters.map((mm) => Math.round(mm * 72 / 25.4));
+    return orientation === 'landscape' || (orientation === 'auto' && width >= height) ? points.reverse() : points;
+  }
+
+  function pdfFromImage(image, width, height, layout) {
+    const [pageWidth, pageHeight] = pageSize(width, height, layout);
     const factor = Math.min((pageWidth - 36) / width, (pageHeight - 36) / height);
     const w = width * factor;
     const h = height * factor;
@@ -476,6 +485,7 @@
         clear.hidden = false;
       } else status.textContent = 'La vue affichée sera exportée.';
     }
+    map.on('cancelexportdraft', () => { if (choosing) cancel(); });
     select.addEventListener('click', () => {
       if (choosing) { cancel(); return; }
       choosing = true;
@@ -572,6 +582,13 @@
         if (active.includes('cours-eau')) legend.push(['Tracé reporté des cartes CAMI (approx.)', sourceColors['cours-eau'], 'dashed']);
         if (permits) labels.forEach((label, i) => legend.push([label, colors[i]]));
         if (!legend.length) legend.push(['Fond de carte', '#e9f1ed']);
+        if (!get('export-legend').checked) legend.length = 0;
+        const layout = {
+          title: get('export-title').value.trim() || 'Carte des titres miniers',
+          description: get('export-description').value.trim().replace(/\s+/g, ' '),
+          paper: get('export-paper').value,
+          orientation: get('export-orientation').value,
+        };
         const canvas = document.createElement('canvas');
         canvas.width = width;
         const ctx = canvas.getContext('2d');
@@ -610,7 +627,7 @@
         const date = new Intl.DateTimeFormat('fr-FR', {
           timeZone: 'Africa/Lubumbashi', day: '2-digit', month: '2-digit', year: 'numeric',
         }).format(new Date());
-        decorate(ctx, map, area, scale, width, mapHeight, legend, scope, date, tileStatus, mapLeft, mapWidth, credit, layers.provinces);
+        decorate(ctx, map, area, scale, width, mapHeight, legend, scope, date, tileStatus, mapLeft, mapWidth, credit, layers.provinces, layout);
         if (fields.length) {
           ctx.fillStyle = ink;
           ctx.font = 'bold 30px system-ui, sans-serif';
@@ -619,7 +636,7 @@
           fields.forEach((line, i) => ctx.fillText(line, 54, footerHeight + 101 + 33 * i, width - 108));
         }
         const image = await encode(canvas, kind === 'png' ? 'image/png' : 'image/jpeg');
-        save(kind === 'png' ? image : pdfFromImage(image, width, canvas.height), 'carte-miniere-kasai.' + kind);
+        save(kind === 'png' ? image : pdfFromImage(image, width, canvas.height, layout), 'carte-miniere-kasai.' + kind);
         status.textContent = 'Carte exportée.' + (tileStatus === 'partial' || tileStatus === 'unavailable' ? ' Le fond de carte est incomplet.' : '');
       } catch (error) {
         status.textContent = 'Export impossible. ' + error.message;

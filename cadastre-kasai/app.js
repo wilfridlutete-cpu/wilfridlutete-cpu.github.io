@@ -10,15 +10,19 @@ function setSidebar(open) {
   if (!open && sidebar.contains(document.activeElement)) sidebarToggle.focus();
   sidebar.hidden = !open;
   sidebarToggle.setAttribute('aria-expanded', String(open));
-  sidebarToggle.textContent = open ? 'Masquer les filtres' : 'Afficher les filtres';
+  sidebarToggle.textContent = open ? 'Données ‹' : 'Données ›';
+  if (open) map.fire('sidebaropened');
 }
 
 sidebarToggle.hidden = false;
-setSidebar(!compactLayout.matches);
-compactLayout.addEventListener('change', (event) => setSidebar(!event.matches));
+setSidebar(false);
 sidebarToggle.addEventListener('click', () => setSidebar(sidebar.hidden));
+get('close-sidebar').addEventListener('click', () => {
+  setSidebar(false);
+  sidebarToggle.focus();
+});
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && !sidebar.hidden &&
+  if (event.key === 'Escape' && !sidebar.hidden && !get('catalogue').open &&
       (sidebar.contains(document.activeElement) || document.activeElement === sidebarToggle || compactLayout.matches)) {
     setSidebar(false);
     sidebarToggle.focus();
@@ -28,6 +32,7 @@ const mapResize = new ResizeObserver(() => map.invalidateSize({ animate: false }
 mapResize.observe(get('map'));
 
 L.control.scale({ imperial: false }).addTo(map);
+get('map-zoom').append(map.zoomControl.getContainer());
 map.attributionControl.setPrefix('<a href="https://leafletjs.com/" title="A JavaScript library for interactive maps">Leaflet</a> · <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="https://wilfridlutete-cpu.github.io/">Wilfrid Lutete</a>');
 
 const styles = {
@@ -287,6 +292,7 @@ function render(refit = false) {
   get('count').textContent = total + (total === 1 ? ' dossier minier' : ' dossiers miniers');
   map.fire('permitsfiltered', { features: visible });
   if (refit) fit();
+  return visible;
 }
 
 async function fetchCollection(url, name) {
@@ -384,12 +390,25 @@ try {
   }
   updateUnits();
   Object.keys(layers).forEach(showLayer);
+  const tools = window.outilsCarte(map, form);
   render(true);
   window.cartographie(map, layers, labels, colors);
   form.addEventListener('input', (event) => {
     render(event.target.name === 'unit');
   });
   form.addEventListener('reset', () => requestAnimationFrame(() => { updateUnits(); render(true); }));
+  get('map-search').addEventListener('input', () => render());
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const bounds = L.geoJSON(render()).getBounds();
+    if (bounds.isValid()) map.fitBounds(bounds, { maxZoom: 14, padding: [32, 32] });
+  });
+  get('map-search').addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      form.requestSubmit();
+    }
+  });
   const failure = await water;
   if (failure) {
     toggleFor('cours-eau').checked = false;
@@ -439,6 +458,7 @@ try {
     showLayer('localites');
     render();
   }
+  tools.restoreLink();
 } catch (error) {
   get('count').textContent = 'Chargement impossible';
   get('load-error').textContent = 'Les données cartographiques n’ont pas pu être chargées. ' + error.message;
