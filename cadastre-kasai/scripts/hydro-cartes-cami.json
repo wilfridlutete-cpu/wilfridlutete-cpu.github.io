@@ -1,0 +1,23 @@
+{
+  "variantes": {
+    "Kasai": "Kasaï",
+    "Mbulamputu": "Bula-Mputu",
+    "Rivière Tshimbida": "Tshimbinda",
+    "Rivière Lubilu": "Lubilu",
+    "Rivière Lovwa": "Lovua",
+    "Rivière Luenda": "Luenda",
+    "Mini Matchibola": "Matshibola"
+  },
+  "site1": {
+    "description": "Carte des sites de levé des coordonnées — Kamonia / Tshikapa, site 1, 1:100 000 (1170 × 827).",
+    "x": [[239, 20.7152777778], [452, 20.7638888889]],
+    "y": [[88, -6.3402777778], [257, -6.3888888889]],
+    "traces": {
+      "Kamakomba": [[727,119],[751,145],[778,164],[813,180],[847,191],[882,193],[916,200]],
+      "Mabanda": [[621,416],[651,413],[689,400],[723,377],[748,353],[770,340],[823,339],[850,337]],
+      "Kabwanga": [[1083,313],[1099,341],[1112,367],[1118,389],[1114,417]],
+      "Kafuma": [[796,687],[810,690],[828,681],[840,663],[850,644]],
+      "Kamanionga": [[784,656],[764,652],[738,650],[715,656],[689,666],[667,669],[646,667]]
+    }
+  }
+}

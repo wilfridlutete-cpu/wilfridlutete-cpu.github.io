@@ -40,6 +40,8 @@
 
   function drawVectors(ctx, layers, point, strokeScale, width, height) {
     const waterLabels = new Map();
+    const permits = new Map();
+    const inFrame = (p) => p.x > 55 && p.y > 35 && p.x < width - 55 && p.y < height - 35;
     for (const layer of layers) {
       layer.eachLayer((path) => {
         const style = path.options;
@@ -60,9 +62,28 @@
           trace(ctx, geometry, point);
           if (properties.nom_eau) {
             const segments = geometry.type === 'LineString' ? [geometry.coordinates] : geometry.coordinates;
-            const candidates = segments.flatMap((segment) => segment.filter((_, i) => i % 8 === 0).map(point));
-            const anchor = candidates.find((p) => p.x > 20 && p.y > 20 && p.x < width - 160 && p.y < height - 20);
-            if (anchor && !waterLabels.has(properties.nom_eau)) waterLabels.set(properties.nom_eau, anchor);
+            for (const segment of segments) {
+              for (let i = 1; i < segment.length; i++) {
+                const a = point(segment[i - 1]);
+                const b = point(segment[i]);
+                const p = a.add(b).divideBy(2);
+                const length = a.distanceTo(b);
+                if (!inFrame(p) || length <= (waterLabels.get(properties.nom_eau)?.length || 0)) continue;
+                const angle = Math.atan2(b.y - a.y, b.x - a.x);
+                waterLabels.set(properties.nom_eau, { p, length, angle: Math.abs(angle) > Math.PI / 2 ? angle - Math.sign(angle) * Math.PI : angle });
+              }
+            }
+          }
+          if (properties.code && path.getBounds) {
+            const bounds = path.getBounds();
+            const center = path.getCenter();
+            const p = point([center.lng, center.lat]);
+            const size = point([bounds.getWest(), bounds.getNorth()]).distanceTo(point([bounds.getEast(), bounds.getSouth()]));
+            if (inFrame(p) && size >= 48 && size > (permits.get(properties.code)?.size || 0)) {
+              const { type, code } = properties;
+              const text = type && !String(code).startsWith(type) ? type + ' ' + code : String(code);
+              permits.set(code, { p, size, text });
+            }
           }
         }
         if (style.fill) {
@@ -80,17 +101,26 @@
     ctx.globalAlpha = 1;
     ctx.setLineDash([]);
     const occupied = [];
-    ctx.font = 'italic 22px system-ui, sans-serif';
-    for (const [name, p] of waterLabels) {
-      const box = { x: p.x, y: p.y, w: ctx.measureText(name).width + 14 };
-      if (occupied.some((q) => Math.abs(q.y - box.y) < 29 && q.x < box.x + box.w && box.x < q.x + q.w)) continue;
+    function label(text, p, angle, color) {
+      const span = ctx.measureText(text).width + 14;
+      const box = { x: p.x - span / 2, y: p.y, w: span };
+      if (occupied.some((q) => Math.abs(q.y - box.y) < 34 && q.x < box.x + box.w && box.x < q.x + q.w)) return;
       occupied.push(box);
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(angle);
+      ctx.textAlign = 'center';
       ctx.strokeStyle = '#fff';
-      ctx.lineWidth = 5;
-      ctx.strokeText(name, p.x, p.y);
-      ctx.fillStyle = '#07527e';
-      ctx.fillText(name, p.x, p.y);
+      ctx.lineWidth = 6;
+      ctx.strokeText(text, 0, -5);
+      ctx.fillStyle = color;
+      ctx.fillText(text, 0, -5);
+      ctx.restore();
     }
+    ctx.font = 'bold 24px system-ui, sans-serif';
+    for (const { p, text } of [...permits.values()].sort((a, b) => b.size - a.size)) label(text, p, 0, '#39251d');
+    ctx.font = 'italic 23px system-ui, sans-serif';
+    for (const [name, { p, angle }] of waterLabels) label(name, p, angle, '#07527e');
   }
 
   function drawTiles(ctx, map, base, area, scale) {
@@ -112,15 +142,81 @@
     return covered >= size.x * size.y * 0.99 ? 'complete' : 'partial';
   }
 
-  function decorate(ctx, map, area, scale, width, height, items, scope, date, tileStatus, mapLeft, mapWidth, credit) {
-    ctx.fillStyle = ink;
-    ctx.font = 'bold 46px system-ui, sans-serif';
-    ctx.fillText('Périmètres miniers', 54, 68);
-    ctx.font = '28px system-ui, sans-serif';
-    ctx.fillText(scope, 54, 110, width - 108);
+  function coordinateLabel(value, positive, negative) {
+    const seconds = Math.round(Math.abs(value) * 3600);
+    const pad = (n) => String(n).padStart(2, '0');
+    return Math.floor(seconds / 3600) + '°' + pad(Math.floor(seconds / 60) % 60) + '′'
+      + pad(seconds % 60) + '″ ' + (value >= 0 ? positive : negative);
+  }
+
+  function drawFrame(ctx, map, area, x, y, width, height) {
+    ctx.strokeStyle = ink;
+    ctx.lineWidth = 4;
+    ctx.strokeRect(x, y, width, height);
+    ctx.font = '21px system-ui, sans-serif';
+    ctx.textAlign = 'center';
+    for (const t of [0.12, 0.37, 0.63, 0.88]) {
+      const lng = map.containerPointToLatLng([area.min.x + t * area.getSize().x, area.min.y]).lng;
+      const lat = map.containerPointToLatLng([area.min.x, area.min.y + t * area.getSize().y]).lat;
+      const px = x + t * width;
+      const py = y + t * height;
+      ctx.beginPath();
+      ctx.moveTo(px, y - 8);
+      ctx.lineTo(px, y);
+      ctx.moveTo(x - 8, py);
+      ctx.lineTo(x, py);
+      ctx.stroke();
+      ctx.fillText(coordinateLabel(lng, 'E', 'O'), px, y - 12, width / 4 - 6);
+      ctx.save();
+      ctx.translate(x - 15, py);
+      ctx.rotate(-Math.PI / 2);
+      ctx.fillText(coordinateLabel(lat, 'N', 'S'), 0, 0, height / 4 - 6);
+      ctx.restore();
+    }
+    ctx.textAlign = 'left';
+  }
+
+  function drawInset(ctx, province, extent, x, y, width, height) {
+    if (!province?.getBounds().isValid() || width < 620 || height < 600) return;
+    const geo = province.getBounds();
+    const panelWidth = 240;
+    const panelHeight = 325;
+    const scale = Math.min(204 / (geo.getEast() - geo.getWest()), 265 / (geo.getNorth() - geo.getSouth()));
+    const middle = geo.getCenter();
+    const point = ([lng, lat]) => ({ x: x + panelWidth / 2 + (lng - middle.lng) * scale,
+      y: y + 177 - (lat - middle.lat) * scale });
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(x, y, panelWidth, panelHeight);
     ctx.strokeStyle = ink;
     ctx.lineWidth = 2;
-    ctx.strokeRect(mapLeft, 145, mapWidth, height);
+    ctx.strokeRect(x, y, panelWidth, panelHeight);
+    ctx.fillStyle = ink;
+    ctx.font = 'bold 20px system-ui, sans-serif';
+    ctx.fillText('Situation dans le Kasaï', x + 10, y + 27, panelWidth - 20);
+    ctx.beginPath();
+    province.eachLayer((layer) => trace(ctx, layer.feature.geometry, point));
+    ctx.fillStyle = '#d3e9e2';
+    ctx.fill('evenodd');
+    ctx.stroke();
+    const nw = point([Math.max(geo.getWest(), extent.getWest()), Math.min(geo.getNorth(), extent.getNorth())]);
+    const se = point([Math.min(geo.getEast(), extent.getEast()), Math.max(geo.getSouth(), extent.getSouth())]);
+    if (nw.x <= se.x && nw.y <= se.y) {
+      ctx.strokeStyle = '#a93925';
+      ctx.lineWidth = 4;
+      ctx.strokeRect(nw.x, nw.y, Math.max(5, se.x - nw.x), Math.max(5, se.y - nw.y));
+    }
+  }
+
+  function decorate(ctx, map, area, scale, width, height, items, scope, date, tileStatus, mapLeft, mapWidth, credit, province) {
+    ctx.fillStyle = ink;
+    ctx.font = 'bold 46px system-ui, sans-serif';
+    ctx.fillText('Carte des titres miniers', 54, 68);
+    ctx.font = '28px system-ui, sans-serif';
+    ctx.fillText(scope, 54, 110, width - 108);
+    ctx.fillStyle = ink;
+    drawFrame(ctx, map, area, mapLeft, 151, mapWidth, height);
+    drawInset(ctx, province, L.latLngBounds(map.containerPointToLatLng(area.min),
+      map.containerPointToLatLng(area.max)), mapLeft + 18, 172, mapWidth, height);
 
     const northX = mapLeft + mapWidth - 53;
     ctx.fillStyle = '#fff';
@@ -156,25 +252,42 @@
     ctx.font = 'bold 30px system-ui, sans-serif';
     ctx.fillText('Légende', 54, footer + 53);
     ctx.font = '25px system-ui, sans-serif';
-    items.forEach(([text, color], index) => {
+    items.forEach(([text, color, symbol], index) => {
       const x = 54 + (index % 3) * ((width - 108) / 3);
       const y = footer + 93 + 43 * Math.floor(index / 3);
       ctx.fillStyle = color;
-      ctx.fillRect(x, y - 18, 32, 18);
+      if (symbol === 'point') {
+        ctx.beginPath();
+        ctx.arc(x + 16, y - 7, 6, 0, 2 * Math.PI);
+        ctx.fill();
+      } else if (symbol) {
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 4;
+        ctx.setLineDash(symbol === 'dashed' ? [7, 4] : []);
+        ctx.beginPath();
+        ctx.moveTo(x, y - 8);
+        ctx.lineTo(x + 32, y - 8);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      } else ctx.fillRect(x, y - 18, 32, 18);
       ctx.fillStyle = ink;
       ctx.fillText(text, x + 44, y, (width - 108) / 3 - 56);
     });
     const sourceY = footer + 106 + 43 * Math.max(1, Math.ceil(items.length / 3));
     ctx.font = '22px system-ui, sans-serif';
-    ctx.fillText('Sources : périmètres fournis · OCHA / RGC · HydroRIVERS · © OpenStreetMap · GeoNames', 54, sourceY, width - 108);
+    ctx.fillText('Sources : périmètres fournis · cartes CAMI fournies · OCHA / RGC · HydroRIVERS · © OpenStreetMap · GeoNames', 54, sourceY, width - 108);
     const tileNote = {
       complete: 'Fond : ' + credit,
       partial: 'Fond partiel : ' + credit,
       unavailable: 'Fond indisponible à l’export : ' + credit,
-      absent: 'Projection Web Mercator · échelle indicative au centre de la zone.',
+      absent: 'Fond : couches vectorielles du géoportail.',
     };
     ctx.fillText(tileNote[tileStatus], 54, sourceY + 32, width - 108);
     ctx.fillText('Édité par Wilfrid Lutete · wilfridlutete-cpu.github.io', 54, sourceY + 63, width - 108);
+    const [pageW, pageH] = width >= ctx.canvas.height ? [842, 595] : [595, 842];
+    const printFactor = Math.min((pageW - 36) / width, (pageH - 36) / ctx.canvas.height);
+    const denominator = Math.round(meters / scale / (printFactor * 0.0254 / 72));
+    ctx.fillText('WGS 84 / Web Mercator (EPSG:3857) · Échelle A4 à 100 % ≈ 1:' + denominator.toLocaleString('fr-FR'), 54, sourceY + 94, width - 108);
     ctx.textAlign = 'right';
     ctx.fillText('Imprimé le ' + date, width - 54, ctx.canvas.height - 20);
     ctx.textAlign = 'left';
@@ -454,7 +567,9 @@
         const mapLeft = (width - mapWidth) / 2;
         const active = Object.keys(sourceLabels).filter((name) => layers[name] && map.hasLayer(layers[name]));
         const permits = layers.permis && map.hasLayer(layers.permis);
-        const legend = active.map((name) => [sourceLabels[name], sourceColors[name]]);
+        const symbols = { provinces: 'line', unites: 'dashed', 'cours-eau': 'line', localites: 'point' };
+        const legend = active.map((name) => [sourceLabels[name], sourceColors[name], symbols[name]]);
+        if (active.includes('cours-eau')) legend.push(['Tracé reporté des cartes CAMI (approx.)', sourceColors['cours-eau'], 'dashed']);
         if (permits) labels.forEach((label, i) => legend.push([label, colors[i]]));
         if (!legend.length) legend.push(['Fond de carte', '#e9f1ed']);
         const canvas = document.createElement('canvas');
@@ -462,11 +577,11 @@
         const ctx = canvas.getContext('2d');
         const fields = printPermit ? wrapFields(ctx, printPermit.fields, width - 108) : [];
         const footerHeight = 145 + mapHeight + 190 + 43 * Math.ceil(legend.length / 3);
-        canvas.height = footerHeight + 32 + (fields.length ? 70 + 33 * fields.length : 0);
+        canvas.height = footerHeight + 65 + (fields.length ? 70 + 33 * fields.length : 0);
         ctx.fillStyle = '#fff';
         ctx.fillRect(0, 0, width, canvas.height);
         ctx.save();
-        ctx.translate(mapLeft, 145);
+        ctx.translate(mapLeft, 151);
         ctx.beginPath();
         ctx.rect(0, 0, mapWidth, mapHeight);
         ctx.clip();
@@ -495,13 +610,13 @@
         const date = new Intl.DateTimeFormat('fr-FR', {
           timeZone: 'Africa/Lubumbashi', day: '2-digit', month: '2-digit', year: 'numeric',
         }).format(new Date());
-        decorate(ctx, map, area, scale, width, mapHeight, legend, scope, date, tileStatus, mapLeft, mapWidth, credit);
+        decorate(ctx, map, area, scale, width, mapHeight, legend, scope, date, tileStatus, mapLeft, mapWidth, credit, layers.provinces);
         if (fields.length) {
           ctx.fillStyle = ink;
           ctx.font = 'bold 30px system-ui, sans-serif';
-          ctx.fillText('Légende cadastrale · titre ' + printPermit.permit.code, 54, footerHeight + 31);
+          ctx.fillText('Légende cadastrale · titre ' + printPermit.permit.code, 54, footerHeight + 65);
           ctx.font = '24px system-ui, sans-serif';
-          fields.forEach((line, i) => ctx.fillText(line, 54, footerHeight + 67 + 33 * i, width - 108));
+          fields.forEach((line, i) => ctx.fillText(line, 54, footerHeight + 101 + 33 * i, width - 108));
         }
         const image = await encode(canvas, kind === 'png' ? 'image/png' : 'image/jpeg');
         save(kind === 'png' ? image : pdfFromImage(image, width, canvas.height), 'carte-miniere-kasai.' + kind);

@@ -10,6 +10,7 @@ const styles = {
   provinces: { color: '#21584e', weight: 2, fill: false, interactive: false },
   'cours-eau': (feature) => ({
     color: '#1884b6', opacity: 0.75, weight: Math.max(0.8, (feature.properties.ordre - 1) * 0.42),
+    dashArray: feature.properties.geometrie_approx ? '3 3' : undefined,
   }),
 };
 const labels = ['Échéance non atteinte', 'Échéance passée', 'Échéance non renseignée'];
@@ -318,7 +319,7 @@ try {
   } else {
     layers['cours-eau'] = L.geoJSON(null, { style: styles['cours-eau'], pane: 'hydro', onEachFeature: ({ properties: p }, layer) => {
       const label = document.createElement('span');
-      label.textContent = p.nom_eau || 'Nom non renseigné';
+      label.textContent = (p.nom_eau || 'Nom non renseigné') + (p.geometrie_approx ? ' (tracé reporté, approximatif)' : '');
       layer.bindTooltip(label, { permanent: Boolean(p.etiquette), sticky: !p.etiquette, className: 'water-label' });
     } });
     showLayer('cours-eau');
