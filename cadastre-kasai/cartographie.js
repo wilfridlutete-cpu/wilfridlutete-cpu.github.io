@@ -332,9 +332,7 @@
     ctx.fillText('Édité par Wilfrid Lutete · wilfridlutete-cpu.github.io', 54, sourceY + 63, width - 108);
     const denominator = Math.round(meters / scale / (printFactor * 0.0254 / 72));
     ctx.fillText('WGS 84 / Web Mercator (EPSG:3857) · Échelle ' + layout.paper + ' à 100 % ≈ 1:' + denominator.toLocaleString('fr-FR'), 54, sourceY + 94, width - 108);
-    ctx.textAlign = 'right';
-    ctx.fillText('Imprimé le ' + date, width - 54, ctx.canvas.height - 20);
-    ctx.textAlign = 'left';
+    ctx.fillText('Imprimé le ' + date + ' (heure du Kasaï)', 54, sourceY + 125, width - 108);
   }
 
   function exportFooter(ctx, width, mapHeight, legend, permit, layout) {
@@ -355,14 +353,14 @@
     }) : [];
     const fieldsHeight = fields.length ? 90 + fields.reduce((total, { lines }) => total + 31 * lines.length + 8, 0) : 0;
     const legendHeight = legend.length ? 60 + 37 * legend.length : 0;
-    const baseHeight = 151 + mapHeight + Math.max(fieldsHeight, legendHeight) + 170;
+    const baseHeight = 151 + mapHeight + Math.max(fieldsHeight, legendHeight) + 180;
     if (layout.orientation === 'auto') layout.orientation = width >= baseHeight ? 'landscape' : 'portrait';
     const [pageW, pageH] = pageSize(width, baseHeight, layout);
     // Reserve vertical space for a 20 pt heading even when the page height sets the scale.
     const reserve = legend.length ? Math.ceil(Math.max(20 * width / (pageW - 36), 20 * baseHeight / (pageH - 56))) : 0;
     const height = baseHeight + reserve;
     const printFactor = Math.min((pageW - 36) / width, (pageH - 36) / height);
-    return { fields, legendX, height, sourceY: height - 135, headingSize: legend.length ? 20 / printFactor : 0, printFactor };
+    return { fields, legendX, height, sourceY: height - 145, headingSize: legend.length ? 20 / printFactor : 0, printFactor };
   }
 
   function save(blob, name) {
@@ -666,6 +664,7 @@
         const credit = backgrounds.find(([, layer]) => layer && layer === base)?.[2];
         const date = new Intl.DateTimeFormat('fr-FR', {
           timeZone: 'Africa/Lubumbashi', day: '2-digit', month: '2-digit', year: 'numeric',
+          hour: '2-digit', minute: '2-digit',
         }).format(new Date());
         decorate(ctx, map, area, scale, width, mapHeight, legend, scope, date, tileStatus, mapLeft, mapWidth, credit, layers.kasai, layout);
         const image = await encode(canvas, kind === 'png' ? 'image/png' : 'image/jpeg');
