@@ -8,9 +8,9 @@
   <link rel="stylesheet" href="vendor/leaflet.css">
   <link rel="stylesheet" href="style.css?v=17">
   <script defer src="vendor/leaflet.js"></script>
-  <script defer src="cartographie.js?v=7"></script>
-  <script defer src="outils.js?v=3"></script>
-  <script type="module" src="app.js?v=14"></script>
+  <script defer src="cartographie.js?v=8"></script>
+  <script defer src="outils.js?v=4"></script>
+  <script type="module" src="app.js?v=15"></script>
   <script>
     if (location.protocol === 'file:') location.replace('../Geoportail-Kasai.html');
   </script>
@@ -32,15 +32,14 @@
         <summary>Couches et fonds de carte</summary>
         <div class="layer-menu">
           <label><input id="osm" type="checkbox"><i class="basemap"></i> Fond OpenStreetMap</label>
-          <label><input id="esri" type="checkbox"><i class="satellite"></i> Satellite Esri HD</label>
-          <label><input id="nasa" type="checkbox"><i class="satellite"></i> Satellite NASA</label>
+          <label><input id="esri" type="checkbox" checked><i class="satellite"></i> Satellite Esri HD</label>
           <p id="osm-status" role="status" hidden></p>
-          <label><input type="checkbox" data-layer="rdc"><i class="rdc"></i> Provinces de la RDC</label>
-          <label><input type="checkbox" data-layer="kasai"><i class="kasai"></i> Province du Kasaï</label>
+          <label><input type="checkbox" data-layer="rdc" checked><i class="rdc"></i> Provinces de la RDC</label>
+          <label><input type="checkbox" data-layer="kasai" checked><i class="kasai"></i> Province du Kasaï</label>
           <label><input type="checkbox" data-layer="unites"><i class="unit"></i> Limites des unités du Kasaï</label>
           <label><input type="checkbox" data-layer="cours-eau"><i class="water"></i> Cours d’eau</label>
           <label><input type="checkbox" data-layer="localites"><i class="place"></i> Localités</label>
-          <label><input type="checkbox" data-layer="permis"><i class="title"></i> Périmètres miniers</label>
+          <label><input type="checkbox" data-layer="permis" checked><i class="title"></i> Périmètres miniers</label>
         </div>
       </details>
       <form id="filters">
@@ -54,11 +53,6 @@
         <fieldset><legend>Date de délivrance</legend><div class="pair"><label>Du<input name="from" type="date"></label><label>Au<input name="to" type="date"></label></div></fieldset>
         <p id="date-error" class="error" role="status" hidden>La date de fin doit être postérieure ou égale à la date de début.</p>
       </form>
-      <details class="data-group">
-        <summary>Légende et sources</summary>
-        <div class="legend"><span><i class="current"></i> Échéance non atteinte</span><span><i class="expired"></i> Échéance passée</span><span><i class="unknown"></i> Échéance non renseignée</span></div>
-        <p class="layer-sources"><a href="https://data.humdata.org/dataset/drc-administrative-boundaries-levels-0-2">OCHA / RGC</a> · <a href="https://www.hydrosheds.org/products/hydrorivers">HydroRIVERS</a> · <a href="https://www.geonames.org/">GeoNames</a></p>
-      </details>
     </aside>
     <nav class="tool-rail" aria-label="Outils cartographiques">
       <div class="tool-group">
@@ -67,7 +61,10 @@
         <button type="button" data-panel="draw-tools"><b aria-hidden="true">◇</b>Dessiner</button>
         <button type="button" data-panel="saved-tools"><b aria-hidden="true">▤</b>Mes cartes</button>
       </div>
-      <div class="tool-group"><button type="button" data-panel="help-tools"><b aria-hidden="true">?</b>Guide</button></div>
+      <div class="tool-group">
+        <button type="button" data-panel="legend-tools"><b aria-hidden="true">≡</b>Légende</button>
+        <button type="button" data-panel="help-tools"><b aria-hidden="true">?</b>Guide</button>
+      </div>
     </nav>
     <nav class="map-navigation" aria-label="Navigation de la carte">
       <button id="fit" type="button" title="Recentrer sur le Kasaï" aria-label="Recentrer sur le Kasaï">⌖</button>
@@ -133,6 +130,11 @@
       <button id="save-view" type="button">Enregistrer cette vue</button>
       <ul id="saved-views"></ul>
       <p id="saved-status" class="tool-note" role="status"></p>
+    </section>
+    <section id="legend-tools" class="tool-panel" aria-label="Légende et sources" hidden>
+      <div class="section-title"><h2>Légende et sources</h2><button type="button" data-close aria-label="Fermer la légende">×</button></div>
+      <div class="legend"><span><i class="current"></i> Échéance non atteinte</span><span><i class="expired"></i> Échéance passée</span><span><i class="unknown"></i> Échéance non renseignée</span></div>
+      <p class="layer-sources"><a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · <a href="https://data.humdata.org/dataset/drc-administrative-boundaries-levels-0-2">OCHA / RGC</a> · <a href="https://www.hydrosheds.org/products/hydrorivers">HydroRIVERS</a> · <a href="https://www.geonames.org/">GeoNames</a></p>
     </section>
     <section id="help-tools" class="tool-panel" aria-label="Guide de la carte" hidden>
       <div class="section-title"><h2>Guide de la carte</h2><button type="button" data-close aria-label="Fermer le guide">×</button></div>

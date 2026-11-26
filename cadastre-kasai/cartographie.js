@@ -4,7 +4,6 @@
   const ink = '#103c35';
   const sourceLabels = { rdc: 'Frontière de la RDC', kasai: 'Limite du Kasaï', unites: 'Unités administratives', 'cours-eau': 'Cours d’eau', localites: 'Localités' };
   const sourceColors = { rdc: '#fff', kasai: '#fff', unites: '#56766f', 'cours-eau': '#1884b6', localites: '#632d57' };
-  const nasaCredit = 'NASA Earthdata / GIBS · Landsat WELD, composite annuel 2000 (fausses couleurs)';
   const esriCredit = 'Esri, Vantor, Earthstar Geographics et la communauté SIG';
   const osmCredit = '© contributeurs OpenStreetMap · openstreetmap.org/copyright';
 
@@ -389,39 +388,29 @@
 
   window.cartographie = function setup(map, layers, labels, colors) {
     const osm = get('osm');
-    const nasa = get('nasa');
     const esri = get('esri');
     const osmStatus = get('osm-status');
     const remote = ['http:', 'https:'].includes(location.protocol);
     osm.disabled = !remote;
     osm.checked = false;
-    nasa.checked = false;
-    esri.checked = false;
     osmStatus.hidden = true;
     const tileUrl = document.querySelector('meta[name="osm-tiles"]')?.content || 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
     const streets = remote ? L.tileLayer(tileUrl, {
       maxZoom: 19, crossOrigin: 'anonymous',
     }) : null;
-    const satellite = L.tileLayer(
-      'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/Landsat_WELD_CorrectedReflectance_Bands157_Global_Annual/default/2000-12-01/GoogleMapsCompatible_Level12/{z}/{y}/{x}.jpeg',
-      { maxNativeZoom: 12, maxZoom: 19, crossOrigin: 'anonymous' },
-    );
     const imagery = L.tileLayer(
       'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
       { maxZoom: 19, crossOrigin: 'anonymous' },
     );
     const backgrounds = [
-      [osm, streets, osmCredit], [nasa, satellite, nasaCredit], [esri, imagery, esriCredit],
+      [osm, streets, osmCredit], [esri, imagery, esriCredit],
     ];
-    let base = null;
-    const satelliteCredits = new Map([
-      [satellite, '<a href="https://www.earthdata.nasa.gov/data/tools/gibs">NASA GIBS</a> · Landsat WELD (2000)'],
-      [imagery, '<a href="https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9">Esri World Imagery</a> · ' + esriCredit],
-    ]);
+    let base = esri.checked ? imagery : null;
+    const imageryCredit = '<a href="https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9">Esri World Imagery</a> · ' + esriCredit;
     let activeCredit;
     function updateCredit() {
       if (activeCredit) map.attributionControl.removeAttribution(activeCredit);
-      activeCredit = satelliteCredits.get(base);
+      activeCredit = base === imagery ? imageryCredit : undefined;
       if (activeCredit) map.attributionControl.addAttribution(activeCredit);
     }
     for (const [input, layer] of backgrounds) {

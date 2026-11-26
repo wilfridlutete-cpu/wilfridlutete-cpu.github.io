@@ -64,7 +64,7 @@ const layers = {};
 const collections = {};
 const toggles = [...document.querySelectorAll('[data-layer]')];
 const toggleFor = (name) => toggles.find((input) => input.dataset.layer === name);
-const mapControls = [...toggles, ...['osm', 'esri', 'nasa'].map(get)];
+const mapControls = [...toggles, ...['osm', 'esri'].map(get)];
 
 function updateEmptyMap() {
   get('map-empty').hidden = mapControls.some((control) => control.checked && !control.disabled);
@@ -242,7 +242,7 @@ function permitContext(path) {
     && polygons(other).some((polygon) => shape.some((part) =>
       polygon.some((ring) => lineHitsPolygon(ring, part)) || pointInPolygon(part[0][0], polygon))));
   if (overlaps.length) fields.push(['Autres périmètres au contact', list(overlaps.map((permit) => String(permit.code)), '')]);
-  for (const [id, name] of [['osm', 'OpenStreetMap'], ['esri', 'Satellite Esri HD'], ['nasa', 'Satellite NASA']]) {
+  for (const [id, name] of [['osm', 'OpenStreetMap'], ['esri', 'Satellite Esri HD']]) {
     if (get(id).checked) fields.push(['Fond de carte', name]);
   }
   return fields;

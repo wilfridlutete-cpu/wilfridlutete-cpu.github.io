@@ -27,7 +27,7 @@
     const print = get('print-tools');
     const exportTabs = [...print.querySelectorAll('[data-export-tab]')];
     const exportViews = [...print.querySelectorAll('[data-export-view]')];
-    const controls = [...document.querySelectorAll('[data-layer], #osm, #esri, #nasa')];
+    const controls = [...document.querySelectorAll('[data-layer], #osm, #esri')];
     const saved = get('saved-views');
     const narrow = matchMedia('(max-width: 740px)');
     const drawings = L.featureGroup().addTo(map);
