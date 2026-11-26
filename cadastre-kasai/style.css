@@ -110,7 +110,6 @@ fieldset{margin:0;padding:.45rem .55rem .6rem;border:1px solid var(--line);borde
 .satellite{background:#304d31}.place{background:#632d57;width:.65rem;border-radius:50%}
 .leaflet-tooltip.place-label{color:#391d33;font-weight:700}
 .leaflet-tooltip.water-label{color:#07527e;font-style:italic}
-.layer-sources{margin-top:.45rem;font-size:.75rem}
 #map .leaflet-control-attribution{max-width:min(38rem,calc(100vw - 1rem));padding:.12rem .38rem;border-radius:.3rem 0 0 0;text-align:right;line-height:1.25}
 #print-permit{font-size:.82rem;margin-top:.3rem}
 .map-selection,.map-selection .leaflet-interactive,.map-sketch,.map-sketch .leaflet-interactive{cursor:crosshair!important}
