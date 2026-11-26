@@ -50,7 +50,10 @@ fieldset{margin:0;padding:.45rem .55rem .6rem;border:1px solid var(--line);borde
 .layer-menu label,.legend span{display:flex;align-items:center;gap:.35rem;margin-top:.35rem;font-size:.83rem}
 #map{position:absolute;inset:0;background:#e9f1ed;z-index:0}
 .map-empty{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:max-content;max-width:min(22rem,73%);padding:.75rem 1rem;border:1px solid var(--line);border-radius:.65rem;background:var(--ivory);text-align:center;font-size:.88rem;pointer-events:none}
-.rdc{border:2px solid #376b79}
+.rdc{border:2px dashed #376b79}
+.kasai{border:2px solid #155c4d}
+.leaflet-tooltip.province-label{padding:.1rem .27rem;border:0;border-radius:.22rem;background:#fbf8f0e6;color:#244954;box-shadow:none;font:700 12px system-ui}
+.leaflet-tooltip.kasai-label{background:#f1cf87;color:#18352e}
 .tool-rail,.map-navigation{position:absolute;right:.8rem;z-index:710;display:grid;gap:.6rem}
 .tool-rail{top:.8rem}
 .tool-group,.map-navigation{overflow:hidden;border:1px solid #cbd8ce;border-radius:.75rem;background:var(--ivory);box-shadow:0 4px 16px #0b272943}

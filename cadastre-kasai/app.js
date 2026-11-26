@@ -36,7 +36,13 @@ get('map-zoom').append(map.zoomControl.getContainer());
 map.attributionControl.setPrefix('<a href="https://leafletjs.com/" title="A JavaScript library for interactive maps">Leaflet</a> · <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="https://wilfridlutete-cpu.github.io/">Wilfrid Lutete</a>');
 
 const styles = {
-  rdc: { color: '#376b79', weight: 1.3, fillOpacity: 0 },
+  rdc: {
+    province: { stroke: false, fillOpacity: 0 },
+    frontiere: { color: '#264d58', weight: 2, interactive: false },
+    interieur: { color: '#376b79', weight: 1.35, dashArray: '5 5', interactive: false },
+    'kasai-interieur': { color: '#155c4d', weight: 2.5, interactive: false },
+  },
+  kasai: { color: '#155c4d', weight: 2.5, fillOpacity: 0 },
   unites: { color: '#56766f', weight: 1, dashArray: '4 4', fillOpacity: 0 },
   'cours-eau': (feature) => ({
     color: '#1884b6', opacity: 0.75, weight: Math.max(0.8, (feature.properties.ordre - 1) * 0.42),
@@ -207,7 +213,7 @@ function permitHover(path) {
     ['Délivrance', displayDate(p.delivrance)], ['Expiration', displayDate(p.expiration)], ['Échéance calculée', term(p)],
     ['Surface du dossier', p.surface_source],
   ];
-  if (active('rdc')) fields.push(['Province', p.province]);
+  if (active('rdc') || active('kasai')) fields.push(['Province', p.province]);
   if (active('unites')) fields.push(['Unité administrative', p.nom]);
   if (active('cours-eau')) {
     const water = matching('cours-eau', ({ type, coordinates }) => {
@@ -236,9 +242,11 @@ function permitHover(path) {
 function showLayer(name) {
   const layer = layers[name];
   if (layer) {
-    if (toggleFor(name).checked) layer.addTo(map);
+    const includedInRdc = name === 'kasai' && map.hasLayer(layers.rdc);
+    if (toggleFor(name).checked && !includedInRdc) layer.addTo(map);
     else map.removeLayer(layer);
   }
+  if (name === 'rdc') showLayer('kasai');
 }
 toggles.forEach((input) => input.addEventListener('change', () => showLayer(input.dataset.layer)));
 
@@ -352,6 +360,35 @@ async function load(name) {
   collections[name] = { type: 'FeatureCollection', features };
 }
 
+function setupProvinceLabels(provinces, kasai) {
+  const group = L.layerGroup().addTo(map);
+  const labelContext = document.createElement('canvas').getContext('2d');
+  labelContext.font = '700 12px system-ui';
+  const ordered = [kasai, ...provinces.filter((feature) => feature !== kasai)];
+  function refresh() {
+    group.clearLayers();
+    const visible = map.hasLayer(layers.rdc) ? ordered : map.hasLayer(layers.kasai) ? [kasai] : [];
+    const occupied = [];
+    const size = map.getSize();
+    for (const { properties: { nom, etiquette } } of visible) {
+      const latlng = L.GeoJSON.coordsToLatLng(etiquette);
+      const p = map.latLngToContainerPoint(latlng);
+      const half = labelContext.measureText(nom).width / 2 + 7;
+      if (p.x - half < 0 || p.x + half > size.x || p.y < 10 || p.y > size.y - 10 ||
+          occupied.some(({ x, y, width }) => Math.abs(y - p.y) < 20 && Math.abs(x - p.x) < width + half)) continue;
+      occupied.push({ x: p.x, y: p.y, width: half });
+      const label = document.createElement('span');
+      label.textContent = nom;
+      group.addLayer(L.tooltip({
+        permanent: true, direction: 'center', opacity: 1,
+        className: nom === 'Kasaï' ? 'province-label kasai-label' : 'province-label',
+      }).setLatLng(latlng).setContent(label));
+    }
+  }
+  map.on('moveend resize', refresh);
+  for (const layer of [layers.rdc, layers.kasai]) layer.on('add remove', refresh);
+}
+
 try {
   const water = load('cours-eau').catch((error) => error);
   const places = load('localites').catch((error) => error);
@@ -459,23 +496,33 @@ try {
   const nationalFailure = await national;
   if (nationalFailure) {
     toggleFor('rdc').disabled = true;
+    toggleFor('kasai').disabled = true;
     get('load-error').textContent += ' La couche des provinces de la RDC est indisponible.';
     get('load-error').hidden = false;
   } else {
     map.createPane('limites-rdc').style.zIndex = '390';
+    const provinces = collections.rdc.features.filter(({ properties }) => properties.genre === 'province');
+    const kasai = provinces.find(({ properties }) => properties.iso === 'CD-KS');
+    const attribution = '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap</a> (ODbL)';
+    function identifyProvince({ properties: p }, layer) {
+      if (p.genre !== 'province') return;
+      const content = () => details(p.nom, [['Niveau administratif', 'Province (ADM1)'], ['Pays', 'République démocratique du Congo']]);
+      bindHoverCard(layer, content);
+      layer.bindPopup(content);
+    }
     layers.rdc = L.geoJSON(collections.rdc, {
       pane: 'limites-rdc',
-      style: styles.rdc,
-      attribution: '<a href="https://www.geoboundaries.org/api/current/gbOpen/COD/ADM1/">geoBoundaries</a> · <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap</a> (ODbL)',
-      onEachFeature: ({ properties: p }, layer) => {
-        const content = () => details(p.nom, [['Niveau administratif', 'Province (ADM1)'], ['Pays', 'République démocratique du Congo']]);
-        bindHoverCard(layer, content);
-        layer.bindPopup(content);
-      },
+      style: ({ properties }) => styles.rdc[properties.genre],
+      attribution,
+      onEachFeature: identifyProvince,
     });
-    layers.kasaiInset = L.geoJSON(collections.rdc.features.filter(({ properties }) => properties.nom === 'Kasaï'));
+    layers.kasai = L.geoJSON(kasai, { pane: 'limites-rdc', style: styles.kasai, attribution, onEachFeature: identifyProvince });
+    setupProvinceLabels(provinces, kasai);
     toggleFor('rdc').addEventListener('change', () => {
       if (toggleFor('rdc').checked) map.fitBounds(layers.rdc.getBounds().pad(0.06));
+    });
+    toggleFor('kasai').addEventListener('change', () => {
+      if (toggleFor('kasai').checked) map.fitBounds(layers.kasai.getBounds().pad(0.08));
     });
     showLayer('rdc');
   }

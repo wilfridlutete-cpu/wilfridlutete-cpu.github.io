@@ -106,7 +106,7 @@
       }
       for (const input of controls) {
         const key = input.id || input.dataset.layer;
-        const checked = key === 'rdc' && view.layers?.provinces === true ? true : view.layers?.[key];
+        const checked = key === 'kasai' ? (view.layers?.kasai ?? view.layers?.provinces) : view.layers?.[key];
         if (typeof checked !== 'boolean' || input.disabled || checked === input.checked) continue;
         input.checked = checked;
         input.dispatchEvent(new Event('change'));
