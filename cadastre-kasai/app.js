@@ -293,7 +293,7 @@ function render(refit = false) {
   const totals = new Map(labels.map((label) => [label, 0]));
   for (const category of dossiers.values()) totals.set(category, totals.get(category) + 1);
   for (const option of form.elements.namedItem('term').options) {
-    option.textContent = option.value ? option.value + ' (' + totals.get(option.value) + ')' : 'Toutes (' + dossiers.size + ')';
+    option.textContent = option.value ? option.value + ' (' + totals.get(option.value) + ')' : 'Toutes';
   }
   const visible = selectedTerm ? candidates.filter(({ properties: p }) => term(p) === selectedTerm) : candidates;
   const inScope = ({ properties: p }) => scope(p, unit);
@@ -301,8 +301,6 @@ function render(refit = false) {
   layers['cours-eau']?.clearLayers().addData(collections['cours-eau'].features.filter(inScope));
   layers.localites?.clearLayers().addData(collections.localites.features.filter(inScope));
   layers.permis.clearLayers().addData(visible);
-  const total = selectedTerm ? totals.get(selectedTerm) : dossiers.size;
-  get('count').textContent = total + (total === 1 ? ' dossier minier' : ' dossiers miniers');
   map.fire('permitsfiltered', { features: visible });
   if (refit) fit();
   return visible;
@@ -529,7 +527,6 @@ try {
   tools.restoreLink();
   updateEmptyMap();
 } catch (error) {
-  get('count').textContent = 'Chargement impossible';
   get('load-error').textContent = 'Les données cartographiques n’ont pas pu être chargées. ' + error.message;
   get('load-error').hidden = false;
 }
