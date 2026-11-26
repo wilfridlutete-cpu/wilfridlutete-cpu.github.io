@@ -48,10 +48,11 @@
     ctx.stroke();
   }
 
-  function drawVectors(ctx, layers, point, strokeScale, width, height) {
+  function drawVectors(ctx, layers, point, strokeScale, width, height, unitsLayer) {
     const waterLabels = new Map();
     const permits = new Map();
     const provinces = new Map();
+    const units = new Map();
     const inFrame = (p) => p.x > 55 && p.y > 35 && p.x < width - 55 && p.y < height - 35;
     for (const layer of layers) {
       layer.eachLayer((path) => {
@@ -71,6 +72,11 @@
           }
         } else {
           trace(ctx, geometry, point);
+          if (unitsLayer === layer && properties.nom) {
+            const center = path.getCenter();
+            const anchor = point([center.lng, center.lat]);
+            if (inFrame(anchor)) units.set(properties.nom, anchor);
+          }
           if (properties.genre === 'province') {
             const anchor = point(properties.etiquette);
             if (inFrame(anchor)) provinces.set(properties.nom, anchor);
@@ -135,6 +141,7 @@
     ctx.font = 'bold 24px system-ui, sans-serif';
     for (const { p, text } of [...permits.values()].sort((a, b) => b.size - a.size)) label(text, p, 0, '#39251d');
     for (const [name, anchor] of provinces) label(name, anchor, 0, '#244954');
+    for (const [name, anchor] of units) label(name, anchor, 0, '#32594c');
     ctx.font = 'italic 23px system-ui, sans-serif';
     for (const [name, { p, angle }] of waterLabels) label(name, p, angle, '#07527e');
   }
@@ -225,14 +232,16 @@
 
   function decorate(ctx, map, area, scale, width, height, items, scope, date, tileStatus, mapLeft, mapWidth, credit, province, layout) {
     ctx.fillStyle = ink;
+    ctx.textAlign = 'center';
     ctx.font = 'bold 46px system-ui, sans-serif';
-    ctx.fillText(layout.title, 54, 58, width - 108);
+    ctx.fillText(layout.title, width / 2, 58, width - 108);
     ctx.font = '28px system-ui, sans-serif';
-    ctx.fillText(scope, 54, 96, width - 108);
+    ctx.fillText(scope, width / 2, 96, width - 108);
     if (layout.description) {
       ctx.font = '22px system-ui, sans-serif';
-      ctx.fillText(layout.description, 54, 127, width - 108);
+      ctx.fillText(layout.description, width / 2, 127, width - 108);
     }
+    ctx.textAlign = 'left';
     ctx.fillStyle = ink;
     drawFrame(ctx, map, area, mapLeft, 151, mapWidth, height);
     drawInset(ctx, province, L.latLngBounds(map.containerPointToLatLng(area.min),
@@ -268,13 +277,30 @@
     ctx.font = '24px system-ui, sans-serif';
     ctx.fillText(distance >= 1000 ? distance / 1000 + ' km' : distance + ' m', mapLeft + 32, by - 16);
 
-    const footer = 145 + height;
-    ctx.font = 'bold 30px system-ui, sans-serif';
-    if (items.length) ctx.fillText('Légende', 54, footer + 53);
+    const footer = 151 + height;
+    const { fields, legendX, sourceY, headingSize, printFactor } = layout.footer;
+    if (fields.length) {
+      ctx.font = 'bold 34px system-ui, sans-serif';
+      ctx.fillText('Permis minier · ' + layout.permitCode, 54, footer + 49, legendX - 108);
+      let y = footer + 86;
+      for (const { name, lines } of fields) {
+        ctx.font = 'bold 25px system-ui, sans-serif';
+        ctx.fillText(name, 54, y, 253);
+        ctx.font = '25px system-ui, sans-serif';
+        lines.forEach((line, index) => ctx.fillText(line, 325, y + index * 31, legendX - 375));
+        y += 31 * lines.length + 8;
+      }
+    }
+    if (items.length) {
+      ctx.font = 'bold ' + headingSize + 'px system-ui, sans-serif';
+      const baseline = footer + 22 + headingSize;
+      ctx.fillText('Légende', legendX, baseline);
+      ctx.fillRect(legendX, baseline + 6, ctx.measureText('Légende').width, Math.max(2, headingSize * 0.04));
+    }
     ctx.font = '25px system-ui, sans-serif';
     items.forEach(([text, color, symbol], index) => {
-      const x = 54 + (index % 3) * ((width - 108) / 3);
-      const y = footer + 93 + 43 * Math.floor(index / 3);
+      const x = legendX;
+      const y = footer + headingSize + 64 + 37 * index;
       ctx.fillStyle = color;
       if (symbol === 'point') {
         ctx.beginPath();
@@ -289,9 +315,8 @@
         ctx.setLineDash([]);
       } else ctx.fillRect(x, y - 18, 32, 18);
       ctx.fillStyle = ink;
-      ctx.fillText(text, x + 44, y, (width - 108) / 3 - 56);
+      ctx.fillText(text, x + 44, y, width - x - 98);
     });
-    const sourceY = footer + (items.length ? 106 + 43 * Math.ceil(items.length / 3) : 52);
     ctx.font = '22px system-ui, sans-serif';
     const sources = layout.national || province
       ? 'Limites RDC et provinces : © OpenStreetMap (ODbL) · CAMI · OCHA / RGC · HydroRIVERS · GeoNames'
@@ -305,8 +330,6 @@
     };
     ctx.fillText(tileNote[tileStatus], 54, sourceY + 32, width - 108);
     ctx.fillText('Édité par Wilfrid Lutete · wilfridlutete-cpu.github.io', 54, sourceY + 63, width - 108);
-    const [pageW, pageH] = pageSize(width, ctx.canvas.height, layout);
-    const printFactor = Math.min((pageW - 36) / width, (pageH - 36) / ctx.canvas.height);
     const denominator = Math.round(meters / scale / (printFactor * 0.0254 / 72));
     ctx.fillText('WGS 84 / Web Mercator (EPSG:3857) · Échelle ' + layout.paper + ' à 100 % ≈ 1:' + denominator.toLocaleString('fr-FR'), 54, sourceY + 94, width - 108);
     ctx.textAlign = 'right';
@@ -314,20 +337,32 @@
     ctx.textAlign = 'left';
   }
 
-  function wrapFields(ctx, fields, width) {
-    ctx.font = '24px system-ui, sans-serif';
-    return fields.flatMap(([label, value]) => {
+  function exportFooter(ctx, width, mapHeight, legend, permit, layout) {
+    const legendX = Math.round(width * 0.59);
+    const sourceFields = new Map(permit?.fields);
+    ctx.font = '25px system-ui, sans-serif';
+    const fields = permit ? ['Titulaire', 'Substances', 'Statut cadastral fourni', 'Demande', 'Délivrance', 'Expiration'].map((name) => {
       const lines = [];
       let line = '';
-      for (const word of (label + ' : ' + (value || 'Non renseigné')).split(/\s+/)) {
+      for (const word of String(sourceFields.get(name) || 'Non renseigné').split(/\s+/)) {
         const next = line ? line + ' ' + word : word;
-        if (line && ctx.measureText(next).width > width) {
+        if (line && ctx.measureText(next).width > legendX - 375) {
           lines.push(line);
           line = word;
         } else line = next;
       }
-      return [...lines, line];
-    });
+      return { name, lines: [...lines, line] };
+    }) : [];
+    const fieldsHeight = fields.length ? 90 + fields.reduce((total, { lines }) => total + 31 * lines.length + 8, 0) : 0;
+    const legendHeight = legend.length ? 60 + 37 * legend.length : 0;
+    const baseHeight = 151 + mapHeight + Math.max(fieldsHeight, legendHeight) + 170;
+    if (layout.orientation === 'auto') layout.orientation = width >= baseHeight ? 'landscape' : 'portrait';
+    const [pageW, pageH] = pageSize(width, baseHeight, layout);
+    // Reserve vertical space for a 20 pt heading even when the page height sets the scale.
+    const reserve = legend.length ? Math.ceil(Math.max(20 * width / (pageW - 36), 20 * baseHeight / (pageH - 56))) : 0;
+    const height = baseHeight + reserve;
+    const printFactor = Math.min((pageW - 36) / width, (pageH - 36) / height);
+    return { fields, legendX, height, sourceY: height - 135, headingSize: legend.length ? 20 / printFactor : 0, printFactor };
   }
 
   function save(blob, name) {
@@ -582,8 +617,8 @@
         const legend = active.map((name) => [sourceLabels[name], sourceColors[name], symbols[name]]);
         if (active.includes('rdc')) legend.push(['Autres limites provinciales', sourceColors.rdc, 'dashed'], [sourceLabels.kasai, sourceColors.kasai, 'line']);
         if (active.includes('cours-eau')) legend.push(['Tracé reporté des cartes CAMI (approx.)', sourceColors['cours-eau'], 'dashed']);
+        else legend.push(['Cours d’eau · couche masquée', sourceColors['cours-eau'], 'line']);
         if (permits) labels.forEach((label, i) => legend.push([label, colors[i]]));
-        if (!legend.length) legend.push(['Fond de carte', '#e9f1ed']);
         if (!get('export-legend').checked) legend.length = 0;
         const layout = {
           title: get('export-title').value.trim() || 'Carte des titres miniers',
@@ -591,13 +626,13 @@
           paper: get('export-paper').value,
           orientation: get('export-orientation').value,
           national: active.includes('rdc'),
+          permitCode: printPermit?.permit.code || 'sans code',
         };
         const canvas = document.createElement('canvas');
         canvas.width = width;
         const ctx = canvas.getContext('2d');
-        const fields = printPermit ? wrapFields(ctx, printPermit.fields, width - 108) : [];
-        const footerHeight = 145 + mapHeight + 190 + 43 * Math.ceil(legend.length / 3);
-        canvas.height = footerHeight + 65 + (fields.length ? 70 + 33 * fields.length : 0);
+        layout.footer = exportFooter(ctx, width, mapHeight, legend, printPermit, layout);
+        canvas.height = layout.footer.height;
         ctx.fillStyle = '#fff';
         ctx.fillRect(0, 0, width, canvas.height);
         ctx.save();
@@ -622,23 +657,17 @@
           .map((name) => layers[name]).filter((layer) => layer && map.hasLayer(layer));
         const point = ([lng, lat]) => map.project([lat, lng]).subtract(map.getPixelOrigin())
           .add(map.layerPointToContainerPoint([0, 0])).subtract(area.min).multiplyBy(scale);
-        drawVectors(ctx, visible, point, Math.max(1.4, Math.min(3.8, scale)), mapWidth, mapHeight);
+        drawVectors(ctx, visible, point, Math.max(1.4, Math.min(3.8, scale)), mapWidth, mapHeight, layers.unites);
         ctx.restore();
         const form = get('filters').elements;
-        const scope = layout.national ? 'République démocratique du Congo' :
-          ['Province du Kasaï', form.unit.value && form.unit.selectedOptions[0].text].filter(Boolean).join(' · ');
+        const unit = (form.unit.value && form.unit.selectedOptions[0].text) || printPermit?.permit.nom;
+        const scope = unit ? 'Province du Kasaï · Unité administrative : ' + unit :
+          layout.national ? 'République démocratique du Congo' : 'Province du Kasaï';
         const credit = backgrounds.find(([, layer]) => layer && layer === base)?.[2];
         const date = new Intl.DateTimeFormat('fr-FR', {
           timeZone: 'Africa/Lubumbashi', day: '2-digit', month: '2-digit', year: 'numeric',
         }).format(new Date());
         decorate(ctx, map, area, scale, width, mapHeight, legend, scope, date, tileStatus, mapLeft, mapWidth, credit, layers.kasai, layout);
-        if (fields.length) {
-          ctx.fillStyle = ink;
-          ctx.font = 'bold 30px system-ui, sans-serif';
-          ctx.fillText('Légende cadastrale · titre ' + printPermit.permit.code, 54, footerHeight + 65);
-          ctx.font = '24px system-ui, sans-serif';
-          fields.forEach((line, i) => ctx.fillText(line, 54, footerHeight + 101 + 33 * i, width - 108));
-        }
         const image = await encode(canvas, kind === 'png' ? 'image/png' : 'image/jpeg');
         save(kind === 'png' ? image : pdfFromImage(image, width, canvas.height, layout), 'carte-miniere-kasai.' + kind);
         status.textContent = 'Carte exportée.' + (tileStatus === 'partial' || tileStatus === 'unavailable' ? ' Le fond de carte est incomplet.' : '');
