@@ -204,6 +204,9 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5h18l-7 8v5l-4 2v-7z"/></svg>
         Filtres
       </button>
+      <button id="toggle-legend" type="button" aria-label="Légende" title="Légende" aria-controls="map-legend" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v2"/></svg>
+      </button>
   <form class="adresse" id="f-adresse">
     <label for="q-adresse" class="sr">Aller à une adresse, ou calculer un trajet (ex. Ixelles → Namur)</label>
     <input id="q-adresse" type="search" placeholder="Rechercher une adresse ou un lieu" autocomplete="off">
@@ -322,6 +325,35 @@
 </aside>
     <div id="map" role="region" aria-label="Carte des bornes de recharge"></div>
     <div id="map-credit">© BelgoElect 2026</div>
+    <section id="map-legend" aria-labelledby="legend-title" hidden>
+      <div class="legend-heading">
+        <h2 id="legend-title">Légende de la carte</h2>
+        <button id="close-legend" type="button" aria-label="Fermer la légende">×</button>
+      </div>
+      <h3>Puissance de recharge</h3>
+      <ul class="legend-items">
+        <li><span class="legend-dot" style="--marker-color:var(--c-lente)" aria-hidden="true"></span>Lente, moins de 22 kW</li>
+        <li><span class="legend-dot" style="--marker-color:var(--c-acceleree)" aria-hidden="true"></span>Accélérée, de 22 à moins de 50 kW</li>
+        <li><span class="legend-dot" style="--marker-color:var(--c-rapide)" aria-hidden="true"></span>Rapide, de 50 à moins de 150 kW</li>
+        <li><span class="legend-dot" style="--marker-color:var(--c-ultra)" aria-hidden="true"></span>Ultra-rapide, 150 kW et plus</li>
+        <li><span class="legend-dot" style="--marker-color:var(--c-inconnue)" aria-hidden="true"></span>Puissance inconnue</li>
+      </ul>
+      <h3>Groupes de bornes</h3>
+      <p class="legend-group"><span aria-hidden="true">12</span>Le nombre indique les emplacements regroupés. Clique sur une pastille pour zoomer.</p>
+      <p class="legend-note">Les données de la carte n’indiquent pas l’occupation des bornes en temps réel.</p>
+      <button id="show-legend-examples" type="button">Voir les exemples</button>
+    </section>
+    <dialog id="legend-examples" aria-labelledby="legend-examples-title">
+      <form method="dialog" class="legend-heading">
+        <h2 id="legend-examples-title">Trois exemples sur la carte</h2>
+        <button type="submit" aria-label="Fermer les exemples">×</button>
+      </form>
+      <ul class="legend-items">
+        <li><span class="legend-dot" style="--marker-color:var(--c-acceleree)" aria-hidden="true"></span><span><strong>Borne de 22 kW</strong> · la couleur vert moyen indique une recharge accélérée.</span></li>
+        <li><span class="legend-dot" style="--marker-color:var(--c-rapide)" aria-hidden="true"></span><span><strong>Borne de 75 kW</strong> · le vert foncé indique une recharge rapide.</span></li>
+        <li class="legend-group"><span aria-hidden="true">12</span><div><strong>Groupe de 12 emplacements</strong> · zoome pour voir les bornes séparément.</div></li>
+      </ul>
+    </dialog>
     <section id="v-stats" class="overlay" hidden aria-label="Statistiques"></section>
     <section id="v-liste" class="overlay" hidden aria-label="Liste des bornes"></section>
     <section id="planif" class="planif" hidden aria-label="Planifier un trajet et sa recharge">
@@ -435,13 +467,36 @@
 
   const filters = $('map-filters');
   const filtersButton = $('toggle-filters');
+  const legend = $('map-legend');
+  const legendButton = $('toggle-legend');
   function setFiltersOpen(open){
     filters.hidden = !open;
     filtersButton.setAttribute('aria-expanded', String(open));
   }
-  filtersButton.addEventListener('click', ()=>setFiltersOpen(filters.hidden));
+  function setLegendOpen(open){
+    legend.hidden = !open;
+    legendButton.setAttribute('aria-expanded', String(open));
+  }
+  function closeLegend(){
+    setLegendOpen(false);
+    legendButton.focus();
+  }
+  filtersButton.addEventListener('click', ()=>{
+    setLegendOpen(false);
+    setFiltersOpen(filters.hidden);
+  });
+  legendButton.addEventListener('click', ()=>{
+    setFiltersOpen(false);
+    setLegendOpen(legend.hidden);
+    if(!legend.hidden) $('close-legend').focus();
+  });
+  $('close-legend').addEventListener('click', closeLegend);
+  $('show-legend-examples').addEventListener('click', ()=>$('legend-examples').showModal());
   document.addEventListener('keydown', event=>{
-    if(event.key === 'Escape' && !filters.hidden){
+    if(event.key !== 'Escape') return;
+    if($('legend-examples').open) return;
+    if(!legend.hidden) closeLegend();
+    else if(!filters.hidden){
       setFiltersOpen(false);
       filtersButton.focus();
     }
@@ -836,6 +891,7 @@
     $('locate-map').hidden = !mapVisible;
     $('map-credit').hidden = !mapVisible;
     setFiltersOpen(false);
+    setLegendOpen(false);
     document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-selected', String(b.dataset.view===v)));
     $('v-stats').hidden = v!=='stats'; $('v-liste').hidden = v!=='liste'; $('planif').hidden = v!=='itineraire';
     if(heat){ if(v==='densite'){ map.addLayer(heat); legendHeat.addTo(map); } else { map.removeLayer(heat); legendHeat.remove(); } }
