@@ -36,8 +36,8 @@ get('map-zoom').append(map.zoomControl.getContainer());
 map.attributionControl.setPrefix('<a href="https://leafletjs.com/" title="A JavaScript library for interactive maps">Leaflet</a> · <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="https://wilfridlutete-cpu.github.io/">Wilfrid Lutete</a>');
 
 const styles = {
-  rdc: { color: '#376b79', weight: 1.3, fillColor: '#8bb6c0', fillOpacity: 0.32 },
-  unites: { color: '#56766f', weight: 1, dashArray: '4 4', fillColor: '#b6d8c2', fillOpacity: 0.33 },
+  rdc: { color: '#376b79', weight: 1.3, fillOpacity: 0 },
+  unites: { color: '#56766f', weight: 1, dashArray: '4 4', fillOpacity: 0 },
   provinces: { color: '#21584e', weight: 2, fill: false },
   'cours-eau': (feature) => ({
     color: '#1884b6', opacity: 0.75, weight: Math.max(0.8, (feature.properties.ordre - 1) * 0.42),
