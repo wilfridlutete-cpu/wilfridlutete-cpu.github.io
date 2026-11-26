@@ -12,7 +12,7 @@
    TOKENS — modifiez ces couleurs pour changer tout le thème
    ========================================================= */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
 :root{
   --navy:#0a1628; --navy2:#0f1e35; --navy3:#162540;
   --blue:#1a6ef7; --blue-d:#0f5de0; --sky:#e8f0fe; --light:#7eb8ff;
@@ -40,6 +40,7 @@ nav.scrolled{box-shadow:0 4px 20px rgba(10,22,40,.08)}
 .nav-links a:hover,.nav-links a.active{color:var(--blue)}
 .nav-links a.active::after,.nav-links a:hover::after{width:100%}
 .nav-cta{background:var(--blue);color:#fff;text-decoration:none;font-size:.85rem;font-weight:600;padding:.55rem 1.3rem;border-radius:100px;transition:all .2s}
+.nav-contact{display:none}
 .nav-cta:hover{background:var(--blue-d);transform:translateY(-1px)}
 .burger{display:none;background:none;border:0;cursor:pointer;padding:.5rem;flex-direction:column;gap:5px}
 .burger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
@@ -48,17 +49,18 @@ nav.scrolled{box-shadow:0 4px 20px rgba(10,22,40,.08)}
 .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 @media (max-width:860px){
   .nav-cta{display:none}
+  .nav-contact{display:list-item}
   .burger{display:flex}
   .nav-links{position:fixed;top:64px;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--border);
-    box-shadow:0 8px 32px rgba(10,22,40,.12);transform:translateY(-120%);transition:transform .3s;pointer-events:none}
-  .nav-links.open{transform:none;pointer-events:auto}
+    box-shadow:0 8px 32px rgba(10,22,40,.12);transform:translateY(-120%);visibility:hidden;transition:transform .3s;pointer-events:none}
+  .nav-links.open{transform:none;visibility:visible;pointer-events:auto}
   .nav-links a{display:block;padding:1rem 1.5rem;border-left:3px solid transparent}
   .nav-links a::after{display:none}
   .nav-links a.active{border-left-color:var(--blue);background:var(--sky)}
 }
 
 /* ---------- HERO ---------- */
-#hero{min-height:100svh;padding:7rem var(--px) 4rem;display:flex;align-items:center;position:relative;overflow:hidden;
+#hero{padding:8rem var(--px) 4rem;display:flex;align-items:center;position:relative;overflow:hidden;
   background:linear-gradient(150deg,var(--navy) 0%,var(--navy3) 100%);color:#fff}
 #hero::before{content:'';position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(ellipse 60% 60% at 25% 40%,rgba(26,110,247,.22),transparent 70%),
@@ -67,20 +69,13 @@ nav.scrolled{box-shadow:0 4px 20px rgba(10,22,40,.08)}
 #hero::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.07;
   background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);
   background-size:48px 48px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%)}
-.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:4rem;align-items:center;width:100%}
-.badge{display:inline-flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
-  color:var(--light);font-size:.78rem;font-weight:500;padding:.4rem 1rem;border-radius:100px;margin-bottom:1.6rem}
-.dot{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 0 rgba(74,222,128,.7);animation:pulse 2s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center;width:100%}
 h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1rem}
-h1 strong{font-weight:700}
-.typed{font-size:clamp(1rem,2vw,1.25rem);color:var(--light);font-weight:500;min-height:1.9em;margin-bottom:1.4rem}
-.typed em{font-family:var(--serif);color:var(--gold)}
-.cursor{display:inline-block;width:2px;height:1.1em;background:var(--gold);vertical-align:-3px;margin-left:3px;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-.pitch{color:rgba(255,255,255,.72);max-width:540px;font-size:1.02rem;margin-bottom:2rem}
+.hero-role{font-size:clamp(1.1rem,2vw,1.45rem);color:var(--light);font-weight:600;margin-bottom:1rem}
+.hero-location{color:rgba(255,255,255,.72);font-size:.9rem;margin-bottom:1.75rem}
+.pitch{color:rgba(255,255,255,.72);max-width:540px;font-size:1.02rem;margin-bottom:1rem}
 .pitch b{color:#fff;font-weight:600}
-.btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
 .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.7rem;border-radius:100px;font-weight:600;font-size:.92rem;text-decoration:none;transition:all .2s;cursor:pointer;border:0;font-family:inherit}
 .btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 24px rgba(26,110,247,.35)}
 .btn-primary:hover{background:var(--blue-d);transform:translateY(-2px)}
@@ -89,27 +84,19 @@ h1 strong{font-weight:700}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:560px;border-top:1px solid rgba(255,255,255,.12);padding-top:1.8rem}
 .stat b{display:block;font-family:var(--serif);font-size:2.1rem;font-weight:600;line-height:1}
 .stat span{font-size:.75rem;color:rgba(255,255,255,.55)}
-.portrait{position:relative;justify-self:center;width:min(360px,100%)}
+.portrait{position:relative;justify-self:center;width:min(320px,100%)}
 .portrait-frame{aspect-ratio:4/5;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.15);
   background:linear-gradient(160deg,#1d3a66,#0f1e35);box-shadow:var(--shadow-lg);display:grid;place-items:center}
 .portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
-.portrait-frame .initials{font-family:var(--serif);font-size:6rem;font-weight:300;color:rgba(255,255,255,.25)}
-.portrait::before{content:'';position:absolute;inset:-14px;border:1px dashed rgba(126,184,255,.35);border-radius:30px;z-index:-1}
-.float-badge{position:absolute;background:#fff;color:var(--navy);padding:.7rem 1rem;border-radius:12px;font-size:.8rem;font-weight:600;
-  box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:.5rem;animation:float 4s ease-in-out infinite}
-.float-badge.b1{bottom:-16px;left:-36px}
-.float-badge.b2{top:-16px;right:-28px;animation-delay:-2s}
-.float-badge i{font-style:normal;font-size:1.1rem}
-@keyframes float{50%{transform:translateY(-10px)}}
-@media (max-width:900px){
-  .hero-grid{grid-template-columns:1fr;text-align:center;gap:3rem}
-  .pitch{margin-inline:auto}.btns{justify-content:center}.stats{margin-inline:auto}
-  .portrait{order:-1;width:220px}.float-badge.b1{left:-34px;bottom:-14px}.float-badge.b2{right:-34px;top:-14px}
+@media (max-width:760px){
+  #hero{padding-top:6rem}
+  .hero-grid{grid-template-columns:1fr;gap:2rem}
+  .portrait{justify-self:start;width:min(220px,100%)}
 }
-@media (max-width:480px){.stats{grid-template-columns:repeat(2,1fr);row-gap:1.5rem}.float-badge{font-size:.7rem;padding:.5rem .7rem}}
+@media (max-width:480px){.stats{grid-template-columns:repeat(2,1fr);row-gap:1rem}}
 
 /* ---------- SECTIONS ---------- */
-section{padding:6rem var(--px)}
+section{padding:clamp(3rem,6vw,5rem) var(--px)}
 .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:.8rem}
 .eyebrow::before{content:'';width:28px;height:2px;background:var(--blue)}
 h2{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,4vw,2.9rem);line-height:1.1;letter-spacing:-.02em;color:var(--navy);margin-bottom:1rem}
@@ -147,8 +134,9 @@ h2 em{font-weight:300;color:var(--blue)}
 .gallery-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
 .count{font-size:.85rem;color:var(--muted)}
 .count b{color:var(--blue)}
-.note-sources{max-width:760px;margin:-.5rem 0 1.75rem;padding:.9rem 1.1rem;border-left:3px solid var(--blue);background:var(--sky);border-radius:0 8px 8px 0;font-size:.9rem;line-height:1.6;color:var(--muted)}
-.note-sources b{color:var(--navy)}
+.note-sources{max-width:760px;margin:1.75rem 0 0;padding:.9rem 1.1rem;border-left:3px solid var(--blue);background:var(--sky);border-radius:0 8px 8px 0;font-size:.9rem;line-height:1.6;color:var(--muted)}
+.note-sources summary{color:var(--navy);font-weight:600;cursor:pointer}
+.note-sources p{margin-top:.6rem}
 .filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
 .filter{font-family:inherit;font-size:.85rem;font-weight:600;padding:.55rem 1.1rem;border-radius:100px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer;transition:all .2s}
 .filter:hover{border-color:var(--blue);color:var(--blue)}
@@ -267,93 +255,81 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:2.5rem var(--px
 <nav id="nav">
   <a href="#" class="brand">Wilfrid <span>Lutete</span></a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#competences">Compétences</a></li>
     <li><a href="#galerie">Projets</a></li>
+    <li><a href="#competences">Compétences</a></li>
     <li><a href="#parcours">Parcours</a></li>
+    <li><a href="#formation">Formation</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li class="nav-contact"><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Me contacter</a>
-  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="burger" id="burger" aria-label="Menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- ===================== HERO ===================== -->
 <header id="hero">
   <div class="container hero-grid">
     <div>
-      <div class="badge"><span class="dot"></span> Basé à Bruxelles · Autorisé à travailler UE & Belgique</div>
-      <h1>Bonjour, je suis<br><strong>Wilfrid Lutete</strong></h1>
-      <div class="typed"><span id="typed"></span><span class="cursor"></span></div>
-      <p class="pitch">Ingénieur en géomatique et analyste de données géospatiales, avec une solide expérience en <b>SIG, analyse spatiale, photogrammétrie, modélisation 3D et réseaux télécoms</b>. Compétent en <b>Python, SQL et solutions ArcGIS</b>, je possède également une expertise en analyse fonctionnelle, gestion de données et automatisation des processus géospatiaux. Rigoureux, analytique et orienté solutions, je sais traduire les besoins métiers en solutions techniques efficaces et collaborer avec des équipes pluridisciplinaires pour mener à bien des projets innovants.</p>
+      <h1>Wilfrid Lutete</h1>
+      <p class="hero-role">Ingénieur en géomatique et analyste de données géospatiales</p>
+      <p class="pitch">Je réalise des projets SIG, d’analyse spatiale, de photogrammétrie et de modélisation 3D, notamment pour les réseaux télécoms. J’utilise ArcGIS, Python et SQL pour analyser les données et automatiser les traitements géospatiaux.</p>
+      <p class="hero-location">Basé à Bruxelles · Autorisé à travailler en Belgique et dans l’UE</p>
       <div class="btns">
-        <a href="#galerie" class="btn btn-primary">Voir mes projets →</a>
-        <a href="https://www.linkedin.com/in/wilfrid-lutete-7700bbb0" class="btn btn-ghost" target="_blank" rel="noopener">Mon profil LinkedIn ↗</a>
+        <a href="#galerie" class="btn btn-primary">Voir mes projets</a>
+        <a href="https://www.linkedin.com/in/wilfrid-lutete-7700bbb0" class="btn btn-ghost" target="_blank" rel="noopener">Mon profil LinkedIn</a>
       </div>
       <div class="stats">
-        <div class="stat"><b data-count="9" data-suffix="+">0</b><span>Années d'exp.</span></div>
-        <div class="stat"><b data-count="4">0</b><span>Diplômes</span></div>
-        <div class="stat"><b data-count="4">0</b><span>Certifs ESRI</span></div>
-        <div class="stat"><b data-count="6">0</b><span>Pays</span></div>
+        <div class="stat"><b>9+</b><span>Années d’expérience</span></div>
+        <div class="stat"><b>4</b><span>Diplômes</span></div>
+        <div class="stat"><b>4</b><span>Certifications Esri</span></div>
+        <div class="stat"><b>6</b><span>Pays</span></div>
       </div>
     </div>
     <div class="portrait">
       <div class="portrait-frame"><img src="photo.jpg" alt="Wilfrid Lutete Nzau"></div>
-      <div class="float-badge b1"><i>📡</i> Digital Twin télécom</div>
-      <div class="float-badge b2"><i>🛸</i> LiDAR & Drone</div>
     </div>
   </div>
 </header>
-
-<!-- ===================== COMPÉTENCES ===================== -->
-<section id="competences">
-  <div class="container">
-    <div class="eyebrow reveal">01 — Expertise</div>
-    <h2 class="reveal">Mes <em>compétences</em></h2>
-    <p class="lead reveal">De la capture terrain par drone jusqu'au jumeau numérique d'un réseau fibre : une chaîne de compétences complète autour de la donnée spatiale.</p>
-    <div class="grid-3" id="skills"></div>
-  </div>
-</section>
 
 <!-- ===================== GALERIE ===================== -->
 <section id="galerie" class="alt">
   <div class="container">
     <div class="gallery-head">
       <div>
-        <div class="eyebrow reveal">02 — Portfolio</div>
         <h2 class="reveal">Mes <em>réalisations</em></h2>
       </div>
       <div class="count">Affichage : <b id="shown">0</b> projet(s) sur <b id="total">0</b></div>
     </div>
-    <p class="note-sources reveal"><b>À propos de ces réalisations.</b> Les applications et cartes réalisées pour ce site sont des projets personnels, présentés à titre indicatif. Les sources des cartes et applications sont indiquées dans la fiche de chaque projet. Les publications scientifiques renvoient à leur éditeur d’origine. Mes missions professionnelles sont seulement décrites : aucune donnée, carte ou livrable appartenant à un employeur ou à un client n’est publié sur ce site.</p>
     <div class="filters" id="filters"></div>
     <div class="maps" id="maps"></div>
+    <details class="note-sources">
+      <summary>À propos de ces réalisations.</summary>
+      <p>Les applications et cartes réalisées pour ce site sont des projets personnels, présentés à titre indicatif. Les sources des cartes et applications sont indiquées dans la fiche de chaque projet. Les publications scientifiques renvoient à leur éditeur d’origine. Mes missions professionnelles sont seulement décrites : aucune donnée, carte ou livrable appartenant à un employeur ou à un client n’est publié sur ce site.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ===================== COMPÉTENCES ===================== -->
+<section id="competences">
+  <div class="container">
+    <h2 class="reveal">Mes <em>compétences</em></h2>
+    <p class="lead reveal">De la capture terrain par drone jusqu'au jumeau numérique d'un réseau fibre : une chaîne de compétences complète autour de la donnée spatiale.</p>
+    <div class="grid-3" id="skills"></div>
   </div>
 </section>
 
 <!-- ===================== PARCOURS ===================== -->
-<section id="parcours">
+<section id="parcours" class="alt">
   <div class="container">
-    <div class="eyebrow reveal">03 — Trajectoire</div>
     <h2 class="reveal">Mon <em>parcours</em></h2>
     <p class="lead reveal">Des missions de terrain en RDC aux réseaux télécom en Belgique : plus de 9 ans au service de la donnée géospatiale.</p>
     <div class="timeline" id="timeline"></div>
   </div>
 </section>
 
-<!-- ===================== SERVICES ===================== -->
-<section id="services" class="dark">
-  <div class="container">
-    <div class="eyebrow reveal">04 — Offres</div>
-    <h2 class="reveal">Mes <em>services</em></h2>
-    <p class="lead reveal">Des prestations sur mesure pour entreprises, opérateurs réseau, bureaux d'études et organisations internationales.</p>
-    <div class="grid-3" id="servicesGrid"></div>
-  </div>
-</section>
-
 <!-- ===================== DIPLÔMES ===================== -->
-<section id="formation" class="alt">
+<section id="formation">
   <div class="container">
-    <div class="eyebrow reveal">05 — Formation</div>
     <h2 class="reveal">Diplômes & <em>certifications</em></h2>
     <p class="lead reveal">Une formation académique en Belgique, en Égypte et en RDC, complétée par des certifications ESRI et des bourses internationales. Diplômes obtenus hors Belgique reconnus par équivalence de la Fédération Wallonie-Bruxelles.</p>
     <div class="grid-4" id="diplomas"></div>
@@ -361,11 +337,19 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:2.5rem var(--px
   </div>
 </section>
 
+<!-- ===================== SERVICES ===================== -->
+<section id="services" class="dark">
+  <div class="container">
+    <h2 class="reveal">Mes <em>services</em></h2>
+    <p class="lead reveal">Des prestations sur mesure pour entreprises, opérateurs réseau, bureaux d'études et organisations internationales.</p>
+    <div class="grid-3" id="servicesGrid"></div>
+  </div>
+</section>
+
 <!-- ===================== CONTACT ===================== -->
 <section id="contact">
   <div class="container contact-grid">
     <div>
-      <div class="eyebrow reveal">06 — Contact</div>
       <h2 class="reveal">Travaillons <em>ensemble</em></h2>
       <p class="lead reveal" style="margin-bottom:0">Un poste, une mission SIG, un projet de jumeau numérique ou de modélisation 3D ? Basé à Bruxelles, je travaille en français, en anglais et j'ai des notions de néerlandais.</p>
       <div class="socials">
@@ -435,7 +419,6 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:2.5rem var(--px
    CONTENU — modifiez ici vos informations
    ========================================================= */
 const EMAIL = "wilfridlutete@gmail.com";
-const ROLES = ["Ingénieur Géomaticien", "Data Analyst SIG", "Spécialiste LiDAR & Photogrammétrie", "Consultant Réseaux Télécom"];
 
 const SKILLS = [
   {ico:"🗺️", t:"SIG & Géomatique", d:"Analyse spatiale avancée, géotraitement et production cartographique de haute qualité.", tags:["ArcGIS Pro","QGIS","ArcGIS Enterprise","PostGIS","GeoServer","OpenStreetMap","Spatial Data Science"],
@@ -620,49 +603,40 @@ document.addEventListener("keydown", e => {
   if(e.key==="Escape") closeModal(); if(e.key==="ArrowLeft") openModal(idx-1); if(e.key==="ArrowRight") openModal(idx+1);
 });
 
-/* Texte tapé */
-(function type(){
-  const el = $("#typed"); let r=0, c=0, del=false;
-  (function tick(){
-    const w = ROLES[r];
-    el.textContent = w.slice(0, c += del ? -1 : 1);
-    let t = del ? 40 : 85;
-    if(!del && c===w.length){ del=true; t=1800; }
-    else if(del && c===0){ del=false; r=(r+1)%ROLES.length; t=300; }
-    setTimeout(tick, t);
-  })();
-})();
-
-/* Compteurs + apparition au scroll */
+/* Apparition au scroll */
 const io = new IntersectionObserver(entries => entries.forEach(en => {
   if(!en.isIntersecting) return;
   en.target.classList.add("in"); io.unobserve(en.target);
 }), {threshold:.12});
 document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
-const statsIO = new IntersectionObserver(entries => entries.forEach(en => {
-  if(!en.isIntersecting) return;
-  const el = en.target, end = +el.dataset.count, suf = el.dataset.suffix||"", t0 = performance.now();
-  (function step(now){
-    const p = Math.min((now-t0)/1400,1);
-    el.textContent = Math.round(end*(1-Math.pow(1-p,3))) + (p===1?suf:"");
-    if(p<1) requestAnimationFrame(step);
-  })(t0);
-  statsIO.unobserve(el);
-}), {threshold:.5});
-document.querySelectorAll("[data-count]").forEach(el => statsIO.observe(el));
-
 /* Nav : burger, lien actif, ombre, retour en haut */
 const burger=$("#burger"), links=$("#navLinks");
-burger.onclick = () => { burger.classList.toggle("open"); links.classList.toggle("open"); };
-links.addEventListener("click", e => { if(e.target.tagName==="A"){ burger.classList.remove("open"); links.classList.remove("open"); } });
+function setMenuOpen(open) {
+  burger.classList.toggle("open", open);
+  links.classList.toggle("open", open);
+  burger.setAttribute("aria-expanded", String(open));
+}
+burger.onclick = () => setMenuOpen(!links.classList.contains("open"));
+links.addEventListener("click", e => { if(e.target.closest("a")) setMenuOpen(false); });
+document.addEventListener("keydown", e => {
+  if(e.key === "Escape" && links.classList.contains("open")) {
+    setMenuOpen(false);
+    burger.focus();
+  }
+});
 const sections=[...document.querySelectorAll("section[id]")];
 addEventListener("scroll", () => {
   const y = scrollY;
   $("#nav").classList.toggle("scrolled", y>20);
   $("#toTop").classList.toggle("show", y>600);
   let cur=""; sections.forEach(s => { if(y >= s.offsetTop-120) cur=s.id; });
-  links.querySelectorAll("a").forEach(a => a.classList.toggle("active", a.getAttribute("href")==="#"+cur));
+  $("#nav").querySelectorAll('a[href^="#"]:not(.brand)').forEach(a => {
+    const active = a.hash === "#" + cur;
+    a.classList.toggle("active", active);
+    if(active) a.setAttribute("aria-current", "location");
+    else a.removeAttribute("aria-current");
+  });
 }, {passive:true});
 $("#toTop").onclick = () => scrollTo({top:0,behavior:"smooth"});
 
