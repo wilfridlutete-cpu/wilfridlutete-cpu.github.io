@@ -3,7 +3,22 @@
 *{box-sizing:border-box}
 body{margin:0;height:100dvh;min-height:26rem;display:grid;grid-template-rows:auto minmax(0,1fr)}
 .top,.brand,.section-title{display:flex;align-items:center;justify-content:space-between;gap:.8rem}
-.top{position:relative;padding:1rem 4.6rem 1rem 1.35rem;background:linear-gradient(110deg,#102f28,#15533f);color:#fff;justify-content:flex-start;flex-wrap:wrap;border-bottom:2px solid #cbac68}
+.top{
+  position:relative;padding:1rem 4.6rem 1rem 1.35rem;color:#102e47;
+  justify-content:flex-start;flex-wrap:wrap;border-bottom:2px solid #e4b74f;
+  background-color:#79c6f4;
+  --leopard-spots:
+    radial-gradient(ellipse 10px 6px at 12px 12px,#348dc5 43%,#184e79 50% 75%,transparent 88%),
+    radial-gradient(ellipse 6px 10px at 43px 18px,#428fc5 37%,#225378 48% 72%,transparent 90%),
+    radial-gradient(ellipse 11px 7px at 74px 10px,#4da1d4 39%,#18547c 48% 71%,transparent 86%),
+    radial-gradient(ellipse 8px 5px at 61px 37px,#398cbf 35%,#20517c 49% 72%,transparent 90%),
+    radial-gradient(ellipse 7px 10px at 21px 45px,#4a9dce 33%,#1f577e 47% 70%,transparent 88%),
+    radial-gradient(ellipse 6px 4px at 87px 47px,#255c85 60%,transparent 87%),
+    radial-gradient(ellipse 4px 3px at 34px 31px,#285780 55%,transparent 90%),
+    radial-gradient(ellipse 4px 5px at 93px 27px,#245983 53%,transparent 86%);
+  background-image:linear-gradient(100deg,#e7f7ff 4%,#c4eaff 25%,#9ddaffad 53%,#73c8fb44 80%,#72c7f460),var(--leopard-spots);
+  background-size:auto,104px 61px,104px 61px,104px 61px,104px 61px,104px 61px,104px 61px,104px 61px,104px 61px;
+}
 .flag{position:absolute;top:1.35rem;right:1.35rem;display:block;border-radius:.15rem}
 .mark{display:grid;place-items:center;flex:0 0 2.8rem;height:2.8rem;background:radial-gradient(circle at 35% 25%,#29785d,#123f34 75%);border:1px solid #72ad8b80;border-radius:.65rem;perspective:7rem}
 .gem{position:relative;width:77%;height:73%;transform:rotateX(8deg) rotateY(-10deg);filter:drop-shadow(0 .16rem .2rem #091f1b);animation:gem-tilt 4s ease-in-out}
@@ -18,7 +33,7 @@ body{margin:0;height:100dvh;min-height:26rem;display:grid;grid-template-rows:aut
 @media(hover:hover){.brand:hover .gem{animation:gem-hover 2.8s ease-in-out infinite}}
 @keyframes gem-hover{50%{transform:rotateX(-14deg) rotateY(29deg) rotateZ(5deg)}}
 @media(prefers-reduced-motion:reduce){.gem,.brand:hover .gem{animation:none}}
-h1,h2,p{margin:0}h1{font-size:1.3rem}h2{font-size:1.04rem}.brand p{color:#d1e7de;font-size:.9rem;margin-top:.15rem}
+h1,h2,p{margin:0}h1{font-size:1.3rem}h2{font-size:1.04rem}.brand p{color:#24516a;font-size:.9rem;margin-top:.15rem}
 a{color:inherit}button,select,input,summary{font:inherit}button,summary{cursor:pointer}
 button{border:1px solid var(--line);border-radius:.4rem;padding:.5rem .65rem;background:#fff;color:var(--green);font-weight:650}
 button:disabled{opacity:.55;cursor:default}
@@ -108,7 +123,7 @@ i{display:inline-block;width:.85rem;height:.65rem;border-radius:.15rem}
 .error,.map-error{color:#852a1f}.map-error{position:absolute;z-index:711;bottom:3rem;left:.8rem;max-width:calc(100% - 6rem);background:white;padding:.5rem .65rem;border-radius:.35rem;font-size:.85rem}
 .leaflet-popup-content dt{font-weight:700}.leaflet-popup-content dd{margin:0 0 .35rem;overflow-wrap:anywhere}
 @media(max-width:740px){
-  .top{padding:.65rem 3.75rem .65rem .75rem}
+  .top{padding:.65rem 3.75rem .65rem .75rem;background-image:linear-gradient(95deg,#e7f7ff 5%,#c4eaff 70%,#79c6f477 100%),var(--leopard-spots)}
   .flag{top:.8rem;right:.75rem}
   .brand{justify-content:flex-start;gap:.55rem}
   .mark{flex-basis:2.2rem;height:2.2rem}
