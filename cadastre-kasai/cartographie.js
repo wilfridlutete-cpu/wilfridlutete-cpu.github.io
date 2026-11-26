@@ -2,8 +2,8 @@
 (() => {
   const get = (id) => document.getElementById(id);
   const ink = '#103c35';
-  const sourceLabels = { provinces: 'Limites provinciales', unites: 'Unités administratives', 'cours-eau': 'Cours d’eau', localites: 'Localités' };
-  const sourceColors = { provinces: '#21584e', unites: '#56766f', 'cours-eau': '#1884b6', localites: '#632d57' };
+  const sourceLabels = { rdc: 'Provinces de la RDC', provinces: 'Limite du Kasaï', unites: 'Unités administratives', 'cours-eau': 'Cours d’eau', localites: 'Localités' };
+  const sourceColors = { rdc: '#376b79', provinces: '#21584e', unites: '#56766f', 'cours-eau': '#1884b6', localites: '#632d57' };
   const nasaCredit = 'NASA Earthdata / GIBS · Landsat WELD, composite annuel 2000 (fausses couleurs)';
   const esriCredit = 'Esri, Vantor, Earthstar Geographics et la communauté SIG';
   const osmCredit = '© contributeurs OpenStreetMap · openstreetmap.org/copyright';
@@ -279,7 +279,10 @@
     });
     const sourceY = footer + (items.length ? 106 + 43 * Math.ceil(items.length / 3) : 52);
     ctx.font = '22px system-ui, sans-serif';
-    ctx.fillText('Sources : périmètres fournis · cartes CAMI fournies · OCHA / RGC · HydroRIVERS · © OpenStreetMap · GeoNames', 54, sourceY, width - 108);
+    const sources = layout.national
+      ? 'Provinces RDC ADM1 : geoBoundaries · © OpenStreetMap / Wambacher (ODbL) · CAMI · OCHA / RGC · HydroRIVERS · GeoNames'
+      : 'Sources : périmètres fournis · cartes CAMI fournies · OCHA / RGC · HydroRIVERS · © OpenStreetMap · GeoNames';
+    ctx.fillText(sources, 54, sourceY, width - 108);
     const tileNote = {
       complete: 'Fond : ' + credit,
       partial: 'Fond partiel : ' + credit,
@@ -378,7 +381,7 @@
     osm.disabled = !remote;
     osm.checked = false;
     nasa.checked = false;
-    esri.checked = remote;
+    esri.checked = false;
     osmStatus.hidden = true;
     const tileUrl = document.querySelector('meta[name="osm-tiles"]')?.content || 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
     const streets = remote ? L.tileLayer(tileUrl, {
@@ -395,7 +398,7 @@
     const backgrounds = [
       [osm, streets, osmCredit], [nasa, satellite, nasaCredit], [esri, imagery, esriCredit],
     ];
-    let base = remote ? imagery : null;
+    let base = null;
     const satelliteCredits = new Map([
       [satellite, '<a href="https://www.earthdata.nasa.gov/data/tools/gibs">NASA GIBS</a> · Landsat WELD (2000)'],
       [imagery, '<a href="https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9">Esri World Imagery</a> · ' + esriCredit],
@@ -577,7 +580,7 @@
         const mapLeft = (width - mapWidth) / 2;
         const active = Object.keys(sourceLabels).filter((name) => layers[name] && map.hasLayer(layers[name]));
         const permits = layers.permis && map.hasLayer(layers.permis);
-        const symbols = { provinces: 'line', unites: 'dashed', 'cours-eau': 'line', localites: 'point' };
+        const symbols = { rdc: 'line', provinces: 'line', unites: 'dashed', 'cours-eau': 'line', localites: 'point' };
         const legend = active.map((name) => [sourceLabels[name], sourceColors[name], symbols[name]]);
         if (active.includes('cours-eau')) legend.push(['Tracé reporté des cartes CAMI (approx.)', sourceColors['cours-eau'], 'dashed']);
         if (permits) labels.forEach((label, i) => legend.push([label, colors[i]]));
@@ -588,6 +591,7 @@
           description: get('export-description').value.trim().replace(/\s+/g, ' '),
           paper: get('export-paper').value,
           orientation: get('export-orientation').value,
+          national: active.includes('rdc'),
         };
         const canvas = document.createElement('canvas');
         canvas.width = width;
@@ -615,14 +619,15 @@
         ctx.fillStyle = '#e9f1ed';
         ctx.fillRect(0, 0, mapWidth, mapHeight);
         const tileStatus = drawTiles(ctx, map, base, area, scale);
-        const visible = ['unites', 'provinces', 'cours-eau', 'permis', 'localites']
+        const visible = ['rdc', 'unites', 'provinces', 'cours-eau', 'permis', 'localites']
           .map((name) => layers[name]).filter((layer) => layer && map.hasLayer(layer));
         const point = ([lng, lat]) => map.project([lat, lng]).subtract(map.getPixelOrigin())
           .add(map.layerPointToContainerPoint([0, 0])).subtract(area.min).multiplyBy(scale);
         drawVectors(ctx, visible, point, Math.max(1.4, Math.min(3.8, scale)), mapWidth, mapHeight);
         ctx.restore();
         const form = get('filters').elements;
-        const scope = ['Province du Kasaï', form.unit.value && form.unit.selectedOptions[0].text].filter(Boolean).join(' · ');
+        const scope = layout.national ? 'République démocratique du Congo' :
+          ['Province du Kasaï', form.unit.value && form.unit.selectedOptions[0].text].filter(Boolean).join(' · ');
         const credit = backgrounds.find(([, layer]) => layer && layer === base)?.[2];
         const date = new Intl.DateTimeFormat('fr-FR', {
           timeZone: 'Africa/Lubumbashi', day: '2-digit', month: '2-digit', year: 'numeric',

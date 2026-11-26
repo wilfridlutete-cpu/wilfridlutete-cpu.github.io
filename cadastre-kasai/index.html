@@ -6,11 +6,11 @@
   <meta name="description" content="Carte des périmètres miniers de la province du Kasaï">
   <title>Géoportail du cadastre minier du Kasaï</title>
   <link rel="stylesheet" href="vendor/leaflet.css">
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
   <script defer src="vendor/leaflet.js"></script>
-  <script defer src="cartographie.js?v=2"></script>
+  <script defer src="cartographie.js?v=3"></script>
   <script defer src="outils.js?v=1"></script>
-  <script type="module" src="app.js?v=5"></script>
+  <script type="module" src="app.js?v=6"></script>
   <script>
     if (location.protocol === 'file:') location.replace('../Geoportail-Kasai.html');
   </script>
@@ -22,23 +22,25 @@
   </header>
   <main id="workspace">
     <div id="map" aria-label="Carte interactive des périmètres miniers"></div>
-    <button id="sidebar-toggle" type="button" aria-controls="sidebar" aria-expanded="false" hidden>Données <span aria-hidden="true">›</span></button>
+    <p id="map-empty" class="map-empty" hidden>Activez une couche ou un fond de carte dans <strong>Filtres</strong> pour afficher la carte.</p>
+    <button id="sidebar-toggle" type="button" aria-controls="sidebar" aria-expanded="false" hidden>Filtres <span aria-hidden="true">›</span></button>
     <label class="map-search"><span class="visually-hidden">Rechercher par code, titulaire ou substance</span><input id="map-search" form="filters" name="search" type="search" placeholder="Rechercher un permis"></label>
-    <aside id="sidebar" aria-label="Données et filtres" hidden>
-      <div class="section-title"><h2>Données et filtres</h2><button id="close-sidebar" type="button" aria-label="Fermer les données">×</button></div>
+    <aside id="sidebar" aria-label="Couches et filtres" hidden>
+      <div class="section-title"><h2>Couches et filtres</h2><button id="close-sidebar" type="button" aria-label="Fermer les filtres">×</button></div>
       <button id="open-catalogue" type="button">Catalogue des couches</button>
-      <details class="data-group">
+      <details class="data-group" open>
         <summary>Couches et fonds de carte</summary>
         <div class="layer-menu">
           <label><input id="osm" type="checkbox"><i class="basemap"></i> Fond OpenStreetMap</label>
           <label><input id="esri" type="checkbox"><i class="satellite"></i> Satellite Esri HD</label>
           <label><input id="nasa" type="checkbox"><i class="satellite"></i> Satellite NASA</label>
           <p id="osm-status" role="status" hidden></p>
-          <label><input type="checkbox" data-layer="provinces" checked><i class="province"></i> Provinces</label>
-          <label><input type="checkbox" data-layer="unites" checked><i class="unit"></i> Limites des unités</label>
-          <label><input type="checkbox" data-layer="cours-eau" checked><i class="water"></i> Cours d’eau</label>
-          <label><input type="checkbox" data-layer="localites" checked><i class="place"></i> Localités</label>
-          <label><input type="checkbox" data-layer="permis" checked><i class="title"></i> Périmètres miniers</label>
+          <label><input type="checkbox" data-layer="rdc"><i class="rdc"></i> Provinces de la RDC</label>
+          <label><input type="checkbox" data-layer="provinces"><i class="province"></i> Province du Kasaï</label>
+          <label><input type="checkbox" data-layer="unites"><i class="unit"></i> Limites des unités du Kasaï</label>
+          <label><input type="checkbox" data-layer="cours-eau"><i class="water"></i> Cours d’eau</label>
+          <label><input type="checkbox" data-layer="localites"><i class="place"></i> Localités</label>
+          <label><input type="checkbox" data-layer="permis"><i class="title"></i> Périmètres miniers</label>
         </div>
       </details>
       <form id="filters">
@@ -136,7 +138,7 @@
     <section id="help-tools" class="tool-panel" aria-label="Guide de la carte" hidden>
       <div class="section-title"><h2>Guide de la carte</h2><button type="button" data-close aria-label="Fermer le guide">×</button></div>
       <ol>
-        <li>Ouvrez <strong>Données</strong> pour choisir les couches et filtrer les titres.</li>
+        <li>Ouvrez <strong>Filtres</strong> pour activer les couches et filtrer les titres.</li>
         <li>Saisissez un code, un titulaire ou une substance. Appuyez sur Entrée pour cadrer les résultats.</li>
         <li>Survolez un objet pour l’identifier ou cliquez pour ouvrir sa fiche.</li>
         <li>Utilisez les outils à droite pour mesurer, dessiner, partager ou exporter la carte.</li>

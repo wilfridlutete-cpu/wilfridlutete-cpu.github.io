@@ -10,7 +10,7 @@ function setSidebar(open) {
   if (!open && sidebar.contains(document.activeElement)) sidebarToggle.focus();
   sidebar.hidden = !open;
   sidebarToggle.setAttribute('aria-expanded', String(open));
-  sidebarToggle.textContent = open ? 'Données ‹' : 'Données ›';
+  sidebarToggle.textContent = open ? 'Filtres ‹' : 'Filtres ›';
   if (open) map.fire('sidebaropened');
 }
 
@@ -36,6 +36,7 @@ get('map-zoom').append(map.zoomControl.getContainer());
 map.attributionControl.setPrefix('<a href="https://leafletjs.com/" title="A JavaScript library for interactive maps">Leaflet</a> · <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="https://wilfridlutete-cpu.github.io/">Wilfrid Lutete</a>');
 
 const styles = {
+  rdc: { color: '#376b79', weight: 1.3, fillColor: '#8bb6c0', fillOpacity: 0.32 },
   unites: { color: '#56766f', weight: 1, dashArray: '4 4', fillColor: '#b6d8c2', fillOpacity: 0.33 },
   provinces: { color: '#21584e', weight: 2, fill: false },
   'cours-eau': (feature) => ({
@@ -58,6 +59,12 @@ const layers = {};
 const collections = {};
 const toggles = [...document.querySelectorAll('[data-layer]')];
 const toggleFor = (name) => toggles.find((input) => input.dataset.layer === name);
+const mapControls = [...toggles, ...['osm', 'esri', 'nasa'].map(get)];
+
+function updateEmptyMap() {
+  get('map-empty').hidden = mapControls.some((control) => control.checked && !control.disabled);
+}
+for (const control of mapControls) control.addEventListener('change', () => queueMicrotask(updateEmptyMap));
 
 function details(title, fields) {
   const section = document.createElement('section');
@@ -305,7 +312,7 @@ async function fetchCollection(url, name) {
 
 async function load(name) {
   const endpoint = new URLSearchParams(location.search).get('wfs');
-  if (!endpoint || name === 'localites') {
+  if (!endpoint || name === 'localites' || name === 'rdc') {
     const embedded = get('data-' + name);
     if (embedded) {
       collections[name] = JSON.parse(embedded.textContent);
@@ -350,6 +357,7 @@ async function load(name) {
 try {
   const water = load('cours-eau').catch((error) => error);
   const places = load('localites').catch((error) => error);
+  const national = load('rdc').catch((error) => error);
   await Promise.all(['provinces', 'unites', 'permis'].map(load));
   layers.unites = L.geoJSON(null, {
     style: styles.unites,
@@ -458,7 +466,30 @@ try {
     showLayer('localites');
     render();
   }
+  const nationalFailure = await national;
+  if (nationalFailure) {
+    toggleFor('rdc').disabled = true;
+    get('load-error').textContent += ' La couche des provinces de la RDC est indisponible.';
+    get('load-error').hidden = false;
+  } else {
+    map.createPane('limites-rdc').style.zIndex = '390';
+    layers.rdc = L.geoJSON(collections.rdc, {
+      pane: 'limites-rdc',
+      style: styles.rdc,
+      attribution: '<a href="https://www.geoboundaries.org/api/current/gbOpen/COD/ADM1/">geoBoundaries</a> · <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap</a> (ODbL)',
+      onEachFeature: ({ properties: p }, layer) => {
+        const content = () => details(p.nom, [['Niveau administratif', 'Province (ADM1)'], ['Pays', 'République démocratique du Congo']]);
+        bindHoverCard(layer, content);
+        layer.bindPopup(content);
+      },
+    });
+    toggleFor('rdc').addEventListener('change', () => {
+      if (toggleFor('rdc').checked) map.fitBounds(layers.rdc.getBounds().pad(0.06));
+    });
+    showLayer('rdc');
+  }
   tools.restoreLink();
+  updateEmptyMap();
 } catch (error) {
   get('count').textContent = 'Chargement impossible';
   get('load-error').textContent = 'Les données cartographiques n’ont pas pu être chargées. ' + error.message;
