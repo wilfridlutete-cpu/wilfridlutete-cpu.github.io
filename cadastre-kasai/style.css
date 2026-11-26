@@ -95,7 +95,7 @@ fieldset{margin:0;padding:.45rem .55rem .6rem;border:1px solid var(--line);borde
 .leaflet-tooltip.place-label{color:#391d33;font-weight:700}
 .leaflet-tooltip.water-label{color:#07527e;font-style:italic}
 .layer-sources{margin-top:.45rem;font-size:.75rem}
-.satellite-credit{background:#fffffff0;color:#233d39;padding:.2rem .4rem;border-radius:.25rem;font-size:.68rem;max-width:min(24rem,65vw)}
+#map .leaflet-control-attribution{max-width:min(38rem,calc(100vw - 1rem));padding:.12rem .38rem;border-radius:.3rem 0 0 0;text-align:right;line-height:1.25}
 .map-hover-card{position:absolute;top:0;left:0;z-index:700;pointer-events:none;width:max-content;max-width:min(22rem,calc(100% - 1rem));max-height:calc(100% - 1rem);overflow:hidden;overflow-wrap:anywhere;padding:.55rem .7rem;border:1px solid #bbccc2;border-radius:.4rem;background:#fbf8f0;color:#18352e;box-shadow:0 3px 12px #0b27294d;font-size:.8rem;line-height:1.35}
 .map-hover-card dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:.15rem .5rem;margin:.3rem 0 0}
 .map-hover-card dt{font-weight:700}.map-hover-card dd{margin:0}
@@ -121,7 +121,8 @@ i{display:inline-block;width:.85rem;height:.65rem;border-radius:.15rem}
   .tool-rail,.map-navigation{right:.45rem}
   .tool-rail{top:.5rem}
   .tool-group button{width:3.35rem}
-  .map-readout{left:.5rem;font-size:.66rem}
+  .map-readout{left:.5rem;bottom:2.25rem;font-size:.66rem}
+  #map .leaflet-bottom.leaflet-left{bottom:3.65rem}
   .leaflet-popup-content{max-width:calc(100vw - 4rem)}
   form input,form select{font-size:1rem}
 }

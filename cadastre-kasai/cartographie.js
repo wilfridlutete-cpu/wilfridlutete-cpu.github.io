@@ -411,17 +411,11 @@
       [satellite, '<a href="https://www.earthdata.nasa.gov/data/tools/gibs">NASA GIBS</a> · Landsat WELD (2000)'],
       [imagery, '<a href="https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9">Esri World Imagery</a> · ' + esriCredit],
     ]);
-    const creditControl = L.control({ position: 'bottomleft' });
-    creditControl.onAdd = () => {
-      const element = L.DomUtil.create('div', 'satellite-credit');
-      L.DomEvent.disableClickPropagation(element);
-      return element;
-    };
-    creditControl.addTo(map);
+    let activeCredit;
     function updateCredit() {
-      const element = creditControl.getContainer();
-      element.innerHTML = satelliteCredits.get(base) || '';
-      element.hidden = !element.innerHTML;
+      if (activeCredit) map.attributionControl.removeAttribution(activeCredit);
+      activeCredit = satelliteCredits.get(base);
+      if (activeCredit) map.attributionControl.addAttribution(activeCredit);
     }
     for (const [input, layer] of backgrounds) {
       if (!layer) continue;
