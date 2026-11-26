@@ -67,7 +67,7 @@ fieldset{margin:0;padding:.45rem .55rem .6rem;border:1px solid var(--line);borde
 .rdc,.kasai{background:#526a72;box-shadow:0 0 0 1px #526a72}
 .rdc{border:2px dashed #fff}
 .kasai{border:2px solid #fff}
-.leaflet-limites-rdc-pane canvas{filter:drop-shadow(0 0 1px #183541)}
+.leaflet-limites-rdc-pane>svg{filter:drop-shadow(0 0 1px #183541)}
 .leaflet-tooltip.province-label{padding:0;border:0;background:transparent;color:#fff;box-shadow:none;font:700 12px system-ui;text-shadow:0 1px 2px #162e38,0 0 2px #162e38}
 .leaflet-tooltip.kasai-label{color:#f1cf87}
 .tool-rail,.map-navigation{position:absolute;right:.8rem;z-index:710;display:grid;gap:.6rem}

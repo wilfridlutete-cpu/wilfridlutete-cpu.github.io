@@ -1,7 +1,7 @@
 const L = window.L;
 const form = document.querySelector('#filters');
 const get = (id) => document.getElementById(id);
-const map = L.map('map', { preferCanvas: true, maxZoom: 19 }).setView([-5.5, 21.9], 7);
+const map = L.map('map', { maxZoom: 19 }).setView([-5.5, 21.9], 7);
 const sidebar = get('sidebar');
 const sidebarToggle = get('sidebar-toggle');
 const compactLayout = matchMedia('(max-width: 740px)');
