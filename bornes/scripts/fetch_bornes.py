@@ -649,8 +649,11 @@ def ecrire(features: list[dict]) -> None:
         },
         "features": [compacte(f) for f in features],
     }
-    (OUT_DIR / "bornes.geojson").write_text(
-        json.dumps(geojson, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    encoded = json.dumps(geojson, ensure_ascii=False, separators=(",", ":"))
+    (OUT_DIR / "bornes.geojson").write_text(encoded, encoding="utf-8")
+    # L'ouverture directe depuis Windows ne permet pas de lire un fichier voisin via fetch().
+    (OUT_DIR / "bornes-local.js").write_text(
+        f"globalThis.belgoElectDataset = {encoded};\n", encoding="utf-8")
 
     cols = ["source", "osm_id", "ref", "nom", "operateur", "reseau", "region", "commune", "adresse", "type_lieu",
             "puissance_kw", "puissance_estimee", "classe", "courant", "prises", "points", "vehicules", "payant",

@@ -84,7 +84,10 @@
   .auteur a{color:#fff;font-weight:600;text-decoration:none}
   .auteur a:hover{color:var(--accent);text-decoration:underline}
   main{position:relative;display:flex;flex-direction:column;min-height:0}
-  .tabs{display:flex;gap:2px;background:var(--panel);border-bottom:1px solid var(--line);padding:0 12px;overflow-x:auto}
+  .view-nav{display:flex;flex:none;background:var(--panel);border-bottom:1px solid var(--line)}
+  .home-link{display:flex;align-items:center;padding:0 16px;color:var(--ink);font-weight:700;text-decoration:none;border-right:1px solid var(--line)}
+  .home-link:hover,.home-link:focus-visible{background:var(--soft)}
+  .tabs{display:flex;gap:2px;min-width:0;padding:0 8px;overflow-x:auto}
   .tabs button{background:transparent;border:0;border-bottom:3px solid transparent;border-radius:0;color:var(--muted);padding:12px 14px;white-space:nowrap}
   .tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--accent)}
   .tabs button:hover{color:var(--ink)}
@@ -179,9 +182,38 @@
     .hide-m{display:none}
   }
 </style>
+<link rel="stylesheet" href="assets/carte.css">
 </head>
 <body>
-<aside>
+<main>
+  <header class="view-nav">
+    <a class="map-brand" href="accueil.html"><img src="assets/eco-auto.svg" width="36" height="36" alt="">BelgoElect</a>
+    <a class="home-link" href="accueil.html">Accueil</a>
+    <a class="home-link" href="mobile.html">Mobile</a>
+  <nav class="tabs" role="tablist" aria-label="Vues">
+    <button role="tab" data-view="carte" aria-selected="true">Carte</button>
+    <button role="tab" data-view="itineraire" aria-selected="false">Trajet et recharge</button>
+    <button role="tab" data-view="densite" aria-selected="false">Densité</button>
+    <button role="tab" data-view="stats" aria-selected="false">Statistiques</button>
+    <button role="tab" data-view="liste" aria-selected="false">Liste</button>
+  </nav>
+  </header>
+  <div class="stage">
+    <div class="map-tools">
+      <button id="toggle-filters" type="button" aria-controls="map-filters" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5h18l-7 8v5l-4 2v-7z"/></svg>
+        Filtres
+      </button>
+  <form class="adresse" id="f-adresse">
+    <label for="q-adresse" class="sr">Aller à une adresse, ou calculer un trajet (ex. Ixelles → Namur)</label>
+    <input id="q-adresse" type="search" placeholder="Rechercher une adresse ou un lieu" autocomplete="off">
+    <button type="submit">Aller</button>
+  </form>
+    </div>
+    <button id="locate-map" class="locate-map" type="button" aria-label="Bornes autour de moi" title="Bornes autour de moi">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/></svg>
+    </button>
+<aside id="map-filters" aria-label="Filtres de la carte" hidden>
   <header>
     <h1>Bornes de recharge <span>en Belgique</span></h1>
     <p class="lead">Où recharger votre voiture électrique ? Toutes les bornes publiques de Bruxelles, de Flandre et de Wallonie sur une seule carte, avec leur puissance, leurs prises et leur opérateur. Données ouvertes, actualisées chaque nuit.</p>
@@ -195,11 +227,7 @@
     <button type="button" data-region="Flandre" aria-pressed="false">Flandre <small data-nr="Flandre"></small></button>
     <button type="button" data-region="Wallonie" aria-pressed="false">Wallonie <small data-nr="Wallonie"></small></button>
   </div>
-  <form class="adresse" id="f-adresse">
-    <label for="q-adresse" class="sr">Aller à une adresse, ou calculer un trajet (ex. Ixelles → Namur)</label>
-    <input id="q-adresse" type="search" placeholder="Adresse, ou trajet : Ixelles → Namur" autocomplete="off">
-    <button type="submit">Aller</button>
-  </form>
+
 
   <fieldset id="f-classe">
     <legend>Vitesse de recharge</legend>
@@ -288,20 +316,10 @@
     Données <a href="https://data.mobility.brussels" target="_blank" rel="noopener">Bruxelles Mobilité</a> et
     <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© contributeurs OpenStreetMap</a> (licence ODbL).
     <span id="maj"></span><br>
-    Une borne manque ? Ajoutez-la sur <a href="https://www.openstreetmap.org" target="_blank" rel="noopener">OpenStreetMap</a> : elle apparaîtra ici le lendemain.
+    Une borne manque ? Ajoutez-la sur <a href="https://www.openstreetmap.org/fixthemap" target="_blank" rel="noopener">OpenStreetMap</a>. Elle pourra apparaître après la prochaine collecte réussie.
   </p>
   <p class="auteur">Réalisé par <a href="https://wilfridlutete-cpu.github.io/">Wilfrid Lutete</a></p>
 </aside>
-
-<main>
-  <nav class="tabs" role="tablist" aria-label="Vues">
-    <button role="tab" data-view="carte" aria-selected="true">Carte</button>
-    <button role="tab" data-view="itineraire" aria-selected="false">Trajet et recharge</button>
-    <button role="tab" data-view="densite" aria-selected="false">Densité</button>
-    <button role="tab" data-view="stats" aria-selected="false">Statistiques</button>
-    <button role="tab" data-view="liste" aria-selected="false">Liste</button>
-  </nav>
-  <div class="stage">
     <div id="map" role="region" aria-label="Carte des bornes de recharge"></div>
     <section id="v-stats" class="overlay" hidden aria-label="Statistiques"></section>
     <section id="v-liste" class="overlay" hidden aria-label="Liste des bornes"></section>
@@ -382,21 +400,52 @@
   const showStatus = (txt, ms) => { status.hidden = false; status.textContent = txt; if(ms) setTimeout(()=>status.hidden = true, ms); };
 
   // --- Carte et fonds de plan ---
-  const map = L.map('map', {preferCanvas:true, zoomControl:true});
+  const map = L.map('map', {preferCanvas:true, zoomControl:false});
   map.fitBounds(ZONES['']);
   const fonds = {
-    'Plan (OpenStreetMap)': L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:19,
-      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">contributeurs OpenStreetMap</a>'}),
     'Satellite (Esri)': L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom:19,
       attribution:'Imagerie &copy; Esri, Maxar, Earthstar Geographics | Bornes &copy; <a href="https://www.openstreetmap.org/copyright">contributeurs OpenStreetMap</a>'}),
-    'Clair (CARTO)': L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {maxZoom:20, subdomains:'abcd',
-      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">contributeurs OpenStreetMap</a> &copy; CARTO'}),
-    'Sombre (CARTO)': L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {maxZoom:20, subdomains:'abcd',
-      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">contributeurs OpenStreetMap</a> &copy; CARTO'})
+    'Plan (OpenStreetMap)': L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom:19,
+      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">contributeurs OpenStreetMap</a>'
+    })
   };
-  fonds['Plan (OpenStreetMap)'].addTo(map);
-  L.control.layers(fonds, null, {position:'topright'}).addTo(map);
+  const planOSM = fonds['Plan (OpenStreetMap)'];
+  const satellite = fonds['Satellite (Esri)'];
+  planOSM.on('tileerror', ()=>{
+    setTimeout(()=>{
+      if(!map.hasLayer(planOSM)) return;
+      map.removeLayer(planOSM);
+      satellite.addTo(map);
+      showStatus('Fond OpenStreetMap indisponible. Affichage de la vue satellite.', 5000);
+    }, 0);
+  });
+  (location.protocol === 'file:' ? satellite : planOSM).addTo(map);
+  L.control.zoom({position:'topleft'}).addTo(map);
+  const locateControl = L.control({position:'topleft'});
+  locateControl.onAdd = () => {
+    const button = $('locate-map');
+    L.DomEvent.disableClickPropagation(button);
+    return button;
+  };
+  locateControl.addTo(map);
+  L.control.layers(fonds, null, {position:'bottomright'}).addTo(map);
   L.control.scale({imperial:false}).addTo(map);
+
+  const filters = $('map-filters');
+  const filtersButton = $('toggle-filters');
+  function setFiltersOpen(open){
+    filters.hidden = !open;
+    filtersButton.setAttribute('aria-expanded', String(open));
+  }
+  filtersButton.addEventListener('click', ()=>setFiltersOpen(filters.hidden));
+  document.addEventListener('keydown', event=>{
+    if(event.key === 'Escape' && !filters.hidden){
+      setFiltersOpen(false);
+      filtersButton.focus();
+    }
+  });
+  $('locate-map').addEventListener('click', ()=>$('btn-loc').click());
 
   const cluster = L.markerClusterGroup({chunkedLoading:true, disableClusteringAtZoom:16, maxClusterRadius:50});
   map.addLayer(cluster);
@@ -467,37 +516,85 @@
     return f;
   }
 
-  // --- Chargement : fichier préparé chaque nuit, sinon requête Overpass en direct sur Bruxelles ---
+  const osmRegions = new Map([
+    ['BE-BRU', 'Bruxelles-Capitale'],
+    ['BE-VLG', 'Flandre'],
+    ['BE-WAL', 'Wallonie']
+  ]);
+
+  async function loadSnapshot(){
+    if(location.protocol !== 'file:'){
+      try{
+        const response = await fetch('data/bornes.geojson', {cache:'no-cache'});
+        if(response.ok) return await response.json();
+      }catch(error){ /* La copie JavaScript peut rester accessible. */ }
+    }
+    return new Promise((resolve, reject)=>{
+      const script = document.createElement('script');
+      script.src = 'data/bornes-local.js';
+      script.onload = () => {
+        const dataset = globalThis.belgoElectDataset;
+        delete globalThis.belgoElectDataset;
+        script.remove();
+        resolve(dataset);
+      };
+      script.onerror = () => {
+        script.remove();
+        reject(new Error('Copie locale indisponible'));
+      };
+      document.head.append(script);
+    });
+  }
+
+  // Le fichier publié fournit les données officielles et OSM. Overpass complète les régions manquantes.
   async function load(){
+    let features = [];
     try{
-      const r = await fetch('data/bornes.geojson', {cache:'no-cache'});
-      if(!r.ok) throw new Error(r.status);
-      const gj = await r.json();
+      const gj = await loadSnapshot();
+      features = gj.features.map(upgrade);
       if(gj.metadata && gj.metadata.genere_le)
         $('maj').textContent = 'Mise à jour : ' + new Date(gj.metadata.genere_le).toLocaleString('fr-BE') + '.';
-      return gj.features.map(upgrade);
-    }catch(e){
-      showStatus('Interrogation directe d’OpenStreetMap pour Bruxelles (10 à 60 s)…');
-      return await loadLive();
+    }catch(e){ /* Le portail peut aussi démarrer sans fichier publié. */ }
+    const coverage = new Set(features.map(f=>f.properties.region));
+    const missing = [...osmRegions].filter(([, name])=>!coverage.has(name));
+    if(!missing.length) return features;
+    showStatus('Recherche des bornes OpenStreetMap en ' + missing.map(([, name])=>name).join(', ') + '…');
+    try{
+      const extra = await loadLive(missing);
+      $('maj').textContent += ' Données OpenStreetMap chargées en direct pour les régions complémentaires.';
+      return features.concat(extra);
+    }catch(error){
+      if(!features.length) throw error;
+      $('maj').textContent += ' Couverture partielle : OpenStreetMap est temporairement indisponible pour les régions manquantes.';
+      return features;
     }
   }
-  async function loadLive(){
-    const q = '[out:json][timeout:180];area["ISO3166-2"="BE-BRU"]->.r;rel(area.r)["boundary"="administrative"]["admin_level"="8"];map_to_area->.cs;'+
-      'foreach.cs->.c(.c out tags;(node["amenity"="charging_station"](area.c);way["amenity"="charging_station"](area.c););out center tags;);';
+  async function loadLive(regions){
+    const q = '[out:json][timeout:45];' + regions.map(([code])=>
+      'area["ISO3166-2"="'+code+'"]->.r;.r out tags;nwr["amenity"="charging_station"](area.r);out center tags;'
+    ).join('');
     const servers = ['https://overpass-api.de/api/interpreter','https://overpass.kumi.systems/api/interpreter'];
     let js = null, last;
     for(const url of servers){
-      try{ const r = await fetch(url, {method:'POST', body:'data=' + encodeURIComponent(q)}); if(!r.ok) throw new Error('HTTP '+r.status); js = await r.json(); break; }
+      try{
+        const r = await fetch(url, {method:'POST', body:'data=' + encodeURIComponent(q), signal:AbortSignal.timeout(55000)});
+        if(!r.ok) throw new Error('HTTP '+r.status);
+        const result = await r.json();
+        if(result.remark || !Array.isArray(result.elements)) throw new Error('Réponse Overpass incomplète');
+        js = result;
+        break;
+      }
       catch(e){ last = e; }
     }
     if(!js) throw last || new Error('Overpass indisponible');
-    $('maj').textContent = 'Données en direct (Bruxelles uniquement).';
-    const out = [], seen = new Set(); let commune = '';
+    const out = [], seen = new Set(); let region = '';
     js.elements.forEach(el=>{
-      if(el.type==='area'){ commune = (el.tags&&(el.tags['name:fr']||el.tags.name))||''; return; }
+      if(el.type==='area'){ region = osmRegions.get(el.tags?.['ISO3166-2']) || ''; return; }
+      if(!region) return;
       const key = el.type+'/'+el.id; if(seen.has(key)) return; seen.add(key);
-      const f = toFeature(el, 'Bruxelles-Capitale', commune); if(f) out.push(f);
+      const f = toFeature(el, region, el.tags?.['addr:city'] || ''); if(f) out.push(f);
     });
+    if(regions.some(([, name])=>!out.some(f=>f.properties.region===name))) throw new Error('Couverture Overpass incomplète');
     return out;
   }
 
@@ -733,6 +830,10 @@
   // --- Vues ---
   function setView(v){
     view = v;
+    const mapVisible = v !== 'liste' && v !== 'stats';
+    document.querySelector('.map-tools').hidden = !mapVisible;
+    $('locate-map').hidden = !mapVisible;
+    setFiltersOpen(false);
     document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-selected', String(b.dataset.view===v)));
     $('v-stats').hidden = v!=='stats'; $('v-liste').hidden = v!=='liste'; $('planif').hidden = v!=='itineraire';
     if(heat){ if(v==='densite'){ map.addLayer(heat); legendHeat.addTo(map); } else { map.removeLayer(heat); legendHeat.remove(); } }
@@ -1104,6 +1205,8 @@
       if(q.get('arrivee')) $('t-arr').value=q.get('arrivee');
       setView('itineraire');
       if($('t-arr').value && $('t-dep').value) calculerTrajet();
+    } else if (q.get('vue') === 'itineraire' || q.get('vue') === 'stats') {
+      setView(q.get('vue'));
     }
   }).catch(err=>{
     showStatus('Impossible de charger les bornes (' + err.message + '). Réessayez dans quelques minutes.');

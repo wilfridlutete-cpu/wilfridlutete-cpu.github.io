@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Retrouvez la carte des bornes et le planificateur BelgoElect sur votre téléphone.">
+  <title>Mobile | BelgoElect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+  <link rel="stylesheet" href="assets/accueil.css">
+  <link rel="stylesheet" href="assets/mobile.css">
+  <script src="assets/mobile.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="accueil.html"><img src="assets/eco-auto.svg" width="42" height="42" alt="">BelgoElect</a>
+      <nav aria-label="Navigation principale">
+        <a href="accueil.html">Accueil</a>
+        <a href="index.html">Carte</a>
+        <a href="mobile.html" aria-current="page">Mobile</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero mobile-hero" aria-labelledby="titre">
+      <div class="wrap hero-inner">
+        <p class="eyebrow">BelgoElect sur mobile</p>
+        <h1 id="titre">Vos bornes <em>à portée de main.</em></h1>
+        <p class="intro">Trouvez une prise compatible et préparez votre prochain arrêt depuis votre téléphone.</p>
+        <div class="actions">
+          <a class="button" href="index.html">Ouvrir la carte</a>
+          <a class="button secondary" href="#installation">Accès sur Android et iPhone</a>
+        </div>
+      </div>
+      <figure class="phone-figure">
+        <img class="hero-photo" src="assets/belgoelect-mobile-gand.jpg" width="1448" height="1086" fetchpriority="high" alt="Aux quais du Graslei, une femme noire tient un téléphone affichant une maquette de la carte BelgoElect, en vert sur une scène en noir et blanc.">
+        <figcaption>Maquette de BelgoElect · Graslei, Gand</figcaption>
+      </figure>
+    </section>
+    <section class="wrap guide" id="installation" aria-labelledby="installation-titre">
+      <h2 id="installation-titre">Accéder à BelgoElect sur votre téléphone</h2>
+      <p>Sur Android comme sur iPhone, ouvrez le portail dans votre navigateur. Vous pouvez ensuite ajouter un raccourci à votre écran d’accueil.</p>
+      <div class="topics mobile-topics">
+        <article>
+          <h3>Android</h3>
+          <p>Dans Chrome, ouvrez le menu ⋮ puis choisissez « Ajouter à l’écran d’accueil ».</p>
+          <div class="store-status">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="#00d7ff" d="M3 2c-.5.3-.8.8-.8 1.5v17c0 .7.3 1.2.8 1.5l10-10z"/>
+              <path fill="#00e676" d="M3 2c.5-.3 1.1-.3 1.7 0l12.4 7-4.1 3z"/>
+              <path fill="#ff4848" d="m3 22 10-10 4.1 3-12.4 7c-.6.3-1.2.3-1.7 0z"/>
+              <path fill="#ffcf00" d="m17.1 9 4 2.2a.9.9 0 0 1 0 1.6l-4 2.2-4.1-3z"/>
+            </svg>
+            <div><strong>Google Play</strong><small>Téléchargement indisponible</small></div>
+          </div>
+        </article>
+        <article>
+          <h3>iPhone</h3>
+          <p>Dans Safari, ouvrez le menu de partage puis choisissez « Sur l’écran d’accueil ».</p>
+          <div class="store-status">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.5 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09ZM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.57-2.33 4.5-3.74 4.25Z"/>
+            </svg>
+            <div><strong>App Store</strong><small>Téléchargement indisponible</small></div>
+          </div>
+        </article>
+        <article>
+          <h3>Escapade en Flandre</h3>
+          <p>Préparez un trajet de Bruges vers Gand, avec les quais du Graslei comme étape de visite.</p>
+          <a href="index.html?depart=Bruges&amp;arrivee=Gand">Planifier Bruges–Gand</a>
+        </article>
+      </div>
+    </section>
+    <section class="networks" aria-labelledby="reseaux-titre">
+      <div class="wrap">
+        <h2 id="reseaux-titre">Réseaux de recharge en Belgique</h2>
+        <p>BelgoElect regroupe les données ouvertes sur les bornes de ces réseaux pour les afficher sur une seule carte.</p>
+      </div>
+      <div class="network-window" tabindex="0" role="region" aria-label="Liste défilante des opérateurs">
+        <div class="network-track">
+          <ul class="network-cards">
+            <li><img src="assets/operateurs/energyvision.png" alt="EnergyVision"></li>
+            <li><img src="assets/operateurs/totalenergies.png" alt="TotalEnergies"></li>
+            <li><img src="assets/operateurs/dats24.png" alt="DATS 24"></li>
+            <li><img src="assets/operateurs/allego.png" alt="Allego"></li>
+            <li><img src="assets/operateurs/electra.png" alt="Electra"></li>
+            <li><img src="assets/operateurs/fastned.png" alt="Fastned"></li>
+            <li><img src="assets/operateurs/luminus.png" alt="Luminus"></li>
+            <li><img src="assets/operateurs/smappee.png" alt="Smappee"></li>
+            <li><img src="assets/operateurs/powerdot.png" alt="Powerdot"></li>
+            <li><img src="assets/operateurs/eneco.png" alt="Eneco"></li>
+            <li><img src="assets/operateurs/chargewell.png" alt="Chargewell"></li>
+            <li><img src="assets/operateurs/d-ieteren.png" alt="D’Ieteren Energy"></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="brand" href="accueil.html"><img src="assets/eco-auto.svg" width="32" height="32" alt="">BelgoElect</a>
+    </div>
+  </footer>
+</body>
+</html>

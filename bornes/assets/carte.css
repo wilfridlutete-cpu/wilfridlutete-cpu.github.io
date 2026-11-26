@@ -1,0 +1,94 @@
+body {
+  display: block;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+main { height: 100%; }
+.view-nav {
+  align-items: center;
+  gap: .25rem;
+  min-height: 4.25rem;
+  padding-inline: clamp(.75rem, 2vw, 2rem);
+}
+.map-brand {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: .6rem;
+  margin-right: clamp(.25rem, 2vw, 2rem);
+  color: var(--ink);
+  font: 700 1.25rem var(--display);
+  text-decoration: none;
+}
+.home-link {
+  min-height: 44px;
+  padding-inline: .75rem;
+  border: 0;
+  border-radius: .4rem;
+}
+.tabs { margin-inline-start: auto; }
+.tabs button { min-height: 44px; }
+
+.map-tools {
+  position: absolute;
+  z-index: 1102;
+  inset: 14px 14px auto auto;
+  display: flex;
+  gap: 8px;
+  width: min(520px, calc(100% - 74px));
+}
+.map-tools form {
+  flex: 1;
+  min-width: 0;
+  gap: 0;
+  padding: 4px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #102e2429;
+}
+.map-tools input { width: 100%; border: 0; background: var(--panel); font-size: 16px; }
+.map-tools form button { flex: none; }
+#toggle-filters, .locate-map {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--ink);
+  box-shadow: 0 2px 8px #102e2429;
+}
+#toggle-filters[aria-expanded="true"] { background: var(--soft); }
+
+#map-filters {
+  position: absolute;
+  z-index: 1101;
+  inset: 72px 14px auto auto;
+  width: min(360px, calc(100% - 28px));
+  max-height: calc(100% - 86px);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 8px 26px #102e2450;
+  overscroll-behavior: contain;
+}
+#map-filters[hidden], .map-tools[hidden], .locate-map[hidden] { display: none; }
+#status { top: auto; bottom: 36px; width: max-content; max-width: min(75%, 32rem); }
+.locate-map {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+}
+@media (max-width: 760px) {
+  .view-nav { flex-wrap: wrap; gap: 0; padding-top: .25rem; }
+  .map-brand { margin-right: auto; }
+  .tabs { flex: 0 1 100%; margin: 0; padding: 0; }
+  .tabs button { padding-inline: .65rem; }
+  .planif { top: 72px; left: 56px; max-height: calc(100% - 86px); }
+  .charts { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .map-tools { inset: 14px 10px auto 60px; width: auto; flex-wrap: wrap; }
+  .map-tools form { flex-basis: 100%; }
+  #map-filters { top: 112px; max-height: calc(100% - 126px); }
+  .planif { top: 112px; max-height: calc(100% - 126px); }
+}

@@ -1,0 +1,61 @@
+.mobile-hero h1 em { display: block; }
+.phone-figure { position: relative; margin: 0; }
+.phone-figure figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: .5rem 1rem;
+  background: #071912e8;
+  color: white;
+  font-size: .95rem;
+}
+.mobile-topics .store-status {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  min-height: 3.5rem;
+  margin-top: auto;
+  padding: .5rem .8rem;
+  border: 1px solid #767676;
+  border-radius: .6rem;
+  background: #111;
+  color: #fff;
+  line-height: 1.15;
+}
+.store-status svg { flex: none; width: 1.8rem; height: 1.8rem; }
+.store-status strong, .store-status small { display: block; }
+.store-status small { margin-top: .2rem; color: #e0e0e0; font-size: .875rem; }
+.networks { padding-block: clamp(3rem, 6vw, 5rem); background: var(--forest); color: white; }
+.network-window {
+  overflow-x: auto;
+  padding-block: .5rem 1rem;
+  margin-block: 1rem;
+  scrollbar-width: none;
+}
+.network-window:focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; }
+.network-track { display: flex; width: max-content; }
+.network-cards {
+  display: flex;
+  gap: .9rem;
+  margin: 0;
+  padding: 0 .9rem 0 0;
+  list-style: none;
+}
+.network-cards li {
+  display: grid;
+  place-items: center;
+  width: 12rem;
+  min-height: 6rem;
+  padding: .8rem;
+  border-radius: .75rem;
+  border-bottom: .28rem solid #80cd79;
+  background: var(--paper);
+}
+.network-cards img {
+  display: block;
+  width: 100%;
+  height: 4.5rem;
+  object-fit: contain;
+}
+@media (max-width: 850px) {
+  .phone-figure { grid-row: 1; }
+}
