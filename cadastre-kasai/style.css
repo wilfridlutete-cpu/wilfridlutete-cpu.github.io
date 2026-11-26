@@ -112,10 +112,6 @@ fieldset{margin:0;padding:.45rem .55rem .6rem;border:1px solid var(--line);borde
 .leaflet-tooltip.water-label{color:#07527e;font-style:italic}
 .layer-sources{margin-top:.45rem;font-size:.75rem}
 #map .leaflet-control-attribution{max-width:min(38rem,calc(100vw - 1rem));padding:.12rem .38rem;border-radius:.3rem 0 0 0;text-align:right;line-height:1.25}
-.map-hover-card{position:absolute;top:0;left:0;z-index:700;pointer-events:none;width:max-content;max-width:min(22rem,calc(100% - 1rem));max-height:calc(100% - 1rem);overflow:hidden;overflow-wrap:anywhere;padding:.55rem .7rem;border:1px solid #bbccc2;border-radius:.4rem;background:#fbf8f0;color:#18352e;box-shadow:0 3px 12px #0b27294d;font-size:.8rem;line-height:1.35}
-.map-hover-card dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:.15rem .5rem;margin:.3rem 0 0}
-.map-hover-card dt{font-weight:700}.map-hover-card dd{margin:0}
-.map-selection .map-hover-card,.map-sketch .map-hover-card{display:none}
 #print-permit{font-size:.82rem;margin-top:.3rem}
 .map-selection,.map-selection .leaflet-interactive,.map-sketch,.map-sketch .leaflet-interactive{cursor:crosshair!important}
 .north-indicator{background:#fff;color:#103c35;text-align:center;padding:.2rem .42rem;border-radius:.3rem;font-weight:800;line-height:1.05;box-shadow:0 1px 5px #203d3255}
