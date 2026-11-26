@@ -123,6 +123,20 @@ i{display:inline-block;width:.85rem;height:.65rem;border-radius:.15rem}
 .province{background:#21584e}.unit{border:1px dashed #4c6d61}.water{background:#168bc0}.title{background:#f1d0aa}.current{background:#0d8764}.expired{background:#ba512e}.unknown{background:#68678e}
 .error,.map-error{color:#852a1f}.map-error{position:absolute;z-index:711;bottom:3rem;left:.8rem;max-width:calc(100% - 6rem);background:white;padding:.5rem .65rem;border-radius:.35rem;font-size:.85rem}
 .leaflet-popup-content dt{font-weight:700}.leaflet-popup-content dd{margin:0 0 .35rem;overflow-wrap:anywhere}
+.leaflet-popup.feature-popup{margin-bottom:0}
+.feature-popup .leaflet-popup-content-wrapper{padding:0;border-radius:.55rem;background:#fff;color:#18352e;box-shadow:0 6px 22px #0b272956}
+.feature-popup .leaflet-popup-content{margin:0;max-width:min(340px,calc(100vw - 2rem));overflow:hidden;border-radius:.55rem}
+.feature-popup section>strong{display:block;padding:.58rem 2rem .55rem .75rem;background:#173b41;color:#fff;font-size:.92rem;overflow-wrap:anywhere}
+.feature-popup dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:.3rem .7rem;max-height:min(19rem,47dvh);overflow:auto;overscroll-behavior:contain;margin:0;padding:.65rem .75rem;font-size:.8rem}
+.feature-popup dl dd{margin:0}
+.feature-popup section>button{margin:0 .75rem .75rem;font-size:.8rem}
+#map .feature-popup a.leaflet-popup-close-button{z-index:1;color:#fff;font-weight:700}
+.feature-popup .leaflet-popup-tip-container{display:none}
+.feature-popup::after{content:"";position:absolute;width:.75rem;height:.75rem;background:#fff;transform:translate(-50%,-50%) rotate(45deg);pointer-events:none}
+.feature-popup[data-side="right"]::after{left:0;top:var(--arrow-y)}
+.feature-popup[data-side="left"]::after{left:100%;top:var(--arrow-y)}
+.feature-popup[data-side="above"]::after{left:var(--arrow-x);top:100%}
+.feature-popup[data-side="below"]::after{left:var(--arrow-x);top:0;background:#173b41}
 @media(max-width:740px){
   .top{padding:.65rem 3.75rem .65rem .75rem;background-image:linear-gradient(95deg,#e7f7ff 5%,#c4eaff 70%,#79c6f477 100%),var(--leopard-spots)}
   .flag{top:.8rem;right:.75rem}

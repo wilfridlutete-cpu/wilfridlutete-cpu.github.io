@@ -95,6 +95,7 @@ hoverCard.hidden = true;
 hoverCard.setAttribute('aria-hidden', 'true');
 mapContainer.append(hoverCard);
 let hoveredLayer;
+let featurePopup;
 
 function hideHoverCard() {
   hoveredLayer = undefined;
@@ -104,10 +105,60 @@ function hideHoverCard() {
 map.on('movestart zoomstart popupopen', hideHoverCard);
 mapContainer.addEventListener('pointerleave', hideHoverCard);
 
+const featurePopupOptions = { className: 'feature-popup', autoPan: false, minWidth: 265, maxWidth: 340 };
+
+function positionFeaturePopup() {
+  if (!featurePopup) return;
+  const popup = featurePopup.getElement();
+  const { width, height, left, top } = popup.getBoundingClientRect();
+  const container = mapContainer.getBoundingClientRect();
+  const size = map.getSize();
+  const point = map.latLngToContainerPoint(featurePopup.getLatLng());
+  const gap = 13;
+  const margin = 8;
+  const fitsRight = point.x + gap + width <= size.x - margin;
+  const fitsLeft = point.x - gap - width >= margin;
+  let side;
+  let x;
+  let y;
+  if (fitsRight || fitsLeft) {
+    side = fitsRight ? 'right' : 'left';
+    x = fitsRight ? point.x + gap : point.x - gap - width;
+    y = point.y - height / 2;
+  } else {
+    side = point.y >= size.y / 2 ? 'above' : 'below';
+    x = point.x - width / 2;
+    y = side === 'above' ? point.y - gap - height : point.y + gap;
+  }
+  x = Math.round(Math.max(margin, Math.min(x, size.x - width - margin)));
+  y = Math.round(Math.max(margin, Math.min(y, size.y - height - margin)));
+  popup.dataset.side = side;
+  popup.style.setProperty('--arrow-x', Math.max(15, Math.min(point.x - x, width - 15)) + 'px');
+  popup.style.setProperty('--arrow-y', Math.max(15, Math.min(point.y - y, height - 15)) + 'px');
+  const dx = Math.round(x - (left - container.left));
+  const dy = Math.round(y - (top - container.top));
+  if (dx || dy) {
+    const scroll = popup.querySelector('dl').scrollTop;
+    featurePopup.options.offset = L.point(featurePopup.options.offset).add([dx, dy]);
+    featurePopup.update();
+    popup.querySelector('dl').scrollTop = scroll;
+  }
+}
+
+map.on('popupopen', ({ popup }) => {
+  if (popup.options.className !== featurePopupOptions.className) return;
+  featurePopup = popup;
+  positionFeaturePopup();
+});
+map.on('popupclose', ({ popup }) => {
+  if (featurePopup === popup) featurePopup = undefined;
+});
+map.on('moveend resize', positionFeaturePopup);
+
 function bindHoverCard(layer, content) {
   layer.on('mouseover mousemove', ({ containerPoint, originalEvent }) => {
     if (!containerPoint || originalEvent?.pointerType === 'touch' || originalEvent?.sourceCapabilities?.firesTouchEvents ||
-        mapContainer.classList.contains('map-selection') || layer.isPopupOpen()) {
+        mapContainer.classList.contains('map-selection') || featurePopup) {
       hideHoverCard();
       return;
     }
@@ -127,6 +178,7 @@ function bindHoverCard(layer, content) {
   layer.on('mouseout remove', () => {
     if (hoveredLayer === layer) hideHoverCard();
   });
+  layer.on('click', () => requestAnimationFrame(positionFeaturePopup));
 }
 
 function permitFields(p) {
@@ -397,7 +449,7 @@ try {
     onEachFeature: ({ properties: p }, layer) => {
       const content = () => details(p.nom, [['Couche', 'Unité administrative'], ['Province', p.province]]);
       bindHoverCard(layer, content);
-      layer.bindPopup(content);
+      layer.bindPopup(content, featurePopupOptions);
     },
   });
   layers.permis = L.geoJSON(null, {
@@ -407,7 +459,7 @@ try {
     }),
     onEachFeature: ({ properties: p }, layer) => {
       bindHoverCard(layer, () => permitHover(layer));
-      layer.bindPopup(() => permitDetails(p));
+      layer.bindPopup(() => permitDetails(p), featurePopupOptions);
     },
   });
   map.createPane('hydro').style.zIndex = '410';
@@ -461,7 +513,7 @@ try {
         ['Tracé', p.geometrie_approx ? 'Reporté, approximatif' : undefined],
       ].filter(([, value]) => value != null));
       bindHoverCard(layer, content);
-      layer.bindPopup(content);
+      layer.bindPopup(content, featurePopupOptions);
     } });
     showLayer('cours-eau');
     render();
@@ -485,7 +537,7 @@ try {
         }
         const content = () => details(p.nom, [['Province', p.province], ['Unité administrative', p.unite], ['Source', 'GeoNames']]);
         bindHoverCard(layer, content);
-        layer.bindPopup(content);
+        layer.bindPopup(content, featurePopupOptions);
       },
     });
     showLayer('localites');
@@ -506,7 +558,7 @@ try {
       if (p.genre !== 'province') return;
       const content = () => details(p.nom, [['Niveau administratif', 'Province (ADM1)'], ['Pays', 'République démocratique du Congo']]);
       bindHoverCard(layer, content);
-      layer.bindPopup(content);
+      layer.bindPopup(content, featurePopupOptions);
     }
     layers.rdc = L.geoJSON(collections.rdc, {
       pane: 'limites-rdc',
