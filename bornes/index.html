@@ -321,6 +321,7 @@
   <p class="auteur">Réalisé par <a href="https://wilfridlutete-cpu.github.io/">Wilfrid Lutete</a></p>
 </aside>
     <div id="map" role="region" aria-label="Carte des bornes de recharge"></div>
+    <div id="map-credit">© BelgoElect 2026</div>
     <section id="v-stats" class="overlay" hidden aria-label="Statistiques"></section>
     <section id="v-liste" class="overlay" hidden aria-label="Liste des bornes"></section>
     <section id="planif" class="planif" hidden aria-label="Planifier un trajet et sa recharge">
@@ -833,6 +834,7 @@
     const mapVisible = v !== 'liste' && v !== 'stats';
     document.querySelector('.map-tools').hidden = !mapVisible;
     $('locate-map').hidden = !mapVisible;
+    $('map-credit').hidden = !mapVisible;
     setFiltersOpen(false);
     document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-selected', String(b.dataset.view===v)));
     $('v-stats').hidden = v!=='stats'; $('v-liste').hidden = v!=='liste'; $('planif').hidden = v!=='itineraire';

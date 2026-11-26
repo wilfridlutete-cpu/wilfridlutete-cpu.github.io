@@ -71,7 +71,19 @@ main { height: 100%; }
   overscroll-behavior: contain;
 }
 #map-filters[hidden], .map-tools[hidden], .locate-map[hidden] { display: none; }
-#status { top: auto; bottom: 36px; width: max-content; max-width: min(75%, 32rem); }
+#status { top: auto; bottom: 54px; width: max-content; max-width: min(75%, 32rem); }
+#map-credit {
+  position: absolute;
+  z-index: 900;
+  inset: auto auto 24px 50%;
+  transform: translateX(-50%);
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--panel);
+  color: var(--ink);
+  font-size: .875rem;
+  pointer-events: none;
+}
 .locate-map {
   width: 42px;
   height: 42px;
