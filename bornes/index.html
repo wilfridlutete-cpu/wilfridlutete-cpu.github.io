@@ -182,7 +182,7 @@
     .hide-m{display:none}
   }
 </style>
-<link rel="stylesheet" href="assets/carte.css">
+<link rel="stylesheet" href="assets/carte.css?v=20261126-legend">
 </head>
 <body>
 <main>
@@ -418,6 +418,49 @@
   </div>
 </div>
 
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const filters = $('map-filters');
+  const filtersButton = $('toggle-filters');
+  const legend = $('map-legend');
+  const legendButton = $('toggle-legend');
+  function setPanelOpen(button, panel, open){
+    panel.hidden = !open;
+    button.setAttribute('aria-expanded', String(open));
+  }
+  function closeLegend(){
+    setPanelOpen(legendButton, legend, false);
+    legendButton.focus();
+  }
+  filtersButton.addEventListener('click', ()=>{
+    setPanelOpen(legendButton, legend, false);
+    setPanelOpen(filtersButton, filters, filters.hidden);
+  });
+  legendButton.addEventListener('click', ()=>{
+    setPanelOpen(filtersButton, filters, false);
+    setPanelOpen(legendButton, legend, legend.hidden);
+    if(!legend.hidden) $('close-legend').focus();
+  });
+  $('close-legend').addEventListener('click', closeLegend);
+  $('show-legend-examples').addEventListener('click', ()=>$('legend-examples').showModal());
+  document.addEventListener('keydown', event=>{
+    if(event.key !== 'Escape') return;
+    if($('legend-examples').open) return;
+    if(!legend.hidden) closeLegend();
+    else if(!filters.hidden){
+      setPanelOpen(filtersButton, filters, false);
+      filtersButton.focus();
+    }
+  });
+  document.addEventListener('belgoelect:change-view', ()=>{
+    setPanelOpen(filtersButton, filters, false);
+    setPanelOpen(legendButton, legend, false);
+    const examples = $('legend-examples');
+    if(examples.open) examples.close();
+  });
+})();
+</script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
@@ -465,42 +508,6 @@
   L.control.layers(fonds, null, {position:'bottomright'}).addTo(map);
   L.control.scale({imperial:false}).addTo(map);
 
-  const filters = $('map-filters');
-  const filtersButton = $('toggle-filters');
-  const legend = $('map-legend');
-  const legendButton = $('toggle-legend');
-  function setFiltersOpen(open){
-    filters.hidden = !open;
-    filtersButton.setAttribute('aria-expanded', String(open));
-  }
-  function setLegendOpen(open){
-    legend.hidden = !open;
-    legendButton.setAttribute('aria-expanded', String(open));
-  }
-  function closeLegend(){
-    setLegendOpen(false);
-    legendButton.focus();
-  }
-  filtersButton.addEventListener('click', ()=>{
-    setLegendOpen(false);
-    setFiltersOpen(filters.hidden);
-  });
-  legendButton.addEventListener('click', ()=>{
-    setFiltersOpen(false);
-    setLegendOpen(legend.hidden);
-    if(!legend.hidden) $('close-legend').focus();
-  });
-  $('close-legend').addEventListener('click', closeLegend);
-  $('show-legend-examples').addEventListener('click', ()=>$('legend-examples').showModal());
-  document.addEventListener('keydown', event=>{
-    if(event.key !== 'Escape') return;
-    if($('legend-examples').open) return;
-    if(!legend.hidden) closeLegend();
-    else if(!filters.hidden){
-      setFiltersOpen(false);
-      filtersButton.focus();
-    }
-  });
   $('locate-map').addEventListener('click', ()=>$('btn-loc').click());
 
   const cluster = L.markerClusterGroup({chunkedLoading:true, disableClusteringAtZoom:16, maxClusterRadius:50});
@@ -890,8 +897,7 @@
     document.querySelector('.map-tools').hidden = !mapVisible;
     $('locate-map').hidden = !mapVisible;
     $('map-credit').hidden = !mapVisible;
-    setFiltersOpen(false);
-    setLegendOpen(false);
+    document.dispatchEvent(new Event('belgoelect:change-view'));
     document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-selected', String(b.dataset.view===v)));
     $('v-stats').hidden = v!=='stats'; $('v-liste').hidden = v!=='liste'; $('planif').hidden = v!=='itineraire';
     if(heat){ if(v==='densite'){ map.addLayer(heat); legendHeat.addTo(map); } else { map.removeLayer(heat); legendHeat.remove(); } }
