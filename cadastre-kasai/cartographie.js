@@ -2,8 +2,8 @@
 (() => {
   const get = (id) => document.getElementById(id);
   const ink = '#103c35';
-  const sourceLabels = { rdc: 'Provinces de la RDC', provinces: 'Limite du Kasaï', unites: 'Unités administratives', 'cours-eau': 'Cours d’eau', localites: 'Localités' };
-  const sourceColors = { rdc: '#376b79', provinces: '#21584e', unites: '#56766f', 'cours-eau': '#1884b6', localites: '#632d57' };
+  const sourceLabels = { rdc: 'Provinces de la RDC', unites: 'Unités administratives', 'cours-eau': 'Cours d’eau', localites: 'Localités' };
+  const sourceColors = { rdc: '#376b79', unites: '#56766f', 'cours-eau': '#1884b6', localites: '#632d57' };
   const nasaCredit = 'NASA Earthdata / GIBS · Landsat WELD, composite annuel 2000 (fausses couleurs)';
   const esriCredit = 'Esri, Vantor, Earthstar Geographics et la communauté SIG';
   const osmCredit = '© contributeurs OpenStreetMap · openstreetmap.org/copyright';
@@ -279,7 +279,7 @@
     });
     const sourceY = footer + (items.length ? 106 + 43 * Math.ceil(items.length / 3) : 52);
     ctx.font = '22px system-ui, sans-serif';
-    const sources = layout.national
+    const sources = layout.national || province
       ? 'Provinces RDC ADM1 : geoBoundaries · © OpenStreetMap / Wambacher (ODbL) · CAMI · OCHA / RGC · HydroRIVERS · GeoNames'
       : 'Sources : périmètres fournis · cartes CAMI fournies · OCHA / RGC · HydroRIVERS · © OpenStreetMap · GeoNames';
     ctx.fillText(sources, 54, sourceY, width - 108);
@@ -580,7 +580,7 @@
         const mapLeft = (width - mapWidth) / 2;
         const active = Object.keys(sourceLabels).filter((name) => layers[name] && map.hasLayer(layers[name]));
         const permits = layers.permis && map.hasLayer(layers.permis);
-        const symbols = { rdc: 'line', provinces: 'line', unites: 'dashed', 'cours-eau': 'line', localites: 'point' };
+        const symbols = { rdc: 'line', unites: 'dashed', 'cours-eau': 'line', localites: 'point' };
         const legend = active.map((name) => [sourceLabels[name], sourceColors[name], symbols[name]]);
         if (active.includes('cours-eau')) legend.push(['Tracé reporté des cartes CAMI (approx.)', sourceColors['cours-eau'], 'dashed']);
         if (permits) labels.forEach((label, i) => legend.push([label, colors[i]]));
@@ -619,7 +619,7 @@
         ctx.fillStyle = '#e9f1ed';
         ctx.fillRect(0, 0, mapWidth, mapHeight);
         const tileStatus = drawTiles(ctx, map, base, area, scale);
-        const visible = ['rdc', 'unites', 'provinces', 'cours-eau', 'permis', 'localites']
+        const visible = ['rdc', 'unites', 'cours-eau', 'permis', 'localites']
           .map((name) => layers[name]).filter((layer) => layer && map.hasLayer(layer));
         const point = ([lng, lat]) => map.project([lat, lng]).subtract(map.getPixelOrigin())
           .add(map.layerPointToContainerPoint([0, 0])).subtract(area.min).multiplyBy(scale);
@@ -632,7 +632,7 @@
         const date = new Intl.DateTimeFormat('fr-FR', {
           timeZone: 'Africa/Lubumbashi', day: '2-digit', month: '2-digit', year: 'numeric',
         }).format(new Date());
-        decorate(ctx, map, area, scale, width, mapHeight, legend, scope, date, tileStatus, mapLeft, mapWidth, credit, layers.provinces, layout);
+        decorate(ctx, map, area, scale, width, mapHeight, legend, scope, date, tileStatus, mapLeft, mapWidth, credit, layers.kasaiInset, layout);
         if (fields.length) {
           ctx.fillStyle = ink;
           ctx.font = 'bold 30px system-ui, sans-serif';

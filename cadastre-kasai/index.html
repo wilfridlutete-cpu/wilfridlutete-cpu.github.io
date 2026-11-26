@@ -8,9 +8,9 @@
   <link rel="stylesheet" href="vendor/leaflet.css">
   <link rel="stylesheet" href="style.css?v=9">
   <script defer src="vendor/leaflet.js"></script>
-  <script defer src="cartographie.js?v=3"></script>
-  <script defer src="outils.js?v=1"></script>
-  <script type="module" src="app.js?v=7"></script>
+  <script defer src="cartographie.js?v=4"></script>
+  <script defer src="outils.js?v=2"></script>
+  <script type="module" src="app.js?v=8"></script>
   <script>
     if (location.protocol === 'file:') location.replace('../Geoportail-Kasai.html');
   </script>
@@ -36,7 +36,6 @@
           <label><input id="nasa" type="checkbox"><i class="satellite"></i> Satellite NASA</label>
           <p id="osm-status" role="status" hidden></p>
           <label><input type="checkbox" data-layer="rdc"><i class="rdc"></i> Provinces de la RDC</label>
-          <label><input type="checkbox" data-layer="provinces"><i class="province"></i> Province du Kasaï</label>
           <label><input type="checkbox" data-layer="unites"><i class="unit"></i> Limites des unités du Kasaï</label>
           <label><input type="checkbox" data-layer="cours-eau"><i class="water"></i> Cours d’eau</label>
           <label><input type="checkbox" data-layer="localites"><i class="place"></i> Localités</label>
@@ -44,7 +43,7 @@
         </div>
       </details>
       <form id="filters">
-        <div class="section-title"><h2>Filtres</h2><button type="reset" class="quiet">Réinitialiser</button></div>
+        <div class="section-title"><h2>Critères des permis</h2><button type="reset" class="quiet">Réinitialiser</button></div>
         <div class="pair">
           <label>Unité administrative<select name="unit"><option value="">Toutes</option></select></label>
         </div>

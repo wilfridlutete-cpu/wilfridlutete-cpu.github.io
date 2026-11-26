@@ -38,7 +38,6 @@ map.attributionControl.setPrefix('<a href="https://leafletjs.com/" title="A Java
 const styles = {
   rdc: { color: '#376b79', weight: 1.3, fillOpacity: 0 },
   unites: { color: '#56766f', weight: 1, dashArray: '4 4', fillOpacity: 0 },
-  provinces: { color: '#21584e', weight: 2, fill: false },
   'cours-eau': (feature) => ({
     color: '#1884b6', opacity: 0.75, weight: Math.max(0.8, (feature.properties.ordre - 1) * 0.42),
     dashArray: feature.properties.geometrie_approx ? '3 3' : undefined,
@@ -208,7 +207,7 @@ function permitHover(path) {
     ['Délivrance', displayDate(p.delivrance)], ['Expiration', displayDate(p.expiration)], ['Échéance calculée', term(p)],
     ['Surface du dossier', p.surface_source],
   ];
-  if (active('provinces')) fields.push(['Province', p.province]);
+  if (active('rdc')) fields.push(['Province', p.province]);
   if (active('unites')) fields.push(['Unité administrative', p.nom]);
   if (active('cours-eau')) {
     const water = matching('cours-eau', ({ type, coordinates }) => {
@@ -290,7 +289,6 @@ function render(refit = false) {
   }
   const visible = selectedTerm ? candidates.filter(({ properties: p }) => term(p) === selectedTerm) : candidates;
   const inScope = ({ properties: p }) => scope(p, unit);
-  layers.provinces.clearLayers().addData(collections.provinces.features.filter(({ properties: p }) => p.nom === 'Kasaï'));
   layers.unites.clearLayers().addData(collections.unites.features.filter(inScope));
   layers['cours-eau']?.clearLayers().addData(collections['cours-eau'].features.filter(inScope));
   layers.localites?.clearLayers().addData(collections.localites.features.filter(inScope));
@@ -358,19 +356,11 @@ try {
   const water = load('cours-eau').catch((error) => error);
   const places = load('localites').catch((error) => error);
   const national = load('rdc').catch((error) => error);
-  await Promise.all(['provinces', 'unites', 'permis'].map(load));
+  await Promise.all(['unites', 'permis'].map(load));
   layers.unites = L.geoJSON(null, {
     style: styles.unites,
     onEachFeature: ({ properties: p }, layer) => {
       const content = () => details(p.nom, [['Couche', 'Unité administrative'], ['Province', p.province]]);
-      bindHoverCard(layer, content);
-      layer.bindPopup(content);
-    },
-  });
-  layers.provinces = L.geoJSON(null, {
-    style: styles.provinces,
-    onEachFeature: ({ properties: p }, layer) => {
-      const content = () => details(p.nom, [['Couche', 'Province']]);
       bindHoverCard(layer, content);
       layer.bindPopup(content);
     },
@@ -483,6 +473,7 @@ try {
         layer.bindPopup(content);
       },
     });
+    layers.kasaiInset = L.geoJSON(collections.rdc.features.filter(({ properties }) => properties.nom === 'Kasaï'));
     toggleFor('rdc').addEventListener('change', () => {
       if (toggleFor('rdc').checked) map.fitBounds(layers.rdc.getBounds().pad(0.06));
     });
