@@ -38,11 +38,11 @@ map.attributionControl.setPrefix('<a href="https://leafletjs.com/" title="A Java
 const styles = {
   rdc: {
     province: { stroke: false, fillOpacity: 0 },
-    frontiere: { color: '#264d58', weight: 2, interactive: false },
-    interieur: { color: '#376b79', weight: 1.35, dashArray: '5 5', interactive: false },
-    'kasai-interieur': { color: '#155c4d', weight: 2.5, interactive: false },
+    frontiere: { color: '#fff', weight: 3.6, interactive: false },
+    interieur: { color: '#fff', weight: 1.9, dashArray: '6 5', interactive: false },
+    'kasai-interieur': { color: '#fff', weight: 2.8, interactive: false },
   },
-  kasai: { color: '#155c4d', weight: 2.5, fillOpacity: 0 },
+  kasai: { color: '#fff', weight: 2.8, fillOpacity: 0 },
   unites: { color: '#56766f', weight: 1, dashArray: '4 4', fillOpacity: 0 },
   'cours-eau': (feature) => ({
     color: '#1884b6', opacity: 0.75, weight: Math.max(0.8, (feature.properties.ordre - 1) * 0.42),

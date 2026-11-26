@@ -3,7 +3,7 @@
   const get = (id) => document.getElementById(id);
   const ink = '#103c35';
   const sourceLabels = { rdc: 'Frontière de la RDC', kasai: 'Limite du Kasaï', unites: 'Unités administratives', 'cours-eau': 'Cours d’eau', localites: 'Localités' };
-  const sourceColors = { rdc: '#264d58', kasai: '#155c4d', unites: '#56766f', 'cours-eau': '#1884b6', localites: '#632d57' };
+  const sourceColors = { rdc: '#fff', kasai: '#fff', unites: '#56766f', 'cours-eau': '#1884b6', localites: '#632d57' };
   const nasaCredit = 'NASA Earthdata / GIBS · Landsat WELD, composite annuel 2000 (fausses couleurs)';
   const esriCredit = 'Esri, Vantor, Earthstar Geographics et la communauté SIG';
   const osmCredit = '© contributeurs OpenStreetMap · openstreetmap.org/copyright';
@@ -36,6 +36,17 @@
       case 'LineString': line(coordinates, false); break;
       case 'MultiLineString': coordinates.forEach((segment) => line(segment, false)); break;
     }
+  }
+
+  function strokeWithContrast(ctx, color, width) {
+    if (color === '#fff') {
+      ctx.strokeStyle = '#526a72';
+      ctx.lineWidth = width + 2;
+      ctx.stroke();
+    }
+    ctx.strokeStyle = color;
+    ctx.lineWidth = width;
+    ctx.stroke();
   }
 
   function drawVectors(ctx, layers, point, strokeScale, width, height) {
@@ -98,10 +109,8 @@
         }
         if (style.stroke) {
           ctx.globalAlpha = style.opacity;
-          ctx.strokeStyle = style.color;
-          ctx.lineWidth = style.weight * strokeScale;
           ctx.setLineDash(style.dashArray ? style.dashArray.split(/[, ]+/).map((n) => Number(n) * strokeScale) : []);
-          ctx.stroke();
+          strokeWithContrast(ctx, style.color, style.weight * strokeScale);
         }
       });
     }
@@ -273,13 +282,11 @@
         ctx.arc(x + 16, y - 7, 6, 0, 2 * Math.PI);
         ctx.fill();
       } else if (symbol) {
-        ctx.strokeStyle = color;
-        ctx.lineWidth = 4;
         ctx.setLineDash(symbol === 'dashed' ? [7, 4] : []);
         ctx.beginPath();
         ctx.moveTo(x, y - 8);
         ctx.lineTo(x + 32, y - 8);
-        ctx.stroke();
+        strokeWithContrast(ctx, color, 4);
         ctx.setLineDash([]);
       } else ctx.fillRect(x, y - 18, 32, 18);
       ctx.fillStyle = ink;
@@ -584,7 +591,7 @@
         const permits = layers.permis && map.hasLayer(layers.permis);
         const symbols = { rdc: 'line', kasai: 'line', unites: 'dashed', 'cours-eau': 'line', localites: 'point' };
         const legend = active.map((name) => [sourceLabels[name], sourceColors[name], symbols[name]]);
-        if (active.includes('rdc')) legend.push(['Autres limites provinciales', '#376b79', 'dashed'], [sourceLabels.kasai, sourceColors.kasai, 'line']);
+        if (active.includes('rdc')) legend.push(['Autres limites provinciales', sourceColors.rdc, 'dashed'], [sourceLabels.kasai, sourceColors.kasai, 'line']);
         if (active.includes('cours-eau')) legend.push(['Tracé reporté des cartes CAMI (approx.)', sourceColors['cours-eau'], 'dashed']);
         if (permits) labels.forEach((label, i) => legend.push([label, colors[i]]));
         if (!legend.length) legend.push(['Fond de carte', '#e9f1ed']);
